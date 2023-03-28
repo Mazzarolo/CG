@@ -11,12 +11,11 @@
 #include "Figura.h"
 #include "Interface.h"
 
-Botao   *bt = NULL; //se a aplicacao tiver varios botoes, sugiro implementar um manager de botoes.
 Figura  *fig = NULL;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
-int screenWidth = 500, screenHeight = 500; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
+int screenWidth = 800, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 int mouseX, mouseY; //variaveis globais do mouse para poder exibir dentro da render().
 
 void DrawMouseScreenCoords()
@@ -35,14 +34,10 @@ void render()
 {
    colorirFundo(0.1, 0.1, 0.1);
 
-   CV::text(20,500,"Programa Demo Canvas2D");
-
    DrawMouseScreenCoords();
 
-   bt->Render();
-
-   fig->moveFigura(screenWidth / 2, screenHeight / 2);
-   fig->desenhaFigura();
+   fig->mover(screenWidth / 2, screenHeight / 2);
+   fig->desenhar();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -75,21 +70,12 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    mouseY = y;
 
    printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
-
-   if( state == 0 ) //clicou
-   {
-       if( bt->Colidiu(x, y) )
-       {
-           printf("\nClicou no botao\n");
-       }
-   }
 }
 
 int main(void)
 {
-   bt = new Botao(200, 400, 140, 50, "Sou um botao");
-   fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4);
+   fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
 
-   CV::init(&screenWidth, &screenHeight, "Titulo da Janela: Canvas 2D - Pressione 1, 2, 3");
+   CV::init(&screenWidth, &screenHeight, "Editor de imagens");
    CV::run();
 }

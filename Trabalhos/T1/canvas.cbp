@@ -44,6 +44,7 @@
 			<Add library="../lib/freeglut.lib" />
 		</Linker>
 		<Unit filename="include/GL/glut.h" />
+		<Unit filename="src/Botao.cpp" />
 		<Unit filename="src/Botao.h" />
 		<Unit filename="src/Figura.cpp" />
 		<Unit filename="src/Figura.h" />

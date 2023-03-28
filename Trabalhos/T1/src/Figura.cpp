@@ -1,32 +1,47 @@
 #include "Figura.h"
 #include "gl_canvas2d.h"
 
-Figura::Figura(int x, int y, int raio, int numLados)
+Figura::Figura(int x, int y, int raio, int numLados, float angulo)
 {
     this->x = x;
     this->y = y;
     this->raio = raio;
     this->numLados = numLados;
-    this->r = 1;
-    this->g = 0;
-    this->b = 0;
+    this->color = 1;
+    preenchido = false;
+    this->angulo = angulo;
 }
 
-void Figura::pintarFigura(int r, int g, int b)
+void Figura::colorir(int color)
 {
-    this->r = r;
-    this->g = g;
-    this->b = b;
+    this->color = color;
 }
 
-void Figura::desenhaFigura()
+void Figura::desenhar()
 {
-    CV::color(r, g, b);
-    CV::circleFill(x, y, raio, numLados);
+    CV::color(color);
+    if(preenchido)
+    {
+        CV::circleFill(x, y, angulo, raio, numLados);
+    }
+    else
+    {
+        CV::circle(x, y, angulo, raio, numLados);
+    }
 }
 
-void Figura::moveFigura(int x, int y)
+void Figura::mover(int x, int y)
 {
     this->x = x;
     this->y = y;
+}
+
+void Figura::trocarPreenchimento()
+{
+    preenchido = !preenchido;
+}
+
+void Figura::rotacionar(float angulo)
+{
+    this->angulo = angulo;
 }

@@ -160,9 +160,41 @@ void CV::circle( float x, float y, float radius, int div )
    glEnd();
 }
 
-void CV::circleFill( float x, float y, float radius, int div )
+void CV::circleFill( float x, float y, float radius, int div)
 {
    float ang = 0, x1, y1;
+   float inc = PI_2/div;
+   glBegin(GL_POLYGON);
+      for(int lado = 1; lado <= div; lado++) //GL_POLYGON desenha um poligono CONVEXO preenchido.
+      {
+         x1 = (cos(ang)*radius);
+         y1 = (sin(ang)*radius);
+         glVertex2d(x1+x, y1+y);
+         ang+=inc;
+      }
+   glEnd();
+}
+
+// circulo que possui angulação no desenho
+void CV::circle( float x, float y, float angle, float radius, int div )
+{
+   float ang = angle, x1, y1;
+   float inc = PI_2/div;
+   glBegin(GL_LINE_LOOP);
+      for(int lado = 1; lado <= div; lado++) //GL_LINE_LOOP desenha um poligono fechado. Liga automaticamente o primeiro e ultimio vertices.
+      {
+         x1 = (cos(ang)*radius);
+         y1 = (sin(ang)*radius);
+         glVertex2d(x1+x, y1+y);
+         ang+=inc;
+      }
+   glEnd();
+}
+
+// circulo preenchido que possui angulação no desenho
+void CV::circleFill( float x, float y, float angle, float radius, int div)
+{
+   float ang = angle, x1, y1;
    float inc = PI_2/div;
    glBegin(GL_POLYGON);
       for(int lado = 1; lado <= div; lado++) //GL_POLYGON desenha um poligono CONVEXO preenchido.

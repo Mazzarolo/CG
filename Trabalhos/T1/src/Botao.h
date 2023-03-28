@@ -1,40 +1,22 @@
-#ifndef __BOTAO_H__
-#define __BOTAO_H__
+#ifndef BOTAO_H
+#define BOTAO_H
 
-#include "gl_canvas2d.h"
-
-class Botao{
+class Botao
+{
   float altura, largura, x, y;
+  int corTexto, corBotao;
   char label[100];
+  bool escrito;
 
 public:
-  Botao(float _x, float _y, float _larg, float _alt, char *_label)
-  {
-     altura  = _alt;
-     largura = _larg;
-     x = _x;
-     y = _y;
-     strcpy(label, _label);
-  }
+  Botao(float x, float y, float largura, float altura, char *label);
+  Botao(float x, float y, float largura, float altura);
 
-  void Render()
-  {
-      CV::color(0, 1, 0);
-      CV::rectFill(x, y, x + largura, y + altura);
-      CV::color(0, 0, 0);
-      CV::text(x+5, y+altura/2, label); //escreve o label do botao mais ou menos ao centro.
-  }
+  void colorir(int corTexto, int corBotao);
 
-  //recebe as coordenadas do mouse para tratar clique ou detectar quando o mouse esta em cima do botao
-  bool Colidiu(int mx, int my)
-  {
-      if( mx >= x && mx <= (x + largura) && my >= y && my <= (y + altura) )
-      {
-          return true;
-      }
-      return false;
-  }
+  void desenhar();
 
+  bool colidiu(int mx, int my);
 };
 
 #endif

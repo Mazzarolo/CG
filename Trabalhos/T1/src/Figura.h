@@ -4,13 +4,17 @@
 class Figura
 {
     int x, y, raio, numLados;
-    int r, g, b;
+    int color;
+    float angulo;
+    bool preenchido;
 
 public:
-    Figura(int x, int y, int raio, int numLados);
-    void pintarFigura(int r, int g, int b);
-    void desenhaFigura();
-    void moveFigura(int x, int y);
+    Figura(int x, int y, int raio, int numLados, float angulo);
+    void colorir(int color);
+    void desenhar();
+    void mover(int x, int y);
+    void trocarPreenchimento();
+    void rotacionar(float angulo);
 };
 
 #endif // FIGURA_H

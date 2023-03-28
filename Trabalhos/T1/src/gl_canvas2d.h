@@ -39,8 +39,10 @@ public:
 
     //centro e raio do circulo
     static void circle( float x, float y, float radius, int div );
+    static void circle( float x, float y, float angle, float radius, int div );
     static void circle( Vector2 pos, float radius, int div );
 
+    static void circleFill( float x, float y, float angle, float radius, int div );
     static void circleFill( float x, float y, float radius, int div );
     static void circleFill( Vector2 pos, float radius, int div );
 
