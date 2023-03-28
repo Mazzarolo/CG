@@ -8,10 +8,12 @@
 #include "gl_canvas2d.h"
 
 #include "Botao.h"
+#include "GerenciadorDeBotoes.h"
 #include "Figura.h"
 #include "Interface.h"
 
 Figura  *fig = NULL;
+GerenciadorDeBotoes *botoesGerais = NULL;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
@@ -38,6 +40,8 @@ void render()
 
    fig->mover(screenWidth / 2, screenHeight / 2);
    fig->desenhar();
+
+   botoesGerais->desenharBotoes();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -70,11 +74,14 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    mouseY = y;
 
    printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+
+   botoesGerais->verificarClick(x, y, button, state);
 }
 
 int main(void)
 {
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
+   botoesGerais = new GerenciadorDeBotoes(4, 4, 20, screenHeight * 3 / 5, 20, 100, screenWidth, screenHeight);
 
    CV::init(&screenWidth, &screenHeight, "Editor de imagens");
    CV::run();

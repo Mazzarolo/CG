@@ -3,6 +3,7 @@
 
 class Figura
 {
+private:
     int x, y, raio, numLados;
     int color;
     float angulo;

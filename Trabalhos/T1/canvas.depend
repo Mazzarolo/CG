@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1680012651 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1680031058 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -106,19 +106,20 @@
 	<stdlib.h>
 	"gl_canvas2d.h"
 	"Botao.h"
+	"GerenciadorDeBotoes.h"
 	"Figura.h"
 	"Interface.h"
 
 1679940220 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\bola.h
 	"gl_canvas2d.h"
 
-1680012465 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
+1680030523 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 
 1680012230 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 
-1680012063 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+1680026510 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 
 1679959922 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
@@ -196,7 +197,15 @@
 
 1680005632 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 
-1680012740 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
+1680030532 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
+
+1680031036 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+	"GerenciadorDeBotoes.h"
+	"Botao.h"
+	"gl_canvas2d.h"
+
+1680030438 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+	"Botao.h"
 
