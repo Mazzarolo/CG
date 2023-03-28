@@ -7,9 +7,9 @@ Figura::Figura(int x, int y, int raio, int numLados)
     this->y = y;
     this->raio = raio;
     this->numLados = numLados;
-    this->r = 255;
-    this->g = 255;
-    this->b = 255;
+    this->r = 1;
+    this->g = 0;
+    this->b = 0;
 }
 
 void Figura::pintarFigura(int r, int g, int b)

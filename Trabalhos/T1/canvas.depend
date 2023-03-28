@@ -121,3 +121,73 @@
 
 1679940750 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 
+1679959922 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
+	"Figura.h"
+	"gl_canvas2d.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\figura.h
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\include\gl\glut.h
+	"freeglut_std.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1679944203 j:\programação\c\cg\trabalhos\t1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\vector2.h
+
+1679960804 source:j:\programação\c\cg\trabalhos\t1\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Botao.h"
+	"Figura.h"
+	"Interface.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\bola.h
+	"gl_canvas2d.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\relogio.h
+	"gl_canvas2d.h"
+
+1679944203 j:\programação\c\cg\trabalhos\t1\src\botao.h
+	"gl_canvas2d.h"
+
+1679944203 source:j:\programação\c\cg\trabalhos\t1\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1679944203 source:j:\programação\c\cg\trabalhos\t1\src\relogio.cpp
+	"Relogio.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+
+1679960535 source:j:\programação\c\cg\trabalhos\t1\src\interface.cpp
+	"Interface.h"
+	"gl_canvas2d.h"
+
+1679960785 j:\programação\c\cg\trabalhos\t1\src\interface.h
+
