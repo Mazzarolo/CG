@@ -23,6 +23,7 @@ int mouseX, mouseY; //variaveis globais do mouse para poder exibir dentro da ren
 void DrawMouseScreenCoords()
 {
     char str[100];
+    CV::color(1, 1, 1);
     sprintf(str, "Mouse: (%d,%d)", mouseX, mouseY);
     CV::text(10,300, str);
     sprintf(str, "Screen: (%d,%d)", screenWidth, screenHeight);
@@ -81,7 +82,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 int main(void)
 {
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
-   botoesGerais = new GerenciadorDeBotoes(4, 4, 20, screenHeight * 3 / 5, 20, 100, screenWidth, screenHeight);
+   botoesGerais = new GerenciadorDeBotoes(4, 4, 20, screenHeight * 3 / 5, screenWidth, screenHeight);
 
    CV::init(&screenWidth, &screenHeight, "Editor de imagens");
    CV::run();
