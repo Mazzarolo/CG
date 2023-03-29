@@ -1,5 +1,4 @@
 #include "GerenciadorDeBotoes.h"
-#include "Botao.h"
 #include "gl_canvas2d.h"
 
 GerenciadorDeBotoes::GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela)
@@ -55,4 +54,20 @@ int GerenciadorDeBotoes::verificarClick(int mx, int my, int button, int state)
         }
     }
     return -1;
+}
+
+void GerenciadorDeBotoes::atribuirFiguras(int* nLados, int* cor)
+{
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->atribuirFigura(nLados[i], 3.14 / 4, cor[i]);
+    }
+}
+
+void GerenciadorDeBotoes::colorirBotoes(int* cor)
+{
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->colorir(0, cor[i]);
+    }
 }

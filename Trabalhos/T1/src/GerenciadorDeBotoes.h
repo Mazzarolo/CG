@@ -13,7 +13,11 @@ private:
 public:
     GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela);
 
+    void colorirBotoes(int* cor);
+
     void desenharBotoes(int largTela, int altTela);
+
+    void atribuirFiguras(int* nLados, int* cor);
 
     int verificarClick(int mx, int my, int button, int state);
 

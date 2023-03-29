@@ -14,6 +14,7 @@
 
 Figura  *fig = NULL;
 GerenciadorDeBotoes *botoesGerais = NULL;
+GerenciadorDeBotoes *cores = NULL;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
@@ -37,12 +38,13 @@ void render()
 {
    colorirFundo(0.1, 0.1, 0.1);
 
-   DrawMouseScreenCoords();
+   //DrawMouseScreenCoords();
 
    fig->mover(screenWidth / 2, screenHeight / 2);
    fig->desenhar();
 
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
+   cores->desenharBotoes(screenWidth, screenHeight);
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -74,15 +76,23 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    mouseX = x; //guarda as coordenadas do mouse para exibir dentro da render()
    mouseY = y;
 
-   printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+   //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
    botoesGerais->verificarClick(x, y, button, state);
+   cores->verificarClick(x, y, button, state);
 }
 
 int main(void)
 {
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
-   botoesGerais = new GerenciadorDeBotoes(4, 10, 10, 5, screenWidth, screenHeight);
+   criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
+   cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
+   int cor[14];
+
+   for(int i = 0; i < 14; i++)
+      cor[i] = i;
+
+    cores->colorirBotoes(cor);
 
    CV::init(&screenWidth, &screenHeight, "Editor de imagens");
    CV::run();

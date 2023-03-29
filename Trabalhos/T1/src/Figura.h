@@ -21,6 +21,8 @@ public:
     void trocarPreenchimento();
 
     void rotacionar(float angulo);
+
+    void setFiguraConfig(int x, int y, int raio);
 };
 
 #endif // FIGURA_H

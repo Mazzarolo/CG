@@ -45,3 +45,10 @@ void Figura::rotacionar(float angulo)
 {
     this->angulo = angulo;
 }
+
+void Figura::setFiguraConfig(int x, int y, int raio)
+{
+    this->x = x;
+    this->y = y;
+    this->raio = raio;
+}
