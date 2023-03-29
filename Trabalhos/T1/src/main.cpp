@@ -36,7 +36,9 @@ void DrawMouseScreenCoords()
 //Deve-se manter essa função com poucas linhas de codigo.
 void render()
 {
-   colorirFundo(0.1, 0.1, 0.1);
+   colorirFundo(0.5, 0.5, 0.5);
+   CV::color(0.1, 0.1, 0.1);
+   CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
 
    //DrawMouseScreenCoords();
 
@@ -79,7 +81,13 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
    botoesGerais->verificarClick(x, y, button, state);
-   cores->verificarClick(x, y, button, state);
+
+   int corSelect = cores->verificarClick(x, y, button, state);
+
+   if (corSelect != -1)
+   {
+       botoesGerais->colorirFiguras(corSelect);
+   }
 }
 
 int main(void)

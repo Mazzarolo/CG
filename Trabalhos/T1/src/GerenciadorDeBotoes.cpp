@@ -17,7 +17,7 @@ GerenciadorDeBotoes::GerenciadorDeBotoes(int numTotal, float percentAlt, float p
     for(int i = 0; i < numTotal; i++)
     {
         botoes[i] = new Botao(espaco + i * espaco + i * largura, (percentY / 100) * altTela, largura, altura, i);
-        botoes[i]->colorir(0, 2);
+        botoes[i]->colorir(0, 14);
     }
 }
 
@@ -69,5 +69,21 @@ void GerenciadorDeBotoes::colorirBotoes(int* cor)
     for(int i = 0; i < numTotal; i++)
     {
         botoes[i]->colorir(0, cor[i]);
+    }
+}
+
+void GerenciadorDeBotoes::colorirBotoes(int cor)
+{
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->colorir(0, cor);
+    }
+}
+
+void GerenciadorDeBotoes::colorirFiguras(int cor)
+{
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->colorirFigura(cor);
     }
 }

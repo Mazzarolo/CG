@@ -12,7 +12,7 @@ void criarBotoesGerais(GerenciadorDeBotoes** botoesGerais, int screenWidth, int 
     *botoesGerais = new GerenciadorDeBotoes(4, 10, 80, 5, screenWidth, screenHeight);
 
     int nLados[4] = {3, 4, 6, 30};
-    int cor[4] = {3, 4, 6, 7};
+    int cor[4] = {0, 0, 0, 0};
 
     (*botoesGerais)->atribuirFiguras(nLados, cor);
 }

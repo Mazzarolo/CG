@@ -14,6 +14,9 @@ public:
     GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela);
 
     void colorirBotoes(int* cor);
+    void colorirBotoes(int cor);
+
+    void colorirFiguras(int cor);
 
     void desenharBotoes(int largTela, int altTela);
 

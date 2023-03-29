@@ -26,6 +26,8 @@ public:
   bool click(int mx, int my, int button, int state);
 
   void setBotaoConfig(int x, int y, int largura, int altura);
+
+  void colorirFigura(int cor);
 };
 
 #endif

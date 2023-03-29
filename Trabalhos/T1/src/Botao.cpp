@@ -71,3 +71,8 @@ void Botao::atribuirFigura(int nLados, float angulo, int cor)
     fig->trocarPreenchimento();
     fig->colorir(cor);
 }
+
+void Botao::colorirFigura(int cor)
+{
+    fig->colorir(cor);
+}
