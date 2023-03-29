@@ -2,26 +2,42 @@
 #include "Botao.h"
 #include "gl_canvas2d.h"
 
-GerenciadorDeBotoes::GerenciadorDeBotoes(int numTotal, int numLinha, int esqX, int topY, int largTela, int altTela)
+GerenciadorDeBotoes::GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela)
 {
     this->numTotal = numTotal;
+    this->percentEspaco = percentEspaco;
+    this->percentY = percentY;
+    this->percentAlt = percentAlt;
+
     botoes = new Botao*[numTotal];
 
-    int cont = 0;
-    int largura = 100;
-    int altura = 50;
+    int espaco = (percentEspaco / 100) * largTela;
+    int largura = (largTela - (numTotal + 1) * espaco) / numTotal;
+    int altura = (percentAlt / 100) * altTela;
+
     for(int i = 0; i < numTotal; i++)
     {
-        if(cont >= numLinha)
-        {
-            cont = 0;
-        }
-        botoes[i] = new Botao(esqX + i * 50 + i * largura, topY, largura, altura, i);
+        botoes[i] = new Botao(espaco + i * espaco + i * largura, (percentY / 100) * altTela, largura, altura, i);
+        botoes[i]->colorir(0, 2);
     }
 }
 
-void GerenciadorDeBotoes::desenharBotoes()
+void GerenciadorDeBotoes::posicionarResponsivo(int largTela, int altTela)
 {
+    int espaco = (percentEspaco / 100) * largTela;
+    int largura = (largTela - (numTotal + 1) * espaco) / numTotal;
+    int altura = (percentAlt / 100) * altTela;
+
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->setBotaoConfig(espaco + i * espaco + i * largura, (percentY / 100) * altTela, largura, altura);
+    }
+}
+
+void GerenciadorDeBotoes::desenharBotoes(int largTela, int altTela)
+{
+    posicionarResponsivo(largTela, altTela);
+
     for(int i = 0; i < numTotal; i++)
     {
         botoes[i]->desenhar();

@@ -45,3 +45,11 @@ void Botao::colorir(int corTexto, int corBotao)
     this->corTexto = corTexto;
     this->corBotao = corBotao;
 }
+
+void Botao::setBotaoConfig(int x, int y, int largura, int altura)
+{
+    this->altura  = altura;
+    this->largura = largura;
+    this->x = x;
+    this->y = y;
+}

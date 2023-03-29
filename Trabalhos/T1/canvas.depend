@@ -61,7 +61,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1680007435 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gl_canvas2d.h
+1680095254 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1680033302 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1680094282 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -113,13 +113,13 @@
 1679940220 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\bola.h
 	"gl_canvas2d.h"
 
-1680030523 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
+1680094467 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 
 1680012230 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 
-1680026510 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+1680094402 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 
 1679959922 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
@@ -197,15 +197,15 @@
 
 1680005632 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 
-1680030532 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
+1680094477 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1680033334 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+1680094993 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1680033529 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+1680095161 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 

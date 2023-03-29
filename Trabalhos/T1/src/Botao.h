@@ -19,6 +19,8 @@ public:
   void desenhar();
 
   bool click(int mx, int my, int button, int state);
+
+  void setBotaoConfig(int x, int y, int largura, int altura);
 };
 
 #endif

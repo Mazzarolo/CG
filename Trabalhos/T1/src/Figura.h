@@ -11,10 +11,15 @@ private:
 
 public:
     Figura(int x, int y, int raio, int numLados, float angulo);
+
     void colorir(int color);
+
     void desenhar();
+
     void mover(int x, int y);
+
     void trocarPreenchimento();
+
     void rotacionar(float angulo);
 };
 
