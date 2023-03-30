@@ -50,6 +50,8 @@
 		<Unit filename="src/Figura.h" />
 		<Unit filename="src/GerenciadorDeBotoes.cpp" />
 		<Unit filename="src/GerenciadorDeBotoes.h" />
+		<Unit filename="src/GerenciadorDeFiguras.cpp" />
+		<Unit filename="src/GerenciadorDeFiguras.h" />
 		<Unit filename="src/Interface.cpp" />
 		<Unit filename="src/Interface.h" />
 		<Unit filename="src/Vector2.h" />
