@@ -10,7 +10,7 @@ private:
   int corTexto, corBotao;
   int id;
   char label[100];
-  bool escrito;
+  bool escrito, clickDown;
   Figura* fig;
 
 public:

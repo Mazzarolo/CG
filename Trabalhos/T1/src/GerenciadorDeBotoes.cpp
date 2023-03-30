@@ -45,15 +45,16 @@ void GerenciadorDeBotoes::desenharBotoes(int largTela, int altTela)
 
 int GerenciadorDeBotoes::verificarClick(int mx, int my, int button, int state)
 {
+    int clicked = -1;
     for(int i = 0; i < numTotal; i++)
     {
         if(botoes[i]->click(mx, my, button, state))
         {
             printf("\nClickou no %d", i);
-            return i;
+            clicked = i;
         }
     }
-    return -1;
+    return clicked;
 }
 
 void GerenciadorDeBotoes::atribuirFiguras(int* nLados, int* cor)

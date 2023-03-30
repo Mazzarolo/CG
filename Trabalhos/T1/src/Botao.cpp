@@ -26,7 +26,10 @@ Botao::Botao(float x, float y, float largura, float altura, int id)
 
 void Botao::desenhar()
 {
-    CV::color(corBotao);
+    if(fig && clickDown)
+        CV::color(0.8, 0.8, 0.8);
+    else
+        CV::color(corBotao);
     CV::rectFill(x, y, x + largura, y + altura);
     CV::color(corTexto);
     if(escrito)
@@ -37,10 +40,20 @@ void Botao::desenhar()
 
 bool Botao::click(int mx, int my, int button,  int state)
 {
-    if( mx >= x && mx <= (x + largura) && my >= y && my <= (y + altura) && !button && state == 1)
+    if( mx >= x && mx <= (x + largura) && my >= y && my <= (y + altura) && !button)
     {
-        return true;
+        if(state == 0)
+            clickDown = true;
+        else if(state == 1 && clickDown)
+        {
+            clickDown = false;
+            return true;
+        }
     }
+
+    if (state == 1)
+        clickDown = false;
+
     return false;
 }
 
