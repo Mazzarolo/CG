@@ -13,7 +13,8 @@ private:
     int numTotal;
 
 public:
-
+    GerenciadorDeFiguras();
+    desenharFiguras(int largTela, int altTela);
 };
 
 

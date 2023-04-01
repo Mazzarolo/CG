@@ -11,6 +11,7 @@ Botao::Botao(float x, float y, float largura, float altura, char *label, int id)
     fig = NULL;
     strcpy(this->label, label);
     escrito = true;
+    clickDown = false;
 }
 
 Botao::Botao(float x, float y, float largura, float altura, int id)
@@ -22,6 +23,7 @@ Botao::Botao(float x, float y, float largura, float altura, int id)
     this->id = id;
     fig = NULL;
     escrito = false;
+    clickDown = false;
 }
 
 void Botao::desenhar()
