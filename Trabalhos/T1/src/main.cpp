@@ -9,10 +9,12 @@
 
 #include "Botao.h"
 #include "GerenciadorDeBotoes.h"
+#include "GerenciadorDeFiguras.h"
 #include "Figura.h"
 #include "Interface.h"
 
 Figura  *fig = NULL;
+GerenciadorDeFiguras *figuras = NULL;
 GerenciadorDeBotoes *botoesGerais = NULL;
 GerenciadorDeBotoes *cores = NULL;
 
@@ -37,14 +39,16 @@ void DrawMouseScreenCoords()
 void render()
 {
    colorirFundo(0.5, 0.5, 0.5);
-   CV::color(0.1, 0.1, 0.1);
-   CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
 
    //DrawMouseScreenCoords();
 
    fig->mover(screenWidth / 2, screenHeight / 2);
    fig->desenhar();
 
+   figuras->desenharFiguras(screenWidth, screenHeight);
+
+   CV::color(0.1, 0.1, 0.1);
+   CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
    cores->desenharBotoes(screenWidth, screenHeight);
 }
@@ -80,7 +84,14 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
    //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
-   botoesGerais->verificarClick(x, y, button, state);
+   int figuraAdicionada = botoesGerais->verificarClick(x, y, button, state);
+
+   if(figuraAdicionada != -1)
+   {
+        figuras->adicionarFigura(botoesGerais->getFigura(figuraAdicionada), screenWidth, screenHeight);
+   }
+
+   figuras->verificarClick(x, y, button, state);
 
    int corSelect = cores->verificarClick(x, y, button, state);
 
@@ -95,6 +106,8 @@ int main(void)
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
+   figuras = new GerenciadorDeFiguras();
+
    int cor[14];
 
    for(int i = 0; i < 14; i++)

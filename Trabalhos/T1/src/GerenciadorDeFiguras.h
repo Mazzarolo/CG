@@ -3,18 +3,27 @@
 
 #include "Figura.h"
 #include <list>
+#include <stdlib.h>
 
 using namespace std;
 
 class GerenciadorDeFiguras
 {
 private:
-    list<Figura> listaFiguras;
+    list<Figura*> listaFiguras;
     int numTotal;
+    Figura* selected;
 
 public:
     GerenciadorDeFiguras();
-    desenharFiguras(int largTela, int altTela);
+
+    void adicionarFigura(Figura* base, int largTela, int altTela);
+
+    void desenharFiguras(int largTela, int altTela);
+
+    void posicionarResponsivo(int largTela, int altTela);
+
+    void verificarClick(int mx, int my, int button, int state);
 };
 
 

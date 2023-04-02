@@ -88,3 +88,8 @@ void GerenciadorDeBotoes::colorirFiguras(int cor)
         botoes[i]->colorirFigura(cor);
     }
 }
+
+Figura* GerenciadorDeBotoes::getFigura(int id)
+{
+    return botoes[id]->getFigura();
+}

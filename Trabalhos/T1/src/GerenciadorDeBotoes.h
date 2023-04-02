@@ -27,6 +27,8 @@ public:
     void posicionarResponsivo(int largTela, int altTela);
 
     Botao getBotao(int id);
+
+    Figura* getFigura(int id);
 };
 
 #endif // GERENCIADORDEBOTOES_H

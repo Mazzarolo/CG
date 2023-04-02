@@ -91,3 +91,8 @@ void Botao::colorirFigura(int cor)
 {
     fig->colorir(cor);
 }
+
+Figura* Botao::getFigura()
+{
+    return fig;
+}

@@ -1,5 +1,6 @@
 #include "Figura.h"
 #include "gl_canvas2d.h"
+#include "stdio.h"
 
 Figura::Figura(int x, int y, int raio, int numLados, float angulo)
 {
@@ -10,6 +11,7 @@ Figura::Figura(int x, int y, int raio, int numLados, float angulo)
     this->color = 1;
     preenchido = false;
     this->angulo = angulo;
+    clicked = false;
 }
 
 void Figura::colorir(int color)
@@ -51,4 +53,41 @@ void Figura::setFiguraConfig(int x, int y, int raio)
     this->x = x;
     this->y = y;
     this->raio = raio;
+}
+
+Figura* Figura::clonarFigura()
+{
+    Figura* novaFigura = NULL;
+    novaFigura = new Figura(x, y, raio, numLados, angulo);
+    novaFigura->colorir(color);
+    novaFigura->preenchido = preenchido;
+    return novaFigura;
+}
+
+bool Figura::click(int mx, int my, int button, int state)
+{
+    if(state == 1)
+        clicked = false;
+
+    if((sqrt(pow(mx - x, 2) + pow(my - y, 2))) < raio)
+    {
+        if(state == 0)
+        {
+            clicked = true;
+            offSetX = x - mx;
+            offSetY = y - my;
+            return true;
+        }
+    }
+
+    if(clicked)
+        arrastar(mx, my);
+
+    return false;
+}
+
+void Figura::arrastar(int mx, int my)
+{
+    x = mx + offSetX;
+    y = my + offSetY;
 }

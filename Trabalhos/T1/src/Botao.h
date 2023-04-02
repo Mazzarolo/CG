@@ -28,6 +28,8 @@ public:
   void setBotaoConfig(int x, int y, int largura, int altura);
 
   void colorirFigura(int cor);
+
+  Figura* getFigura();
 };
 
 #endif
