@@ -24,6 +24,8 @@ public:
     void posicionarResponsivo(int largTela, int altTela);
 
     void verificarClick(int mx, int my, int button, int state);
+
+    void verificarMudancas(int key);
 };
 
 

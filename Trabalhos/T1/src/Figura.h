@@ -1,6 +1,8 @@
 #ifndef FIGURA_H
 #define FIGURA_H
 
+#include <stdlib.h>
+
 class Figura
 {
 private:
@@ -8,7 +10,7 @@ private:
     int offSetX, offSetY;
     int color;
     float angulo;
-    bool preenchido, clicked;
+    bool preenchido, clicked, selected;
 
 public:
     Figura(int x, int y, int raio, int numLados, float angulo);
@@ -30,6 +32,8 @@ public:
     bool click(int mx, int my, int button, int state);
 
     void arrastar(int mx, int my);
+
+    void setSelected();
 };
 
 #endif // FIGURA_H

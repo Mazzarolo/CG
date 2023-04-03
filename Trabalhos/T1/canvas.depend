@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1680205978 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1680542022 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -107,20 +107,23 @@
 	"gl_canvas2d.h"
 	"Botao.h"
 	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
 	"Figura.h"
 	"Interface.h"
 
 1679940220 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\bola.h
 	"gl_canvas2d.h"
 
-1680207207 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
+1680540961 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 	"Figura.h"
 
-1680098887 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
+1680541687 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
+	"stdio.h"
 
-1680098830 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+1680541434 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+	<stdlib.h>
 
 1680454472 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
@@ -203,23 +206,24 @@
 1680097392 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
 
-1680207372 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
+1680540961 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1680207047 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+1680540961 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"gl_canvas2d.h"
 
-1680107138 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+1680540961 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1680203034 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1680541543 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1680205434 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1680541946 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
 	<list>
+	<stdlib.h>
 
 1680450101 source:j:\programação\c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"

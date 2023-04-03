@@ -39,8 +39,23 @@ void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state)
     {
         if((*fig)->click(mx, my, button, state))
         {
+            if(selected)
+                selected->setSelected();
             selected = (*fig);
+            selected->setSelected();
             return;
+        }
+    }
+}
+
+void GerenciadorDeFiguras::verificarMudancas(int key)
+{
+    if(selected)
+    {
+        switch(key)
+        {
+            case 200:
+                break;
         }
     }
 }

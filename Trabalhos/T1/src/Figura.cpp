@@ -12,6 +12,7 @@ Figura::Figura(int x, int y, int raio, int numLados, float angulo)
     preenchido = false;
     this->angulo = angulo;
     clicked = false;
+    selected = false;
 }
 
 void Figura::colorir(int color)
@@ -21,6 +22,18 @@ void Figura::colorir(int color)
 
 void Figura::desenhar()
 {
+    if(selected)
+    {
+        CV::color(rand() % 14);
+        if(preenchido)
+        {
+            CV::circleFill(x, y, angulo, raio + 5, numLados);
+        }
+        else
+        {
+            CV::circle(x, y, angulo, raio + 2, numLados);
+        }
+    }
     CV::color(color);
     if(preenchido)
     {
@@ -90,4 +103,9 @@ void Figura::arrastar(int mx, int my)
 {
     x = mx + offSetX;
     y = my + offSetY;
+}
+
+void Figura::setSelected()
+{
+    selected = !selected;
 }

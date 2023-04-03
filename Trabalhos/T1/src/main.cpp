@@ -68,6 +68,8 @@ void keyboard(int key)
 	     exit(0);
 	  break;
    }
+
+   figuras->verificarMudancas(key);
 }
 
 //funcao chamada toda vez que uma tecla for liberada
