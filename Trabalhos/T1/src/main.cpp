@@ -93,7 +93,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
         figuras->adicionarFigura(botoesGerais->getFigura(figuraAdicionada), screenWidth, screenHeight);
    }
 
-   figuras->verificarClick(x, y, button, state);
+   figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
 
    int corSelect = cores->verificarClick(x, y, button, state);
 

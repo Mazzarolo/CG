@@ -34,6 +34,10 @@ public:
     void arrastar(int mx, int my);
 
     void setSelected();
+
+    void girar(float angulo);
+
+    void redimencionar(int diferenca);
 };
 
 #endif // FIGURA_H

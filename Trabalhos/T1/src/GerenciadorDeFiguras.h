@@ -23,7 +23,7 @@ public:
 
     void posicionarResponsivo(int largTela, int altTela);
 
-    void verificarClick(int mx, int my, int button, int state);
+    void verificarClick(int mx, int my, int button, int state, int canvasY);
 
     void verificarMudancas(int key);
 };

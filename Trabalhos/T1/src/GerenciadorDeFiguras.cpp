@@ -32,7 +32,7 @@ void GerenciadorDeFiguras::posicionarResponsivo(int largTela, int altTela)
     // fazer depois
 }
 
-void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state)
+void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state, int canvasY)
 {
     list<Figura*>::reverse_iterator fig;
     for (fig = listaFiguras.rbegin(); fig != listaFiguras.rend(); ++fig)
@@ -46,6 +46,12 @@ void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state)
             return;
         }
     }
+    if(button == 0 && state == 0 && my < canvasY)
+    {
+        if(selected)
+            selected->setSelected();
+        selected = NULL;
+    }
 }
 
 void GerenciadorDeFiguras::verificarMudancas(int key)
@@ -55,6 +61,16 @@ void GerenciadorDeFiguras::verificarMudancas(int key)
         switch(key)
         {
             case 200:
+                selected->redimencionar(-2);
+                break;
+            case 201:
+                selected->girar(0.1);
+                break;
+            case 202:
+                selected->redimencionar(2);
+                break;
+            case 203:
+                selected->girar(-0.1);
                 break;
         }
     }

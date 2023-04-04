@@ -109,3 +109,13 @@ void Figura::setSelected()
 {
     selected = !selected;
 }
+
+void Figura::girar(float angulo)
+{
+    this->angulo += angulo;
+}
+
+void Figura::redimencionar(int diferenca)
+{
+    raio += diferenca;
+}
