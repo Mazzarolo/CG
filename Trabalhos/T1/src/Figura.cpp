@@ -117,5 +117,6 @@ void Figura::girar(float angulo)
 
 void Figura::redimencionar(int diferenca)
 {
+    if(raio + diferenca > 2)
     raio += diferenca;
 }

@@ -100,6 +100,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    if (corSelect != -1)
    {
        botoesGerais->colorirFiguras(corSelect);
+       figuras->colorirSelect(corSelect);
    }
 }
 

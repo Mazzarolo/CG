@@ -60,18 +60,29 @@ void GerenciadorDeFiguras::verificarMudancas(int key)
     {
         switch(key)
         {
+            case 102:
+                selected->trocarPreenchimento();
+                break;
+            case 117:
+                break;
             case 200:
                 selected->redimencionar(-2);
                 break;
             case 201:
-                selected->girar(0.1);
+                selected->girar(0.02);
                 break;
             case 202:
                 selected->redimencionar(2);
                 break;
             case 203:
-                selected->girar(-0.1);
+                selected->girar(-0.02);
                 break;
         }
     }
+}
+
+void GerenciadorDeFiguras::colorirSelect(int cor)
+{
+    if(selected)
+        selected->colorir(cor);
 }

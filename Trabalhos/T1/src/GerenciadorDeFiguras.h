@@ -26,6 +26,8 @@ public:
     void verificarClick(int mx, int my, int button, int state, int canvasY);
 
     void verificarMudancas(int key);
+
+    void colorirSelect(int cor);
 };
 
 
