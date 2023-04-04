@@ -60,22 +60,28 @@ void GerenciadorDeFiguras::verificarMudancas(int key)
     {
         switch(key)
         {
-            case 102:
+            case 100:   //preciona d para enviar a imagem para traz no desenho
+                listaFiguras.remove(selected);
+                listaFiguras.push_front(selected);
+                break;
+            case 102:   //preciona p para trocar o poreenchimento do desenho
                 selected->trocarPreenchimento();
                 break;
-            case 117:
+            case 117:   //preciona d para enviar a imagem para frente no desenho
+                listaFiguras.remove(selected);
+                listaFiguras.push_back(selected);
                 break;
             case 200:
-                selected->redimencionar(-2);
+                selected->girar(-0.02);
                 break;
             case 201:
-                selected->girar(0.02);
-                break;
-            case 202:
                 selected->redimencionar(2);
                 break;
+            case 202:
+                selected->girar(0.02);
+                break;
             case 203:
-                selected->girar(-0.02);
+                selected->redimencionar(-2);
                 break;
         }
     }
