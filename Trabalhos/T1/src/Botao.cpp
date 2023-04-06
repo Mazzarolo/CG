@@ -28,7 +28,7 @@ Botao::Botao(float x, float y, float largura, float altura, int id)
 
 void Botao::desenhar()
 {
-    if(fig && clickDown)
+    if((fig || escrito) && clickDown)
         CV::color(0.8, 0.8, 0.8);
     else
         CV::color(corBotao);

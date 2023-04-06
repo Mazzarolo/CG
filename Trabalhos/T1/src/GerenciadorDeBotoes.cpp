@@ -29,7 +29,7 @@ GerenciadorDeBotoes::GerenciadorDeBotoes(int numTotal, int x, int y, int larg, i
 
     for(int i = 0; i < numTotal; i++)
     {
-        botoes[i] = new Botao(x, y + y * i, larg, alt, textos[i], i);
+        botoes[i] = new Botao(x, y + alt * i, larg, alt, textos[i], i);
         botoes[i]->colorir(0, 14);
     }
 }

@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
 
 #include "gl_canvas2d.h"
 
@@ -52,6 +53,7 @@ void render()
    CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
    cores->desenharBotoes(screenWidth, screenHeight);
+   opcoes->desenharBotoes();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -103,6 +105,8 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
        botoesGerais->colorirFiguras(corSelect);
        figuras->colorirSelect(corSelect);
    }
+
+    opcoes->verificarClick(x, y, button, state);
 }
 
 int main(void)
@@ -110,7 +114,8 @@ int main(void)
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
-   //opcoes = new GerenciadorDeBotoes(3, 50, 50, 100, 50, textos);
+   char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
+   opcoes = new GerenciadorDeBotoes(3, 50, 50, 200, 30, textos);
    figuras = new GerenciadorDeFiguras();
 
    int cor[14];

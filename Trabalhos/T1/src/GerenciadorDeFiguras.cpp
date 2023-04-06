@@ -71,6 +71,11 @@ void GerenciadorDeFiguras::verificarMudancas(int key)
                 listaFiguras.remove(selected);
                 listaFiguras.push_back(selected);
                 break;
+            case 127:
+                listaFiguras.remove(selected);
+                selected = NULL;
+                free(selected);
+                break;
             case 200:
                 selected->girar(-0.02);
                 break;
