@@ -17,6 +17,7 @@ Figura  *fig = NULL;
 GerenciadorDeFiguras *figuras = NULL;
 GerenciadorDeBotoes *botoesGerais = NULL;
 GerenciadorDeBotoes *cores = NULL;
+GerenciadorDeBotoes *opcoes = NULL;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
@@ -109,6 +110,7 @@ int main(void)
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
+   //opcoes = new GerenciadorDeBotoes(3, 50, 50, 100, 50, textos);
    figuras = new GerenciadorDeFiguras();
 
    int cor[14];

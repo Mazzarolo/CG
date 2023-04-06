@@ -11,7 +11,8 @@ private:
     Botao** botoes;
 
 public:
-    GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela);
+    GerenciadorDeBotoes(int numTotal, float percentAlt, float percentY, float percentEspaco, int largTela, int altTela); // Horizontal e responsivo
+    GerenciadorDeBotoes(int numTotal, int x, int y, int larg, int alt, char** textos); // Vertical
 
     void colorirBotoes(int* cor);
     void colorirBotoes(int cor);
@@ -19,6 +20,7 @@ public:
     void colorirFiguras(int cor);
 
     void desenharBotoes(int largTela, int altTela);
+    void desenharBotoes(); //não responsivo
 
     void atribuirFiguras(int* nLados, int* cor);
 
