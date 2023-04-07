@@ -126,12 +126,13 @@
 1680612110 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 	<stdlib.h>
 
-1680454472 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
+1680877557 source:j:\programação\c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
 
-1680452554 j:\programação\c\cg\trabalhos\t1\src\figura.h
+1680877557 j:\programação\c\cg\trabalhos\t1\src\figura.h
+	<stdlib.h>
 
 1680114778 j:\programação\c\cg\trabalhos\t1\src\gl_canvas2d.h
 	<stdio.h>
@@ -161,12 +162,13 @@
 
 1680114778 j:\programação\c\cg\trabalhos\t1\src\vector2.h
 
-1680454551 source:j:\programação\c\cg\trabalhos\t1\src\main.cpp
+1680878038 source:j:\programação\c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
+	<string>
 	"gl_canvas2d.h"
 	"Botao.h"
 	"GerenciadorDeBotoes.h"
@@ -226,21 +228,21 @@
 	<list>
 	<stdlib.h>
 
-1680450101 source:j:\programação\c\cg\trabalhos\t1\src\botao.cpp
+1680877557 source:j:\programação\c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1680450123 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+1680877557 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"gl_canvas2d.h"
 
-1680449992 j:\programação\c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+1680877557 j:\programação\c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1680454139 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1680878352 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1680453205 j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1680878202 j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
 	<list>
 	<stdlib.h>

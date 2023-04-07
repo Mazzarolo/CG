@@ -54,7 +54,7 @@ void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state,
     }
 }
 
-void GerenciadorDeFiguras::verificarMudancas(int key)
+void GerenciadorDeFiguras::verificarMudancasTeclado(int key)
 {
     if(selected)
     {
@@ -89,6 +89,17 @@ void GerenciadorDeFiguras::verificarMudancas(int key)
                 selected->redimencionar(-2);
                 break;
         }
+    }
+}
+
+void GerenciadorDeFiguras::verificarMudancasMouse(int wheel, int direction)
+{
+    if(!wheel && selected)
+    {
+        if(direction == 1)
+            selected->redimencionar(2);
+        else if(direction == -1)
+            selected->redimencionar(-2);
     }
 }
 

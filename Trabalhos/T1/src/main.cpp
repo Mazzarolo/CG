@@ -53,7 +53,7 @@ void render()
    CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
    cores->desenharBotoes(screenWidth, screenHeight);
-   opcoes->desenharBotoes();
+   //opcoes->desenharBotoes();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -72,7 +72,7 @@ void keyboard(int key)
 	  break;
    }
 
-   figuras->verificarMudancas(key);
+   figuras->verificarMudancasTeclado(key);
 }
 
 //funcao chamada toda vez que uma tecla for liberada
@@ -87,7 +87,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    mouseX = x; //guarda as coordenadas do mouse para exibir dentro da render()
    mouseY = y;
 
-   //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+   printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
    int figuraAdicionada = botoesGerais->verificarClick(x, y, button, state);
 
@@ -97,6 +97,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    }
 
    figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
+   figuras->verificarMudancasMouse(wheel, direction);
 
    int corSelect = cores->verificarClick(x, y, button, state);
 
@@ -106,7 +107,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
        figuras->colorirSelect(corSelect);
    }
 
-    opcoes->verificarClick(x, y, button, state);
+    //opcoes->verificarClick(x, y, button, state);
 }
 
 int main(void)
@@ -114,8 +115,8 @@ int main(void)
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
-   char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
-   opcoes = new GerenciadorDeBotoes(3, 50, 50, 200, 30, textos);
+   //char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
+   //opcoes = new GerenciadorDeBotoes(3, 50, 50, 200, 30, textos);
    figuras = new GerenciadorDeFiguras();
 
    int cor[14];

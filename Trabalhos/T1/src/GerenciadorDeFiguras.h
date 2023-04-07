@@ -25,7 +25,9 @@ public:
 
     void verificarClick(int mx, int my, int button, int state, int canvasY);
 
-    void verificarMudancas(int key);
+    void verificarMudancasTeclado(int key);
+
+    void verificarMudancasMouse(int wheel, int direction);
 
     void colorirSelect(int cor);
 };
