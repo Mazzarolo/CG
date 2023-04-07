@@ -162,7 +162,7 @@
 
 1680114778 j:\programação\c\cg\trabalhos\t1\src\vector2.h
 
-1680878038 source:j:\programação\c\cg\trabalhos\t1\src\main.cpp
+1680901518 source:j:\programação\c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -239,10 +239,10 @@
 1680877557 j:\programação\c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1680878352 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1680901574 source:j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1680878202 j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1680901374 j:\programação\c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
 	<list>
 	<stdlib.h>

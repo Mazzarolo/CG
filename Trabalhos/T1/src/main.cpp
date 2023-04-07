@@ -79,6 +79,7 @@ void keyboard(int key)
 void keyboardUp(int key)
 {
    printf("\nLiberou: %d" , key);
+   figuras->verificarSoltarTeclado(key);
 }
 
 //funcao para tratamento de mouse: cliques, movimentos e arrastos

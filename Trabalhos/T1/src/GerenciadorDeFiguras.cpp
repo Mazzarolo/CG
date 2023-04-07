@@ -4,6 +4,7 @@ GerenciadorDeFiguras::GerenciadorDeFiguras()
 {
     numTotal = 0;
     selected = NULL;
+    ctrl = false;
 }
 
 void GerenciadorDeFiguras::adicionarFigura(Figura* base, int largTela, int altTela)
@@ -88,18 +89,41 @@ void GerenciadorDeFiguras::verificarMudancasTeclado(int key)
             case 203:
                 selected->redimencionar(-2);
                 break;
+            case 214:
+                ctrl = true;
+                break;
+        }
+    }
+}
+
+void GerenciadorDeFiguras::verificarSoltarTeclado(int key)
+{
+    if(selected)
+    {
+        switch(key)
+        {
+            case 214:
+                ctrl = false;
+                break;
         }
     }
 }
 
 void GerenciadorDeFiguras::verificarMudancasMouse(int wheel, int direction)
 {
-    if(!wheel && selected)
+    if(!wheel && selected && !ctrl)
     {
         if(direction == 1)
             selected->redimencionar(2);
         else if(direction == -1)
             selected->redimencionar(-2);
+    }
+    else if(!wheel && selected && ctrl)
+    {
+        if(direction == 1)
+            selected->girar(0.04);
+        else if(direction == -1)
+            selected->girar(-0.04);
     }
 }
 

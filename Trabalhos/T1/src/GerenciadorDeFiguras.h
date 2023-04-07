@@ -13,6 +13,7 @@ private:
     list<Figura*> listaFiguras;
     int numTotal;
     Figura* selected;
+    bool ctrl;
 
 public:
     GerenciadorDeFiguras();
@@ -26,6 +27,8 @@ public:
     void verificarClick(int mx, int my, int button, int state, int canvasY);
 
     void verificarMudancasTeclado(int key);
+
+    void verificarSoltarTeclado(int key);
 
     void verificarMudancasMouse(int wheel, int direction);
 
