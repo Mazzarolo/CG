@@ -14,7 +14,9 @@
 #include "Figura.h"
 #include "Interface.h"
 
+FILE *arq;
 Figura  *fig = NULL;
+Botao *botaoSalvar = NULL;
 GerenciadorDeFiguras *figuras = NULL;
 GerenciadorDeBotoes *botoesGerais = NULL;
 GerenciadorDeBotoes *cores = NULL;
@@ -53,6 +55,8 @@ void render()
    CV::rectFill(0, 0.75 * screenHeight, screenWidth, screenHeight);
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
    cores->desenharBotoes(screenWidth, screenHeight);
+   botaoSalvar->setBotaoConfig(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100);
+   botaoSalvar->desenhar();
    //opcoes->desenharBotoes();
 }
 
@@ -108,6 +112,11 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
        figuras->colorirSelect(corSelect);
    }
 
+   if(botaoSalvar->click(x, y, button, state))
+   {
+       figuras->salvarFiguras(&arq);
+   }
+
     //opcoes->verificarClick(x, y, button, state);
 }
 
@@ -119,13 +128,17 @@ int main(void)
    //char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
    //opcoes = new GerenciadorDeBotoes(3, 50, 50, 200, 30, textos);
    figuras = new GerenciadorDeFiguras();
+   botaoSalvar = new Botao(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100, "Salvar", 0);
+   botaoSalvar->colorir(0, 3);
 
    int cor[14];
 
    for(int i = 0; i < 14; i++)
       cor[i] = i;
 
-    cores->colorirBotoes(cor);
+   cores->colorirBotoes(cor);
+
+   figuras->carregarFiguras(&arq);
 
    CV::init(&screenWidth, &screenHeight, "Editor de imagens");
    CV::run();

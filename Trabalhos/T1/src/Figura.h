@@ -2,6 +2,7 @@
 #define FIGURA_H
 
 #include <stdlib.h>
+#include <stdio.h>
 
 class Figura
 {
@@ -38,6 +39,8 @@ public:
     void girar(float angulo);
 
     void redimencionar(int diferenca);
+
+    void salvar(FILE** arq);
 };
 
 #endif // FIGURA_H

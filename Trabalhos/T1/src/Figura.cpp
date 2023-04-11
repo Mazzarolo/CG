@@ -120,3 +120,8 @@ void Figura::redimencionar(int diferenca)
     if(raio + diferenca > 2)
     raio += diferenca;
 }
+
+void Figura::salvar(FILE** arq)
+{
+    fprintf(*arq, "\n%d %d %d %d %d %f %d", x, y, raio, numLados, color, angulo, preenchido);
+}

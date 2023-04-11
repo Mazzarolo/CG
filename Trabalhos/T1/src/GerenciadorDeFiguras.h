@@ -3,6 +3,7 @@
 
 #include "Figura.h"
 #include <list>
+#include <stdio.h>
 #include <stdlib.h>
 
 using namespace std;
@@ -17,6 +18,10 @@ private:
 
 public:
     GerenciadorDeFiguras();
+
+    void carregarFiguras(FILE** arq);
+
+    void salvarFiguras(FILE** arq);
 
     void adicionarFigura(Figura* base, int largTela, int altTela);
 

@@ -7,6 +7,45 @@ GerenciadorDeFiguras::GerenciadorDeFiguras()
     ctrl = false;
 }
 
+void GerenciadorDeFiguras::carregarFiguras(FILE** arq)
+{
+    *arq = fopen("figuras.gr", "rt");
+
+    fscanf(*arq, "%d", &numTotal);
+
+    printf("\n%d\n", numTotal);
+
+    for(int i = 0; i < numTotal; i++)
+    {
+        int x, y, raio, numLados, color;
+        float angulo;
+        bool preenchido;
+        fscanf(*arq, "%d%d%d%d%d%f%d", &x, &y, &raio, &numLados, &color, &angulo, &preenchido);
+        Figura* fig = new Figura(x, y, raio, numLados, angulo);
+        fig->colorir(color);
+        if(preenchido)
+            fig->trocarPreenchimento();
+        listaFiguras.push_back(fig);
+    }
+
+    fclose(*arq);
+}
+
+void GerenciadorDeFiguras::salvarFiguras(FILE** arq)
+{
+    *arq = fopen("figuras.gr", "wt");
+
+    fprintf(*arq, "%d ", numTotal);
+
+    list<Figura*>::iterator fig;
+    for (fig = listaFiguras.begin(); fig != listaFiguras.end(); ++fig)
+    {
+        (*fig)->salvar(arq);
+    }
+
+    fclose(*arq);
+}
+
 void GerenciadorDeFiguras::adicionarFigura(Figura* base, int largTela, int altTela)
 {
     int raio;
@@ -17,6 +56,7 @@ void GerenciadorDeFiguras::adicionarFigura(Figura* base, int largTela, int altTe
         raio = 0.1 * largTela;
     novaFigura->setFiguraConfig(largTela / 2, altTela / 2, raio);
     listaFiguras.push_back(novaFigura);
+    numTotal++;
 }
 
 void GerenciadorDeFiguras::desenharFiguras(int largTela, int altTela)
