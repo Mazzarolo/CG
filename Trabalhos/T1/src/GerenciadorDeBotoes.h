@@ -28,7 +28,11 @@ public:
 
     void posicionarResponsivo(int largTela, int altTela);
 
+    void posicionar(int x, int y);
+
     Botao getBotao(int id);
+
+    bool onBotoes(int mx, int my);
 
     Figura* getFigura(int id);
 };

@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1681239460 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1681825518 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -115,10 +115,10 @@
 1679940220 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\bola.h
 	"gl_canvas2d.h"
 
-1681237916 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
+1681823812 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 	"Figura.h"
 
-1681243905 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
+1681822966 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
@@ -210,21 +210,21 @@
 1680097392 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
 
-1680807837 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
+1681823826 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1680807750 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+1681824137 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"gl_canvas2d.h"
 
-1680786288 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+1681824145 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1681243984 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1681825256 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1681239443 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1681825086 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
 	<list>
 	<stdio.h>

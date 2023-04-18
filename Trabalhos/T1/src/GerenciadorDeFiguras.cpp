@@ -102,18 +102,17 @@ void GerenciadorDeFiguras::verificarMudancasTeclado(int key)
         switch(key)
         {
             case 100:   //preciona d para enviar a imagem para traz no desenho
-                listaFiguras.remove(selected);
-                listaFiguras.push_front(selected);
+                enviarTras();
                 break;
             case 102:   //preciona p para trocar o poreenchimento do desenho
                 selected->trocarPreenchimento();
                 break;
             case 117:   //preciona d para enviar a imagem para frente no desenho
-                listaFiguras.remove(selected);
-                listaFiguras.push_back(selected);
+                enviarFrente();
                 break;
             case 127:
                 listaFiguras.remove(selected);
+                numTotal--;
                 selected = NULL;
                 free(selected);
                 break;
@@ -171,4 +170,21 @@ void GerenciadorDeFiguras::colorirSelect(int cor)
 {
     if(selected)
         selected->colorir(cor);
+}
+
+void GerenciadorDeFiguras::enviarFrente()
+{
+    listaFiguras.remove(selected);
+    listaFiguras.push_back(selected);
+}
+
+void GerenciadorDeFiguras::enviarTras()
+{
+    listaFiguras.remove(selected);
+    listaFiguras.push_front(selected);
+}
+
+Figura* GerenciadorDeFiguras::getSelected()
+{
+    return selected;
 }

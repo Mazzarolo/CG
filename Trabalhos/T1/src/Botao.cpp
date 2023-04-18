@@ -96,3 +96,29 @@ Figura* Botao::getFigura()
 {
     return fig;
 }
+
+void Botao::posicionar(int x, int y)
+{
+    this->x = x;
+    this->y = y;
+}
+
+int Botao::getAltura()
+{
+    return altura;
+}
+
+int Botao::getLargura()
+{
+    return largura;
+}
+
+int Botao::getX()
+{
+    return x;
+}
+
+int Botao::getY()
+{
+    return y;
+}

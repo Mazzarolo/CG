@@ -27,6 +27,16 @@ public:
 
   void setBotaoConfig(int x, int y, int largura, int altura);
 
+  void posicionar(int x, int y);
+
+  int getAltura();
+
+  int getLargura();
+
+  int getX();
+
+  int getY();
+
   void colorirFigura(int cor);
 
   Figura* getFigura();

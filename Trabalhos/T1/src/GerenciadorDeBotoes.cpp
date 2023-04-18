@@ -114,3 +114,20 @@ Figura* GerenciadorDeBotoes::getFigura(int id)
 {
     return botoes[id]->getFigura();
 }
+
+void GerenciadorDeBotoes::posicionar(int x, int y)
+{
+    for(int i = 0; i < numTotal; i++)
+    {
+        botoes[i]->posicionar(x, y + botoes[i]->getAltura() * i);
+    }
+}
+
+bool GerenciadorDeBotoes::onBotoes(int mx, int my)
+{
+    if(mx > botoes[0]->getX() && mx < botoes[0]->getX() + botoes[0]->getLargura() && my > botoes[0]->getY()
+       && my < botoes[numTotal - 1]->getY() + botoes[numTotal - 1]->getAltura())
+        return true;
+    else
+        return false;
+}

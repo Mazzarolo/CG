@@ -21,6 +21,7 @@ GerenciadorDeFiguras *figuras = NULL;
 GerenciadorDeBotoes *botoesGerais = NULL;
 GerenciadorDeBotoes *cores = NULL;
 GerenciadorDeBotoes *opcoes = NULL;
+bool visivel = false;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
@@ -57,7 +58,8 @@ void render()
    cores->desenharBotoes(screenWidth, screenHeight);
    botaoSalvar->setBotaoConfig(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100);
    botaoSalvar->desenhar();
-   //opcoes->desenharBotoes();
+   if(visivel)
+      opcoes->desenharBotoes();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
@@ -101,9 +103,6 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
         figuras->adicionarFigura(botoesGerais->getFigura(figuraAdicionada), screenWidth, screenHeight);
    }
 
-   figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
-   figuras->verificarMudancasMouse(wheel, direction);
-
    int corSelect = cores->verificarClick(x, y, button, state);
 
    if (corSelect != -1)
@@ -117,7 +116,40 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
        figuras->salvarFiguras(&arq);
    }
 
-    //opcoes->verificarClick(x, y, button, state);
+   Figura* selecionada = figuras->getSelected();
+
+   if(button == 2 && y < 0.75 * screenHeight && selecionada)
+   {
+       visivel = true;
+       opcoes->posicionar(x, y);
+   }
+
+   if(visivel && selecionada)
+   {
+       int op = opcoes->verificarClick(x, y, button, state);
+       if(op != -1)
+       {
+           switch(op)
+           {
+              case 0:
+                selecionada->trocarPreenchimento();
+                break;
+              case 1:
+                figuras->enviarFrente();
+                break;
+              case 2:
+                figuras->enviarTras();
+                break;
+           }
+           visivel = false;
+       }
+   }
+
+   if(button == 0 && state == 1)
+      visivel = false;
+   if(!opcoes->onBotoes(x, y) || !visivel)
+      figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
+   figuras->verificarMudancasMouse(wheel, direction);
 }
 
 int main(void)
@@ -125,8 +157,8 @@ int main(void)
    fig = new Figura(screenWidth / 2, screenHeight / 2, 20, 4, 3.14 / 4);
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
-   //char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
-   //opcoes = new GerenciadorDeBotoes(3, 50, 50, 200, 30, textos);
+   char* textos[3] = {"Trocar Preenchimento", "Enviar para frente", "Enviar para tras"};
+   opcoes = new GerenciadorDeBotoes(3, 50, 50, 250, 30, textos);
    figuras = new GerenciadorDeFiguras();
    botaoSalvar = new Botao(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100, "Salvar", 0);
    botaoSalvar->colorir(0, 3);

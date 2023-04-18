@@ -38,6 +38,12 @@ public:
     void verificarMudancasMouse(int wheel, int direction);
 
     void colorirSelect(int cor);
+
+    void enviarFrente();
+
+    void enviarTras();
+
+    Figura* getSelected();
 };
 
 
