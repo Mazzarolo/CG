@@ -336,3 +336,106 @@
 	"Figura.h"
 	"Interface.h"
 
+1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.cpp
+	"Botao.h"
+	"gl_canvas2d.h"
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.h
+	"Figura.h"
+
+1681937749 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
+	<stdlib.h>
+	<stdio.h>
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\glut.h
+	"freeglut_std.h"
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\vector2.h
+
+1681940890 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
+	"Figura.h"
+	"gl_canvas2d.h"
+	"stdio.h"
+
+1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.cpp
+	"GerenciadorDeBotoes.h"
+	"gl_canvas2d.h"
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.h
+	"Botao.h"
+
+1681939314 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
+	"GerenciadorDeFiguras.h"
+
+1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
+	"Figura.h"
+	<list>
+	<stdio.h>
+	<stdlib.h>
+
+1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1681938239 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.cpp
+	"Interface.h"
+	"gl_canvas2d.h"
+
+1681938161 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.h
+	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
+	"EditorDeCor.h"
+
+1681938178 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"Botao.h"
+	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
+	"Figura.h"
+	"Interface.h"
+	"Slider.h"
+	"EditorDeCor.h"
+
+1681941728 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
+	"gl_canvas2d.h"
+
+1681937300 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
+	"Slider.h"
+
+1681938017 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.cpp
+	"EditorDeCor.h"
+
+1681941136 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.h
+	"gl_canvas2d.h"
+	"Slider.h"
+	"Figura.h"
+

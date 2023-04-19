@@ -14,6 +14,8 @@ private:
     int color;
     float angulo;
     bool preenchido, clicked, selected;
+    float r, g, b;
+    bool corPersonalizada;
 
 public:
     // Construtor da clase figura
@@ -21,6 +23,7 @@ public:
 
     // Colore a figura
     void colorir(int color);
+    void colorir(float r, float g, float b);
 
     // desenha a figura
     void desenhar();

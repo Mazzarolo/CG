@@ -46,6 +46,8 @@
 		<Unit filename="include/GL/glut.h" />
 		<Unit filename="src/Botao.cpp" />
 		<Unit filename="src/Botao.h" />
+		<Unit filename="src/EditorDeCor.cpp" />
+		<Unit filename="src/EditorDeCor.h" />
 		<Unit filename="src/Figura.cpp" />
 		<Unit filename="src/Figura.h" />
 		<Unit filename="src/GerenciadorDeBotoes.cpp" />
@@ -54,6 +56,8 @@
 		<Unit filename="src/GerenciadorDeFiguras.h" />
 		<Unit filename="src/Interface.cpp" />
 		<Unit filename="src/Interface.h" />
+		<Unit filename="src/Slider.cpp" />
+		<Unit filename="src/Slider.h" />
 		<Unit filename="src/Vector2.h" />
 		<Unit filename="src/gl_canvas2d.cpp" />
 		<Unit filename="src/gl_canvas2d.h" />

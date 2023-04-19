@@ -19,7 +19,7 @@ void criarBotoesGerais(GerenciadorDeBotoes** botoesGerais, int screenWidth, int 
     (*botoesGerais)->atribuirFiguras(nLados, cor);
 }
 
-void verificarOpcoes(int op, Figura* selecionada, GerenciadorDeFiguras* figuras, bool* visivel)
+void verificarOpcoes(int op, Figura* selecionada, GerenciadorDeFiguras* figuras, EditorDeCor* sliders, bool* visivel)
 {
     if(op != -1)
        {
@@ -41,9 +41,12 @@ void verificarOpcoes(int op, Figura* selecionada, GerenciadorDeFiguras* figuras,
                 selecionada->modificarLados(-1);
                 break;
               case 5:
-                figuras->adicionarClone();
+                sliders->colorirFigura(selecionada);
                 break;
               case 6:
+                figuras->adicionarClone();
+                break;
+              case 7:
                 figuras->excluir();
                 break;
            }

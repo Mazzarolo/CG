@@ -19,11 +19,14 @@ void GerenciadorDeFiguras::carregarFiguras(FILE** arq, int chave)
 
     for(int i = 0; i < numTotal; i++)
     {
-        int x, y, raio, numLados, color, preenchido;
-        float angulo;
-        fscanf(*arq, "%d%d%d%d%d%f%d", &x, &y, &raio, &numLados, &color, &angulo, &preenchido);
+        int x, y, raio, numLados, color, preenchido, corPersonalizada;
+        float angulo, r, g, b;
+        fscanf(*arq, "%d%d%d%d%d%f%d%f%f%f%d", &x, &y, &raio, &numLados, &color, &angulo, &preenchido, &r, &g, &b, &corPersonalizada);
         Figura* fig = new Figura(x - chave, y - chave, raio - chave, numLados - chave, angulo - chave);
-        fig->colorir(color - chave);
+        if(corPersonalizada - chave)
+            fig->colorir(r - chave, g - chave, b - chave);
+        else
+            fig->colorir(color - chave);
         if(preenchido - chave)
             fig->trocarPreenchimento();
         listaFiguras.push_back(fig);

@@ -15,11 +15,21 @@ Figura::Figura(int x, int y, int raio, int numLados, float angulo)
     this->angulo = angulo;
     clicked = false;
     selected = false;
+    corPersonalizada = false;
 }
 
 void Figura::colorir(int color)
 {
+    corPersonalizada = false;
     this->color = color;
+}
+
+void Figura::colorir(float r, float g, float b)
+{
+    corPersonalizada = true;
+    this->r = r;
+    this->g = g;
+    this->b = b;
 }
 
 void Figura::desenhar()
@@ -36,7 +46,10 @@ void Figura::desenhar()
             CV::circle(x, y, angulo, raio + 2, numLados);
         }
     }
-    CV::color(color);
+    if(corPersonalizada)
+        CV::color(r, g, b);
+    else
+        CV::color(color);
     if(preenchido)
     {
         CV::circleFill(x, y, angulo, raio, numLados);
@@ -75,6 +88,7 @@ Figura* Figura::clonarFigura()
     Figura* novaFigura = NULL;
     novaFigura = new Figura(x, y, raio, numLados, angulo);
     novaFigura->colorir(color);
+    novaFigura->colorir(r, g, b);
     novaFigura->preenchido = preenchido;
     return novaFigura;
 }
@@ -125,7 +139,8 @@ void Figura::redimencionar(int diferenca)
 
 void Figura::salvar(FILE** arq, int chave)
 {
-    fprintf(*arq, "\n%d %d %d %d %d %f %d", x + chave, y + chave, raio + chave, numLados + chave, color + chave, angulo + chave, preenchido + chave);
+    fprintf(*arq, "\n%d %d %d %d %d %f %d ", x + chave, y + chave, raio + chave, numLados + chave, color + chave, angulo + chave, preenchido + chave);
+    fprintf(*arq, "%f %f %f %d", r + chave, g + chave, b + chave, corPersonalizada + chave);
 }
 
 void Figura::modificarLados(int dif)

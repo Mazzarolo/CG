@@ -13,6 +13,8 @@
 #include "GerenciadorDeFiguras.h"
 #include "Figura.h"
 #include "Interface.h"
+#include "Slider.h"
+#include "EditorDeCor.h"
 
 FILE *arq;  // variavel que guarda ponteiro para o arquivo que pode ser salvo/carregado
 Botao *botaoSalvar = NULL;  // variavel onde será alocado o botão de salvar
@@ -20,6 +22,7 @@ GerenciadorDeFiguras *figuras = NULL;   //variavel que ira alcoar o gerenciador 
 GerenciadorDeBotoes *botoesGerais = NULL;   // variavel onde sera alocado o gerenciador de botões responsavel pelos botões de desenhar figuras
 GerenciadorDeBotoes *cores = NULL;  // variavel onde sera alocado os botões de seleção de cores
 GerenciadorDeBotoes *opcoes = NULL; //variavel onde sera alocado o gerenciador de botoes responsavel pelas opções mostradas ao precionar botão direito
+EditorDeCor *sliders = NULL;
 bool visivel = false;   // variavel que controla a visualização das opções do botão direito
 
 int screenWidth = 800, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
@@ -39,6 +42,7 @@ void render()
    cores->desenharBotoes(screenWidth, screenHeight);
    botaoSalvar->setBotaoConfig(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100);
    botaoSalvar->desenhar();
+   sliders->desenhar();
    if(visivel)
       opcoes->desenharBotoes();
 }
@@ -99,7 +103,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    if(visivel && selecionada)
    {
        int op = opcoes->verificarClick(x, y, button, state);
-       verificarOpcoes(op, selecionada, figuras, &visivel);
+       verificarOpcoes(op, selecionada, figuras, sliders, &visivel);
    }
 
    if(button == 0 && state == 1)
@@ -107,16 +111,18 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
    if(!opcoes->onBotoes(x, y) || !visivel)
       figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
    figuras->verificarMudancasMouse(wheel, direction);
+   sliders->verificarMouse(x, y, button, state);
 }
 
 //Inicialização de muitos gerenciadores usados na aplicação
 int main(void)
 {
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
+   sliders = new EditorDeCor(600, 0, 200, 100);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
    char* textos[] = {"Trocar Preenchimento", "Enviar para Frente", "Enviar para Tras", "Aumentar o Numero de Lados", "Diminuir o Numero de Lados",
-                      "Clonar Figura", "Excluir Figura"};
-   opcoes = new GerenciadorDeBotoes(7, 50, 50, 300, 30, textos);
+                      "Aplicar Cor Personalizada", "Clonar Figura", "Excluir Figura"};
+   opcoes = new GerenciadorDeBotoes(8, 50, 50, 300, 30, textos);
    figuras = new GerenciadorDeFiguras();
    botaoSalvar = new Botao(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100, "Salvar", 0);
    botaoSalvar->colorir(0, 3);
