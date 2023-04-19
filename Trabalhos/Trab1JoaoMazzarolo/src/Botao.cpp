@@ -1,3 +1,5 @@
+//Implementação da clase Botão
+
 #include "Botao.h"
 #include "gl_canvas2d.h"
 

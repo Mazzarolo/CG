@@ -1,3 +1,5 @@
+// Implementação da classe do Gerenciador de Botoes
+
 #include "GerenciadorDeBotoes.h"
 #include "gl_canvas2d.h"
 
@@ -71,7 +73,6 @@ int GerenciadorDeBotoes::verificarClick(int mx, int my, int button, int state)
     {
         if(botoes[i]->click(mx, my, button, state))
         {
-            printf("\nClickou no %d", i);
             clicked = i;
         }
     }

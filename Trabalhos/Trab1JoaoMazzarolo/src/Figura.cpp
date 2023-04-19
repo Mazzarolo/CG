@@ -1,3 +1,5 @@
+//Implementação da classe figura
+
 #include "Figura.h"
 #include "gl_canvas2d.h"
 #include "stdio.h"
@@ -121,7 +123,13 @@ void Figura::redimencionar(int diferenca)
     raio += diferenca;
 }
 
-void Figura::salvar(FILE** arq)
+void Figura::salvar(FILE** arq, int chave)
 {
-    fprintf(*arq, "\n%d %d %d %d %d %f %d", x, y, raio, numLados, color, angulo, preenchido);
+    fprintf(*arq, "\n%d %d %d %d %d %f %d", x + chave, y + chave, raio + chave, numLados + chave, color + chave, angulo + chave, preenchido + chave);
+}
+
+void Figura::modificarLados(int dif)
+{
+    if(dif >= 0 || numLados > 3)
+        numLados += dif;
 }

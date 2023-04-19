@@ -1,3 +1,5 @@
+//Implementa a clase Gerenciador de Figuras
+
 #include "GerenciadorDeFiguras.h"
 
 GerenciadorDeFiguras::GerenciadorDeFiguras()
@@ -7,23 +9,22 @@ GerenciadorDeFiguras::GerenciadorDeFiguras()
     ctrl = false;
 }
 
-void GerenciadorDeFiguras::carregarFiguras(FILE** arq)
+void GerenciadorDeFiguras::carregarFiguras(FILE** arq, int chave)
 {
     *arq = fopen("figuras.gr", "rt");
 
     fscanf(*arq, "%d", &numTotal);
 
-    printf("\n%d\n", numTotal);
+    numTotal -= chave;
 
     for(int i = 0; i < numTotal; i++)
     {
-        int x, y, raio, numLados, color;
+        int x, y, raio, numLados, color, preenchido;
         float angulo;
-        bool preenchido;
         fscanf(*arq, "%d%d%d%d%d%f%d", &x, &y, &raio, &numLados, &color, &angulo, &preenchido);
-        Figura* fig = new Figura(x, y, raio, numLados, angulo);
-        fig->colorir(color);
-        if(preenchido)
+        Figura* fig = new Figura(x - chave, y - chave, raio - chave, numLados - chave, angulo - chave);
+        fig->colorir(color - chave);
+        if(preenchido - chave)
             fig->trocarPreenchimento();
         listaFiguras.push_back(fig);
     }
@@ -31,16 +32,16 @@ void GerenciadorDeFiguras::carregarFiguras(FILE** arq)
     fclose(*arq);
 }
 
-void GerenciadorDeFiguras::salvarFiguras(FILE** arq)
+void GerenciadorDeFiguras::salvarFiguras(FILE** arq, int chave)
 {
     *arq = fopen("figuras.gr", "wt");
 
-    fprintf(*arq, "%d ", numTotal);
+    fprintf(*arq, "%d ", chave + numTotal);
 
     list<Figura*>::iterator fig;
     for (fig = listaFiguras.begin(); fig != listaFiguras.end(); ++fig)
     {
-        (*fig)->salvar(arq);
+        (*fig)->salvar(arq, chave);
     }
 
     fclose(*arq);
@@ -66,11 +67,6 @@ void GerenciadorDeFiguras::desenharFiguras(int largTela, int altTela)
     {
         (*fig)->desenhar();
     }
-}
-
-void GerenciadorDeFiguras::posicionarResponsivo(int largTela, int altTela)
-{
-    // fazer depois
 }
 
 void GerenciadorDeFiguras::verificarClick(int mx, int my, int button, int state, int canvasY)
@@ -111,10 +107,7 @@ void GerenciadorDeFiguras::verificarMudancasTeclado(int key)
                 enviarFrente();
                 break;
             case 127:
-                listaFiguras.remove(selected);
-                numTotal--;
-                selected = NULL;
-                free(selected);
+                excluir();
                 break;
             case 200:
                 selected->girar(-0.02);
@@ -187,4 +180,25 @@ void GerenciadorDeFiguras::enviarTras()
 Figura* GerenciadorDeFiguras::getSelected()
 {
     return selected;
+}
+
+void GerenciadorDeFiguras::excluir()
+{
+    if(selected)
+    {
+        listaFiguras.remove(selected);
+        numTotal--;
+        selected = NULL;
+        free(selected);
+    }
+}
+
+void GerenciadorDeFiguras::adicionarClone()
+{
+    if(selected)
+    {
+        Figura* novaFigura = selected->clonarFigura();
+        listaFiguras.push_back(novaFigura);
+        numTotal++;
+    }
 }

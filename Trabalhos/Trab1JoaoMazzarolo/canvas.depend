@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1681825518 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1681914262 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -118,12 +118,12 @@
 1681823812 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 	"Figura.h"
 
-1681822966 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
+1681910403 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
 
-1681239717 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+1681910203 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 	<stdlib.h>
 	<stdio.h>
 
@@ -203,12 +203,13 @@
 1680114778 j:\programação\c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
 
-1680108328 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.cpp
+1681914201 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.cpp
 	"Interface.h"
 	"gl_canvas2d.h"
 
-1680097392 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
+1681914225 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
 
 1681823826 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
@@ -221,10 +222,10 @@
 1681824145 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1681825256 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1681913653 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1681825086 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1681913385 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
 	<list>
 	<stdio.h>
@@ -248,4 +249,90 @@
 	"Figura.h"
 	<list>
 	<stdlib.h>
+
+1681914774 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\botao.cpp
+	"Botao.h"
+	"gl_canvas2d.h"
+
+1681915062 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\botao.h
+	"Figura.h"
+
+1681915443 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
+	<stdlib.h>
+	<stdio.h>
+
+1680095254 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\include\gl\glut.h
+	"freeglut_std.h"
+
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\vector2.h
+
+1681915460 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
+	"Figura.h"
+	"gl_canvas2d.h"
+	"stdio.h"
+
+1681920923 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.cpp
+	"GerenciadorDeBotoes.h"
+	"gl_canvas2d.h"
+
+1681921342 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.h
+	"Botao.h"
+
+1681915680 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
+	"GerenciadorDeFiguras.h"
+
+1681920555 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
+	"Figura.h"
+	<list>
+	<stdio.h>
+	<stdlib.h>
+
+1680108133 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1681921587 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\interface.cpp
+	"Interface.h"
+	"gl_canvas2d.h"
+
+1681921786 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\interface.h
+	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
+
+1681915884 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"Botao.h"
+	"GerenciadorDeBotoes.h"
+	"GerenciadorDeFiguras.h"
+	"Figura.h"
+	"Interface.h"
 
