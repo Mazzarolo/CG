@@ -28,6 +28,7 @@ public:
     //Função que retorna a porcentagem do slider entre 0 e 1
     float porcentagem();
 
+    //Seta o xBotao para 0, deixando o slider "zerado"
     void setZero();
 };
 

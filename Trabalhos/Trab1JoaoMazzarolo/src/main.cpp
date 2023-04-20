@@ -16,6 +16,7 @@ O que foi implementado:
     - Rotacionar figura em qualquer ângulo;
     - Aplicar criptografia no arquivo (Chave passada por parametro nos métodos de slavar/carregar);
     - Implementação de Sliders;
+    - Painel com labels referentes às figuras desenhadas na tela, controlado por um slider;
     - Editor de cores personalizadas;
     - Interface parcialmente responsiva (Elementos de UI interagem com alteração da tela, porém as figuras desenhadas não);
     - Clonar figura;
@@ -168,6 +169,6 @@ int main(void)
 
    figuras->carregarFiguras(&arq, chave);
 
-   CV::init(&screenWidth, &screenHeight, "Editor de imagens");
+   CV::init(&screenWidth, &screenHeight, "Editor de Figuras");
    CV::run();
 }

@@ -14,10 +14,13 @@ private:
     int deslocamento;
     Slider* slider;
 public:
+    //Construtor do painel de labels
     PainelLabels(int screenWidth, int screenHeight, float decY, float decAltura);
 
+    //Desenha o painel de labels e seu scroll
     void desenhar(int screenWidth, int screenHeight, GerenciadorDeFiguras* figuras);
 
+    //trata as verificações de mouse do painel de labels
     void verificarMouse(int mx, int my, int button, int state);
 };
 

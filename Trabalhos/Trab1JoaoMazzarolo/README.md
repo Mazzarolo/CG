@@ -41,6 +41,7 @@
     - Rotacionar figura em qualquer ângulo;
     - Aplicar criptografia no arquivo (Chave passada por parametro nos métodos de slavar/carregar);
     - Implementação de Sliders;
+    - Painel com labels referentes as figuras desenhadas na tela, controlada por um slider;
     - Editor de cores personalizadas;
     - Interface parcialmente responsiva (Elementos de UI interagem com alteração da tela, porém as figuras desenhadas não);
     - Clonar figura;

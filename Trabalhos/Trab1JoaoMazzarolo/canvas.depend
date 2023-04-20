@@ -98,7 +98,7 @@
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\relogio.h
 	"gl_canvas2d.h"
 
-1681914262 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
+1682019973 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -111,19 +111,22 @@
 	"GerenciadorDeFiguras.h"
 	"Figura.h"
 	"Interface.h"
+	"Slider.h"
+	"EditorDeCor.h"
+	"PainelLabels.h"
 
 1679940220 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\bola.h
 	"gl_canvas2d.h"
 
-1681823812 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
+1681915062 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.h
 	"Figura.h"
 
-1681910403 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
+1682015026 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
 
-1681910203 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
+1682014726 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\figura.h
 	<stdlib.h>
 	<stdio.h>
 
@@ -203,30 +206,32 @@
 1680114778 j:\programação\c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
 
-1681914201 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.cpp
+1681993168 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.cpp
 	"Interface.h"
 	"gl_canvas2d.h"
 
-1681914225 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
+1681993168 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\interface.h
 	"GerenciadorDeBotoes.h"
 	"GerenciadorDeFiguras.h"
+	"EditorDeCor.h"
 
-1681823826 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
+1681914774 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1681824137 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
+1681922372 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"gl_canvas2d.h"
 
-1681824145 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
+1681921342 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1681913653 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
+1682018171 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1681913385 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
+1682017978 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\gerenciadordefiguras.h
 	"Figura.h"
+	"gl_canvas2d.h"
 	<list>
 	<stdio.h>
 	<stdlib.h>
@@ -324,7 +329,7 @@
 	"GerenciadorDeFiguras.h"
 	"EditorDeCor.h"
 
-1682018556 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
+1682019973 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -452,17 +457,39 @@
 	"Slider.h"
 	"Figura.h"
 
-1682017404 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
+1682019753 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
 	"gl_canvas2d.h"
 
 1682017434 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
 	"Slider.h"
 
-1682018545 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.h
+1682019716 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.h
 	"gl_canvas2d.h"
 	"Slider.h"
 	"GerenciadorDeFiguras.h"
 
 1682018836 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.cpp
 	"PainelLabels.h"
+
+1681993168 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\editordecor.cpp
+	"EditorDeCor.h"
+
+1681993168 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\editordecor.h
+	"gl_canvas2d.h"
+	"Slider.h"
+	"Figura.h"
+
+1682019753 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\slider.h
+	"gl_canvas2d.h"
+
+1682019716 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\painellabels.h
+	"gl_canvas2d.h"
+	"Slider.h"
+	"GerenciadorDeFiguras.h"
+
+1682018836 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\painellabels.cpp
+	"PainelLabels.h"
+
+1682017434 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\slider.cpp
+	"Slider.h"
 
