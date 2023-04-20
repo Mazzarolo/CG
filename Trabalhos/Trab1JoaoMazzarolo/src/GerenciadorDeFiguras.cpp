@@ -11,7 +11,7 @@ GerenciadorDeFiguras::GerenciadorDeFiguras()
 
 void GerenciadorDeFiguras::carregarFiguras(FILE** arq, int chave)
 {
-    *arq = fopen("figuras.gr", "rt");
+    *arq = fopen("Trab1JoaoMazzarolo\\figuras.gr", "rt");
 
     fscanf(*arq, "%d", &numTotal);
 
@@ -40,7 +40,7 @@ void GerenciadorDeFiguras::carregarFiguras(FILE** arq, int chave)
 
 void GerenciadorDeFiguras::salvarFiguras(FILE** arq, int chave)
 {
-    *arq = fopen("figuras.gr", "wt");
+    *arq = fopen("Trab1JoaoMazzarolo\\figuras.gr", "wt");
 
     fprintf(*arq, "%d", numTotal + chave);
 

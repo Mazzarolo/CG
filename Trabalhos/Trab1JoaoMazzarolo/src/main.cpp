@@ -40,6 +40,7 @@ Uma explicação de como usar o programa está no arquivo README.md, na pasta do pr
 #include "Interface.h"
 #include "Slider.h"
 #include "EditorDeCor.h"
+#include "PainelLabels.h"
 
 FILE *arq;  // variavel que guarda ponteiro para o arquivo que pode ser salvo/carregado
 Botao *botaoSalvar = NULL;  // variavel onde será alocado o botão de salvar
