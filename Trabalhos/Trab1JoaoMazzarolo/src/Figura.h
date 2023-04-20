@@ -63,6 +63,9 @@ public:
 
     // modifica o numero de lados somando o parametro
     void modificarLados(int dif);
+
+    //printa a figura em forma de texto
+    void printText(int x, int y);
 };
 
 #endif // FIGURA_H

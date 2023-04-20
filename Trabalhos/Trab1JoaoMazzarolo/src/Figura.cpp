@@ -151,3 +151,14 @@ void Figura::modificarLados(int dif)
     if(dif >= 0 || numLados > 3)
         numLados += dif;
 }
+
+void Figura::printText(int x, int y)
+{
+    if(corPersonalizada)
+        CV::color(r, g, b);
+    else
+        CV::color(color);
+    char texto[20];
+    sprintf(texto, "%d Lados", numLados);
+    CV::text(x, y, texto);
+}

@@ -27,6 +27,8 @@ public:
 
     //Função que retorna a porcentagem do slider entre 0 e 1
     float porcentagem();
+
+    void setZero();
 };
 
 #endif // SLIDER_H

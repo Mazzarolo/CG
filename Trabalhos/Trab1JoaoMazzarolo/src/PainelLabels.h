@@ -5,13 +5,20 @@
 
 #include "gl_canvas2d.h"
 #include "Slider.h"
-#include "Botao.h"
+#include "GerenciadorDeFiguras.h"
 
 class PainelLabels
 {
 private:
-    int x, y, largura, altura;
+    float decY, decAltura;
+    int deslocamento;
+    Slider* slider;
+public:
+    PainelLabels(int screenWidth, int screenHeight, float decY, float decAltura);
 
+    void desenhar(int screenWidth, int screenHeight, GerenciadorDeFiguras* figuras);
+
+    void verificarMouse(int mx, int my, int button, int state);
 };
 
 #endif // PAINELLABELS_H_INCLUDED

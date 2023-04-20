@@ -257,7 +257,7 @@
 1681915062 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\botao.h
 	"Figura.h"
 
-1681993168 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
+1682014726 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
 	<stdlib.h>
 	<stdio.h>
 
@@ -289,7 +289,7 @@
 
 1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\vector2.h
 
-1682004289 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
+1682015026 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
@@ -301,11 +301,12 @@
 1681921342 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1682009774 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
+1682018171 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1681920555 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
+1682017978 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
 	"Figura.h"
+	"gl_canvas2d.h"
 	<list>
 	<stdio.h>
 	<stdlib.h>
@@ -323,7 +324,7 @@
 	"GerenciadorDeFiguras.h"
 	"EditorDeCor.h"
 
-1682005139 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
+1682018556 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -451,17 +452,17 @@
 	"Slider.h"
 	"Figura.h"
 
-1681993168 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
+1682017404 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
 	"gl_canvas2d.h"
 
-1681993168 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
+1682017434 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
 	"Slider.h"
 
-1682005686 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.h
+1682018545 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.h
 	"gl_canvas2d.h"
 	"Slider.h"
-	"Botao.h"
+	"GerenciadorDeFiguras.h"
 
-1682004849 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.cpp
+1682018836 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.cpp
 	"PainelLabels.h"
 

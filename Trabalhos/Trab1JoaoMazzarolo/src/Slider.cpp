@@ -58,3 +58,8 @@ float Slider::porcentagem()
 {
     return (float)(xBotao - x) / (float) largura;
 }
+
+void Slider::setZero()
+{
+    xBotao = x;
+}

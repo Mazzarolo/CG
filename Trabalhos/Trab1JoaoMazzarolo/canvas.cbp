@@ -56,6 +56,8 @@
 		<Unit filename="src/GerenciadorDeFiguras.h" />
 		<Unit filename="src/Interface.cpp" />
 		<Unit filename="src/Interface.h" />
+		<Unit filename="src/PainelLabels.cpp" />
+		<Unit filename="src/PainelLabels.h" />
 		<Unit filename="src/Slider.cpp" />
 		<Unit filename="src/Slider.h" />
 		<Unit filename="src/Vector2.h" />

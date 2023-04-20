@@ -4,6 +4,7 @@
 #define GERENCIADORDEFIGURAS_H
 
 #include "Figura.h"
+#include "gl_canvas2d.h"
 #include <list>
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,8 +62,14 @@ public:
     // Exclui uma figura
     void excluir();
 
+    //Função usada para printar as labels
+    void printLabels(int x, int y, int largura, int altura);
+
     // Retorna a figura selecionada
     Figura* getSelected();
+
+    // Retorna o numero total
+    int getNumTotal();
 };
 
 

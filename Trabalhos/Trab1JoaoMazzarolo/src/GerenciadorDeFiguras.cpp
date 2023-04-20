@@ -208,3 +208,24 @@ void GerenciadorDeFiguras::adicionarClone()
         numTotal++;
     }
 }
+
+void GerenciadorDeFiguras::printLabels(int x, int y, int largura, int altura)
+{
+    int i = 0;
+    list<Figura*>::iterator fig;
+    for (fig = listaFiguras.begin(); fig != listaFiguras.end(); ++fig)
+    {
+        if((*fig) == selected)
+            CV::color(rand() % 14);
+        else
+            CV::color(0.2, 0.2, 0.2);
+        CV::rect(x + largura * i, y, x + largura + i * largura, y + altura);
+        (*fig)->printText(x + largura * i, y + altura / 2);
+        i++;
+    }
+}
+
+int GerenciadorDeFiguras::getNumTotal()
+{
+    return numTotal;
+}

@@ -48,7 +48,8 @@ GerenciadorDeFiguras *figuras = NULL;   //variavel que ira alcoar o gerenciador 
 GerenciadorDeBotoes *botoesGerais = NULL;   // variavel onde sera alocado o gerenciador de botões responsavel pelos botões de desenhar figuras
 GerenciadorDeBotoes *cores = NULL;  // variavel onde sera alocado os botões de seleção de cores
 GerenciadorDeBotoes *opcoes = NULL; //variavel onde sera alocado o gerenciador de botoes responsavel pelas opções mostradas ao precionar botão direito
-EditorDeCor *sliders = NULL;
+EditorDeCor *sliders = NULL;        //variavel onde sera alocado o editor de cores
+PainelLabels *labels = NULL;        //variavel que ira guardar o painel com as labels dos objetos
 bool visivel = false;   // variavel que controla a visualização das opções do botão direito
 
 int screenWidth = 800, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
@@ -70,6 +71,7 @@ void render()
    sliders->moverResponsivo(screenWidth);
    botaoSalvar->desenhar();
    sliders->desenhar();
+   labels->desenhar(screenWidth, screenHeight, figuras);
    if(visivel)
       opcoes->desenharBotoes();
 }
@@ -135,11 +137,12 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
    if(button == 0 && state == 1)
       visivel = false;
-   if((!opcoes->onBotoes(x, y) || !visivel) && !sliders->onEditor(x, y))
+   if((!opcoes->onBotoes(x, y) || !visivel) && !sliders->onEditor(x, y) && y < 0.70 * screenHeight)
       figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
    figuras->verificarMudancasMouse(wheel, direction);
    if(sliders->verificarMouse(x, y, button, state) && selecionada)
       sliders->colorirFigura(selecionada);
+    labels->verificarMouse(x, y, button, state);
 }
 
 //Inicialização de muitos gerenciadores usados na aplicação
@@ -147,6 +150,7 @@ int main(void)
 {
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
    sliders = new EditorDeCor(screenWidth, 200, 100);
+   labels = new PainelLabels(screenWidth, screenHeight, 0.7, 0.05);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
    char* textos[] = {"Trocar Preenchimento", "Enviar para Frente", "Enviar para Tras", "Aumentar o Numero de Lados", "Diminuir o Numero de Lados",
                       "Aplicar Cor Personalizada", "Clonar Figura", "Excluir Figura"};
