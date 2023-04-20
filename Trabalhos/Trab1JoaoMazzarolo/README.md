@@ -1,4 +1,5 @@
-## Editor de Figuras - João Davi Rigo Mazzarolo
+# Editor de Figuras
+## João Davi Rigo Mazzarolo
 
 ### Como usar o programa:
 
