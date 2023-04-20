@@ -1,3 +1,28 @@
+/*
+Editor de Figuras - João Davi Rigo Mazzarolo
+
+O que foi implementado:
+
+* Trabalho Base:
+    - Inserir/excluir figura.
+    - Cor da figura.
+    - Preenchimento da figura.
+    - Editar tamanho da figura.
+    - Editar orientação da figura.
+    - Enviar para frente/traz.
+    - Salvar em arquivo e carregar de arquivo.
+* Bônus:
+    - Sinalizar qual figura está selecionada;
+    - Rotacionar figura em qualquer ângulo;
+    - Aplicar criptografia no arquivo (Chave passada por parametro nos métodos de slavar/carregar);
+    - Implementação de Sliders;
+    - Editor de cores personalizadas;
+    - Interface parcialmente responsiva (Elementos de UI interagem com alteração da tela, porém as figuras desenhadas não);
+    - Clonar figura;
+
+Uma explicação de como usar o programa está no arquivo README.md, na pasta do projeto.
+*/
+
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h>
 
