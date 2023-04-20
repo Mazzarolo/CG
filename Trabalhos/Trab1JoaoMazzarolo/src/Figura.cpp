@@ -39,7 +39,7 @@ void Figura::desenhar()
         CV::color(rand() % 14);
         if(preenchido)
         {
-            CV::circleFill(x, y, angulo, raio + 5, numLados);
+            CV::circleFill(x, y, angulo, raio + 3, numLados);
         }
         else
         {
@@ -87,8 +87,11 @@ Figura* Figura::clonarFigura()
 {
     Figura* novaFigura = NULL;
     novaFigura = new Figura(x, y, raio, numLados, angulo);
-    novaFigura->colorir(color);
-    novaFigura->colorir(r, g, b);
+    novaFigura->corPersonalizada = corPersonalizada;
+    if(corPersonalizada)
+        novaFigura->colorir(r, g, b);
+    else
+        novaFigura->colorir(color);
     novaFigura->preenchido = preenchido;
     return novaFigura;
 }

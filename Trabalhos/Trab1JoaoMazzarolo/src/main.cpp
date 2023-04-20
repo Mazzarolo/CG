@@ -41,6 +41,7 @@ void render()
    botoesGerais->desenharBotoes(screenWidth, screenHeight);
    cores->desenharBotoes(screenWidth, screenHeight);
    botaoSalvar->setBotaoConfig(screenWidth * 5 / 100, screenHeight * 5 / 100, screenWidth * 12 / 100, screenHeight * 7 / 100);
+   sliders->moverResponsivo(screenWidth);
    botaoSalvar->desenhar();
    sliders->desenhar();
    if(visivel)
@@ -94,7 +95,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
    Figura* selecionada = figuras->getSelected();
 
-   if(button == 2 && y < 0.75 * screenHeight && selecionada)
+   if(button == 2 && y < 0.75 * screenHeight && selecionada && !sliders->onEditor(x, y))
    {
        visivel = true;
        opcoes->posicionar(x, y);
@@ -108,17 +109,18 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
    if(button == 0 && state == 1)
       visivel = false;
-   if(!opcoes->onBotoes(x, y) || !visivel)
+   if((!opcoes->onBotoes(x, y) || !visivel) && !sliders->onEditor(x, y))
       figuras->verificarClick(x, y, button, state, 0.75 * screenHeight);
    figuras->verificarMudancasMouse(wheel, direction);
-   sliders->verificarMouse(x, y, button, state);
+   if(sliders->verificarMouse(x, y, button, state) && selecionada)
+      sliders->colorirFigura(selecionada);
 }
 
 //Inicialização de muitos gerenciadores usados na aplicação
 int main(void)
 {
    criarBotoesGerais(&botoesGerais, screenWidth, screenHeight);
-   sliders = new EditorDeCor(600, 0, 200, 100);
+   sliders = new EditorDeCor(screenWidth, 200, 100);
    cores = new GerenciadorDeBotoes(14, 2, 93, 5, screenWidth, screenHeight);
    char* textos[] = {"Trocar Preenchimento", "Enviar para Frente", "Enviar para Tras", "Aumentar o Numero de Lados", "Diminuir o Numero de Lados",
                       "Aplicar Cor Personalizada", "Clonar Figura", "Excluir Figura"};

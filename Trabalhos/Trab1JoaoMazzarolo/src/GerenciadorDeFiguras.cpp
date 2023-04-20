@@ -17,6 +17,9 @@ void GerenciadorDeFiguras::carregarFiguras(FILE** arq, int chave)
 
     numTotal -= chave;
 
+    if(numTotal < 0)
+        numTotal = 0;
+
     for(int i = 0; i < numTotal; i++)
     {
         int x, y, raio, numLados, color, preenchido, corPersonalizada;
@@ -39,7 +42,7 @@ void GerenciadorDeFiguras::salvarFiguras(FILE** arq, int chave)
 {
     *arq = fopen("figuras.gr", "wt");
 
-    fprintf(*arq, "%d ", chave + numTotal);
+    fprintf(*arq, "%d", numTotal + chave);
 
     list<Figura*>::iterator fig;
     for (fig = listaFiguras.begin(); fig != listaFiguras.end(); ++fig)

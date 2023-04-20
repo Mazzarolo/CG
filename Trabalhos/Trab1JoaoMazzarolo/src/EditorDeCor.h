@@ -16,13 +16,19 @@ private:
 
 public:
     //Contrutor do editor de cor
-    EditorDeCor(int x, int y, int largura, int altura);
+    EditorDeCor(int screenWidth, int largura, int altura);
 
     //Desenha todos os elementos
     void desenhar();
 
+    //Move o desenho com base na largura da tela
+    void moverResponsivo(int screenWidth);
+
     //Trata todas as verificações do mouse
-    void verificarMouse(int mx, int my, int button, int state);
+    bool verificarMouse(int mx, int my, int button, int state);
+
+    //Verifica se o mouse esta sobre o painel de seleção de cor
+    bool onEditor(int mx, int my);
 
     //Colore uma figura com a cor personalizada
     void colorirFigura(Figura* fig);

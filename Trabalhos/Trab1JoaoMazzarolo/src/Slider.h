@@ -19,6 +19,9 @@ public:
     //Desenha o slider
     void desenhar();
 
+    //Move o slider
+    void mover(int x, int y);
+
     //Função que trata o arrastar do slider
     bool arrastar(int mx, int my, int button, int state);
 

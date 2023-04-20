@@ -23,12 +23,20 @@ void Slider::desenhar()
     CV::circleFill(xBotao, y + altura / 2, raio, 30);
 }
 
+void Slider::mover(int x, int y)
+{
+    int offset = xBotao - this->x;
+    xBotao = x + offset;
+    this->x = x;
+    this->y = y;
+}
+
 bool Slider::arrastar(int mx, int my, int button, int state)
 {
     if(state == 1)
         clicked = false;
 
-    if((sqrt(pow(mx - xBotao, 2) + pow(my - (y + altura / 2), 2))) < raio)
+    if((sqrt(pow(mx - xBotao, 2) + pow(my - (y + altura / 2), 2))) < raio || ((mx >= x && mx <= x + largura && my >= y && my <= y + altura) && state == 0))
     {
         if(state == 0)
         {
@@ -38,7 +46,10 @@ bool Slider::arrastar(int mx, int my, int button, int state)
     }
 
     if(clicked && mx >= x && mx <= x + largura)
+    {
         xBotao = mx;
+        return true;
+    }
 
     return false;
 }

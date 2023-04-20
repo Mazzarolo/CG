@@ -2,10 +2,10 @@
 
 #include "EditorDeCor.h"
 
-EditorDeCor::EditorDeCor(int x, int y, int largura, int altura)
+EditorDeCor::EditorDeCor(int screenWidth, int largura, int altura)
 {
-    this->x = x;
-    this->y = y;
+    this->x = screenWidth - largura;
+    this->y = 0;
     this->largura = largura;
     this->altura = altura;
     visivel = true;
@@ -26,12 +26,33 @@ void EditorDeCor::desenhar()
     CV::rectFill(x + 120, y + 15, x + largura - 10, y + altura - 10);
 }
 
-void EditorDeCor::verificarMouse(int mx, int my, int button, int state)
+void EditorDeCor::moverResponsivo(int screenWidth)
 {
+    x = screenWidth - largura;
+    sliders[0]->mover(x + largura * 0.05, y + altura * 0.15);
+    sliders[1]->mover(x + largura * 0.05, y + altura * 0.45);
+    sliders[2]->mover(x + largura * 0.05, y + altura * 0.75);
+}
+
+bool EditorDeCor::verificarMouse(int mx, int my, int button, int state)
+{
+    bool clicked = false;
     for(int i = 0; i < 3; i++)
     {
-        sliders[i]->arrastar(mx, my, button, state);
+        if(sliders[i]->arrastar(mx, my, button, state))
+            clicked = true;
     }
+    // Verifica se o quadrado de cor foi precionado
+    if(mx >= x + 120 && mx <= x + largura - 10 && my >= y + 15 && my <= y + altura - 10 && state == 0)
+        clicked = true;
+    return clicked;
+}
+
+bool EditorDeCor::onEditor(int mx, int my)
+{
+    if(mx >= x && mx <= x + largura && my >= y && my <= y + altura)
+        return true;
+    return false;
 }
 
 void EditorDeCor::colorirFigura(Figura* fig)
