@@ -61,7 +61,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.h
+1684191280 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -89,15 +89,13 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1680114778 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684191268 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	"gl_canvas2d.h"
-	"Bola.h"
-	"Relogio.h"
 	"Botao.h"
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\bola.h
