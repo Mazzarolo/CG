@@ -57,11 +57,11 @@
 	<stdio.h>
 	<stdlib.h>
 
-1679936208 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\gl_canvas2d.cpp
+1679936208 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\gl_canvas2d.h
+1682599321 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -70,10 +70,10 @@
 	<GL/freeglut_ext.h>
 	"Vector2.h"
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\include\gl\glut.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\include\gl\glut.h
 	"freeglut_std.h"
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\include\gl\freeglut_std.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\include\gl\freeglut_std.h
 	<windows.h>
 	<EGL/egl.h>
 	<GLES/gl.h>
@@ -84,12 +84,12 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\include\gl\freeglut_ext.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\vector2.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\vector2.h
 
-1679936208 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\main.cpp
+1683330439 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -100,16 +100,16 @@
 	"Relogio.h"
 	"Botao.h"
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\bola.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\bola.h
 	"gl_canvas2d.h"
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\relogio.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\relogio.h
 	"gl_canvas2d.h"
 
-1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\botao.h
+1679936208 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\botao.h
 	"gl_canvas2d.h"
 
-1679936208 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\base\src\relogio.cpp
+1679936208 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\praticarotacao\src\relogio.cpp
 	"Relogio.h"
 	<math.h>
 	<stdio.h>
