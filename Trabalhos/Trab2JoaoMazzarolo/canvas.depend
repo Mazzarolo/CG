@@ -113,3 +113,72 @@
 	<stdio.h>
 	<stdlib.h>
 
+1684239984 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1684263239 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\include\gl\glut.h
+	"freeglut_std.h"
+
+1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
+
+1684263060 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"gl_canvas2d.h"
+	"Botao.h"
+	"Player.h"
+	"Bezier.h"
+	"Background.h"
+
+1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\botao.h
+	"gl_canvas2d.h"
+
+1684263337 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\player.cpp
+	"Player.h"
+
+1684255984 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\bezier.cpp
+	"Bezier.h"
+
+1684255204 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\bezier.h
+	"gl_canvas2d.h"
+	<vector>
+
+1684263493 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\player.h
+	"gl_canvas2d.h"
+	<vector>
+
+1684263362 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\background.cpp
+	"Background.h"
+
+1684262789 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\background.h
+	"gl_canvas2d.h"
+	"Bezier.h"
+
