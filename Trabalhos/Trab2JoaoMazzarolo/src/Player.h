@@ -9,10 +9,10 @@ using namespace std;
 class Player
 {
 private:
-    Vector2 center, speed;
+    Vector2 center;
     vector<Vector2> shape;
-    int color[3], maxSpeed;
-    bool moving;
+    int color[3], speed;
+    bool left, right, top, down;
     int yScreenCenter;
 
 public:

@@ -3,11 +3,11 @@
 Player::Player(int screenWidth, int screenHeight)
 {
     center = Vector2(screenWidth / 2, screenHeight / 2);
-    speed = Vector2(0, 0);
+    speed = 5;
     shape.push_back(Vector2(0, 15));
     shape.push_back(Vector2(15, -15));
     shape.push_back(Vector2(-15, -15));
-    maxSpeed = 1;
+    left = right = top = down = false;
     yScreenCenter = screenHeight / 2;
     color[0] = 1;
     color[1] = color[2] = 0;
@@ -30,51 +30,52 @@ void Player::render()
 
 void Player::getKeys(int key)
 {
-    moving = true;
     switch(key)
     {
         case 119:
-            if(speed.y > -maxSpeed)
-                speed.y--;
+            down = true;
             break;
         case 115:
-            if(speed.y < maxSpeed)
-                speed.y++;
+            top = true;
             break;
         case 97:
-            if(speed.x > -maxSpeed)
-                speed.x--;
+            left = true;
             break;
         case 100:
-            if(speed.x < maxSpeed)
-                speed.x++;
-            break;
-        default:
-            moving = false;
+            right = true;
             break;
     }
 }
 
 void Player::move()
 {
-    if(!moving)
-    {
-        if(speed.x > 0)
-            speed.x--;
-        else if(speed.x < 0)
-            speed.x++;
-        if(speed.y > 0)
-            speed.y--;
-        else if(speed.y < 0)
-            speed.y++;
-    }
-    center = center + speed;
+    if(right)
+        center.x += speed;
+    if(left)
+        center.x -= speed;
+    if(top)
+        center.y += speed;
+    if(down)
+        center.y -= speed;
 }
 
 void Player::brake(int key)
 {
-    if(key == 119 || key == 115 || key == 97 || key == 100)
-        moving = false;
+    switch(key)
+    {
+        case 119:
+            down = false;
+            break;
+        case 115:
+            top = false;
+            break;
+        case 97:
+            left = false;
+            break;
+        case 100:
+            right = false;
+            break;
+    }
 }
 
 int Player::getY()

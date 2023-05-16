@@ -61,7 +61,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1684191280 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.h
+1684279807 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -89,14 +89,18 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684191268 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684279807 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
+	<vector>
 	"gl_canvas2d.h"
 	"Botao.h"
+	"Player.h"
+	"Bezier.h"
+	"Background.h"
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\bola.h
 	"gl_canvas2d.h"
@@ -181,4 +185,25 @@
 1684262789 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\background.h
 	"gl_canvas2d.h"
 	"Bezier.h"
+
+1684279807 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\background.cpp
+	"Background.h"
+
+1684279807 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\background.h
+	"gl_canvas2d.h"
+	"Bezier.h"
+
+1684279807 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\bezier.h
+	"gl_canvas2d.h"
+	<vector>
+
+1684279807 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\bezier.cpp
+	"Bezier.h"
+
+1684279966 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\player.h
+	"gl_canvas2d.h"
+	<vector>
+
+1684279807 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\player.cpp
+	"Player.h"
 
