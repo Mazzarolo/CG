@@ -33,10 +33,10 @@ void Player::getKeys(int key)
     switch(key)
     {
         case 119:
-            down = true;
+            top = true;
             break;
         case 115:
-            top = true;
+            down = true;
             break;
         case 97:
             left = true;
@@ -54,9 +54,12 @@ void Player::move()
     if(left)
         center.x -= speed;
     if(top)
-        center.y += speed;
-    if(down)
         center.y -= speed;
+    if(down)
+        center.y += speed;
+
+    if(center.y < -(yScreenCenter))
+        center.y = yScreenCenter;
 }
 
 void Player::brake(int key)
@@ -64,10 +67,10 @@ void Player::brake(int key)
     switch(key)
     {
         case 119:
-            down = false;
+            top = false;
             break;
         case 115:
-            top = false;
+            down = false;
             break;
         case 97:
             left = false;

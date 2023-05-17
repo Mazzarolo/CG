@@ -12,7 +12,7 @@ private:
     Bezier* leftCurve;
     Bezier* rightCurve;
     int backColor[3], lineColor[3];
-    int y;
+    int y, height;
 
 public:
     Background(int screenWidth, int screenHeight);

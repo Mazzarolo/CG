@@ -61,6 +61,7 @@ void render()
     background->render();
     player->render();
     background->moveY(player->getY(), screenHeight);
+    printf("%d\n", player->getY());
 }
 
 void keyboard(int key)
