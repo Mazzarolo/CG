@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int screenWidth = 800, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
+int screenWidth = 800, screenHeight = 60/**<  */0; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 Background* background = NULL;
 Player* player = NULL;
 float polX[4] = {100, 200, 200, 100}, polY[4] = {100, 100, 200, 200};
