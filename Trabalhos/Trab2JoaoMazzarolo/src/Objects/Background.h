@@ -1,7 +1,7 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
 
-#include "gl_canvas2d.h"
+#include "../Lib/gl_canvas2d.h"
 #include "Bezier.h"
 
 using namespace std;

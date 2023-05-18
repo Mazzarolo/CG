@@ -1,7 +1,7 @@
 #ifndef BEZIER_H
 #define BEZIER_H
 
-#include "gl_canvas2d.h"
+#include "../Lib/gl_canvas2d.h"
 #include <vector>
 
 using namespace std;

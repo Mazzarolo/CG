@@ -6,12 +6,12 @@
 #include <stdlib.h>
 #include <vector>
 
-#include "gl_canvas2d.h"
+#include "Lib/gl_canvas2d.h"
 
-#include "Botao.h"
-#include "Player.h"
-#include "Bezier.h"
-#include "Background.h"
+#include "Objects/Player.h"
+#include "Objects/Bezier.h"
+#include "Objects/Background.h"
+#include "Scenes/Scene.h"
 
 using namespace std;
 

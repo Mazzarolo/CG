@@ -44,16 +44,17 @@
 			<Add library="../lib/freeglut.lib" />
 		</Linker>
 		<Unit filename="include/GL/glut.h" />
-		<Unit filename="src/Background.cpp" />
-		<Unit filename="src/Background.h" />
-		<Unit filename="src/Bezier.cpp" />
-		<Unit filename="src/Bezier.h" />
-		<Unit filename="src/Botao.h" />
-		<Unit filename="src/Player.cpp" />
-		<Unit filename="src/Player.h" />
-		<Unit filename="src/Vector2.h" />
-		<Unit filename="src/gl_canvas2d.cpp" />
-		<Unit filename="src/gl_canvas2d.h" />
+		<Unit filename="src/Lib/gl_canvas2d.cpp" />
+		<Unit filename="src/Lib/gl_canvas2d.h" />
+		<Unit filename="src/Objects/Background.cpp" />
+		<Unit filename="src/Objects/Background.h" />
+		<Unit filename="src/Objects/Bezier.cpp" />
+		<Unit filename="src/Objects/Bezier.h" />
+		<Unit filename="src/Objects/Player.cpp" />
+		<Unit filename="src/Objects/Player.h" />
+		<Unit filename="src/Scenes/Scene.cpp" />
+		<Unit filename="src/Scenes/Scene.h" />
+		<Unit filename="src/Structures/Vector2.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
