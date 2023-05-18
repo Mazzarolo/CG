@@ -88,7 +88,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 int main(void)
 {
-    CV::init(&screenWidth, &screenHeight, "Titulo da Janela: Canvas 2D - Pressione 1, 2, 3");
+    CV::init(&screenWidth, &screenHeight, "Jogo foda nave");
     rotatePolygon(rotX, rotY, 3.14 / 4);
     background = new Background(screenWidth, screenHeight);
     player = new Player(screenWidth, screenHeight);

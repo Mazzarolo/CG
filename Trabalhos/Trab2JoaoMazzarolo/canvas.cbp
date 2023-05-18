@@ -56,6 +56,8 @@
 		<Unit filename="src/Scenes/GameScene.h" />
 		<Unit filename="src/Scenes/Scene.cpp" />
 		<Unit filename="src/Scenes/Scene.h" />
+		<Unit filename="src/Scenes/SceneManager.cpp" />
+		<Unit filename="src/Scenes/SceneManager.h" />
 		<Unit filename="src/Structures/Vector2.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
