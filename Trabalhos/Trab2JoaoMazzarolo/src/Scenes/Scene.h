@@ -7,7 +7,7 @@ protected:
     int screenWidth, screenHeight;
 
 public:
-    Scene() = delete;
+    Scene(int screenWidth, int screenHeight);
 
     virtual void render() = 0;
 };

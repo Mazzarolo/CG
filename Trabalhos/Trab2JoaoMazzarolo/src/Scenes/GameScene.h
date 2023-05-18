@@ -6,17 +6,18 @@
 #include "../Lib/gl_canvas2d.h"
 #include "../Objects/Player.h"
 #include "../Objects/Background.h"
+#include "../Tools/Input.h"
 
 using namespace std;
 
-class GameScene : public Scene
+class GameScene : public Scene, public Input
 {
 private:
     Player* player;
     Background* background;
 
 public:
-    GameScene();
+    GameScene(int screenWidth, int screenHeight);
 
     void render();
 };

@@ -89,18 +89,18 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684351397 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684447803 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	<vector>
-	"gl_canvas2d.h"
-	"Botao.h"
-	"Player.h"
-	"Bezier.h"
-	"Background.h"
+	"Lib/gl_canvas2d.h"
+	"Objects/Player.h"
+	"Objects/Bezier.h"
+	"Objects/Background.h"
+	"Scenes/GameScene.h"
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\bola.h
 	"gl_canvas2d.h"
@@ -250,4 +250,59 @@
 1684419413 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 
 1684429743 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"../Structures/Vector2.h"
+
+1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\structures\vector2.h
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+	"Background.h"
+
+1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
+	"../Lib/gl_canvas2d.h"
+	"Bezier.h"
+
+1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.h
+	"../Lib/gl_canvas2d.h"
+	<vector>
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
+	"Bezier.h"
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+	"Player.h"
+
+1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+	"../Lib/gl_canvas2d.h"
+	<vector>
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+
+1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+
+1684450308 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+	<vector>
+	"Scene.h"
+	"../Lib/gl_canvas2d.h"
+	"../Objects/Player.h"
+	"../Objects/Background.h"
+	"../Tools/Input.h"
+
+1684449269 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
+
+1684448898 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
+	"Input.h"
+
+1684448779 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.h
 
