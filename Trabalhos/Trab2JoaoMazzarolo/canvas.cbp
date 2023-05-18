@@ -54,7 +54,6 @@
 		<Unit filename="src/Objects/Player.h" />
 		<Unit filename="src/Scenes/GameScene.cpp" />
 		<Unit filename="src/Scenes/GameScene.h" />
-		<Unit filename="src/Scenes/Scene.cpp" />
 		<Unit filename="src/Scenes/Scene.h" />
 		<Unit filename="src/Scenes/SceneManager.cpp" />
 		<Unit filename="src/Scenes/SceneManager.h" />

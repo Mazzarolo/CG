@@ -11,7 +11,7 @@
 #include "Objects/Player.h"
 #include "Objects/Bezier.h"
 #include "Objects/Background.h"
-#include "Scenes/Scene.h"
+#include "Scenes/GameScene.h"
 
 using namespace std;
 
