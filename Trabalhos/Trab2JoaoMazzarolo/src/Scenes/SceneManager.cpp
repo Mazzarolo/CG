@@ -6,7 +6,7 @@ SceneManager::SceneManager(int screenWidth, int screenHeight)
     clock = new Clock();
 }
 
-void SceneManager::render()
+void SceneManager::update()
 {
     clock->tic();
     currentScene->render();

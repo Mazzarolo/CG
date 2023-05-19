@@ -10,9 +10,11 @@ class Input
 {
 private:
     static int button, state, wheel, direction, mX, mY, keyUp, keyDown;
-    static vector<function<void()>> keyUpListeners, keyDownListeners;
+    static vector<function<void()>> keyUpListeners, keyDownListeners, mouseListeners;
 
 public:
+    Input();
+
     void setKeyUp(int key);
 
     void setKeyDown(int key);
@@ -22,7 +24,11 @@ public:
     void resetKeys();
 
 protected:
-    void addListeners(function<void()> keyUpListener, function<void()> keyDownListener);
+    virtual void onKeyboardDown() { };
+
+    virtual void onKeyboardUp() { };
+
+    virtual void onMouse() { };
 
     int getButton();
 
@@ -39,6 +45,10 @@ protected:
     int getKeyUp();
 
     int getKeyDown();
+
+private:
+    void addKeyboardListeners(function<void()> keyUpListener, function<void()> keyDownListener, function<void()> mouseListener);
+
 };
 
 #endif  // INPUT_H

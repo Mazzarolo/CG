@@ -42,5 +42,5 @@ void Background::render()
 
 void Background::moveY(int y, int screenHeight)
 {
-    this->y = y - screenHeight / 2;
+    this->y = y - screenHeight / 5;
 }

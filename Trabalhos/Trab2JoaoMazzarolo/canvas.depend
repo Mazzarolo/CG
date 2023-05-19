@@ -147,7 +147,7 @@
 
 1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684415165 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684519343 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -155,10 +155,8 @@
 	<stdlib.h>
 	<vector>
 	"Lib/gl_canvas2d.h"
-	"Objects/Player.h"
-	"Objects/Bezier.h"
-	"Objects/Background.h"
-	"Scenes/Scene.h"
+	"Scenes/SceneManager.h"
+	"Tools/Input.h"
 
 1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\botao.h
 	"gl_canvas2d.h"
@@ -205,9 +203,11 @@
 1684280185 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\player.cpp
 	"Player.h"
 
-1684414402 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.cpp
+1684518166 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.cpp
+	"Scene.h"
+	<stdio.h>
 
-1684414133 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1684520962 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
 1684415215 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
@@ -221,11 +221,13 @@
 1684255984 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684414133 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684521133 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684415203 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684520418 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
+	"../Tools/Input.h"
+	"../Tools/Clock.h"
 	<vector>
 
 1684239984 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
@@ -243,11 +245,14 @@
 
 1684239984 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\structures\vector2.h
 
-1684414440 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
+1684476191 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
+	"../Tools/Input.h"
 
-1684419413 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684476191 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+	"GameScene.h"
 
-1684429743 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+1684519292 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+	"SceneManager.h"
 
 1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
 	"gl_canvas2d.h"
@@ -323,4 +328,29 @@
 
 1684475974 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
 	"Clock.h"
+
+1684519271 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
+	"GameScene.h"
+	"../Tools/Clock.h"
+
+1684476191 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+	<vector>
+	"Scene.h"
+	"../Lib/gl_canvas2d.h"
+	"../Objects/Player.h"
+	"../Objects/Background.h"
+	"../Tools/Input.h"
+
+1684519894 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.h
+	<vector>
+	<functional>
+
+1684476191 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.h
+	<chrono>
+
+1684476191 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
+	"Clock.h"
+
+1684520318 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
+	"Input.h"
 

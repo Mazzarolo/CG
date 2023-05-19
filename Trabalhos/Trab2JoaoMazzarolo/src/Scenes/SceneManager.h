@@ -15,7 +15,7 @@ private:
 public:
     SceneManager(int screenWidth, int screenHeight);
 
-    void render();
+    void update();
 };
 
 

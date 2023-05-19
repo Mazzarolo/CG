@@ -19,7 +19,7 @@ Input* input = NULL;
 
 void render()
 {
-    sceneManager->render();
+    sceneManager->update();
 }
 
 void keyboard(int key)

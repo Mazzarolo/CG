@@ -8,8 +8,15 @@ int Input::wheel;
 int Input::direction;
 int Input::mX;
 int Input::mY;
+
 vector<function<void()>> Input::keyUpListeners;
 vector<function<void()>> Input::keyDownListeners;
+vector<function<void()>> Input::mouseListeners;
+
+Input::Input()
+{
+    addKeyboardListeners([this] {onKeyboardUp();}, [this] {onKeyboardDown();}, [this] {onMouse();});
+}
 
 void Input::setKeyUp(int key)
 {
@@ -33,6 +40,8 @@ void Input::setMouse(int button, int state, int wheel, int direction, int mX, in
     this->direction = direction;
     this->mX = mX;
     this->mY = mY;
+    for (vector<function<void()>>::iterator func = mouseListeners.begin(); func != mouseListeners.end(); func++)
+        (*func)();
 }
 
 void Input::resetKeys()
@@ -41,10 +50,11 @@ void Input::resetKeys()
     keyDown = -1;
 }
 
-void Input::addListeners(function<void()> keyUpListener, function<void()> keyDownListener)
+void Input::addKeyboardListeners(function<void()> keyUpListener, function<void()> keyDownListener, function<void()> mouseListener)
 {
     keyUpListeners.push_back(keyUpListener);
     keyDownListeners.push_back(keyDownListener);
+    mouseListeners.push_back(mouseListener);
 }
 
 int Input::getButton()

@@ -2,23 +2,22 @@
 
 Player::Player(int screenWidth, int screenHeight)
 {
-    center = Vector2(screenWidth / 2, screenHeight / 2);
+    center = Vector2(screenWidth / 2, screenHeight / 5);
     speed = 300;
     shape.push_back(Vector2(0, 15));
     shape.push_back(Vector2(15, -15));
     shape.push_back(Vector2(-15, -15));
     left = right = top = down = false;
-    yScreenCenter = screenHeight / 2;
+    fixedY = screenHeight / 5;
     color[0] = 1;
     color[1] = color[2] = 0;
-    addListeners([this] {onKeyboardUp();}, [this] {onKeyboardDown();});
 }
 
 void Player::render()
 {
     move();
 
-    CV::translate(center.x, yScreenCenter);
+    CV::translate(center.x, fixedY);
     float xPoints[3], yPoints[3];
     for (int i = 0; i < 3; i++)
     {
@@ -80,8 +79,11 @@ void Player::move()
     if(down)
         center.y += speed;
 
-    if(center.y < -(yScreenCenter))
-        center.y = yScreenCenter;
+    printf("%.1f ", center.y);
+    printf("%d\n", fixedY);
+
+    if(center.y < -(fixedY) * 4)
+        center.y = fixedY;
 }
 
 int Player::getY()

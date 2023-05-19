@@ -16,7 +16,7 @@ private:
     int color[3];
     float speed;
     bool left, right, top, down;
-    int yScreenCenter;
+    int fixedY;
 
 public:
     Player(int screenWidth, int screenHeight);
