@@ -17,6 +17,8 @@ public:
     //Função que vai interpolando entre 2 pontos com base em um offset t
     Vector2 lerp(Vector2 a, Vector2 b, float t);
 
+    bool checkCollision(Vector2 point);
+
     //Desenha uma curva de Bezier
     void render();
 };

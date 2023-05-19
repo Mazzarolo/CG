@@ -29,8 +29,9 @@ Background::Background(int screenWidth, int screenHeight)
 }
 
 void Background::render()
-{   CV::translate(0, y);
+{   
     CV::clear(backColor[0], backColor[1], backColor[2]);
+    CV::translate(0, y);
     CV::color(lineColor[0], lineColor[1], lineColor[2]);
     leftCurve->render();
     rightCurve->render();
@@ -38,6 +39,24 @@ void Background::render()
     leftCurve->render();
     rightCurve->render();
     CV::translate(0, 0);
+}
+
+bool Background::checkCollision(Vector2 point)
+{
+    CV::translate(0, y);
+    if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
+    {
+        CV::translate(0, 0);
+        return true;
+    }
+    CV::translate(0, y + height);
+    if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
+    {
+        CV::translate(0, 0);
+        return true;
+    }
+    CV::translate(0, 0);
+    return false;
 }
 
 void Background::moveY(int y, int screenHeight)

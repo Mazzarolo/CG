@@ -17,6 +17,8 @@ private:
 public:
     Background(int screenWidth, int screenHeight);
 
+    bool checkCollision(Vector2 point);
+
     void render();
 
     void moveY(int y, int screenHeight);

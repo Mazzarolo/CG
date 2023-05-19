@@ -81,3 +81,9 @@ int Player::getY()
 {
     return center.y;
 }
+
+Vector2 Player::getPosition()
+{
+    //printf("%f %d\n", center.x, fixedY);
+    return Vector2(center.x, fixedY);
+}

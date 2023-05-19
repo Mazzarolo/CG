@@ -11,4 +11,8 @@ void GameScene::render()
     background->render();
     player->render();
     background->moveY(player->getY(), screenHeight);
+    if(background->checkCollision(player->getPosition()))
+    {
+        printf("oi\n");
+    }
 }

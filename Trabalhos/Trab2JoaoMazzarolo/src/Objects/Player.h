@@ -30,6 +30,8 @@ public:
     void move();
 
     int getY();
+
+    Vector2 getPosition();
 };
 
 #endif // PLAYER_H
