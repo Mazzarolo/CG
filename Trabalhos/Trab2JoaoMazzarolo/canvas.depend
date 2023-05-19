@@ -89,7 +89,7 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684454873 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684457247 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -278,18 +278,19 @@
 1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684454401 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684456677 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684456643 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684475836 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
+	"../Tools/Clock.h"
 	<vector>
 
 1684454539 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
-1684456537 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+1684475929 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
 1684451125 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
@@ -313,7 +314,13 @@
 1684449639 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.cpp
 	"Scene.h"
 
-1684456542 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
-	<chrono>
+1684475909 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
 	"GameScene.h"
+	"../Tools/Clock.h"
+
+1684475970 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.h
+	<chrono>
+
+1684475974 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
+	"Clock.h"
 

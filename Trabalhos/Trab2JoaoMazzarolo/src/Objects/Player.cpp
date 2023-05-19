@@ -3,7 +3,7 @@
 Player::Player(int screenWidth, int screenHeight)
 {
     center = Vector2(screenWidth / 2, screenHeight / 2);
-    speed = 5;
+    speed = 300;
     shape.push_back(Vector2(0, 15));
     shape.push_back(Vector2(15, -15));
     shape.push_back(Vector2(-15, -15));
@@ -70,6 +70,7 @@ void Player::onKeyboardUp()
 
 void Player::move()
 {
+    float speed = this->speed * getDeltaTime();
     if(right)
         center.x += speed;
     if(left)

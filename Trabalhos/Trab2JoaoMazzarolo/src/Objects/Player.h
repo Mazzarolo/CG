@@ -3,16 +3,18 @@
 
 #include "../Lib/gl_canvas2d.h"
 #include "../Tools/Input.h"
+#include "../Tools/Clock.h"
 #include <vector>
 
 using namespace std;
 
-class Player : public Input
+class Player : public Input, public Clock
 {
 private:
     Vector2 center;
     vector<Vector2> shape;
-    int color[3], speed;
+    int color[3];
+    float speed;
     bool left, right, top, down;
     int yScreenCenter;
 

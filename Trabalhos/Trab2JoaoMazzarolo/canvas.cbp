@@ -59,6 +59,8 @@
 		<Unit filename="src/Scenes/SceneManager.cpp" />
 		<Unit filename="src/Scenes/SceneManager.h" />
 		<Unit filename="src/Structures/Vector2.h" />
+		<Unit filename="src/Tools/Clock.cpp" />
+		<Unit filename="src/Tools/Clock.h" />
 		<Unit filename="src/Tools/Input.cpp" />
 		<Unit filename="src/Tools/Input.h" />
 		<Unit filename="src/main.cpp" />
