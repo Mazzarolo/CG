@@ -7,7 +7,7 @@ Player::Player(int screenWidth, int screenHeight)
     shape.push_back(Vector2(0, 15));
     shape.push_back(Vector2(15, -15));
     shape.push_back(Vector2(-15, -15));
-    left = right = top = down = false;
+    left = right = top = false;
     fixedY = screenHeight / 5;
     color[0] = 1;
     color[1] = color[2] = 0;
@@ -36,9 +36,6 @@ void Player::onKeyboardDown()
         case 119:
             top = true;
             break;
-        case 115:
-            down = true;
-            break;
         case 97:
             left = true;
             break;
@@ -54,9 +51,6 @@ void Player::onKeyboardUp()
     {
         case 119:
             top = false;
-            break;
-        case 115:
-            down = false;
             break;
         case 97:
             left = false;
@@ -76,11 +70,8 @@ void Player::move()
         center.x -= speed;
     if(top)
         center.y -= speed;
-    if(down)
-        center.y += speed;
 
-    printf("%.1f ", center.y);
-    printf("%d\n", fixedY);
+    center.y -= getDeltaTime() * 100;
 
     if(center.y < -(fixedY) * 4)
         center.y = fixedY;

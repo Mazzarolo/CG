@@ -15,7 +15,7 @@ private:
     vector<Vector2> shape;
     int color[3];
     float speed;
-    bool left, right, top, down;
+    bool left, right, top;
     int fixedY;
 
 public:
