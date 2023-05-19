@@ -2,11 +2,12 @@
 #define PLAYER_H
 
 #include "../Lib/gl_canvas2d.h"
+#include "../Tools/Input.h"
 #include <vector>
 
 using namespace std;
 
-class Player
+class Player : public Input
 {
 private:
     Vector2 center;
@@ -20,11 +21,11 @@ public:
 
     void render();
 
-    void getKeys(int key);
+    void onKeyboardDown();
+
+    void onKeyboardUp();
 
     void move();
-
-    void brake(int key);
 
     int getY();
 };

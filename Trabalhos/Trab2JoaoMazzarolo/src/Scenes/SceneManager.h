@@ -1,7 +1,10 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
+#include <chrono>
 #include "GameScene.h"
+
+using namespace std;
 
 class SceneManager
 {

@@ -10,4 +10,5 @@ void GameScene::render()
 {
     background->render();
     player->render();
+    background->moveY(player->getY(), screenHeight);
 }

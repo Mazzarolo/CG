@@ -11,11 +11,13 @@ Player::Player(int screenWidth, int screenHeight)
     yScreenCenter = screenHeight / 2;
     color[0] = 1;
     color[1] = color[2] = 0;
+    addListeners([this] {onKeyboardUp();}, [this] {onKeyboardDown();});
 }
 
 void Player::render()
 {
     move();
+
     CV::translate(center.x, yScreenCenter);
     float xPoints[3], yPoints[3];
     for (int i = 0; i < 3; i++)
@@ -28,9 +30,9 @@ void Player::render()
     CV::translate(0, 0);
 }
 
-void Player::getKeys(int key)
+void Player::onKeyboardDown()
 {
-    switch(key)
+    switch(getKeyDown())
     {
         case 119:
             top = true;
@@ -43,6 +45,25 @@ void Player::getKeys(int key)
             break;
         case 100:
             right = true;
+            break;
+    }
+}
+
+void Player::onKeyboardUp()
+{
+    switch(getKeyUp())
+    {
+        case 119:
+            top = false;
+            break;
+        case 115:
+            down = false;
+            break;
+        case 97:
+            left = false;
+            break;
+        case 100:
+            right = false;
             break;
     }
 }
@@ -60,25 +81,6 @@ void Player::move()
 
     if(center.y < -(yScreenCenter))
         center.y = yScreenCenter;
-}
-
-void Player::brake(int key)
-{
-    switch(key)
-    {
-        case 119:
-            top = false;
-            break;
-        case 115:
-            down = false;
-            break;
-        case 97:
-            left = false;
-            break;
-        case 100:
-            right = false;
-            break;
-    }
 }
 
 int Player::getY()

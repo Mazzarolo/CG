@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class GameScene : public Scene, public Input
+class GameScene : public Scene
 {
 private:
     Player* player;

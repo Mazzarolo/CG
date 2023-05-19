@@ -1,7 +1,9 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-class Scene
+#include "../Tools/Input.h"
+
+class Scene : public Input
 {
 protected:
     int screenWidth, screenHeight;
