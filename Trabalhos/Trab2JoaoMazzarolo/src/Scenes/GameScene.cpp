@@ -2,17 +2,18 @@
 
 GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, screenHeight)
 {
-    player = new Player(screenWidth, screenHeight);
-    background = new Background(screenWidth, screenHeight);
+    int startY = screenHeight / 7;
+    player = new Player(screenWidth, screenHeight, startY);
+    background = new Background(screenWidth, screenHeight, player->getPosition().y);
 }
 
 void GameScene::render()
 {
     background->render();
     player->render();
-    background->moveY(player->getY(), screenHeight);
+    background->moveY(player->getY());
     if(background->checkCollision(player->getPosition()))
     {
-        printf("oi\n");
+        player->setX(screenWidth / 2);
     }
 }

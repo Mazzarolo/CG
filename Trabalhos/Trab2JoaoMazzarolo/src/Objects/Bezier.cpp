@@ -3,6 +3,10 @@
 Bezier::Bezier(vector<Vector2> points)
 {
     this->points = points;
+    for (int i = 0; i < points.size(); i++)
+    {
+        renderPoints.push_back(points[i]);
+    }
 }
 
 //Fun��o que vai interpolando entre 2 pontos com base em um offset t
@@ -14,14 +18,14 @@ Vector2 Bezier::lerp(Vector2 a, Vector2 b, float t)
 //Desenha uma curva de Bezier
 void Bezier::render()
 {
-    Vector2 oldPoint = points[0];
+    Vector2 oldPoint = renderPoints[0];
 
     //desenha a curva de bezier com 4 pontos de controle
     for (float t = 0; t < 1; t += 0.01)
     {
-        Vector2 p0 = lerp(points[0], points[1], t);
-        Vector2 p1 = lerp(points[1], points[2], t);
-        Vector2 p2 = lerp(points[2], points[3], t);
+        Vector2 p0 = lerp(renderPoints[0], renderPoints[1], t);
+        Vector2 p1 = lerp(renderPoints[1], renderPoints[2], t);
+        Vector2 p2 = lerp(renderPoints[2], renderPoints[3], t);
 
         Vector2 p01 = lerp(p0, p1, t);
         Vector2 p12 = lerp(p1, p2, t);
@@ -34,27 +38,34 @@ void Bezier::render()
 }
 
 //Faça um metodo que verifique a colisão da curva com um ponto passado por parametro
-bool Bezier::checkCollision(Vector2 point)
+bool Bezier::checkCollision(Vector2 player)
 {
     // Implemente a fun��o de colis�o
     for (float t = 0; t < 1; t += 0.01) {
-        Vector2 p0 = lerp(points[0], points[1], t);
-        Vector2 p1 = lerp(points[1], points[2], t);
-        Vector2 p2 = lerp(points[2], points[3], t);
+        Vector2 p0 = lerp(renderPoints[0], renderPoints[1], t);
+        Vector2 p1 = lerp(renderPoints[1], renderPoints[2], t);
+        Vector2 p2 = lerp(renderPoints[2], renderPoints[3], t);
 
         Vector2 p01 = lerp(p0, p1, t);
         Vector2 p12 = lerp(p1, p2, t);
 
         Vector2 p = lerp(p01, p12, t);
 
-        printf("x: %f y: %f\n", p.x, p.y);
-
-        if (p.x + 10 >= point.x && p.x - 10 <= point.y - 10 && p.y + 10 >= point.y && p.y - 10 <= point.y) {
+        //implemente o if de verificação com um raio de 10 pixels
+        if (sqrt(pow(p.x - player.x, 2) + pow(p.y - player.y, 2)) < 10) 
+        {
             return true;
         }
     }
-    printf("\n");
+
     return false;
+}
+
+void Bezier::moveY(int offsetY)
+{
+    for (int i = 0; i < points.size(); i++) {
+        renderPoints[i].y = points[i].y + offsetY;
+    }
 }
 
 /*

@@ -12,16 +12,16 @@ private:
     Bezier* leftCurve;
     Bezier* rightCurve;
     int backColor[3], lineColor[3];
-    int y, height;
+    int renderY, height, offsetY;
 
 public:
-    Background(int screenWidth, int screenHeight);
+    Background(int screenWidth, int screenHeight, int offsetY);
 
     bool checkCollision(Vector2 point);
 
     void render();
 
-    void moveY(int y, int screenHeight);
+    void moveY(int renderY);
 };
 
 #endif // BACKGROUND_H

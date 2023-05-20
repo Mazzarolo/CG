@@ -1,14 +1,16 @@
 #include "Player.h"
 
-Player::Player(int screenWidth, int screenHeight)
+Player::Player(int screenWidth, int screenHeight, int startY)
 {
-    center = Vector2(screenWidth / 2, screenHeight / 5);
+    center = Vector2(screenWidth / 2, startY);
     speed = 300;
+    cameraSpeed = 100;
     shape.push_back(Vector2(0, 15));
     shape.push_back(Vector2(15, -15));
     shape.push_back(Vector2(-15, -15));
     left = right = top = false;
-    fixedY = screenHeight / 5;
+    fixedY = startY;
+    maxY = screenHeight - startY;
     color[0] = 1;
     color[1] = color[2] = 0;
 }
@@ -21,8 +23,8 @@ void Player::render()
     float xPoints[3], yPoints[3];
     for (int i = 0; i < 3; i++)
     {
-        xPoints[i] = shape.at(i).x;
-        yPoints[i] = shape.at(i).y;
+        xPoints[i] = shape[i].x;
+        yPoints[i] = shape[i].y;
     }
     CV::color(color[0], color[1], color[2]);
     CV::polygonFill(xPoints, yPoints, 3);
@@ -71,9 +73,9 @@ void Player::move()
     if(top)
         center.y -= speed;
 
-    center.y -= getDeltaTime() * 100;
+    //center.y -= getDeltaTime() * cameraSpeed;
 
-    if(center.y < -(fixedY) * 4)
+    if(center.y < -maxY)
         center.y = fixedY;
 }
 
@@ -86,4 +88,9 @@ Vector2 Player::getPosition()
 {
     //printf("%f %d\n", center.x, fixedY);
     return Vector2(center.x, fixedY);
+}
+
+void Player::setX(int x)
+{
+    center.x = x;
 }

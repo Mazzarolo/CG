@@ -1,8 +1,10 @@
 #include "Background.h"
 
-Background::Background(int screenWidth, int screenHeight)
+Background::Background(int screenWidth, int screenHeight, int offsetY)
 {
-    y = 0;
+    this->offsetY = offsetY;
+
+    renderY = -offsetY;
 
     for(int i = 0; i < 3; i++)
     {
@@ -31,35 +33,38 @@ Background::Background(int screenWidth, int screenHeight)
 void Background::render()
 {   
     CV::clear(backColor[0], backColor[1], backColor[2]);
-    CV::translate(0, y);
     CV::color(lineColor[0], lineColor[1], lineColor[2]);
+    leftCurve->moveY(renderY);
+    rightCurve->moveY(renderY);
     leftCurve->render();
     rightCurve->render();
-    CV::translate(0, y + height);
+    leftCurve->moveY(renderY + height);
+    rightCurve->moveY(renderY + height);
     leftCurve->render();
     rightCurve->render();
-    CV::translate(0, 0);
 }
 
 bool Background::checkCollision(Vector2 point)
-{
-    CV::translate(0, y);
+{   
+    leftCurve->moveY(renderY);
+    rightCurve->moveY(renderY);
+
     if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
     {
-        CV::translate(0, 0);
         return true;
     }
-    CV::translate(0, y + height);
+
+    leftCurve->moveY(renderY + height);
+    rightCurve->moveY(renderY + height);
+    
     if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
     {
-        CV::translate(0, 0);
         return true;
     }
-    CV::translate(0, 0);
     return false;
 }
 
-void Background::moveY(int y, int screenHeight)
+void Background::moveY(int y)
 {
-    this->y = y - screenHeight / 5;
+    renderY = y - offsetY;
 }

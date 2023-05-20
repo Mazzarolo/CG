@@ -14,12 +14,12 @@ private:
     Vector2 center;
     vector<Vector2> shape;
     int color[3];
-    float speed;
+    float speed, cameraSpeed;
     bool left, right, top;
-    int fixedY;
+    int fixedY, maxY;
 
 public:
-    Player(int screenWidth, int screenHeight);
+    Player(int screenWidth, int screenHeight, int startY);
 
     void render();
 
@@ -30,6 +30,8 @@ public:
     void move();
 
     int getY();
+
+    void setX(int x);
 
     Vector2 getPosition();
 };
