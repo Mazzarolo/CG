@@ -2,9 +2,10 @@
 
 GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, screenHeight)
 {
+    int curvesHeight = screenHeight * 2;
     int startY = screenHeight / 7;
-    player = new Player(screenWidth, screenHeight, startY);
-    background = new Background(screenWidth, screenHeight, player->getPosition().y);
+    player = new Player(screenWidth, screenHeight, startY, curvesHeight);
+    background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
 }
 
 void GameScene::render()
@@ -12,7 +13,7 @@ void GameScene::render()
     background->render();
     player->render();
     background->moveY(player->getY());
-    if(background->checkCollision(player->getPosition()))
+    if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()))
     {
         player->setX(screenWidth / 2);
     }

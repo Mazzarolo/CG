@@ -38,7 +38,7 @@ void Bezier::render()
 }
 
 //Faça um metodo que verifique a colisão da curva com um ponto passado por parametro
-bool Bezier::checkCollision(Vector2 player)
+bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 {
     // Implemente a fun��o de colis�o
     for (float t = 0; t < 1; t += 0.01) {
@@ -51,8 +51,7 @@ bool Bezier::checkCollision(Vector2 player)
 
         Vector2 p = lerp(p01, p12, t);
 
-        //implemente o if de verificação com um raio de 10 pixels
-        if (sqrt(pow(p.x - player.x, 2) + pow(p.y - player.y, 2)) < 10) 
+        if (Collisions::circlePoint(player, hitBoxRadius, p)) 
         {
             return true;
         }

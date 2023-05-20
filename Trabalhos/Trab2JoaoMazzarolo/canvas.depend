@@ -267,32 +267,37 @@
 	<GL/freeglut_ext.h>
 	"../Structures/Vector2.h"
 
-1684447647 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\structures\vector2.h
+1684602002 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\structures\vector2.h
+	<math.h>
+	<stdio.h>
 
-1684559740 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1684605359 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
-1684549258 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
+1684604473 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
+	<time.h>
+	<stdlib.h>
 	"../Lib/gl_canvas2d.h"
 	"Bezier.h"
 
-1684553870 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.h
+1684604422 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.h
 	"../Lib/gl_canvas2d.h"
+	"../Tools/Collisions.h"
 	<vector>
 
-1684559420 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
+1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684559836 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684604148 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684559828 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684604127 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
 	<vector>
 
-1684559932 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684604481 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
 1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
@@ -354,4 +359,11 @@
 
 1684520318 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
 	"Input.h"
+
+1684604068 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.h
+	<vector>
+	"../Structures/Vector2.h"
+
+1684603000 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
+	"Collisions.h"
 

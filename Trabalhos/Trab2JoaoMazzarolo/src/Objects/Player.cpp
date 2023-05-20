@@ -1,8 +1,9 @@
 #include "Player.h"
 
-Player::Player(int screenWidth, int screenHeight, int startY)
+Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 {
     center = Vector2(screenWidth / 2, startY);
+    hitBoxRadius = 15;
     speed = 300;
     cameraSpeed = 100;
     shape.push_back(Vector2(0, 15));
@@ -10,7 +11,7 @@ Player::Player(int screenWidth, int screenHeight, int startY)
     shape.push_back(Vector2(-15, -15));
     left = right = top = false;
     fixedY = startY;
-    maxY = screenHeight - startY;
+    maxY = curveHeight - startY;
     color[0] = 1;
     color[1] = color[2] = 0;
 }
@@ -73,7 +74,7 @@ void Player::move()
     if(top)
         center.y -= speed;
 
-    //center.y -= getDeltaTime() * cameraSpeed;
+    center.y -= getDeltaTime() * cameraSpeed;
 
     if(center.y < -maxY)
         center.y = fixedY;
@@ -93,4 +94,20 @@ Vector2 Player::getPosition()
 void Player::setX(int x)
 {
     center.x = x;
+}
+
+vector<Vector2> Player::getShapeAbs()
+{
+    vector<Vector2> shapeAbs;
+    for (int i = 0; i < 3; i++)
+    {
+        shapeAbs.push_back(Vector2(shape[i].x + center.x, shape[i].y + fixedY));
+        printf("%.1f %.1f\n", shapeAbs[i].x, shapeAbs[i].y);
+    }
+    return shape;
+}
+
+int Player::getHitBoxRadius()
+{
+    return hitBoxRadius;
 }

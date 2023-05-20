@@ -12,6 +12,7 @@ class Player : public Input, public Clock
 {
 private:
     Vector2 center;
+    int hitBoxRadius;
     vector<Vector2> shape;
     int color[3];
     float speed, cameraSpeed;
@@ -19,7 +20,7 @@ private:
     int fixedY, maxY;
 
 public:
-    Player(int screenWidth, int screenHeight, int startY);
+    Player(int screenWidth, int screenHeight, int startY, int curveHeight);
 
     void render();
 
@@ -34,6 +35,10 @@ public:
     void setX(int x);
 
     Vector2 getPosition();
+
+    vector<Vector2> getShapeAbs();
+
+    int getHitBoxRadius();
 };
 
 #endif // PLAYER_H

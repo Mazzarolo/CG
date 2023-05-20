@@ -1,8 +1,10 @@
 #include "Background.h"
 
-Background::Background(int screenWidth, int screenHeight, int offsetY)
+Background::Background(int screenWidth, int screenHeight, int offsetY, int curveHeight)
 {
     this->offsetY = offsetY;
+
+    height = curveHeight;
 
     renderY = -offsetY;
 
@@ -12,22 +14,22 @@ Background::Background(int screenWidth, int screenHeight, int offsetY)
         lineColor[i] = 1;
     }
 
+    srand(time(NULL));
+
     vector<Vector2> points;
-    points.push_back(Vector2(2 * screenWidth / 32, 0 * screenHeight / 3));
-    points.push_back(Vector2(0 * screenWidth / 32, 1 * screenHeight / 3));
-    points.push_back(Vector2(4 * screenWidth / 32, 2 * screenHeight / 3));
-    points.push_back(Vector2(2 * screenWidth / 32, 3 * screenHeight / 3));
+    points.push_back(Vector2(4 * screenWidth / 32, 0 * height / 3));
+    points.push_back(Vector2((2 + rand() % 2) * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2((5 + rand() % 3) * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(4 * screenWidth / 32, 3 * height / 3));
     leftCurve = new Bezier(points);
 
     points.clear();
 
-    points.push_back(Vector2(30 * screenWidth / 32, 0 * screenHeight / 3));
-    points.push_back(Vector2(32 * screenWidth / 32, 1 * screenHeight / 3));
-    points.push_back(Vector2(28 * screenWidth / 32, 2 * screenHeight / 3));
-    points.push_back(Vector2(30 * screenWidth / 32, 3 * screenHeight / 3));
+    points.push_back(Vector2(28 * screenWidth / 32, 0 * height / 3));
+    points.push_back(Vector2((27 - (rand() % 3)) * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2((30 - (rand() % 2)) * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(28 * screenWidth / 32, 3 * height / 3));
     rightCurve = new Bezier(points);
-
-    height = screenHeight;
 }
 
 void Background::render()
@@ -44,12 +46,12 @@ void Background::render()
     rightCurve->render();
 }
 
-bool Background::checkCollision(Vector2 point)
+bool Background::checkCollision(Vector2 point, int hitBoxRadius)
 {   
     leftCurve->moveY(renderY);
     rightCurve->moveY(renderY);
 
-    if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
+    if(leftCurve->checkCollision(point, hitBoxRadius) || rightCurve->checkCollision(point, hitBoxRadius))
     {
         return true;
     }
@@ -57,7 +59,7 @@ bool Background::checkCollision(Vector2 point)
     leftCurve->moveY(renderY + height);
     rightCurve->moveY(renderY + height);
     
-    if(leftCurve->checkCollision(point) || rightCurve->checkCollision(point))
+    if(leftCurve->checkCollision(point, hitBoxRadius) || rightCurve->checkCollision(point, hitBoxRadius))
     {
         return true;
     }
