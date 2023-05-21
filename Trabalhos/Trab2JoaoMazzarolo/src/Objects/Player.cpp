@@ -3,12 +3,12 @@
 Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 {
     center = Vector2(screenWidth / 2, startY);
+    sprite = new Bitmap();
+    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Test.bmp");
+    sprite->setPosition(-sprite->getWidth() / 2, -sprite->getHeight() / 2);
     hitBoxRadius = 15;
     speed = 300;
     cameraSpeed = 100;
-    shape.push_back(Vector2(0, 15));
-    shape.push_back(Vector2(15, -15));
-    shape.push_back(Vector2(-15, -15));
     left = right = top = false;
     fixedY = startY;
     maxY = curveHeight - startY;
@@ -16,19 +16,19 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     color[1] = color[2] = 0;
 }
 
+Player::~Player()
+{
+    delete sprite;
+}
+
 void Player::render()
 {
     move();
 
     CV::translate(center.x, fixedY);
-    float xPoints[3], yPoints[3];
-    for (int i = 0; i < 3; i++)
-    {
-        xPoints[i] = shape[i].x;
-        yPoints[i] = shape[i].y;
-    }
-    CV::color(color[0], color[1], color[2]);
-    CV::polygonFill(xPoints, yPoints, 3);
+
+    sprite->render();
+
     CV::translate(0, 0);
 }
 
@@ -94,17 +94,6 @@ Vector2 Player::getPosition()
 void Player::setX(int x)
 {
     center.x = x;
-}
-
-vector<Vector2> Player::getShapeAbs()
-{
-    vector<Vector2> shapeAbs;
-    for (int i = 0; i < 3; i++)
-    {
-        shapeAbs.push_back(Vector2(shape[i].x + center.x, shape[i].y + fixedY));
-        printf("%.1f %.1f\n", shapeAbs[i].x, shapeAbs[i].y);
-    }
-    return shape;
 }
 
 int Player::getHitBoxRadius()

@@ -2,47 +2,30 @@
 
 Bitmap::Bitmap()
 {
-    
+
+}
+
+Bitmap::~Bitmap()
+{
+    delete[] pixels;
 }
 
 bool Bitmap::read(unsigned char* memory)
 {
+    // Lendo o Header do Bitmap
     memcpy(&header.test, &memory[0], 2);
     memcpy(&header.size, &memory[2], 4);
     memcpy(&header.reserved, &memory[6], 4);
     memcpy(&header.offset, &memory[10], 4);
-
+    
+    // Lendo o DIB Header do Bitmap
     memcpy(&dibHeader.size, &memory[14], 4);
-
-    if (dibHeader.size != 40)
-    {
-        printf("Error: DIB header size is not 40\n");
-        return false;
-    }
-
     memcpy(&dibHeader.pixelWidth, &memory[18], 4);
     memcpy(&dibHeader.pixelHeight, &memory[22], 4);
     memcpy(&dibHeader.numColorPlanes, &memory[26], 2);
     memcpy(&dibHeader.colorDepth, &memory[28], 2);
-    memcpy(&dibHeader.compressionMethod, &memory[30], 4);
-    memcpy(&dibHeader.rawImageSize, &memory[34], 4);
-    memcpy(&dibHeader.horizontalResolution, &memory[38], 4);
-    memcpy(&dibHeader.verticalResolution, &memory[42], 4); 
-    memcpy(&dibHeader.numColors, &memory[46], 4);
-    memcpy(&dibHeader.numImportantColors, &memory[50], 4);
 
-    if (dibHeader.numColors != 0)
-    {
-        printf("Error: DIB header numColors is not 0\n");
-        return false;
-    }
-
-    if(dibHeader.colorDepth != 24)
-    {
-        printf("Error: DIB header colorDepth is not 24\n");
-        return false;
-    }
-
+    // Calculando os valores para ler os pixels do bitmap
     pixelInfo.rowSize = (((dibHeader.pixelWidth * dibHeader.colorDepth) + 31) / 32) * 4;
     pixelInfo.arraySize = dibHeader.pixelWidth * dibHeader.pixelHeight;
 
@@ -50,17 +33,19 @@ bool Bitmap::read(unsigned char* memory)
 
     int index = 0;
 
+    // Lendo os pixels do bitmap
     for (int i = 0; i < dibHeader.pixelHeight; i++)
     {
         unsigned char* rowData = new unsigned char[pixelInfo.rowSize];
 
         memcpy(rowData, &memory[header.offset + (i * pixelInfo.rowSize)], pixelInfo.rowSize);
 
-        for (int j = 0; j < dibHeader.pixelWidth * 3; j += 3)
+        for (int j = 0; j < dibHeader.pixelWidth * 4; j += 4)
         {
-            pixels[index].b = rowData[j];
-            pixels[index].g = rowData[j + 1];
-            pixels[index].r = rowData[j + 2];
+            pixels[index].b = ((float) rowData[j]) / 255.0f;
+            pixels[index].g = ((float) rowData[j + 1]) / 255.0f;
+            pixels[index].r = ((float) rowData[j + 2]) / 255.0f;
+            pixels[index].a = ((float) rowData[j + 3]) / 255.0f;
             index++;
         }
         
@@ -100,10 +85,29 @@ void Bitmap::render()
 {
     for (int i = 0; i < dibHeader.pixelHeight; i++)
     {
-        for (int j = 0; i < dibHeader.pixelHeight; j++)
+        for (int j = 0; j < dibHeader.pixelHeight; j++)
         {
-            CV::point(j, i);
+            if(pixels[i * dibHeader.pixelWidth + j].a == 0.0f)
+                continue;
+            CV::color(pixels[i * dibHeader.pixelWidth + j].r, pixels[i * dibHeader.pixelWidth + j].g, pixels[i * dibHeader.pixelWidth + j].b);
+            CV::point(position.x + j, position.y + i);
         }
         
     }
+}
+
+void Bitmap::setPosition(int x, int y)
+{
+    position.x = x;
+    position.y = y;
+}
+
+int Bitmap::getWidth()
+{
+    return dibHeader.pixelWidth;
+}
+
+int Bitmap::getHeight()
+{
+    return dibHeader.pixelHeight;
 }

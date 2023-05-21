@@ -271,7 +271,7 @@
 	<math.h>
 	<stdio.h>
 
-1684632469 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1684693860 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
 1684604473 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
@@ -288,22 +288,23 @@
 1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684608870 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684693251 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684604127 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684694840 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
+	"Bitmap.h"
 	<vector>
 
-1684638628 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684693774 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
 1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684638475 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684692874 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -368,10 +369,10 @@
 1684603000 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
 	"Collisions.h"
 
-1684638412 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
+1684692883 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
-1684638144 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
+1684692853 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

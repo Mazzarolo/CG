@@ -10,7 +10,7 @@ using namespace std;
 
 typedef struct bitmapPixel
 {
-    unsigned char r, g, b;
+    float r, g, b, a;
 } BitmapPixel;
 
 typedef struct bitmapHeader
@@ -28,12 +28,6 @@ typedef struct dibHeader
     unsigned int pixelHeight;
     unsigned short numColorPlanes;
     unsigned short colorDepth;
-    unsigned int compressionMethod;
-    unsigned int rawImageSize;
-    unsigned int horizontalResolution;
-    unsigned int verticalResolution;
-    unsigned int numColors;
-    unsigned int numImportantColors;
 } DibHeader;
 
 typedef struct pixelInfo
@@ -45,6 +39,7 @@ typedef struct pixelInfo
 class Bitmap
 {
 private:
+    Vector2 position;
     BitmapHeader header;
     DibHeader dibHeader;
     PixelInfo pixelInfo;
@@ -52,10 +47,18 @@ private:
 
 public:
     Bitmap();
+
+    ~Bitmap();
     
     void load(char* filename);
 
     void render();
+
+    void setPosition(int x, int y);
+
+    int getWidth();
+
+    int getHeight();
 
 private:
     bool read(unsigned char* memory);

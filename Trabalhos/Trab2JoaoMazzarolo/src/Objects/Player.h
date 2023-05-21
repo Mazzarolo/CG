@@ -4,6 +4,7 @@
 #include "../Lib/gl_canvas2d.h"
 #include "../Tools/Input.h"
 #include "../Tools/Clock.h"
+#include "Bitmap.h"
 #include <vector>
 
 using namespace std;
@@ -11,9 +12,9 @@ using namespace std;
 class Player : public Input, public Clock
 {
 private:
+    Bitmap* sprite;
     Vector2 center;
     int hitBoxRadius;
-    vector<Vector2> shape;
     int color[3];
     float speed, cameraSpeed;
     bool left, right, top;
@@ -21,6 +22,8 @@ private:
 
 public:
     Player(int screenWidth, int screenHeight, int startY, int curveHeight);
+
+    ~Player();
 
     void render();
 

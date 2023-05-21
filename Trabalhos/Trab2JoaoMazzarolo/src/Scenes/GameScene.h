@@ -16,7 +16,6 @@ class GameScene : public Scene
 private:
     Player* player;
     Background* background;
-    Bitmap* bmp;
 
 public:
     GameScene(int screenWidth, int screenHeight);

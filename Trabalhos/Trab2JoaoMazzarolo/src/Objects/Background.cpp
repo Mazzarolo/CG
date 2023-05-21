@@ -18,16 +18,16 @@ Background::Background(int screenWidth, int screenHeight, int offsetY, int curve
 
     vector<Vector2> points;
     points.push_back(Vector2(10 * screenWidth / 32, 0 * height / 3));
-    points.push_back(Vector2(0 * screenWidth / 32, 1 * height / 3));
-    points.push_back(Vector2(20 * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(-6 * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2(26 * screenWidth / 32, 2 * height / 3));
     points.push_back(Vector2(10 * screenWidth / 32, 3 * height / 3));
     leftCurve = new Bezier(points);
 
     points.clear();
 
     points.push_back(Vector2(22 * screenWidth / 32, 0 * height / 3));
-    points.push_back(Vector2(10 * screenWidth / 32, 1 * height / 3));
-    points.push_back(Vector2(32 * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(6 * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2(38 * screenWidth / 32, 2 * height / 3));
     points.push_back(Vector2(22 * screenWidth / 32, 3 * height / 3));
     rightCurve = new Bezier(points);
 }
