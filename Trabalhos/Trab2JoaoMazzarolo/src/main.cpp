@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
+#include <windows.h>
+#include <mmsystem.h>
 
 #include "Lib/gl_canvas2d.h"
 #include "Scenes/SceneManager.h"
@@ -41,7 +43,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 int main(void)
 {
-    CV::init(&screenWidth, &screenHeight, "Jogo foda nave");
+    CV::init(&screenWidth, &screenHeight, "Nave Gamer");
 
     sceneManager = new SceneManager(screenWidth, screenHeight);
     input = new Input();

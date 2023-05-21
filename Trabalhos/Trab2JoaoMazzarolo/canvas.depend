@@ -89,13 +89,15 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684548661 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684703027 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	<vector>
+	<windows.h>
+	<mmsystem.h>
 	"Lib/gl_canvas2d.h"
 	"Scenes/SceneManager.h"
 	"Tools/Input.h"
@@ -271,13 +273,14 @@
 	<math.h>
 	<stdio.h>
 
-1684693860 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1684701476 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
-1684604473 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
+1684701469 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
 	<time.h>
 	<stdlib.h>
 	"../Lib/gl_canvas2d.h"
+	"Bitmap.h"
 	"Bezier.h"
 
 1684604422 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.h
@@ -288,7 +291,7 @@
 1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684693251 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684698205 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
 1684694840 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
@@ -304,7 +307,7 @@
 1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684692874 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684698858 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -369,7 +372,7 @@
 1684603000 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
 	"Collisions.h"
 
-1684692883 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
+1684700428 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
 1684692853 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h

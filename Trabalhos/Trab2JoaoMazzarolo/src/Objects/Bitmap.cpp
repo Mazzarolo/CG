@@ -85,7 +85,7 @@ void Bitmap::render()
 {
     for (int i = 0; i < dibHeader.pixelHeight; i++)
     {
-        for (int j = 0; j < dibHeader.pixelHeight; j++)
+        for (int j = 0; j < dibHeader.pixelWidth; j++)
         {
             if(pixels[i * dibHeader.pixelWidth + j].a == 0.0f)
                 continue;

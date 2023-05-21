@@ -4,9 +4,9 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 {
     center = Vector2(screenWidth / 2, startY);
     sprite = new Bitmap();
-    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Test.bmp");
+    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Player.bmp");
     sprite->setPosition(-sprite->getWidth() / 2, -sprite->getHeight() / 2);
-    hitBoxRadius = 15;
+    hitBoxRadius = 23;
     speed = 300;
     cameraSpeed = 100;
     left = right = top = false;

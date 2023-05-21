@@ -32,8 +32,14 @@ Background::Background(int screenWidth, int screenHeight, int offsetY, int curve
     rightCurve = new Bezier(points);
 }
 
+Background::~Background()
+{
+    delete leftCurve;
+    delete rightCurve;
+}
+
 void Background::render()
-{   
+{
     CV::clear(backColor[0], backColor[1], backColor[2]);
     CV::color(lineColor[0], lineColor[1], lineColor[2]);
     leftCurve->moveY(renderY);
@@ -47,7 +53,7 @@ void Background::render()
 }
 
 bool Background::checkCollision(Vector2 point, int hitBoxRadius)
-{   
+{
     leftCurve->moveY(renderY);
     rightCurve->moveY(renderY);
 
@@ -58,7 +64,7 @@ bool Background::checkCollision(Vector2 point, int hitBoxRadius)
 
     leftCurve->moveY(renderY + height);
     rightCurve->moveY(renderY + height);
-    
+
     if(leftCurve->checkCollision(point, hitBoxRadius) || rightCurve->checkCollision(point, hitBoxRadius))
     {
         return true;

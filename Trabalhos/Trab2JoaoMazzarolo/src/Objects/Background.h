@@ -4,6 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "../Lib/gl_canvas2d.h"
+#include "Bitmap.h"
 #include "Bezier.h"
 
 using namespace std;
@@ -18,6 +19,8 @@ private:
 
 public:
     Background(int screenWidth, int screenHeight, int offsetY, int curveHeight);
+
+    ~Background();
 
     bool checkCollision(Vector2 point, int hitBoxRadius);
 
