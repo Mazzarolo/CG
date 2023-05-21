@@ -17,18 +17,18 @@ Background::Background(int screenWidth, int screenHeight, int offsetY, int curve
     srand(time(NULL));
 
     vector<Vector2> points;
-    points.push_back(Vector2(4 * screenWidth / 32, 0 * height / 3));
-    points.push_back(Vector2((2 + rand() % 2) * screenWidth / 32, 1 * height / 3));
-    points.push_back(Vector2((5 + rand() % 3) * screenWidth / 32, 2 * height / 3));
-    points.push_back(Vector2(4 * screenWidth / 32, 3 * height / 3));
+    points.push_back(Vector2(10 * screenWidth / 32, 0 * height / 3));
+    points.push_back(Vector2(0 * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2(20 * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(10 * screenWidth / 32, 3 * height / 3));
     leftCurve = new Bezier(points);
 
     points.clear();
 
-    points.push_back(Vector2(28 * screenWidth / 32, 0 * height / 3));
-    points.push_back(Vector2((27 - (rand() % 3)) * screenWidth / 32, 1 * height / 3));
-    points.push_back(Vector2((30 - (rand() % 2)) * screenWidth / 32, 2 * height / 3));
-    points.push_back(Vector2(28 * screenWidth / 32, 3 * height / 3));
+    points.push_back(Vector2(22 * screenWidth / 32, 0 * height / 3));
+    points.push_back(Vector2(10 * screenWidth / 32, 1 * height / 3));
+    points.push_back(Vector2(32 * screenWidth / 32, 2 * height / 3));
+    points.push_back(Vector2(22 * screenWidth / 32, 3 * height / 3));
     rightCurve = new Bezier(points);
 }
 

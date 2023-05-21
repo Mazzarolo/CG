@@ -6,6 +6,8 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     int startY = screenHeight / 7;
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
+    bmp = new Bitmap();
+    bmp->load("Trab2JoaoMazzarolo\\src\\Images\\Test.bmp");
 }
 
 void GameScene::render()
