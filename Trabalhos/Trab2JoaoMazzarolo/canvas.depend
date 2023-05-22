@@ -308,7 +308,7 @@
 1684726022 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684723416 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684732519 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -317,8 +317,9 @@
 	"../Tools/Input.h"
 	"../Objects/Bitmap.h"
 
-1684725640 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
+1684732563 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
 	"../Tools/Input.h"
+	"../Tools/Clock.h"
 
 1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
 	"Input.h"
@@ -408,10 +409,10 @@
 	"Button.h"
 	"../Objects/Bitmap.h"
 
-1684726064 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1684732543 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
-1684720964 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.h
+1684732137 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.h
 	<vector>
 	"../Lib/gl_canvas2d.h"
 	"Scene.h"

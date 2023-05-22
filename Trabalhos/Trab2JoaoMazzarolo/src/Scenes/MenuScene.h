@@ -11,6 +11,7 @@ using namespace std;
 class MenuScene : public Scene
 {
 private:
+    Bitmap* title;
     vector<SpriteButton*> buttons;
 
 public:

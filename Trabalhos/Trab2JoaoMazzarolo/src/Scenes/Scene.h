@@ -2,8 +2,9 @@
 #define SCENE_H
 
 #include "../Tools/Input.h"
+#include "../Tools/Clock.h"
 
-class Scene : public Input
+class Scene : public Input, public Clock
 {
 protected:
     int screenWidth, screenHeight, nextScene;

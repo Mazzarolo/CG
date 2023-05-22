@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class GameScene : public Scene, public Clock
+class GameScene : public Scene
 {
 private:
     Player* player;

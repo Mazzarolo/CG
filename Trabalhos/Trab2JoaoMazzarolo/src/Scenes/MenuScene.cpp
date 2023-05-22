@@ -5,6 +5,11 @@ MenuScene::MenuScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     nextScene = -1;
     int buttonX = 3 * screenWidth / 8;
     int buttonY = 6 * screenHeight / 12;
+
+    title = new Bitmap();
+    title->load("Trab2JoaoMazzarolo\\src\\Images\\Title.bmp");
+    title->setPosition(screenWidth / 2 - title->getWidth() / 2, screenHeight / 2 + 150);
+
     vector<char*> pathToSprites;
 
     pathToSprites.push_back((char*)"Trab2JoaoMazzarolo\\src\\Images\\Buttons\\Play\\Button.bmp");
@@ -36,6 +41,8 @@ MenuScene::~MenuScene()
 void MenuScene::render()
 {
     CV::clear(0.1, 0.1, 0.2);
+    title->render();
+    printFPS(10, screenHeight - 20);
     for(int i = 0; i < buttons.size(); i++)
     {
         buttons[i]->render();
