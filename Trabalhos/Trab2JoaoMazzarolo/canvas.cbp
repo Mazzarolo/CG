@@ -46,6 +46,8 @@
 		<Unit filename="include/GL/glut.h" />
 		<Unit filename="src/Lib/gl_canvas2d.cpp" />
 		<Unit filename="src/Lib/gl_canvas2d.h" />
+		<Unit filename="src/Objects/Animation.cpp" />
+		<Unit filename="src/Objects/Animation.h" />
 		<Unit filename="src/Objects/Background.cpp" />
 		<Unit filename="src/Objects/Background.h" />
 		<Unit filename="src/Objects/Bezier.cpp" />

@@ -3,8 +3,8 @@
 Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 {
     center = Vector2(screenWidth / 2, startY);
-    sprite = new Bitmap();
-    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Player.bmp");
+    sprite = new Animation(5, 2, 10, 0.1f);
+    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Ship.bmp");
     sprite->setPosition(-sprite->getWidth() / 2, -sprite->getHeight() / 2);
     hitBoxRadius = 23;
     speed = 300;

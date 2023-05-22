@@ -38,7 +38,7 @@ typedef struct pixelInfo
 
 class Bitmap
 {
-private:
+protected:
     Vector2 position;
     BitmapHeader header;
     DibHeader dibHeader;
@@ -52,7 +52,7 @@ public:
     
     void load(char* filename);
 
-    void render();
+    virtual void render();
 
     void setPosition(int x, int y);
 

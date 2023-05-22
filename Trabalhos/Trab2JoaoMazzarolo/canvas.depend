@@ -256,7 +256,7 @@
 1684519292 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684447647 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
+1684766429 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
@@ -292,14 +292,14 @@
 1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684716450 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684770836 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684716444 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684770196 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
-	"Bitmap.h"
+	"Animation.h"
 	<vector>
 
 1684726051 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
@@ -379,7 +379,7 @@
 1684700428 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
-1684692853 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
+1684769741 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -409,7 +409,7 @@
 	"Button.h"
 	"../Objects/Bitmap.h"
 
-1684732543 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1684770148 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
 1684732137 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.h
@@ -417,4 +417,11 @@
 	"../Lib/gl_canvas2d.h"
 	"Scene.h"
 	"../UI/SpriteButton.h"
+
+1684771841 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.cpp
+	"Animation.h"
+
+1684770818 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.h
+	"Bitmap.h"
+	"../Tools/Clock.h"
 

@@ -4,7 +4,7 @@
 #include "../Lib/gl_canvas2d.h"
 #include "../Tools/Input.h"
 #include "../Tools/Clock.h"
-#include "Bitmap.h"
+#include "Animation.h"
 #include <vector>
 
 using namespace std;
@@ -12,7 +12,7 @@ using namespace std;
 class Player : public Input, public Clock
 {
 private:
-    Bitmap* sprite;
+    Animation* sprite;
     Vector2 center;
     int hitBoxRadius;
     int color[3];

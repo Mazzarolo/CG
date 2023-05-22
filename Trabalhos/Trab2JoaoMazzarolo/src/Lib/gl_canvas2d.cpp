@@ -136,7 +136,7 @@ void CV::text(float x, float y, const char *t)
     for(int c=0; c < tam; c++)
     {
       glRasterPos2i(x + c*10, y);
-      glutBitmapCharacter(GLUT_BITMAP_8_BY_13, t[c]);
+      glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_10, t[c]);
     }
 }
 
