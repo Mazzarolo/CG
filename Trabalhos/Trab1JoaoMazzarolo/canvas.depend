@@ -346,18 +346,18 @@
 	"EditorDeCor.h"
 	"PainelLabels.h"
 
-1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.cpp
+1682046754 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.cpp
 	"Botao.h"
 	"gl_canvas2d.h"
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\botao.h
 	"Figura.h"
 
-1681937749 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
+1682046779 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.h
 	<stdlib.h>
 	<stdio.h>
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -366,10 +366,10 @@
 	<GL/freeglut_ext.h>
 	"Vector2.h"
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\glut.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\glut.h
 	"freeglut_std.h"
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_std.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_std.h
 	<windows.h>
 	<EGL/egl.h>
 	<GLES/gl.h>
@@ -380,46 +380,47 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_ext.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\vector2.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\vector2.h
 
-1681957328 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
+1682046779 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\figura.cpp
 	"Figura.h"
 	"gl_canvas2d.h"
 	"stdio.h"
 
-1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.cpp
+1682046754 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.cpp
 	"GerenciadorDeBotoes.h"
 	"gl_canvas2d.h"
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordebotoes.h
 	"Botao.h"
 
-1681958486 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
+1682046779 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.cpp
 	"GerenciadorDeFiguras.h"
 
-1681928966 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
+1682046779 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gerenciadordefiguras.h
 	"Figura.h"
+	"gl_canvas2d.h"
 	<list>
 	<stdio.h>
 	<stdlib.h>
 
-1681928966 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.cpp
+1682046754 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1681938239 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.cpp
+1682046754 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.cpp
 	"Interface.h"
 	"gl_canvas2d.h"
 
-1681938161 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\interface.h
 	"GerenciadorDeBotoes.h"
 	"GerenciadorDeFiguras.h"
 	"EditorDeCor.h"
 
-1681954191 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
+1682046779 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -434,17 +435,18 @@
 	"Interface.h"
 	"Slider.h"
 	"EditorDeCor.h"
+	"PainelLabels.h"
 
-1681952965 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
+1682046779 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.h
 	"gl_canvas2d.h"
 
-1681955040 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
+1682046779 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\slider.cpp
 	"Slider.h"
 
-1681954636 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.cpp
+1682046754 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.cpp
 	"EditorDeCor.h"
 
-1681953916 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.h
+1682046754 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\editordecor.h
 	"gl_canvas2d.h"
 	"Slider.h"
 	"Figura.h"
@@ -492,4 +494,12 @@
 
 1682017434 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\t1\src\slider.cpp
 	"Slider.h"
+
+1682046779 j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.h
+	"gl_canvas2d.h"
+	"Slider.h"
+	"GerenciadorDeFiguras.h"
+
+1682046779 source:j:\programação\c\cg\trabalhos\trab1joaomazzarolo\src\painellabels.cpp
+	"PainelLabels.h"
 
