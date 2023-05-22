@@ -1,0 +1,31 @@
+#ifndef MENU_SCENE_H
+#define MENU_SCENE_H
+
+#include <vector>
+#include "../Lib/gl_canvas2d.h"
+#include "Scene.h"
+#include "../UI/SpriteButton.h"
+
+using namespace std;
+
+class MenuScene : public Scene
+{
+private:
+    vector<SpriteButton*> buttons;
+
+public:
+    MenuScene(int screenWidth, int screenHeight);
+
+    ~MenuScene();
+
+    void render();
+
+private:
+    void onPlayClick();
+
+    void onInfoClick();
+
+    void onExitClick();
+};
+
+#endif // MENU_SCENE_H

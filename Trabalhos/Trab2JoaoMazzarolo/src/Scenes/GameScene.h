@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class GameScene : public Scene
+class GameScene : public Scene, public Clock
 {
 private:
     Player* player;
@@ -20,7 +20,13 @@ private:
 public:
     GameScene(int screenWidth, int screenHeight);
 
+    ~GameScene();
+
     void render();
+
+private:
+    void onKeyboardUp();
+
 };
 
 

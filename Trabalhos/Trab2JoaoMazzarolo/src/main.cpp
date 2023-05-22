@@ -31,7 +31,7 @@ void keyboard(int key)
 
 void keyboardUp(int key)
 {
-    //printf("\nLiberou: %d" , key);
+    printf("\nLiberou: %d" , key);
     input->setKeyUp(key);
 }
 

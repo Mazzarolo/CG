@@ -17,4 +17,21 @@ void GameScene::render()
     {
         player->setX(screenWidth / 2);
     }
+    printFPS(10, screenHeight - 20);
+}
+
+GameScene::~GameScene()
+{
+    delete player;
+    delete background;
+}
+
+void GameScene::onKeyboardUp()
+{
+    switch(getKeyUp())
+    {
+        case 27:
+            nextScene = 0;
+            break;
+    }
 }

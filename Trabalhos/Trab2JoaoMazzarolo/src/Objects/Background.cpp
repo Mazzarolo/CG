@@ -2,6 +2,12 @@
 
 Background::Background(int screenWidth, int screenHeight, int offsetY, int curveHeight)
 {
+    this->screenWidth = screenWidth;
+
+    this->screenHeight = screenHeight;
+
+    createStars(250);
+
     this->offsetY = offsetY;
 
     height = curveHeight;
@@ -36,11 +42,16 @@ Background::~Background()
 {
     delete leftCurve;
     delete rightCurve;
+    for (int i = 0; i < stars.size(); i++)
+    {
+        delete stars[i];
+    }
 }
 
 void Background::render()
 {
     CV::clear(backColor[0], backColor[1], backColor[2]);
+    renderStars();
     CV::color(lineColor[0], lineColor[1], lineColor[2]);
     leftCurve->moveY(renderY);
     rightCurve->moveY(renderY);
@@ -75,4 +86,24 @@ bool Background::checkCollision(Vector2 point, int hitBoxRadius)
 void Background::moveY(int y)
 {
     renderY = y - offsetY;
+}
+
+void Background::createStars(int numStars)
+{
+    for(int i = 0; i < numStars; i++)
+    {
+        int x = rand() % screenWidth;
+        int y = rand() % screenHeight;
+        int radius = rand() % 2 + 1;
+        stars.push_back(new Star(x, y, radius));
+    }
+}
+
+void Background::renderStars()
+{
+    for(int i = 0; i < stars.size(); i++)
+    {
+        stars[i]->render();
+        stars[i]->naturalMove(screenHeight);
+    }
 }

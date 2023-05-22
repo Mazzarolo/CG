@@ -19,3 +19,11 @@ float Clock::getDeltaTime()
 {
     return deltaTime;
 }
+
+void Clock::printFPS(int x, int y)
+{
+    char fps[10];
+    sprintf(fps, "FPS: %.1f", 1 / getDeltaTime());
+    CV::color(1, 1, 1);
+    CV::text(x, y, fps);
+}

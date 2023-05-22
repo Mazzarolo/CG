@@ -89,7 +89,7 @@
 
 1680114778 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\vector2.h
 
-1684703027 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
+1684722644 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -273,13 +273,14 @@
 	<math.h>
 	<stdio.h>
 
-1684701476 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1684721986 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
-1684701469 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
+1684716005 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
 	<time.h>
 	<stdlib.h>
 	"../Lib/gl_canvas2d.h"
+	"Star.h"
 	"Bitmap.h"
 	"Bezier.h"
 
@@ -291,23 +292,23 @@
 1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684698205 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684716450 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684694840 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684716444 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
 	"Bitmap.h"
 	<vector>
 
-1684693774 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684726051 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
-1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+1684726022 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684698858 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684723416 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -316,7 +317,7 @@
 	"../Tools/Input.h"
 	"../Objects/Bitmap.h"
 
-1684451181 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
+1684725640 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.h
 	"../Tools/Input.h"
 
 1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
@@ -326,18 +327,20 @@
 	<vector>
 	<functional>
 
-1684528895 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.cpp
+1684725650 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scene.cpp
 	"Scene.h"
 	<stdio.h>
 
-1684528895 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
+1684725519 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
 	"GameScene.h"
+	"MenuScene.h"
 	"../Tools/Clock.h"
 
-1684475970 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.h
+1684712494 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.h
 	<chrono>
+	"../Lib/gl_canvas2d.h"
 
-1684475974 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
+1684712521 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
 	"Clock.h"
 
 1684519271 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
@@ -380,4 +383,37 @@
 	<stdlib.h>
 	<string.h>
 	"../Lib/gl_canvas2d.h"
+
+1684716156 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.h
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Clock.h"
+	"player.h"
+
+1684716459 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
+	"Star.h"
+
+1684721457 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.cpp
+	"Button.h"
+
+1684719183 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.h
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Input.h"
+	<functional>
+
+1684719691 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
+	"SpriteButton.h"
+
+1684719077 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.h
+	<vector>
+	"Button.h"
+	"../Objects/Bitmap.h"
+
+1684726064 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+	"MenuScene.h"
+
+1684720964 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.h
+	<vector>
+	"../Lib/gl_canvas2d.h"
+	"Scene.h"
+	"../UI/SpriteButton.h"
 

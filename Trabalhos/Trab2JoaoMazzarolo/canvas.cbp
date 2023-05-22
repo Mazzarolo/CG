@@ -54,8 +54,12 @@
 		<Unit filename="src/Objects/Bitmap.h" />
 		<Unit filename="src/Objects/Player.cpp" />
 		<Unit filename="src/Objects/Player.h" />
+		<Unit filename="src/Objects/Star.cpp" />
+		<Unit filename="src/Objects/Star.h" />
 		<Unit filename="src/Scenes/GameScene.cpp" />
 		<Unit filename="src/Scenes/GameScene.h" />
+		<Unit filename="src/Scenes/MenuScene.cpp" />
+		<Unit filename="src/Scenes/MenuScene.h" />
 		<Unit filename="src/Scenes/Scene.cpp" />
 		<Unit filename="src/Scenes/Scene.h" />
 		<Unit filename="src/Scenes/SceneManager.cpp" />
@@ -67,6 +71,10 @@
 		<Unit filename="src/Tools/Collisions.h" />
 		<Unit filename="src/Tools/Input.cpp" />
 		<Unit filename="src/Tools/Input.h" />
+		<Unit filename="src/UI/Button.cpp" />
+		<Unit filename="src/UI/Button.h" />
+		<Unit filename="src/UI/SpriteButton.cpp" />
+		<Unit filename="src/UI/SpriteButton.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -2,6 +2,7 @@
 #define CLOCK_H
 
 #include <chrono>
+#include "../Lib/gl_canvas2d.h"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ private:
 
 protected:
     float getDeltaTime();
+
+    void printFPS(int x, int y);
 
 public:
     Clock();

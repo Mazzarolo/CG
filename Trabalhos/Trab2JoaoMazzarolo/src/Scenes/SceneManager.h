@@ -2,6 +2,7 @@
 #define SCENEMANAGER_H
 
 #include "GameScene.h"
+#include "MenuScene.h"
 #include "../Tools/Clock.h"
 
 using namespace std;
@@ -9,7 +10,10 @@ using namespace std;
 class SceneManager
 {
 private:
+    int screenWidth, screenHeight;
     Scene* currentScene;
+    GameScene* gameScene;
+    MenuScene* menuScene;
     Clock* clock;
 
 public:
