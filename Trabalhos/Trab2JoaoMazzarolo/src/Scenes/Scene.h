@@ -18,6 +18,8 @@ public:
     
     int getNextScene();
 
+    virtual void reset() { };
+
     void setNexScene(int nextScene);
 };
 

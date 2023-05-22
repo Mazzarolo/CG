@@ -22,6 +22,8 @@ public:
 
     ~GameScene();
 
+    void reset();
+
     void render();
 
 private:

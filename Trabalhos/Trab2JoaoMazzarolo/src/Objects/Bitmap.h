@@ -60,6 +60,8 @@ public:
 
     int getHeight();
 
+    void moveX(int x);
+
 private:
     bool read(unsigned char* memory);
 };

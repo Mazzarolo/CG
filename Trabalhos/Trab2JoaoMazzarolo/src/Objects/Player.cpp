@@ -2,11 +2,15 @@
 
 Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 {
+    gun = new Gun(screenWidth / 2, startY, screenHeight);
     center = Vector2(screenWidth / 2, startY);
     sprite = new Animation(5, 2, 10, 0.1f);
     sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Ship.bmp");
     sprite->setPosition(-sprite->getWidth() / 2, -sprite->getHeight() / 2);
-    hitBoxRadius = 23;
+    hearth = new Bitmap();
+    hearth->load("Trab2JoaoMazzarolo\\src\\Images\\Health.bmp");
+    hearth->setPosition(10, screenHeight - hearth->getHeight() - 10);
+    hitBoxRadius = 18;
     speed = 300;
     cameraSpeed = 100;
     left = right = top = false;
@@ -14,6 +18,8 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     maxY = curveHeight - startY;
     color[0] = 1;
     color[1] = color[2] = 0;
+    shooting = false;
+    life = 3;
 }
 
 Player::~Player()
@@ -25,11 +31,15 @@ void Player::render()
 {
     move();
 
+    gunControl();
+
     CV::translate(center.x, fixedY);
 
     sprite->render();
 
     CV::translate(0, 0);
+
+    renderHealth();
 }
 
 void Player::onKeyboardDown()
@@ -44,6 +54,9 @@ void Player::onKeyboardDown()
             break;
         case 100:
             right = true;
+            break;
+        case 32:
+            shooting = true;
             break;
     }
 }
@@ -60,6 +73,9 @@ void Player::onKeyboardUp()
             break;
         case 100:
             right = false;
+            break;
+        case 32:
+            shooting = false;
             break;
     }
 }
@@ -99,4 +115,43 @@ void Player::setX(int x)
 int Player::getHitBoxRadius()
 {
     return hitBoxRadius;
+}
+
+void Player::reset(int x)
+{
+    center.x = x;
+    center.y = fixedY;
+    life = 3;
+    gun->reset();
+}
+
+void Player::gunControl()
+{
+    gun->moveX(center.x);
+
+    if(shooting)
+        gun->shoot();
+    
+    gun->moveX(center.x);
+
+    gun->render();
+}
+
+void Player::renderHealth()
+{
+    for (int i = 0; i < life; i++)
+    {
+        hearth->render();
+        hearth->moveX(hearth->getWidth() + 10);
+    }
+    hearth->moveX(-hearth->getWidth() * life - 10 * life);
+}
+
+bool Player::takeDamage()
+{
+    life--;
+    if(life <= 0)
+        return true;
+    else
+        return false;
 }

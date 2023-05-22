@@ -24,5 +24,6 @@ void SceneManager::update()
     {
         currentScene->setNexScene(-1);
         currentScene = gameScene;
+        currentScene->reset();
     }
 }

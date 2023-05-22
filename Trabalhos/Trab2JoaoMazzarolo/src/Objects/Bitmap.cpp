@@ -111,3 +111,8 @@ int Bitmap::getHeight()
 {
     return dibHeader.pixelHeight;
 }
+
+void Bitmap::moveX(int x)
+{
+    position.x += x;
+}

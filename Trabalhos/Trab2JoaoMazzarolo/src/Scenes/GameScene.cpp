@@ -16,6 +16,10 @@ void GameScene::render()
     if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()))
     {
         player->setX(screenWidth / 2);
+        if(player->takeDamage())
+        {
+            nextScene = 0;
+        }
     }
     printFPS(10, screenHeight - 20);
 }
@@ -34,4 +38,9 @@ void GameScene::onKeyboardUp()
             nextScene = 0;
             break;
     }
+}
+
+void GameScene::reset()
+{
+    player->reset(screenWidth / 2);
 }
