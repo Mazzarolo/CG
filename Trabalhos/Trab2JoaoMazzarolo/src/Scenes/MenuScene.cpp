@@ -42,7 +42,7 @@ void MenuScene::render()
 {
     CV::clear(0.1, 0.1, 0.2);
     title->render();
-    printFPS(10, screenHeight - 20);
+    printFPS(10, 10);
     for(int i = 0; i < buttons.size(); i++)
     {
         buttons[i]->render();

@@ -31,7 +31,7 @@ void keyboard(int key)
 
 void keyboardUp(int key)
 {
-    printf("\nLiberou: %d" , key);
+    //printf("\nLiberou: %d" , key);
     input->setKeyUp(key);
 }
 
@@ -45,6 +45,7 @@ int main(void)
 {
     CV::init(&screenWidth, &screenHeight, "Nave Gamer");
 
+    //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Test.wav"), NULL, SND_ASYNC);
     sceneManager = new SceneManager(screenWidth, screenHeight);
     input = new Input();
 

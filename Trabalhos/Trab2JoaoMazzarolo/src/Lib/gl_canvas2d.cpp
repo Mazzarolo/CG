@@ -140,6 +140,16 @@ void CV::text(float x, float y, const char *t)
     }
 }
 
+void CV::textTitle(float x, float y, const char *t)
+{
+    int tam = (int)strlen(t);
+    for(int c=0; c < tam; c++)
+    {
+      glRasterPos2i(x + c*10, y);
+      glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, t[c]);
+    }
+}
+
 void CV::clear(float r, float g, float b)
 {
    glClearColor( r, g, b, 1 );

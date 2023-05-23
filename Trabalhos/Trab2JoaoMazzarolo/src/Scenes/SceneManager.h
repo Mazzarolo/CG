@@ -1,6 +1,8 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
+#include <windows.h>
+#include <mmsystem.h>
 #include "GameScene.h"
 #include "MenuScene.h"
 #include "../Tools/Clock.h"

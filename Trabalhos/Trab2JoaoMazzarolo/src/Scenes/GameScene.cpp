@@ -21,7 +21,7 @@ void GameScene::render()
             nextScene = 0;
         }
     }
-    printFPS(10, screenHeight - 20);
+    printFPS(10, 10);
 }
 
 GameScene::~GameScene()

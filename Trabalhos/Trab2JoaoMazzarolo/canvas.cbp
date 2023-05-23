@@ -39,6 +39,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
+			<Add option="-lwinmm" />
 			<Add library="../lib/libglu32.a" />
 			<Add library="../lib/libopengl32.a" />
 			<Add library="../lib/freeglut.lib" />

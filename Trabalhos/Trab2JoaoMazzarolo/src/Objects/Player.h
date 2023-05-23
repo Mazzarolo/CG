@@ -7,6 +7,8 @@
 #include "../Tools/Clock.h"
 #include "Animation.h"
 #include <vector>
+#include <windows.h>
+#include <mmsystem.h>
 
 using namespace std;
 
@@ -15,12 +17,15 @@ class Player : public Input, public Clock
 private:
     Gun* gun;
     Animation* sprite;
+    Animation* coins;
+    Animation* explosion;
     Bitmap* hearth;
     Vector2 center;
-    int life;
+    Vector2 scorePosition;
+    int life, score;
     int hitBoxRadius;
     int color[3];
-    float invincibleTime, invincbleTimeCounter;    
+    float invincibleTime, invincibleTimeCounter, invincibleBlinkTime, invincibleBlinkTimeCounter;    
     float speed, cameraSpeed;
     bool left, right, top, shooting;
     int fixedY, maxY;
@@ -53,7 +58,7 @@ public:
 private:
     void gunControl();
 
-    void renderHealth();
+    void renderStats();
 
     void renderSprite();
 };
