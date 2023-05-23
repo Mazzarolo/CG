@@ -10,17 +10,25 @@ Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, 
     this->color[2] = color[2];
     this->sprite = sprite;
     this->dead = false;
-    gun = new Gun(screenWidth / 2, screenHeight, screenHeight, 0.5f, -400);
+    life = 3;
+    gun = new Gun(x, y, screenHeight, 0.5f, -400);
+    srand(time(NULL));
+}
+
+Enemy::~Enemy()
+{
+    delete gun;
 }
 
 void Enemy::render()
 {
     move();
 
+    gun->shoot();
+    gun->render();
+
     sprite->setPosition(position.x - sprite->getWidth() / 2, position.y - sprite->getHeight() / 2);
     sprite->render();
-
-    gun->render();
 }
 
 void Enemy::move()
@@ -32,10 +40,28 @@ void Enemy::move()
     }
     position.y += speed * getDeltaTime();
 
-    gun->moveX(position.x);
+    gun->move(position.x, position.y);
 }
 
 bool Enemy::isDead()
 {
     return dead;
+}
+
+bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun)
+{
+    bool hit = false;
+
+    if (Collisions::circleCircle(position, hitBoxRadius, PlayerPosition, playerRadius) || gun->verifyCollision(PlayerPosition, playerRadius))
+    {
+        hit = true;
+    }
+
+    if(playerGun->verifyCollision(position, hitBoxRadius))
+        life--;
+
+    if(life <= 0)
+        dead = true;
+
+    return hit;
 }

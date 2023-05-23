@@ -6,14 +6,25 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     int startY = screenHeight / 7;
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
+    enemiesManager = new EnemiesManager(screenWidth, screenHeight);
 }
 
 void GameScene::render()
 {
     background->render();
+    enemiesManager->render();
     player->render();
     background->moveY(player->getY());
-    if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()))
+
+    if(enemiesManager->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
+    {
+        if(player->takeDamage())
+        {
+            ending = true;
+        }
+    }
+
+    if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()) || enemiesManager->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
     {
         if(player->takeDamage(screenWidth / 2))
         {
@@ -49,6 +60,7 @@ void GameScene::onKeyboardUp()
 void GameScene::reset()
 {
     player->reset(screenWidth / 2);
+    enemiesManager->reset();
     resetStopWatch();
     ending = false;
     endTime = 3;

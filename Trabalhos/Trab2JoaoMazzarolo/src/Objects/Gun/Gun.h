@@ -3,6 +3,7 @@
 
 #include "Projectile.h"
 #include "../../Tools/Clock.h"
+#include "../../Tools/Collisions.h"
 #include <vector>
 
 using namespace std;
@@ -26,7 +27,11 @@ public:
 
     void moveX(int x);
 
+    void move(int x, int y);
+
     void reset();
+
+    bool verifyCollision(Vector2 position, int radius);
 };
 
 #endif // GUN_H

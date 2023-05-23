@@ -21,6 +21,10 @@ public:
     void move();
 
     int getY();
+
+    int getRadius();
+
+    Vector2 getPosition();
 };
 
 #endif // PROJECTILE_H

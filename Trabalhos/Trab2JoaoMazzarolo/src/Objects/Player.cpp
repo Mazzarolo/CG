@@ -221,6 +221,24 @@ bool Player::takeDamage(int x)
     }
 }
 
+bool Player::takeDamage()
+{
+    if(invincibleTimeCounter < invincibleTime)
+    {
+        return false;
+    }
+    //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Zap.wav"), NULL, SND_ASYNC);
+    life--;
+
+    invincibleTimeCounter = 0;
+    if(life <= 0)
+        return true;
+    else
+    {
+        return false;
+    }
+}
+
 void Player::renderSprite()
 {
     if(life <= 0)
@@ -257,4 +275,9 @@ void Player::verifyChanges()
         cameraSpeed += cameraSpeedChanger;
         scoreMultiplier += scoreChanger;
     }
+}
+
+Gun* Player::getGun()
+{
+    return gun;
 }

@@ -7,6 +7,7 @@ Gun::Gun(int x, int y, int screenHeight)
     limitY = screenHeight;
     speed = 500;
     shootRate = 0.5;
+    shootRateCounter = 0;
 }
 
 Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
@@ -16,6 +17,7 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
     limitY = screenHeight;
     this->speed = speed;
     this->shootRate = shootRate;
+    shootRateCounter = 0;
 }
 
 void Gun::shoot()
@@ -53,4 +55,27 @@ void Gun::reset()
         delete projectiles[i];
     }
     projectiles.clear();
+}
+
+bool Gun::verifyCollision(Vector2 position, int radius)
+{
+    bool hit = false;
+
+    for (int i = 0; i < projectiles.size(); i++)
+    {
+        if (Collisions::circleCircle(projectiles[i]->getPosition(), projectiles[i]->getRadius(), position, radius))
+        {
+            delete projectiles[i];
+            projectiles.erase(projectiles.begin() + i);
+            hit = true;
+        }
+    }
+
+    return hit;
+}
+
+void Gun::move(int x, int y)
+{
+    position.x = x;
+    position.y = y;
 }

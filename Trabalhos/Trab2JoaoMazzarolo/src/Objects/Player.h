@@ -54,8 +54,11 @@ public:
     int getHitBoxRadius();
 
     bool takeDamage(int x);
+    bool takeDamage();
 
     void reset(int x);
+
+    Gun* getGun();
 
 private:
     void gunControl();

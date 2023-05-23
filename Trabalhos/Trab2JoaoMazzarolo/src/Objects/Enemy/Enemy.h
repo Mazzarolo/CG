@@ -12,6 +12,7 @@ protected:
     Animation* sprite;
     Gun* gun;
     Vector2 position;
+    int life;
     int hitBoxRadius;
     int color[3];
     float speed;
@@ -27,6 +28,8 @@ public:
     void move();
 
     bool isDead();
+
+    bool verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun);
 };
 
 #endif // ENEMY_H

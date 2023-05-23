@@ -12,6 +12,7 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
     this->colorBorder[0] = colorBorder[0];
     this->colorBorder[1] = colorBorder[1];
     this->colorBorder[2] = colorBorder[2];
+    //printf("%.f %.f\n", position.x, position.y);
 }
 
 void Projectile::render()
@@ -30,4 +31,14 @@ void Projectile::move()
 int Projectile::getY()
 {
     return position.y;
+}
+
+int Projectile::getRadius()
+{
+    return radius;
+}
+
+Vector2 Projectile::getPosition()
+{
+    return position;
 }

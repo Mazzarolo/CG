@@ -3,20 +3,27 @@
 
 #include <vector>
 #include "Enemy.h"
+#include "../../Tools/Clock.h"
 #include "../../Lib/gl_canvas2d.h"
 
-class EnemiesManager
+class EnemiesManager : public Clock
 {
 private:
     vector<Enemy*> enemies;
     vector<Animation*> sprites;
     int screenWidth, screenHeight;
-    int spawnTime, spawnTimeCounter;
+    float spawnTime, spawnTimeCounter;
 
-private:
+public:
     EnemiesManager(int screenWidth, int screenHeight);
 
+    void reset();
+
     void render();
+
+    void spawn();
+
+    bool verifyCollision(Vector2 playerPosition, int playerRadius, Gun* playerGun);
 };
 
 #endif // ENEMIESMANAGER_H
