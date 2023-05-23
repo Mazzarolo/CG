@@ -40,3 +40,15 @@ void Animation::render()
 
     timer += getDeltaTime();
 }
+
+Animation* Animation::clone()
+{
+    Animation* clone = new Animation(numColumns, numRows, numFrames, frameTime);
+    clone->position = position;
+    clone->header = header;
+    clone->dibHeader = dibHeader;
+    clone->pixelInfo = pixelInfo;
+    clone->pixels = new BitmapPixel[pixelInfo.arraySize];
+    memcpy(clone->pixels, pixels, pixelInfo.arraySize * sizeof(BitmapPixel));
+    return clone;
+}

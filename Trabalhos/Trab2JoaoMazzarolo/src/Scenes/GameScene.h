@@ -16,6 +16,8 @@ class GameScene : public Scene
 private:
     Player* player;
     Background* background;
+    bool ending;
+    float endTime, endTimeCounter;
 
 public:
     GameScene(int screenWidth, int screenHeight);
@@ -28,6 +30,8 @@ public:
 
 private:
     void onKeyboardUp();
+
+    void endGame();
 
 };
 

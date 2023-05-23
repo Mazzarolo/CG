@@ -16,6 +16,8 @@ public:
     Animation(int numColumns, int numRows, int numFrames, float frameTime);
 
     void render();
+
+    Animation* clone();
 };
 
 #endif // ANIMATION_H

@@ -116,3 +116,15 @@ void Bitmap::moveX(int x)
 {
     position.x += x;
 }
+
+Bitmap* Bitmap::clone()
+{
+    Bitmap* clone = new Bitmap();
+    clone->position = position;
+    clone->header = header;
+    clone->dibHeader = dibHeader;
+    clone->pixelInfo = pixelInfo;
+    clone->pixels = new BitmapPixel[pixelInfo.arraySize];
+    memcpy(clone->pixels, pixels, pixelInfo.arraySize * sizeof(BitmapPixel));
+    return clone;
+}

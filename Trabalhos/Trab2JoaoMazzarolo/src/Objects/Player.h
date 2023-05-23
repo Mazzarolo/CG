@@ -53,7 +53,7 @@ public:
 
     int getHitBoxRadius();
 
-    bool takeDamage();
+    bool takeDamage(int x);
 
     void reset(int x);
 

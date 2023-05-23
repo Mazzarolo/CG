@@ -62,6 +62,8 @@ public:
 
     void moveX(int x);
 
+    virtual Bitmap* clone();
+
 private:
     bool read(unsigned char* memory);
 };

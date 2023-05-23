@@ -16,6 +16,10 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     coins->load("Trab2JoaoMazzarolo\\src\\Images\\Coin.bmp");
     coins->setPosition(-coins->getWidth() / 2 + 30, screenHeight - hearth->getHeight() * 2);
 
+    explosion = new Animation(5, 1, 5, 0.1f);
+    explosion->load("Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
+    explosion->setPosition(-explosion->getWidth() / 2, -explosion->getHeight() / 2);
+
     gun = new Gun(screenWidth / 2, startY, screenHeight);
 
     hitBoxRadius = 18;
@@ -30,11 +34,11 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     life = 3;
     score = 0;
     scorePosition = Vector2(60, screenHeight - 85);
-    scoreTime = scoreTimeCounter = 0.1f;
+    scoreTime = scoreTimeCounter = 0.01f;
     changingTime = 30;
     changingTimeCounter = 0;
     invincibleTime = invincibleTimeCounter = 1.0f;
-    invincibleBlinkTime = invincibleBlinkTimeCounter = 0.1f;
+    invincibleBlinkTime = invincibleBlinkTimeCounter = 0.01f;
     scoreMultiplier = scoreChanger = 10;
 }
 
@@ -45,13 +49,14 @@ Player::~Player()
 
 void Player::render()
 {
-    move();
+    if(life > 0)
+    {
+        move();
 
-    printf("%.f\n", changingTime);
+        verifyChanges();
 
-    verifyChanges();
-
-    gunControl();
+        gunControl();
+    }
 
     CV::translate(center.x, fixedY);
 
@@ -143,8 +148,8 @@ void Player::reset(int x)
     center.y = fixedY;
     life = 3;
     gun->reset();
-    invincibleTime = invincibleTimeCounter = 1.0f;
-    invincibleBlinkTime = invincibleBlinkTimeCounter = 0.1f;
+    invincibleTimeCounter = invincibleTime;
+    invincibleBlinkTimeCounter = invincibleBlinkTime;
     score = 0;
     scoreTime = scoreTimeCounter = 0.1f;
     changingTimeCounter = 0;
@@ -173,14 +178,17 @@ void Player::renderStats()
     CV::color(1, 1, 1);
     CV::textTitle(scorePosition.x, scorePosition.y, scoreText);
 
-    if(scoreTimeCounter < scoreTime)
+    if (life > 0)
     {
-        scoreTimeCounter += getDeltaTime();
-    }
-    else
-    {
-        scoreTimeCounter = 0;
-        score += scoreMultiplier;
+        if(scoreTimeCounter < scoreTime)
+        {
+            scoreTimeCounter += getDeltaTime();
+        }
+        else
+        {
+            scoreTimeCounter = 0;
+            score += scoreMultiplier;
+        }
     }
 
     for (int i = 0; i < life; i++)
@@ -192,21 +200,35 @@ void Player::renderStats()
     hearth->moveX(-hearth->getWidth() * life - 10 * life);
 }
 
-bool Player::takeDamage()
+bool Player::takeDamage(int x)
 {
     if(invincibleTimeCounter < invincibleTime)
+    {
+        if(life > 0)
+            center.x = x;
         return false;
+    }
     //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Zap.wav"), NULL, SND_ASYNC);
     life--;
+
     invincibleTimeCounter = 0;
     if(life <= 0)
         return true;
     else
+    {
+        center.x = x;
         return false;
+    }
 }
 
 void Player::renderSprite()
 {
+    if(life <= 0)
+    {
+        explosion->render();
+        return;
+    }
+
     if(invincibleTimeCounter < invincibleTime)
     {
         if(invincibleBlinkTimeCounter > invincibleBlinkTime)

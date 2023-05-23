@@ -15,12 +15,17 @@ void GameScene::render()
     background->moveY(player->getY());
     if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()))
     {
-        player->setX(screenWidth / 2);
-        if(player->takeDamage())
+        if(player->takeDamage(screenWidth / 2))
         {
-            nextScene = 0;
+            ending = true;
         }
     }
+
+    if (ending)
+    {
+        endGame();
+    }
+
     printFPS(10, 10);
     printStopWatch(10, 25);
 }
@@ -45,4 +50,16 @@ void GameScene::reset()
 {
     player->reset(screenWidth / 2);
     resetStopWatch();
+    ending = false;
+    endTime = 3;
+    endTimeCounter = 0;
+}
+
+void GameScene::endGame()
+{
+    endTimeCounter += getDeltaTime();
+    if(endTimeCounter >= endTime)
+    {
+        nextScene = 0;
+    }
 }

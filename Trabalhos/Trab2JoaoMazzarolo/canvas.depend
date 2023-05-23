@@ -230,10 +230,10 @@
 1684775248 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684856490 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684867768 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684847737 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1684867934 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"Gun/Gun.h"
 	"../Tools/Input.h"
@@ -264,7 +264,7 @@
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
 
-1684847057 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684864742 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
 1684780846 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
@@ -370,7 +370,7 @@
 	"MenuScene.h"
 	"../Tools/Clock.h"
 
-1684780106 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684864517 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -449,11 +449,11 @@
 	"Bitmap.h"
 	"../Tools/Clock.h"
 
-1684775248 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.h
+1684867315 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.h
 	"Bitmap.h"
 	"../Tools/Clock.h"
 
-1684788621 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
+1684866994 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -484,10 +484,10 @@
 	"../Tools/Input.h"
 	<functional>
 
-1684775248 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.cpp
+1684867857 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.cpp
 	"Animation.h"
 
-1684788662 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
+1684867835 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
 1684789222 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
