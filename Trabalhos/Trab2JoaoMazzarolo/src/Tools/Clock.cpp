@@ -1,6 +1,7 @@
 #include "Clock.h"
 
 float Clock::deltaTime = 0;
+float Clock::stopWatch = 0;
 
 Clock::Clock()
 {
@@ -13,6 +14,8 @@ void Clock::tic()
     chrono::duration<float> time = currentFrame - lastFrame;
     deltaTime = time.count();
     lastFrame = currentFrame;
+
+    stopWatch += deltaTime;
 }
 
 float Clock::getDeltaTime()
@@ -23,7 +26,25 @@ float Clock::getDeltaTime()
 void Clock::printFPS(int x, int y)
 {
     char fps[10];
-    sprintf(fps, "FPS: %.1f", 1 / getDeltaTime());
+    sprintf(fps, "FPS: %.f", 1 / getDeltaTime());
     CV::color(1, 1, 1);
     CV::text(x, y, fps);
+}
+
+void Clock::resetStopWatch()
+{
+    stopWatch = 0;
+}
+
+float Clock::getStopWatch()
+{
+    return stopWatch;
+}
+
+void Clock::printStopWatch(int x, int y)
+{
+    char sw[10];
+    sprintf(sw, "Time:%.f", getStopWatch());
+    CV::color(1, 1, 1);
+    CV::text(x, y, sw);
 }

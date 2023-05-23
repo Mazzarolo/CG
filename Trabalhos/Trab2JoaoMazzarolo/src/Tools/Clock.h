@@ -13,10 +13,18 @@ private:
 
     static float deltaTime;
 
+    static float stopWatch;
+
 protected:
     float getDeltaTime();
 
     void printFPS(int x, int y);
+
+    void printStopWatch(int x, int y);
+
+    void resetStopWatch();
+
+    float getStopWatch();
 
 public:
     Clock();

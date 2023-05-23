@@ -22,10 +22,12 @@ private:
     Bitmap* hearth;
     Vector2 center;
     Vector2 scorePosition;
-    int life, score;
+    int life, score, scoreMultiplier, scoreChanger, cameraSpeedChanger;
     int hitBoxRadius;
     int color[3];
-    float invincibleTime, invincibleTimeCounter, invincibleBlinkTime, invincibleBlinkTimeCounter;    
+    float invincibleTime, invincibleTimeCounter, invincibleBlinkTime, invincibleBlinkTimeCounter;
+    float scoreTime, scoreTimeCounter;
+    float changingTime, changingTimeCounter;
     float speed, cameraSpeed;
     bool left, right, top, shooting;
     int fixedY, maxY;
@@ -61,6 +63,8 @@ private:
     void renderStats();
 
     void renderSprite();
+
+    void verifyChanges();
 };
 
 #endif // PLAYER_H

@@ -20,7 +20,7 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
 
     hitBoxRadius = 18;
     speed = 300;
-    cameraSpeed = 100;
+    cameraSpeed = cameraSpeedChanger = 100;
     left = right = top = false;
     fixedY = startY;
     maxY = curveHeight - startY;
@@ -30,9 +30,12 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     life = 3;
     score = 0;
     scorePosition = Vector2(60, screenHeight - 85);
-
+    scoreTime = scoreTimeCounter = 0.1f;
+    changingTime = 30;
+    changingTimeCounter = 0;
     invincibleTime = invincibleTimeCounter = 1.0f;
     invincibleBlinkTime = invincibleBlinkTimeCounter = 0.1f;
+    scoreMultiplier = scoreChanger = 10;
 }
 
 Player::~Player()
@@ -43,6 +46,10 @@ Player::~Player()
 void Player::render()
 {
     move();
+
+    printf("%.f\n", changingTime);
+
+    verifyChanges();
 
     gunControl();
 
@@ -138,6 +145,11 @@ void Player::reset(int x)
     gun->reset();
     invincibleTime = invincibleTimeCounter = 1.0f;
     invincibleBlinkTime = invincibleBlinkTimeCounter = 0.1f;
+    score = 0;
+    scoreTime = scoreTimeCounter = 0.1f;
+    changingTimeCounter = 0;
+    cameraSpeed = cameraSpeedChanger;
+    scoreMultiplier = scoreChanger;
 }
 
 void Player::gunControl()
@@ -161,7 +173,15 @@ void Player::renderStats()
     CV::color(1, 1, 1);
     CV::textTitle(scorePosition.x, scorePosition.y, scoreText);
 
-    score += 1;
+    if(scoreTimeCounter < scoreTime)
+    {
+        scoreTimeCounter += getDeltaTime();
+    }
+    else
+    {
+        scoreTimeCounter = 0;
+        score += scoreMultiplier;
+    }
 
     for (int i = 0; i < life; i++)
     {
@@ -200,5 +220,19 @@ void Player::renderSprite()
     else
     {
         sprite->render();
+    }
+}
+
+void Player::verifyChanges()
+{
+    if(changingTimeCounter < changingTime)
+    {
+        changingTimeCounter += getDeltaTime();
+    }
+    else
+    {
+        changingTimeCounter = 0;
+        cameraSpeed += cameraSpeedChanger;
+        scoreMultiplier += scoreChanger;
     }
 }

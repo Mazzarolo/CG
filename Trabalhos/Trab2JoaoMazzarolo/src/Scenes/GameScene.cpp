@@ -22,6 +22,7 @@ void GameScene::render()
         }
     }
     printFPS(10, 10);
+    printStopWatch(10, 25);
 }
 
 GameScene::~GameScene()
@@ -43,4 +44,5 @@ void GameScene::onKeyboardUp()
 void GameScene::reset()
 {
     player->reset(screenWidth / 2);
+    resetStopWatch();
 }
