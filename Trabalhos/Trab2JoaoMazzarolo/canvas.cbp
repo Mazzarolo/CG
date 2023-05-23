@@ -55,6 +55,10 @@
 		<Unit filename="src/Objects/Bezier.h" />
 		<Unit filename="src/Objects/Bitmap.cpp" />
 		<Unit filename="src/Objects/Bitmap.h" />
+		<Unit filename="src/Objects/Enemy/EnemiesManager.cpp" />
+		<Unit filename="src/Objects/Enemy/EnemiesManager.h" />
+		<Unit filename="src/Objects/Enemy/Enemy.cpp" />
+		<Unit filename="src/Objects/Enemy/Enemy.h" />
 		<Unit filename="src/Objects/Gun/Gun.cpp" />
 		<Unit filename="src/Objects/Gun/Gun.h" />
 		<Unit filename="src/Objects/Gun/Projectile.cpp" />

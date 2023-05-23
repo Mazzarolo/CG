@@ -18,6 +18,8 @@ private:
 public:
     Gun(int x, int y, int screenHeight);
 
+    Gun(int x, int y, int screenHeight, float shootRate, int speed);
+
     void shoot();
 
     void render();

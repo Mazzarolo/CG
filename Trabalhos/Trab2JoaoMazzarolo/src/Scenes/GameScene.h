@@ -8,6 +8,7 @@
 #include "../Objects/Background.h"
 #include "../Tools/Input.h"
 #include "../Objects/Bitmap.h"
+#include "../Objects/Enemy/EnemiesManager.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ class GameScene : public Scene
 private:
     Player* player;
     Background* background;
+    EnemiesManager* enemiesManager;
     bool ending;
     float endTime, endTimeCounter;
 

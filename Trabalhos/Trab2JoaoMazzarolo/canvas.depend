@@ -230,7 +230,7 @@
 1684775248 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684867768 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1684867929 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
 1684867934 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
@@ -264,7 +264,7 @@
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
 
-1684864742 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1684873292 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
 1684780846 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
@@ -370,7 +370,7 @@
 	"MenuScene.h"
 	"../Tools/Clock.h"
 
-1684864517 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1684871599 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -378,6 +378,7 @@
 	"../Objects/Background.h"
 	"../Tools/Input.h"
 	"../Objects/Bitmap.h"
+	"../Objects/Enemy/EnemiesManager.h"
 
 1684519894 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.h
 	<vector>
@@ -505,10 +506,10 @@
 1684775248 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
 	"SpriteButton.h"
 
-1684788999 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
+1684872811 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
 	"Gun.h"
 
-1684788973 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
+1684872779 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
 	"Projectile.h"
 	"../../Tools/Clock.h"
 	<vector>
@@ -534,4 +535,20 @@
 
 1684798898 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.cpp
 	"Projectile.h"
+
+1684866526 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.h
+	<vector>
+	"../../Lib/gl_canvas2d.h"
+
+1684866794 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
+	"EnemiesManager.h"
+
+1684873510 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+	"Enemy.h"
+
+1684873575 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
+	"../Animation.h"
+	"../Gun/Gun.h"
+	"../../Tools/Clock.h"
+	"../../Lib/gl_canvas2d.h"
 

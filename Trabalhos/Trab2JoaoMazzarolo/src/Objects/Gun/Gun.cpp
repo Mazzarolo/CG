@@ -9,6 +9,15 @@ Gun::Gun(int x, int y, int screenHeight)
     shootRate = 0.5;
 }
 
+Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
+{
+    position.x = x;
+    position.y = y;
+    limitY = screenHeight;
+    this->speed = speed;
+    this->shootRate = shootRate;
+}
+
 void Gun::shoot()
 {
     if (shootRateCounter < shootRate)
