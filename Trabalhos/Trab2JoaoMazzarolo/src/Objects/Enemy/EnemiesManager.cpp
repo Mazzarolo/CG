@@ -15,6 +15,7 @@ EnemiesManager::EnemiesManager(int screenWidth, int screenHeight)
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
     sprites[2]->load("Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy2.bmp");
+    srand(time(NULL));
 }
 
 void EnemiesManager::render()
@@ -40,6 +41,7 @@ void EnemiesManager::spawn()
         spawnTimeCounter = 0;
         int x = screenWidth / 4 + rand() % (screenWidth / 2);
         int y = screenHeight + 100;
+        printf("Enemy spawned at (%d, %d)\n", x, y);
         int hitBoxRadius = 20;
         float speed = 200;
         int color[3] = {1, 0, 0};

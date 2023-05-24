@@ -11,8 +11,7 @@ Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, 
     this->sprite = sprite;
     this->dead = false;
     life = 3;
-    gun = new Gun(x, y, screenHeight, 0.5f, -400);
-    srand(time(NULL));
+    gun = new Gun(x, y, screenHeight, 1.0f, -400);
 }
 
 Enemy::~Enemy()
