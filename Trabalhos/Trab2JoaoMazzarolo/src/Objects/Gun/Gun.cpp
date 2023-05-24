@@ -63,11 +63,14 @@ bool Gun::verifyCollision(Vector2 position, int radius)
 
     for (int i = 0; i < projectiles.size(); i++)
     {
-        if (Collisions::circleCircle(projectiles[i]->getPosition(), projectiles[i]->getRadius(), position, radius))
+        if (Collisions::circleCircle(projectiles[i]->getPosition(), projectiles[i]->getRadius(), position, radius) && !projectiles[i]->getEnded())
+        {
+            projectiles[i]->explode();
+            hit = true;
+        } else if(projectiles[i]->hasEnded())
         {
             delete projectiles[i];
             projectiles.erase(projectiles.begin() + i);
-            hit = true;
         }
     }
 
@@ -78,4 +81,9 @@ void Gun::move(int x, int y)
 {
     position.x = x;
     position.y = y;
+}
+
+bool Gun::isEmpty()
+{
+    return projectiles.empty();
 }

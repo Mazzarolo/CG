@@ -32,6 +32,8 @@ public:
     void reset();
 
     bool verifyCollision(Vector2 position, int radius);
+
+    bool isEmpty();
 };
 
 #endif // GUN_H

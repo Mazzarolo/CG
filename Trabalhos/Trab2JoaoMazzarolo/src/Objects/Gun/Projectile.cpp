@@ -1,5 +1,7 @@
 #include "Projectile.h"
 
+Animation* Projectile::explosionSprite = NULL;
+
 Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder)
 {
     position.x = x;
@@ -12,19 +14,27 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
     this->colorBorder[0] = colorBorder[0];
     this->colorBorder[1] = colorBorder[1];
     this->colorBorder[2] = colorBorder[2];
+    explosionTime = 0.8f;
+    explosionTimeCounter = 0;
+    ended = false;
     //printf("%.f %.f\n", position.x, position.y);
+}
+
+void Projectile::loadExplosionSprite()
+{
+    explosionSprite = new Animation(8, 1, 8, 0.1f);
+    explosionSprite->load("Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ProjectileExplosion.bmp");
 }
 
 void Projectile::render()
 {
-    CV::color(colorCircle[0], colorCircle[1], colorCircle[2]);
-    CV::circleFill(position.x, position.y, radius, 30);
-    CV::color(colorBorder[0], colorBorder[1], colorBorder[2]);
-    CV::circle(position.x, position.y, radius + 2, 30);
+    renderSprite();
 }
 
 void Projectile::move()
 {
+    if(ended)
+        return;
     position.y += speed * getDeltaTime();
 }
 
@@ -41,4 +51,38 @@ int Projectile::getRadius()
 Vector2 Projectile::getPosition()
 {
     return position;
+}
+
+void Projectile::renderSprite()
+{
+    if (!ended)
+    {
+        CV::color(colorCircle[0], colorCircle[1], colorCircle[2]);
+        CV::circleFill(position.x, position.y, radius, 30);
+        CV::color(colorBorder[0], colorBorder[1], colorBorder[2]);
+        CV::circle(position.x, position.y, radius + 2, 30);
+    }
+    else
+    {
+        if(explosionTimeCounter > explosionTime)
+            return;
+        explosionSprite->setPosition(position.x - explosionSprite->getWidth() / 2, position.y - explosionSprite->getHeight() / 2);
+        explosionSprite->render();
+        explosionTimeCounter += getDeltaTime();
+    }
+}
+
+void Projectile::explode()
+{
+    ended = true;
+}
+
+bool Projectile::hasEnded()
+{
+    return ended && explosionTimeCounter >= explosionTime;
+}
+
+bool Projectile::getEnded()
+{
+    return ended;
 }

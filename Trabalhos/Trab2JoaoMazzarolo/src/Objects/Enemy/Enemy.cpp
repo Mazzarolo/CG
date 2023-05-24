@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, float speed, int color[3], Animation* sprite)
+Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, float speed, int color[3], Animation* sprite, Animation* explosion)
 {
     this->position = Vector2(x, y);
     this->hitBoxRadius = hitBoxRadius;
@@ -9,9 +9,12 @@ Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, 
     this->color[1] = color[1];
     this->color[2] = color[2];
     this->sprite = sprite;
+    this->explosion = explosion;
     this->dead = false;
     life = 3;
-    gun = new Gun(x, y, screenHeight, 1.0f, -400);
+    explosionTime = 0.5f;
+    explosionTimeCounter = 0;
+    gun = new Gun(x, y, screenHeight, 0.8f, -300);
 }
 
 Enemy::~Enemy()
@@ -21,13 +24,18 @@ Enemy::~Enemy()
 
 void Enemy::render()
 {
-    move();
+    if(!dead)
+    {
+        move();
 
-    gun->shoot();
+        gun->shoot();
+    }
+
     gun->render();
 
     sprite->setPosition(position.x - sprite->getWidth() / 2, position.y - sprite->getHeight() / 2);
-    sprite->render();
+    
+    renderSprite();
 }
 
 void Enemy::move()
@@ -44,14 +52,19 @@ void Enemy::move()
 
 bool Enemy::isDead()
 {
-    return dead;
+    if(dead && explosionTimeCounter >= explosionTime && gun->isEmpty())
+        return true;
+    else if(position.y < -100)
+        return true;
+    else
+        return false;
 }
 
 bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun)
 {
     bool hit = false;
 
-    if (Collisions::circleCircle(position, hitBoxRadius, PlayerPosition, playerRadius) || gun->verifyCollision(PlayerPosition, playerRadius))
+    if ((Collisions::circleCircle(position, hitBoxRadius, PlayerPosition, playerRadius) && !dead) || gun->verifyCollision(PlayerPosition, playerRadius))
     {
         hit = true;
     }
@@ -63,4 +76,20 @@ bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playe
         dead = true;
 
     return hit;
+}
+
+void Enemy::renderSprite()
+{
+    if(dead)
+    {
+        if(explosionTimeCounter >= explosionTime)
+            return;
+        explosion->setPosition(position.x - explosion->getWidth() / 2, position.y - explosion->getHeight() / 2);
+        explosion->render();
+        explosionTimeCounter += getDeltaTime();
+    }
+    else
+    {
+        sprite->render();
+    }
 }

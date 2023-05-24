@@ -7,6 +7,10 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
     enemiesManager = new EnemiesManager(screenWidth, screenHeight);
+    Projectile::loadExplosionSprite();
+    ending = false;
+    endTime = 3;
+    endTimeCounter = 0;
 }
 
 void GameScene::render()

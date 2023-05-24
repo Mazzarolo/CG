@@ -11,6 +11,7 @@ class EnemiesManager : public Clock
 private:
     vector<Enemy*> enemies;
     vector<Animation*> sprites;
+    Animation* explosion;
     int screenWidth, screenHeight;
     float spawnTime, spawnTimeCounter;
 

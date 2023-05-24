@@ -146,7 +146,7 @@ void Player::reset(int x)
 {
     center.x = x;
     center.y = fixedY;
-    life = 3;
+    life = 10;
     gun->reset();
     invincibleTimeCounter = invincibleTime;
     invincibleBlinkTimeCounter = invincibleBlinkTime;
