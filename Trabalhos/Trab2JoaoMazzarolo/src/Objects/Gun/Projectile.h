@@ -20,6 +20,8 @@ private:
 public:
     Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder);
 
+    virtual ~Projectile() { };
+
     static void loadExplosionSprite();
 
     void render();

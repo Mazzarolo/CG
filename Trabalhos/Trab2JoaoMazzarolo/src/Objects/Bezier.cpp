@@ -3,7 +3,7 @@
 Bezier::Bezier(vector<Vector2> points)
 {
     this->points = points;
-    for (int i = 0; i < points.size(); i++)
+    for (int i = 0; i < (int) points.size(); i++)
     {
         renderPoints.push_back(points[i]);
     }
@@ -51,7 +51,7 @@ bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 
         Vector2 p = lerp(p01, p12, t);
 
-        if (Collisions::circlePoint(player, hitBoxRadius, p)) 
+        if (Collisions::circlePoint(player, hitBoxRadius, p))
         {
             return true;
         }
@@ -62,7 +62,7 @@ bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 
 void Bezier::moveY(int offsetY)
 {
-    for (int i = 0; i < points.size(); i++) {
+    for (int i = 0; i < (int) points.size(); i++) {
         renderPoints[i].y = points[i].y + offsetY;
     }
 }

@@ -42,18 +42,18 @@ void Button::onMouse()
         {
             clicked = true;
         }
-        
+
         if(clicked && state == 1)
         {
             clicked = false;
             selected = false;
             onClick();
         }
-    } 
+    }
     else
     {
         selected = false;
-        if(state = 1 || state == 0)
+        if((state = 1) || (state == 0))
         {
             clicked = false;
         }

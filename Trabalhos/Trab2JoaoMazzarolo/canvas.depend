@@ -287,7 +287,7 @@
 	<math.h>
 	<stdio.h>
 
-1684721986 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1685027453 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
 1684716005 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
@@ -303,13 +303,13 @@
 	"../Tools/Collisions.h"
 	<vector>
 
-1684603315 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
+1685027453 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1684957998 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1685027097 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1684884840 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1685026977 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"Gun/Gun.h"
 	"../Tools/Input.h"
@@ -319,7 +319,7 @@
 	<windows.h>
 	<mmsystem.h>
 
-1684957316 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1685028280 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
 1684799893 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
@@ -402,10 +402,10 @@
 1684879953 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
 	"Collisions.h"
 
-1684877056 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
+1685027453 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
-1684877056 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
+1685026936 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -419,23 +419,23 @@
 1684716459 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
 	"Star.h"
 
-1684721457 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.cpp
+1685026814 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.cpp
 	"Button.h"
 
-1684719183 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.h
+1685026821 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\button.h
 	"../Lib/gl_canvas2d.h"
 	"../Tools/Input.h"
 	<functional>
 
-1684719691 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
+1685026850 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
 	"SpriteButton.h"
 
-1684719077 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.h
+1685026836 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.h
 	<vector>
 	"Button.h"
 	"../Objects/Bitmap.h"
 
-1684800702 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1685027051 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
 1684732137 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.h
@@ -528,15 +528,15 @@
 	"../../Tools/Collisions.h"
 	<vector>
 
-1684957577 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.h
+1685027174 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.h
 	"../../Lib/gl_canvas2d.h"
 	"../../Tools/Clock.h"
 	"../Animation.h"
 
-1684957858 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
+1685027345 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
 	"Gun.h"
 
-1684957918 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.cpp
+1685028236 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.cpp
 	"Projectile.h"
 
 1684866526 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.h
@@ -555,21 +555,41 @@
 	"../../Tools/Clock.h"
 	"../../Lib/gl_canvas2d.h"
 
-1684951643 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.h
+1685029532 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.h
 	<vector>
-	"Enemy.h"
+	"BlockerEnemy.h"
+	"SmallEnemy.h"
+	"SeekerEnemy.h"
 	"../../Tools/Clock.h"
 	"../../Lib/gl_canvas2d.h"
 
-1684952272 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
+1685028963 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
 	"../Animation.h"
 	"../Gun/Gun.h"
 	"../../Tools/Clock.h"
 	"../../Lib/gl_canvas2d.h"
 
-1684953282 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
+1685029833 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
 	"EnemiesManager.h"
 
-1684953464 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+1685029722 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+	"Enemy.h"
+
+1685029755 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\blockerenemy.cpp
+	"BlockerEnemy.h"
+
+1685029440 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\blockerenemy.h
+	"Enemy.h"
+
+1685029762 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\seekerenemy.cpp
+	"SeekerEnemy.h"
+
+1685029367 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\seekerenemy.h
+	"Enemy.h"
+
+1685029299 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\smallenemy.cpp
+	"SmallEnemy.h"
+
+1685029211 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\smallenemy.h
 	"Enemy.h"
 

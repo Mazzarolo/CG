@@ -2,7 +2,7 @@
 
 SpriteButton::SpriteButton(int x, int y, function<void()> onClick, vector<char*> pathToSprites) : Button(x, y, onClick)
 {
-    for(int i = 0; i < pathToSprites.size(); i++)
+    for(int i = 0; i < (int) pathToSprites.size(); i++)
     {
         sprites.push_back(new Bitmap());
         sprites[i]->load(pathToSprites[i]);
@@ -11,6 +11,14 @@ SpriteButton::SpriteButton(int x, int y, function<void()> onClick, vector<char*>
 
     width = sprites[0]->getWidth();
     height = sprites[0]->getHeight();
+}
+
+SpriteButton::~SpriteButton()
+{
+    for(int i = 0; i < (int) sprites.size(); i++)
+    {
+        delete sprites[i];
+    }
 }
 
 void SpriteButton::render()

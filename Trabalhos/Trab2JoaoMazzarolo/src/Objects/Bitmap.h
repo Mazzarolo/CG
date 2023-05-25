@@ -48,7 +48,7 @@ protected:
 public:
     Bitmap();
 
-    ~Bitmap();
+    virtual ~Bitmap();
     
     void load(char* filename);
 

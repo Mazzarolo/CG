@@ -31,7 +31,7 @@ void Gun::shoot()
 void Gun::render()
 {
     shootRateCounter += getDeltaTime();
-    for (int i = 0; i < projectiles.size(); i++)
+    for (int i = 0; i < (int) projectiles.size(); i++)
     {
         projectiles[i]->render();
         projectiles[i]->move();
@@ -50,7 +50,7 @@ void Gun::moveX(int x)
 
 void Gun::reset()
 {
-    for (int i = 0; i < projectiles.size(); i++)
+    for (int i = 0; i < (int) projectiles.size(); i++)
     {
         delete projectiles[i];
     }
@@ -61,7 +61,7 @@ bool Gun::verifyCollision(Vector2 position, int radius)
 {
     bool hit = false;
 
-    for (int i = 0; i < projectiles.size(); i++)
+    for (int i = 0; i < (int) projectiles.size(); i++)
     {
         if (Collisions::circleCircle(projectiles[i]->getPosition(), projectiles[i]->getRadius(), position, radius) && !projectiles[i]->getEnded())
         {

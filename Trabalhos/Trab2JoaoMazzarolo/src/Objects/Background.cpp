@@ -42,7 +42,7 @@ Background::~Background()
 {
     delete leftCurve;
     delete rightCurve;
-    for (int i = 0; i < stars.size(); i++)
+    for (int i = 0; i < (int) stars.size(); i++)
     {
         delete stars[i];
     }
@@ -101,7 +101,7 @@ void Background::createStars(int numStars)
 
 void Background::renderStars()
 {
-    for(int i = 0; i < stars.size(); i++)
+    for(int i = 0; i < (int) stars.size(); i++)
     {
         stars[i]->render();
         stars[i]->naturalMove(screenHeight);

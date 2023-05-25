@@ -1,20 +1,21 @@
 #include "Enemy.h"
 
-Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, float speed, int color[3], Animation* sprite, Animation* explosion)
+Animation* Enemy::explosion = NULL;
+
+Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed)
 {
+    if(explosion == NULL)
+    {
+        explosion = new Animation(5, 1, 5, 0.1f);
+        explosion->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
+    }
+
     this->position = Vector2(x, y);
-    this->hitBoxRadius = hitBoxRadius;
     this->speed = -speed;
-    this->color[0] = color[0];
-    this->color[1] = color[1];
-    this->color[2] = color[2];
-    this->sprite = sprite;
-    this->explosion = explosion;
     this->dead = false;
     life = 3;
     explosionTime = 0.5f;
     explosionTimeCounter = 0;
-    gun = new Gun(x, y, screenHeight, 0.8f, -300);
 }
 
 Enemy::~Enemy()
@@ -35,6 +36,8 @@ void Enemy::render()
 
     sprite->setPosition(position.x - sprite->getWidth() / 2, position.y - sprite->getHeight() / 2);
     
+    //CV::color(1, 0, 0);
+    //CV::circle(position.x, position.y, hitBoxRadius, 30);
     renderSprite();
 }
 

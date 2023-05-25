@@ -10,24 +10,24 @@ class Enemy : public Clock
 {
 protected:
     Animation* sprite;
-    Animation* explosion;
+    static Animation* explosion;
     Gun* gun;
     Vector2 position;
     int life;
     int hitBoxRadius;
-    int color[3];
     float speed;
     float explosionTime, explosionTimeCounter;
     bool dead;
 
-public:
-    Enemy(int screenWidth, int screenHeight, int x, int y, int hitBoxRadius, float speed, int color[3], Animation* sprite, Animation* explosion);
+protected:
+    Enemy(int screenWidth, int screenHeight, int x, int y, float speed);
 
-    ~Enemy();
+public:
+    virtual ~Enemy();
 
     void render();
 
-    void move();
+    virtual void move();
 
     bool isDead();
 

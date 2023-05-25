@@ -2,12 +2,11 @@
 
 GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, screenHeight)
 {
-    int curvesHeight = screenHeight * 3;
+    int curvesHeight = screenHeight * 5;
     int startY = screenHeight / 7;
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
     enemiesManager = new EnemiesManager(screenWidth, screenHeight);
-    Projectile::loadExplosionSprite();
     ending = false;
     endTime = 3;
     endTimeCounter = 0;

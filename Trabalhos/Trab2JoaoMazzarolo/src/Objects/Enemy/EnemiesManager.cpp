@@ -8,16 +8,13 @@ EnemiesManager::EnemiesManager(int screenWidth, int screenHeight)
     spawnTimeCounter = 0;
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
-    sprites[0]->load("Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy0.bmp");
+    sprites[0]->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy0.bmp");
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
-    sprites[1]->load("Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy1.bmp");
+    sprites[1]->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy1.bmp");
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
-    sprites[2]->load("Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy2.bmp");
-
-    explosion = new Animation(5, 1, 5, 0.1f);
-    explosion->load("Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
+    sprites[2]->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Enemies\\Enemy2.bmp");
 
     srand(time(NULL));
 }
@@ -26,7 +23,7 @@ void EnemiesManager::render()
 {
     spawn();
 
-    for(int i = 0; i < enemies.size(); i++)
+    for(int i = 0; i < (int) enemies.size(); i++)
     {
         enemies[i]->render();
         if(enemies[i]->isDead())
@@ -46,17 +43,26 @@ void EnemiesManager::spawn()
         int x = screenWidth / 4 + rand() % (screenWidth / 2);
         int y = screenHeight + 100;
         //printf("Enemy spawned at (%d, %d)\n", x, y);
-        int hitBoxRadius = 20;
         float speed = 150;
-        int color[3] = {1, 0, 0};
-        int spriteIndex = rand() % sprites.size();
-        enemies.push_back(new Enemy(screenWidth, screenHeight, x, y, hitBoxRadius, speed, color, sprites[spriteIndex], explosion));
+        int enemyType = rand() % sprites.size();
+        if (enemyType == 0)
+        {
+            enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+        }
+        else if (enemyType == 1)
+        {
+            enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+        }
+        else if (enemyType == 2)
+        {
+            enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+        }
     }
 }
 
 void EnemiesManager::reset()
 {
-    for(int i = 0; i < enemies.size(); i++)
+    for(int i = 0; i < (int) enemies.size(); i++)
     {
         delete enemies[i];
     }
@@ -68,7 +74,7 @@ void EnemiesManager::reset()
 bool EnemiesManager::verifyCollision(Vector2 playerPosition, int playerRadius, Gun* playerGun)
 {
     bool hit = false;
-    for(int i = 0; i < enemies.size(); i++)
+    for(int i = 0; i < (int) enemies.size(); i++)
     {
         if(enemies[i]->isDead())
         {

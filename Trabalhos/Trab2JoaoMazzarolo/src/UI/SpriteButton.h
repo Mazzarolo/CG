@@ -13,6 +13,8 @@ private:
 public:
     SpriteButton(int x, int y, function<void()> onClick, vector<char*> pathToSprites);
 
+    ~SpriteButton();
+
     void render();
 };
 

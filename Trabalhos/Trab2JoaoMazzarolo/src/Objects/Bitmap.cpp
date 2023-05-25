@@ -17,7 +17,7 @@ bool Bitmap::read(unsigned char* memory)
     memcpy(&header.size, &memory[2], 4);
     memcpy(&header.reserved, &memory[6], 4);
     memcpy(&header.offset, &memory[10], 4);
-    
+
     // Lendo o DIB Header do Bitmap
     memcpy(&dibHeader.size, &memory[14], 4);
     memcpy(&dibHeader.pixelWidth, &memory[18], 4);
@@ -34,13 +34,13 @@ bool Bitmap::read(unsigned char* memory)
     int index = 0;
 
     // Lendo os pixels do bitmap
-    for (int i = 0; i < dibHeader.pixelHeight; i++)
+    for (int i = 0; i < (int) dibHeader.pixelHeight; i++)
     {
         unsigned char* rowData = new unsigned char[pixelInfo.rowSize];
 
         memcpy(rowData, &memory[header.offset + (i * pixelInfo.rowSize)], pixelInfo.rowSize);
 
-        for (int j = 0; j < dibHeader.pixelWidth * 4; j += 4)
+        for (int j = 0; j < (int) dibHeader.pixelWidth * 4; j += 4)
         {
             pixels[index].b = ((float) rowData[j]) / 255.0f;
             pixels[index].g = ((float) rowData[j + 1]) / 255.0f;
@@ -48,10 +48,10 @@ bool Bitmap::read(unsigned char* memory)
             pixels[index].a = ((float) rowData[j + 3]) / 255.0f;
             index++;
         }
-        
+
         delete[] rowData;
     }
-    
+
     return true;
 }
 
@@ -78,21 +78,21 @@ void Bitmap::load(char* filename)
     }
 
     printf("File %s loaded\n", filename);
-    delete[] buffer;   
+    delete[] buffer;
 }
 
 void Bitmap::render()
 {
-    for (int i = 0; i < dibHeader.pixelHeight; i++)
+    for (int i = 0; i < (int) dibHeader.pixelHeight; i++)
     {
-        for (int j = 0; j < dibHeader.pixelWidth; j++)
+        for (int j = 0; j < (int) dibHeader.pixelWidth; j++)
         {
             if(pixels[i * dibHeader.pixelWidth + j].a == 0.0f)
                 continue;
             CV::color(pixels[i * dibHeader.pixelWidth + j].r, pixels[i * dibHeader.pixelWidth + j].g, pixels[i * dibHeader.pixelWidth + j].b);
             CV::point(position.x + j, position.y + i);
         }
-        
+
     }
 }
 

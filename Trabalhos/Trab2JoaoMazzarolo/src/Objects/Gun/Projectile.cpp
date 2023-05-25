@@ -4,6 +4,8 @@ Animation* Projectile::explosionSprite = NULL;
 
 Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder)
 {
+    if (explosionSprite == NULL)
+        loadExplosionSprite();
     position.x = x;
     position.y = y;
     this->radius = radius;
@@ -23,7 +25,7 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
 void Projectile::loadExplosionSprite()
 {
     explosionSprite = new Animation(8, 1, 8, 0.1f);
-    explosionSprite->load("Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ProjectileExplosion.bmp");
+    explosionSprite->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ProjectileExplosion.bmp");
 }
 
 void Projectile::render()

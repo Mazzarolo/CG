@@ -35,7 +35,7 @@ private:
 public:
     Player(int screenWidth, int screenHeight, int startY, int curveHeight);
 
-    ~Player();
+    virtual ~Player();
 
     void render();
 

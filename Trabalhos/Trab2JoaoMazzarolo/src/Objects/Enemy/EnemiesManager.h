@@ -2,7 +2,9 @@
 #define ENEMIESMANAGER_H
 
 #include <vector>
-#include "Enemy.h"
+#include "BlockerEnemy.h"
+#include "SmallEnemy.h"
+#include "SeekerEnemy.h"
 #include "../../Tools/Clock.h"
 #include "../../Lib/gl_canvas2d.h"
 

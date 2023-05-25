@@ -18,6 +18,8 @@ protected:
     Button(int x, int y, int width, int height, function<void()> onClick);
     Button(int x, int y, function<void()> onClick);
 
+    virtual ~Button() { };
+
     virtual void render() = 0;
 
     bool checkCollision();

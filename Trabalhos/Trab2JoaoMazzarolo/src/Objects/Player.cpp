@@ -5,19 +5,19 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     center = Vector2(screenWidth / 2, startY);
 
     sprite = new Animation(5, 2, 10, 0.1f);
-    sprite->load("Trab2JoaoMazzarolo\\src\\Images\\Ship.bmp");
+    sprite->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Ship.bmp");
     sprite->setPosition(-sprite->getWidth() / 2, -sprite->getHeight() / 2);
 
     hearth = new Bitmap();
-    hearth->load("Trab2JoaoMazzarolo\\src\\Images\\Health.bmp");
+    hearth->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Health.bmp");
     hearth->setPosition(10, screenHeight - hearth->getHeight() - 10);
 
     coins = new Animation(9, 1, 9, 0.1f);
-    coins->load("Trab2JoaoMazzarolo\\src\\Images\\Coin.bmp");
+    coins->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Coin.bmp");
     coins->setPosition(-coins->getWidth() / 2 + 30, screenHeight - hearth->getHeight() * 2);
 
     explosion = new Animation(5, 1, 5, 0.1f);
-    explosion->load("Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
+    explosion->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
     explosion->setPosition(-explosion->getWidth() / 2, -explosion->getHeight() / 2);
 
     gun = new Gun(screenWidth / 2, startY, screenHeight);

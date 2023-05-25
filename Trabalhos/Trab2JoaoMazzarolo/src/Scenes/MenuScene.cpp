@@ -7,7 +7,7 @@ MenuScene::MenuScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     int buttonY = 6 * screenHeight / 12;
 
     title = new Bitmap();
-    title->load("Trab2JoaoMazzarolo\\src\\Images\\Title.bmp");
+    title->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Title.bmp");
     title->setPosition(screenWidth / 2 - title->getWidth() / 2, screenHeight / 2 + 150);
 
     vector<char*> pathToSprites;
@@ -32,7 +32,7 @@ MenuScene::MenuScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
 
 MenuScene::~MenuScene()
 {
-    for(int i = 0; i < buttons.size(); i++)
+    for(int i = 0; i < (int) buttons.size(); i++)
     {
         delete buttons[i];
     }
@@ -43,7 +43,7 @@ void MenuScene::render()
     CV::clear(0.1, 0.1, 0.2);
     title->render();
     printFPS(10, 10);
-    for(int i = 0; i < buttons.size(); i++)
+    for(int i = 0; i < (int) buttons.size(); i++)
     {
         buttons[i]->render();
     }
