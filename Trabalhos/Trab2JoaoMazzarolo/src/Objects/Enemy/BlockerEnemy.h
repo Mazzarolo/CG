@@ -10,7 +10,7 @@ public:
 
     virtual ~BlockerEnemy() { };
 
-    void move(bool down);
+    void move(bool accelerating);
 };
 
 #endif // BLOCKER_ENEMY_H

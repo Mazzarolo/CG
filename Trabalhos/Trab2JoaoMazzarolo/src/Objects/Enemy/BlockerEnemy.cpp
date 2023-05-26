@@ -7,7 +7,7 @@ BlockerEnemy::BlockerEnemy(int screenWidth, int screenHeight, int x, int y, floa
     gun = new Gun(x, y, screenHeight, 0.8f, -300);
 }
 
-void BlockerEnemy::move(bool down)
+void BlockerEnemy::move(bool accelerating)
 {
-    Enemy::move(down);
+    Enemy::move(accelerating);
 }

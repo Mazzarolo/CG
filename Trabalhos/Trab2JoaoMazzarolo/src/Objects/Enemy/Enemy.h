@@ -25,9 +25,9 @@ protected:
 public:
     virtual ~Enemy();
 
-    void render(bool down);
+    void render(bool accelerating);
 
-    virtual void move(bool down);
+    virtual void move(bool accelerating);
 
     bool isDead();
 

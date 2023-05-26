@@ -7,7 +7,7 @@ SeekerEnemy::SeekerEnemy(int screenWidth, int screenHeight, int x, int y, float 
     gun = new Gun(x, y, screenHeight, 0.8f, -300);
 }
 
-void SeekerEnemy::move(bool down)
+void SeekerEnemy::move(bool accelerating)
 {
-    Enemy::move(down);
+    Enemy::move(accelerating);
 }

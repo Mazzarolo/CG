@@ -4,7 +4,7 @@ EnemiesManager::EnemiesManager(int screenWidth, int screenHeight)
 {
     this->screenWidth = screenWidth;
     this->screenHeight = screenHeight;
-    spawnTime = 3;
+    spawnTime = 8;
     spawnTimeCounter = 0;
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
@@ -37,7 +37,9 @@ void EnemiesManager::render(int level, bool up)
 void EnemiesManager::spawn(int level)
 {
     spawnTimeCounter += getDeltaTime();
-    if(spawnTimeCounter >= spawnTime)
+    if(level > 6)
+        level = 6;
+    if(spawnTimeCounter >= spawnTime - level * 0.5f)
     {
         spawnTimeCounter = 0;
         int x = rand();
@@ -45,6 +47,7 @@ void EnemiesManager::spawn(int level)
         //printf("Enemy spawned at (%d, %d)\n", x, y);
         float speed = 150;
         int enemyType = rand() % sprites.size();
+        enemyType = 2;
         if (enemyType == 0)
         {
             x = screenWidth / 4 + x % (screenWidth / 2);
@@ -57,11 +60,15 @@ void EnemiesManager::spawn(int level)
         }
         else if (enemyType == 2)
         {
-            x = screenWidth / 2;
-            int num = 1 + level * 2;
+            speed = 75 + level * 10;
+            int distance = screenWidth / 7;
+            int num = level + 1;
+            
+            x = x % (screenWidth - num * distance);
 
             for (int i = 0; i < num; i++)
-                enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x + i * (screenWidth / (2 * num)), y, speed, sprites[enemyType]));
+                enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x + i * distance, y, speed, i * distance,
+                 screenWidth - (num - 1 - i) * distance, rand() % 2, sprites[enemyType]));
         }
     }
 }

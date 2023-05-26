@@ -5,12 +5,16 @@
 
 class SmallEnemy : public Enemy
 {
+private:
+    int minX, maxX;
+    bool right;
+
 public:
-    SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, Animation* sprite);
+    SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, int minX, int maxX, bool right, Animation* sprite);
 
     virtual ~SmallEnemy() { };
 
-    void move(bool down);
+    void move(bool accelerating);
 };
 
 #endif // SMALL_ENEMY_H
