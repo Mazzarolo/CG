@@ -15,6 +15,8 @@ private:
 public:
     Input();
 
+    virtual ~Input();
+
     void setKeyUp(int key);
 
     void setKeyDown(int key);

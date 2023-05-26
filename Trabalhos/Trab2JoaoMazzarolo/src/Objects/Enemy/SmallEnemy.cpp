@@ -7,7 +7,7 @@ SmallEnemy::SmallEnemy(int screenWidth, int screenHeight, int x, int y, float sp
     gun = new Gun(x, y, screenHeight, 0.8f, -300);
 }
 
-void SmallEnemy::move()
+void SmallEnemy::move(bool down)
 {
-    Enemy::move();
+    Enemy::move(down);
 }

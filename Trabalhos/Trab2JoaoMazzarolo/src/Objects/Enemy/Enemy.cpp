@@ -23,16 +23,16 @@ Enemy::~Enemy()
     delete gun;
 }
 
-void Enemy::render()
+void Enemy::render(bool down)
 {
     if(!dead)
     {
-        move();
+        move(down);
 
         gun->shoot();
     }
 
-    gun->render();
+    gun->render(down);
 
     sprite->setPosition(position.x - sprite->getWidth() / 2, position.y - sprite->getHeight() / 2);
     
@@ -41,14 +41,17 @@ void Enemy::render()
     renderSprite();
 }
 
-void Enemy::move()
+void Enemy::move(bool down)
 {
     if(position.y < -100)
     {
         dead = true;
         return;
     }
-    position.y += speed * getDeltaTime();
+    if(down)
+        position.y += 2 * speed * getDeltaTime();
+    else
+        position.y += speed * getDeltaTime();
 
     gun->move(position.x, position.y);
 }

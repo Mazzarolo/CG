@@ -22,9 +22,9 @@ public:
 
     void reset();
 
-    void render();
+    void render(int level, bool up);
 
-    void spawn();
+    void spawn(int level);
 
     bool verifyCollision(Vector2 playerPosition, int playerRadius, Gun* playerGun);
 };

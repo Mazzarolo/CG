@@ -40,6 +40,17 @@ void Projectile::move()
     position.y += speed * getDeltaTime();
 }
 
+void Projectile::move(bool down)
+{
+    if(ended)
+        return;
+    
+    if(down)
+        position.y += 2 * speed * getDeltaTime();
+    else
+        position.y += speed * getDeltaTime();
+}
+
 int Projectile::getY()
 {
     return position.y;

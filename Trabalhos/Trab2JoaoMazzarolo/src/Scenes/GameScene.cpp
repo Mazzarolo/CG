@@ -15,7 +15,7 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
 void GameScene::render()
 {
     background->render();
-    enemiesManager->render();
+    enemiesManager->render(player->getLevel(), player->isUp());
     player->render();
     background->moveY(player->getY());
 
@@ -27,7 +27,7 @@ void GameScene::render()
         }
     }
 
-    if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()) || enemiesManager->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
+    if(background->checkCollision(player->getPosition(), player->getHitBoxRadius()))
     {
         if(player->takeDamage(screenWidth / 2))
         {

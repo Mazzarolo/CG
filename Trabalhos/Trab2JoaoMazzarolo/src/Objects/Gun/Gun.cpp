@@ -43,6 +43,21 @@ void Gun::render()
     }
 }
 
+void Gun::render(bool down)
+{
+    shootRateCounter += getDeltaTime();
+    for (int i = 0; i < (int) projectiles.size(); i++)
+    {
+        projectiles[i]->render();
+        projectiles[i]->move(down);
+        if(projectiles[i]->getY() > limitY + 10 || projectiles[i]->getY() < -10)
+        {
+            delete projectiles[i];
+            projectiles.erase(projectiles.begin() + i);
+        }
+    }
+}
+
 void Gun::moveX(int x)
 {
     position.x = x;

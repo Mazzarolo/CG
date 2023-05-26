@@ -53,6 +53,10 @@ public:
 
     int getHitBoxRadius();
 
+    int getLevel();
+
+    bool isUp();
+
     bool takeDamage(int x);
     bool takeDamage();
 

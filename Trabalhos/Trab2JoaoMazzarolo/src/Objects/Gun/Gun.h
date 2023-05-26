@@ -24,6 +24,7 @@ public:
     void shoot();
 
     void render();
+    void render(bool down);
 
     void moveX(int x);
 

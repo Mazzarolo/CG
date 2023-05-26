@@ -10,7 +10,7 @@ public:
 
     virtual ~SmallEnemy() { };
 
-    void move();
+    void move(bool down);
 };
 
 #endif // SMALL_ENEMY_H

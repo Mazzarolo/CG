@@ -19,13 +19,13 @@ EnemiesManager::EnemiesManager(int screenWidth, int screenHeight)
     srand(time(NULL));
 }
 
-void EnemiesManager::render()
+void EnemiesManager::render(int level, bool up)
 {
-    spawn();
+    spawn(level);
 
     for(int i = 0; i < (int) enemies.size(); i++)
     {
-        enemies[i]->render();
+        enemies[i]->render(up);
         if(enemies[i]->isDead())
         {
             delete enemies[i];
@@ -34,28 +34,34 @@ void EnemiesManager::render()
     }
 }
 
-void EnemiesManager::spawn()
+void EnemiesManager::spawn(int level)
 {
     spawnTimeCounter += getDeltaTime();
     if(spawnTimeCounter >= spawnTime)
     {
         spawnTimeCounter = 0;
-        int x = screenWidth / 4 + rand() % (screenWidth / 2);
+        int x = rand();
         int y = screenHeight + 100;
         //printf("Enemy spawned at (%d, %d)\n", x, y);
         float speed = 150;
         int enemyType = rand() % sprites.size();
         if (enemyType == 0)
         {
+            x = screenWidth / 4 + x % (screenWidth / 2);
             enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
         }
         else if (enemyType == 1)
         {
+            x = screenWidth / 4 + x % (screenWidth / 2);
             enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
         }
         else if (enemyType == 2)
         {
-            enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+            x = screenWidth / 2;
+            int num = 1 + level * 2;
+
+            for (int i = 0; i < num; i++)
+                enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x + i * (screenWidth / (2 * num)), y, speed, sprites[enemyType]));
         }
     }
 }

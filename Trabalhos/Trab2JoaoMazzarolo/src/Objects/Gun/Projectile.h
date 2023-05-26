@@ -27,6 +27,7 @@ public:
     void render();
 
     void move();
+    void move(bool down);
 
     int getY();
 

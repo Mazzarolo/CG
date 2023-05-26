@@ -281,3 +281,13 @@ Gun* Player::getGun()
 {
     return gun;
 }
+
+bool Player::isUp()
+{
+    return top;
+}
+
+int Player::getLevel()
+{
+    return (int) (getStopWatch() / changingTime);
+}

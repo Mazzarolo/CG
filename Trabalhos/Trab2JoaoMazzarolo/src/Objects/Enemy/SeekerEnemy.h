@@ -10,7 +10,7 @@ public:
 
     virtual ~SeekerEnemy() { };
 
-    void move();
+    void move(bool down);
 };
 
 #endif // SEEKER_ENEMY_H

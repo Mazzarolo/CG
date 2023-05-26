@@ -18,6 +18,11 @@ Input::Input()
     addKeyboardListeners([this] {onKeyboardUp();}, [this] {onKeyboardDown();}, [this] {onMouse();});
 }
 
+Input::~Input()
+{
+    
+}
+
 void Input::setKeyUp(int key)
 {
     keyUp = key;
