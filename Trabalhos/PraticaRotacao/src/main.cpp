@@ -1,4 +1,4 @@
-// Atividade de rotação, translação e escalamento de quadrados:
+// Atividade de rotaï¿½ï¿½o, translaï¿½ï¿½o e escalamento de quadrados:
 // Precione 1 para rotacionar o quadrado do centro, e 2 para aumentar a escala do quadrado do canto inferior direito
 
 #include <GL/glut.h>
@@ -20,8 +20,8 @@
 int opcao  = 50;
 int screenWidth = 800, screenHeight = 600; //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
 float vx[] = {-50, 50, 50, -50}, vy[] = {-50, -50, 50, 50}; // Passando os pontos de um quadrado centrado na origem para ser o quadrado original
-float rx[] = {-50, 50, 50, -50}, ry[] = {-50, -50, 50, 50}; // Criando os vetores que vão ser usados na rotação
-float ex[] = {-50, 50, 50, -50}, ey[] = {-50, -50, 50, 50}; // Criando os vetores que vão ser usados na escala
+float rx[] = {-50, 50, 50, -50}, ry[] = {-50, -50, 50, 50}; // Criando os vetores que vï¿½o ser usados na rotaï¿½ï¿½o
+float ex[] = {-50, 50, 50, -50}, ey[] = {-50, -50, 50, 50}; // Criando os vetores que vï¿½o ser usados na escala
 double theta = 3.1415 / 2;
 float startAng = 0;
 
@@ -43,7 +43,7 @@ void scaleFigure(float scale)
     }
 }
 
-// Função translada o quadrado para o valor de x e y escolhido, e o desenha
+// Funï¿½ï¿½o translada o quadrado para o valor de x e y escolhido, e o desenha
 void drawSquare(int x, int y, int color, float *vX, float *vY)
 {
     CV::translate(x, y);
@@ -81,14 +81,14 @@ void drawGear()
     float oldAng = 0;
     float oldR = 100;
     bool up = false;
-    for(float ang = 0, r = 200, i = 0; ang < 2 * 3.14 + 0.4; ang += 0.1, i += 1)
+    for(float ang = 0, r = 200, i = 0; ang < 2 * 3.14; ang += 0.01, i += 1)
     {
-        if(!up && (int) i % 4 == 0)
+        if(!up && (int) i % 31 == 0)
         {
             up = true;
             r += 50;
         }
-        else if(up && (int) i % 4 == 0)
+        else if(up && (int) i % 31 == 0)
         {
             up = false;
             r -= 50;
@@ -103,9 +103,9 @@ void drawGear()
 void render()
 {
     drawAxis();
-    //drawSquare(100, 100, 2, vx, vy);                            //desenha o quadrado original centrado na posição (100, 100)
-    //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posição central da tela
-    //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posição (700, 500);
+    //drawSquare(100, 100, 2, vx, vy);                            //desenha o quadrado original centrado na posiï¿½ï¿½o (100, 100)
+    //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posiï¿½ï¿½o central da tela
+    //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posiï¿½ï¿½o (700, 500);
     //drawCenteredSquare();
     //drawSpiral();
     drawGear();
