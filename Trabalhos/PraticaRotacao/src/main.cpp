@@ -75,6 +75,31 @@ void drawSpiral()
     }
 }
 
+void drawGear()
+{
+    CV::translate(screenWidth / 2, screenHeight / 2);
+    float oldAng = 0;
+    float oldR = 100;
+    bool up = false;
+    for(float ang = 0, r = 200, i = 0; ang < 2 * 3.14 + 0.4; ang += 0.1, i += 1)
+    {
+        if(!up && (int) i % 4 == 0)
+        {
+            up = true;
+            r += 50;
+        }
+        else if(up && (int) i % 4 == 0)
+        {
+            up = false;
+            r -= 50;
+        }
+        CV::color(0, 0, 0);
+        CV::line(oldR * cos(oldAng), oldR * sin(oldAng), r * cos(ang), r * sin(ang));
+        oldAng = ang;
+        oldR = r;
+    }
+}
+
 void render()
 {
     drawAxis();
@@ -82,7 +107,8 @@ void render()
     //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posição central da tela
     //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posição (700, 500);
     //drawCenteredSquare();
-    drawSpiral();
+    //drawSpiral();
+    drawGear();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
