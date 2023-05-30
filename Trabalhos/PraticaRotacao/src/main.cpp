@@ -23,6 +23,7 @@ float vx[] = {-50, 50, 50, -50}, vy[] = {-50, -50, 50, 50}; // Passando os ponto
 float rx[] = {-50, 50, 50, -50}, ry[] = {-50, -50, 50, 50}; // Criando os vetores que vão ser usados na rotação
 float ex[] = {-50, 50, 50, -50}, ey[] = {-50, -50, 50, 50}; // Criando os vetores que vão ser usados na escala
 double theta = 3.1415 / 2;
+float startAng = 0;
 
 void rotateFigure(double theta)
 {
@@ -58,13 +59,30 @@ void drawAxis()
     CV::line(screenWidth / 2, 0, screenWidth /2, screenHeight);
 }
 
+void drawSpiral()
+{
+    CV::translate(screenWidth / 2, screenHeight / 2);
+    startAng -= 0.1;
+    if(startAng < -3.14 * 2)
+        startAng = 0;
+    printf("%f\n", startAng);
+    float ang = startAng;
+    for(float r = 0; r < screenWidth / 2; r += 0.001)
+    {
+        ang -= 0.001;
+        CV::color(0, 0, 0);
+        CV::point(cos(ang) * r, sin(ang) * r);
+    }
+}
+
 void render()
 {
     drawAxis();
-    drawSquare(100, 100, 2, vx, vy);                            //desenha o quadrado original centrado na posição (100, 100)
-    drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posição central da tela
-    drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posição (700, 500);
+    //drawSquare(100, 100, 2, vx, vy);                            //desenha o quadrado original centrado na posição (100, 100)
+    //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posição central da tela
+    //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posição (700, 500);
     //drawCenteredSquare();
+    drawSpiral();
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
