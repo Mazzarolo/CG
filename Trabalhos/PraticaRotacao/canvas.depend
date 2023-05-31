@@ -145,14 +145,15 @@
 1684279807 j:\programação\c\cg\trabalhos\praticarotacao\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1684279807 j:\programação\c\cg\trabalhos\praticarotacao\src\vector2.h
+1685487142 j:\programação\c\cg\trabalhos\praticarotacao\src\vector2.h
 
-1685388063 source:j:\programação\c\cg\trabalhos\praticarotacao\src\main.cpp
+1685490586 source:j:\programação\c\cg\trabalhos\praticarotacao\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
+	<vector>
 	"gl_canvas2d.h"
 	"Bola.h"
 	"Relogio.h"

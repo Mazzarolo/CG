@@ -7,6 +7,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 
 #include "gl_canvas2d.h"
 
@@ -15,6 +16,8 @@
 #include "Botao.h"
 
 #define LADOSQUADRADO 4
+
+using namespace std;
 
 //variavel global para selecao do que sera exibido na canvas.
 int opcao  = 50;
@@ -67,9 +70,8 @@ void drawSpiral()
         startAng = 0;
     printf("%f\n", startAng);
     float ang = startAng;
-    for(float r = 0; r < screenWidth / 2; r += 0.001)
+    for(float r = 0; r < screenWidth / 2; r += 0.001, ang -= 0.001)
     {
-        ang -= 0.001;
         CV::color(0, 0, 0);
         CV::point(cos(ang) * r, sin(ang) * r);
     }
@@ -100,6 +102,43 @@ void drawGear()
     }
 }
 
+void drawBezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
+{
+    Vector2 p;
+    CV::color(0, 0, 0);
+    for(float t = 0; t < 1; t += 0.001)
+    {
+        p.x = pow(1 - t, 3) * p0.x + 3 * pow(1 - t, 2) * t * p1.x + 3 * (1 - t) * pow(t, 2) * p2.x + pow(t, 3) * p3.x;
+        p.y = pow(1 - t, 3) * p0.y + 3 * pow(1 - t, 2) * t * p1.y + 3 * (1 - t) * pow(t, 2) * p2.y + pow(t, 3) * p3.y;
+        CV::point(p.x, p.y);
+    }
+    CV::color(1, 0, 0);
+    CV::circleFill(p0.x, p0.y, 3, 10);
+    CV::circleFill(p1.x, p1.y, 3, 10);
+    CV::circleFill(p2.x, p2.y, 3, 10);
+    CV::circleFill(p3.x, p3.y, 3, 10);
+}
+
+void drawBSpline(vector<Vector2> points)
+{
+    Vector2 p;
+    CV::color(0, 0, 0);
+    for (int i = 0; i < points.size() - 3; i++)
+    {
+        for (float t = 0; t < 1; t += 0.001)
+        {
+            p.x = points[i].x * (1 - pow(t, 3)) * 1 / 6 + points[i + 1].x * (3 * pow(t, 3) - 6 * pow(t, 2) + 4) * 1 / 6 + points[i + 2].x * (-3 * pow(t, 3) + 3 * pow(t, 2) + 3 * t + 1) * 1 / 6 + points[i + 3].x * pow(t, 3) * 1 / 6;
+            p.y = points[i].y * (1 - pow(t, 3)) * 1 / 6 + points[i + 1].y * (3 * pow(t, 3) - 6 * pow(t, 2) + 4) * 1 / 6 + points[i + 2].y * (-3 * pow(t, 3) + 3 * pow(t, 2) + 3 * t + 1) * 1 / 6 + points[i + 3].y * pow(t, 3) * 1 / 6;
+            CV::point(p.x, p.y);
+        }
+    }
+    CV::color(1, 0, 0);
+    for (int i = 0; i < points.size(); i++)
+    {
+        CV::circleFill(points[i].x, points[i].y, 3, 10);
+    }
+}
+
 void render()
 {
     drawAxis();
@@ -107,8 +146,11 @@ void render()
     //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posi��o central da tela
     //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posi��o (700, 500);
     //drawCenteredSquare();
-    //drawSpiral();
-    drawGear();
+    drawSpiral();
+    //drawGear();
+    //drawBezier(Vector2(100, 300), Vector2(300, 100), Vector2(500, 500), Vector2(700, 300));
+    //vector<Vector2> points = {Vector2(100, 300), Vector2(300, 100), Vector2(500, 500), Vector2(700, 300)};
+    //drawBSpline(points);
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
