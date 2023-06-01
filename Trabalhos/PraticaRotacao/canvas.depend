@@ -119,7 +119,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1684279807 j:\programação\c\cg\trabalhos\praticarotacao\src\gl_canvas2d.h
+1685564727 j:\programação\c\cg\trabalhos\praticarotacao\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -147,7 +147,7 @@
 
 1685487142 j:\programação\c\cg\trabalhos\praticarotacao\src\vector2.h
 
-1685490586 source:j:\programação\c\cg\trabalhos\praticarotacao\src\main.cpp
+1685576888 source:j:\programação\c\cg\trabalhos\praticarotacao\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>

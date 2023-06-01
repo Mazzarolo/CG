@@ -102,6 +102,19 @@ void drawGear()
     }
 }
 
+void drawClock(int hora)
+{
+    CV::translate(screenWidth * 3 / 4 , screenHeight * 3 / 4);
+    CV::color(0, 0, 0);
+    float r = 60;
+    for (float ang = 0; ang < 2 * 3.14; ang += 2 * 3.14 / 12)
+    {
+        CV::line(r * cos(ang), r * sin(ang), (r - 10) * cos(ang), (r - 10) * sin(ang));
+    }
+    float ang = (3 - hora) * (2 * 3.14 / 12);
+    CV::line(0, 0, r * cos(ang), r * sin(ang));
+}
+
 void drawBezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
 {
     Vector2 p;
@@ -146,7 +159,8 @@ void render()
     //drawSquare(screenWidth / 2, screenHeight / 2, 3, rx, ry);   //desenha o quadrado rotacionado centrado na posi��o central da tela
     //drawSquare(700, 500, 4, ex, ey);                            //desenha o quadrado escalado centrado na posi��o (700, 500);
     //drawCenteredSquare();
-    drawSpiral();
+    //drawSpiral();
+    drawClock(8);
     //drawGear();
     //drawBezier(Vector2(100, 300), Vector2(300, 100), Vector2(500, 500), Vector2(700, 300));
     //vector<Vector2> points = {Vector2(100, 300), Vector2(300, 100), Vector2(500, 500), Vector2(700, 300)};
