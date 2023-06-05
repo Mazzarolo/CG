@@ -47,6 +47,20 @@ void mouse(int bt, int st, int wheel, int direction, int x, int y);
 void mouseWheelCB(int wheel, int direction, int x, int y);
 void render();
 
+void CV::initOpenGL()
+{
+   glBegin(GL_POINTS);
+}
+
+void CV::finishOpenGL()
+{
+   glEnd();
+}
+
+void CV::basicPoint(float x, float y)
+{
+   glVertex2d(x, y);
+}
 
 void CV::point(float x, float y)
 {

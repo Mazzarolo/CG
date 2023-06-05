@@ -83,6 +83,7 @@ void Bitmap::load(char* filename)
 
 void Bitmap::render()
 {
+    CV::initOpenGL();
     for (int i = 0; i < (int) dibHeader.pixelHeight; i++)
     {
         for (int j = 0; j < (int) dibHeader.pixelWidth; j++)
@@ -90,10 +91,11 @@ void Bitmap::render()
             if(pixels[i * dibHeader.pixelWidth + j].a == 0.0f)
                 continue;
             CV::color(pixels[i * dibHeader.pixelWidth + j].r, pixels[i * dibHeader.pixelWidth + j].g, pixels[i * dibHeader.pixelWidth + j].b);
-            CV::point(position.x + j, position.y + i);
+            CV::basicPoint(position.x + j, position.y + i);
         }
 
     }
+    CV::finishOpenGL();
 }
 
 void Bitmap::setPosition(int x, int y)

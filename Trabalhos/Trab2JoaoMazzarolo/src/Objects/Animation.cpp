@@ -27,6 +27,7 @@ void Animation::render()
     int frameX = (currentFrame % numColumns) * frameWidth;
     int frameY = (currentFrame / numColumns) * frameHeight;
 
+    CV::initOpenGL();
     for (int i = frameY; i < frameY + frameHeight; i++)
     {
         for (int j = frameX; j < frameX + frameWidth; j++)
@@ -34,9 +35,10 @@ void Animation::render()
             if(pixels[i * dibHeader.pixelWidth + j].a == 0.0f)
                 continue;
             CV::color(pixels[i * dibHeader.pixelWidth + j].r, pixels[i * dibHeader.pixelWidth + j].g, pixels[i * dibHeader.pixelWidth + j].b);
-            CV::point(position.x + (dibHeader.pixelWidth - frameWidth) / 2 + j - frameX, position.y + (dibHeader.pixelHeight - frameHeight) / 2 + i - frameY);
+            CV::basicPoint(position.x + (dibHeader.pixelWidth - frameWidth) / 2 + j - frameX, position.y + (dibHeader.pixelHeight - frameHeight) / 2 + i - frameY);
         }
     }
+    CV::finishOpenGL();
 
     timer += getDeltaTime();
 }

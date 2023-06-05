@@ -270,11 +270,11 @@
 1684780846 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
-1684811672 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
+1686001746 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1684808301 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.h
+1686001732 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -402,7 +402,7 @@
 1684879953 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
 	"Collisions.h"
 
-1685027453 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
+1686002300 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.cpp
 	"Bitmap.h"
 
 1685026936 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\bitmap.h
@@ -444,7 +444,7 @@
 	"Scene.h"
 	"../UI/SpriteButton.h"
 
-1684877056 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.cpp
+1686002466 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.cpp
 	"Animation.h"
 
 1684877056 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\animation.h
