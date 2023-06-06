@@ -7,6 +7,7 @@ Bezier::Bezier(vector<Vector2> points)
     {
         renderPoints.push_back(points[i]);
     }
+    spawnPoint = Vector2(points[0].x, 550);
 }
 
 //Fun��o que vai interpolando entre 2 pontos com base em um offset t
@@ -20,6 +21,8 @@ void Bezier::render()
 {
     Vector2 oldPoint = renderPoints[0];
 
+    CV::color(1, 1, 1);
+
     //desenha a curva de bezier com 4 pontos de controle
     for (float t = 0; t < 1; t += 0.01)
     {
@@ -31,6 +34,11 @@ void Bezier::render()
         Vector2 p12 = lerp(p1, p2, t);
 
         Vector2 p = lerp(p01, p12, t);
+
+        if(Collisions::circlePoint(p, 5, Vector2(p.x, spawnPoint.y)))
+        {
+            spawnPoint.x = p.x;
+        }
 
         CV::line(oldPoint.x, oldPoint.y, p.x, p.y);
         oldPoint = p;
@@ -67,40 +75,8 @@ void Bezier::moveY(int offsetY)
     }
 }
 
-/*
-// Implemente a fun��o binomial
-int binomial(int n, int k)
+void Bezier::renderSpawnPoint()
 {
-    // Implemente a fun��o binomial
-    int result = 1;
-    for (int i = 1; i <= k; i++) {
-        result *= n - i + 1;
-        result /= i;
-    }
-    return result;
+    CV::color(1, 0, 0);
+    CV::circle(spawnPoint.x, spawnPoint.y, 5, 30);
 }
-
-//fa�a uma fun��o que desenhe uma curva de bezier com base nos pontos de controle sem usar binomial
-void draw()
-{
-    // Desenha a curva de Bezier
-    for (float t = 0; t < 1; t += 0.01) {
-        // Calcula a posi��o do ponto da curva de Bezier
-        float x = 0;
-        float y = 0;
-        for (int i = 0; i < points.size(); i++) {
-            x += points[i].x * pow(1 - t, points.size() - i - 1) * pow(t, i) * binomial(points.size() - 1, i);
-            y += points[i].y * pow(1 - t, points.size() - i - 1) * pow(t, i) * binomial(points.size() - 1, i);
-        }
-
-        // Desenha o ponto da curva de Bezier
-        CV::color(1, 0, 0);
-        CV::point(x, y);
-    }
-
-    // Desenha os pontos de controle
-    CV::color(0, 0, 1);
-    for (int i = 0; i < points.size(); i++) {
-        CV::point(points[i].x, points[i].y);
-    }
-}*/

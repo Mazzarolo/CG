@@ -57,6 +57,8 @@ void Background::render()
     rightCurve->moveY(renderY);
     leftCurve->render();
     rightCurve->render();
+    rightCurve->renderSpawnPoint();
+    leftCurve->renderSpawnPoint();
     leftCurve->moveY(renderY + height);
     rightCurve->moveY(renderY + height);
     leftCurve->render();

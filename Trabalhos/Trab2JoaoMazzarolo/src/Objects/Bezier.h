@@ -12,6 +12,7 @@ class Bezier
 private:
     vector<Vector2> points;
     vector<Vector2> renderPoints;
+    Vector2 spawnPoint;
 
 public:
     Bezier(vector<Vector2> points);
@@ -23,6 +24,8 @@ public:
 
     //Desenha uma curva de Bezier
     void render();
+
+    void renderSpawnPoint();
 private:
     //Função que vai interpolando entre 2 pontos com base em um offset t
     Vector2 lerp(Vector2 a, Vector2 b, float t);
