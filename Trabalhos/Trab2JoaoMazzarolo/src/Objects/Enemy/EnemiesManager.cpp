@@ -1,10 +1,11 @@
 #include "EnemiesManager.h"
 
-EnemiesManager::EnemiesManager(int screenWidth, int screenHeight)
+EnemiesManager::EnemiesManager(int screenWidth, int screenHeight, Background* background)
 {
+    this->background = background;
     this->screenWidth = screenWidth;
     this->screenHeight = screenHeight;
-    spawnTime = 8;
+    spawnTime = 1;
     spawnTimeCounter = 0;
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
@@ -47,7 +48,7 @@ void EnemiesManager::spawn(int level)
         //printf("Enemy spawned at (%d, %d)\n", x, y);
         float speed = 150;
         int enemyType = rand() % sprites.size();
-        enemyType = 2;
+        enemyType = 1;
         if (enemyType == 0)
         {
             x = screenWidth / 4 + x % (screenWidth / 2);
@@ -55,8 +56,9 @@ void EnemiesManager::spawn(int level)
         }
         else if (enemyType == 1)
         {
-            x = screenWidth / 4 + x % (screenWidth / 2);
-            enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+            vector<Vector2> limits = background->getSpawnPoints();
+            x = limits[0].x + x % (int)(limits[1].x - limits[0].x);
+            enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], background, rand() % 2));
         }
         else if (enemyType == 2)
         {

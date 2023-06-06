@@ -32,6 +32,10 @@ public:
 
     void moveY(int renderY);
 
+    vector<Vector2> getSpawnPoints();
+
+    vector<int> getAllX(int y);
+
 private:
     void createStars(int numStars);
 

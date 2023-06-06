@@ -7,6 +7,7 @@
 #include "SeekerEnemy.h"
 #include "../../Tools/Clock.h"
 #include "../../Lib/gl_canvas2d.h"
+#include "../Background.h"
 
 class EnemiesManager : public Clock
 {
@@ -14,11 +15,12 @@ private:
     vector<Enemy*> enemies;
     vector<Animation*> sprites;
     Animation* explosion;
+    Background* background;
     int screenWidth, screenHeight;
     float spawnTime, spawnTimeCounter;
 
 public:
-    EnemiesManager(int screenWidth, int screenHeight);
+    EnemiesManager(int screenWidth, int screenHeight, Background* background);
 
     void reset();
 

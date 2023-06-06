@@ -7,7 +7,7 @@ Bezier::Bezier(vector<Vector2> points)
     {
         renderPoints.push_back(points[i]);
     }
-    spawnPoint = Vector2(points[0].x, 550);
+    spawnPoint = Vector2(points[0].x, 600);
 }
 
 //Fun��o que vai interpolando entre 2 pontos com base em um offset t
@@ -48,7 +48,6 @@ void Bezier::render()
 //Faça um metodo que verifique a colisão da curva com um ponto passado por parametro
 bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 {
-    // Implemente a fun��o de colis�o
     for (float t = 0; t < 1; t += 0.01) {
         Vector2 p0 = lerp(renderPoints[0], renderPoints[1], t);
         Vector2 p1 = lerp(renderPoints[1], renderPoints[2], t);
@@ -79,4 +78,28 @@ void Bezier::renderSpawnPoint()
 {
     CV::color(1, 0, 0);
     CV::circle(spawnPoint.x, spawnPoint.y, 5, 30);
+}
+
+Vector2 Bezier::getSpawnPoint()
+{
+    return spawnPoint;
+}
+
+int Bezier::getX(int y)
+{
+    for (float t = 0; t < 1; t += 0.01) {
+        Vector2 p0 = lerp(renderPoints[0], renderPoints[1], t);
+        Vector2 p1 = lerp(renderPoints[1], renderPoints[2], t);
+        Vector2 p2 = lerp(renderPoints[2], renderPoints[3], t);
+
+        Vector2 p01 = lerp(p0, p1, t);
+        Vector2 p12 = lerp(p1, p2, t);
+
+        Vector2 p = lerp(p01, p12, t);
+
+        if (Collisions::circlePoint(p, 5, Vector2(p.x, y)))
+        {
+            return p.x;
+        }
+    }
 }

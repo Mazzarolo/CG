@@ -6,7 +6,7 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     int startY = screenHeight / 7;
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
-    enemiesManager = new EnemiesManager(screenWidth, screenHeight);
+    enemiesManager = new EnemiesManager(screenWidth, screenHeight, background);
     ending = false;
     endTime = 3;
     endTimeCounter = 0;

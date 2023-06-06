@@ -109,3 +109,19 @@ void Background::renderStars()
         stars[i]->naturalMove(screenHeight);
     }
 }
+
+vector<Vector2> Background::getSpawnPoints()
+{
+    vector<Vector2> points;
+    points.push_back(leftCurve->getSpawnPoint());
+    points.push_back(rightCurve->getSpawnPoint());
+    return points;
+}
+
+vector<int> Background::getAllX(int y)
+{
+    vector<int> x;
+    x.push_back(leftCurve->getX(y));
+    x.push_back(rightCurve->getX(y));
+    return x;
+}
