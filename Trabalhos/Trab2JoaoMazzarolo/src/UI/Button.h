@@ -12,7 +12,7 @@ class Button : public Input
 protected:
     int x, y, width, height;
     function<void()> onClick;
-    bool selected, clicked;
+    bool selected, clicked, active;
 
 protected:
     Button(int x, int y, int width, int height, function<void()> onClick);
@@ -26,6 +26,10 @@ protected:
 
     void onMouse();
 
+public:
+    void setActive(bool active);
+
+    bool getActive();
 };
 
 #endif // BUTTON_H

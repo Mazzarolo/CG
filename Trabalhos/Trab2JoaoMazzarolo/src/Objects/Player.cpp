@@ -231,6 +231,7 @@ bool Player::takeDamage()
     life--;
 
     invincibleTimeCounter = 0;
+
     if(life <= 0)
         return true;
     else
@@ -290,4 +291,14 @@ bool Player::isUp()
 int Player::getLevel()
 {
     return (int) (getStopWatch() / changingTime);
+}
+
+void Player::addScore(int x)
+{
+    score += x;
+}
+
+void Player::powerUpGun()
+{
+    printf("powerUpGun\n");
 }

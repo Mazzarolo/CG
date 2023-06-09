@@ -27,6 +27,10 @@ private:
     void onInfoClick();
 
     void onExitClick();
+
+    virtual void reset();
+
+    virtual void setNextScene(int nextScene);
 };
 
 #endif // MENU_SCENE_H

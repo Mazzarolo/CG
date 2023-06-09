@@ -20,7 +20,7 @@ public:
 
     virtual void reset() { };
 
-    void setNexScene(int nextScene);
+    virtual void setNextScene(int nextScene);
 };
 
 #endif // SCENE_H

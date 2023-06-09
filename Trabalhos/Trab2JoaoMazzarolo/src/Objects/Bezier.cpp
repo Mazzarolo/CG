@@ -60,7 +60,6 @@ bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 
         if (Collisions::circlePoint(player, hitBoxRadius, p))
         {
-            printf("%f %f\n", p.x, p.y);
             return true;
         }
     }

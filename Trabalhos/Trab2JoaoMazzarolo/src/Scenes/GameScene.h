@@ -9,6 +9,7 @@
 #include "../Tools/Input.h"
 #include "../Objects/Bitmap.h"
 #include "../Objects/Enemy/EnemiesManager.h"
+#include "../Objects/PowerUp/PowerUpManager.h"
 
 using namespace std;
 
@@ -18,7 +19,8 @@ private:
     Player* player;
     Background* background;
     EnemiesManager* enemiesManager;
-    bool ending;
+    PowerUpManager* powerUpManager;
+    bool ending, paused;
     float endTime, endTimeCounter;
 
 public:

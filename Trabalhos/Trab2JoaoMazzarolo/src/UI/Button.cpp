@@ -32,6 +32,9 @@ bool Button::checkCollision()
 
 void Button::onMouse()
 {
+    if(!active)
+        return;
+
     int state = getState();
 
     if(checkCollision())
@@ -47,6 +50,7 @@ void Button::onMouse()
         {
             clicked = false;
             selected = false;
+            active = false;
             onClick();
         }
     }
@@ -58,4 +62,14 @@ void Button::onMouse()
             clicked = false;
         }
     }
+}
+
+void Button::setActive(bool active)
+{
+    this->active = active;
+}
+
+bool Button::getActive()
+{
+    return active;
 }

@@ -28,6 +28,11 @@ MenuScene::MenuScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     pathToSprites.push_back((char*)"Trab2JoaoMazzarolo\\src\\Images\\Buttons\\Quit\\ButtonSelected.bmp");
     pathToSprites.push_back((char*)"Trab2JoaoMazzarolo\\src\\Images\\Buttons\\Quit\\ButtonClicked.bmp");
     buttons.push_back(new SpriteButton(buttonX, buttonY - 250, [this] {onExitClick();}, pathToSprites));
+
+    for(int i = 0; i < (int) buttons.size(); i++)
+    {
+        buttons[i]->setActive(true);
+    }
 }
 
 MenuScene::~MenuScene()
@@ -62,4 +67,21 @@ void MenuScene::onInfoClick()
 void MenuScene::onExitClick()
 {
     exit(0);
+}
+
+void MenuScene::reset()
+{
+    for(int i = 0; i < (int) buttons.size(); i++)
+    {
+        buttons[i]->setActive(true);
+    }
+}
+
+void MenuScene::setNextScene(int nextScene)
+{
+    Scene::setNextScene(nextScene);
+    for(int i = 0; i < (int) buttons.size(); i++)
+    {
+        buttons[i]->setActive(false);
+    }
 }

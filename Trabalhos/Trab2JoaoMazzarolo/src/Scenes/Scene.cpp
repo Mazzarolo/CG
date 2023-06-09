@@ -13,7 +13,7 @@ int Scene::getNextScene()
     return nextScene;
 }
 
-void Scene::setNexScene(int nextScene)
+void Scene::setNextScene(int nextScene)
 {
     this->nextScene = nextScene;
 }

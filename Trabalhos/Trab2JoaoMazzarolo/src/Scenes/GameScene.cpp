@@ -7,6 +7,7 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
     enemiesManager = new EnemiesManager(screenWidth, screenHeight, background, player);
+    powerUpManager = new PowerUpManager(screenWidth, screenHeight, background, player);
     ending = false;
     endTime = 3;
     endTimeCounter = 0;
@@ -14,6 +15,13 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
 
 void GameScene::render()
 {
+    powerUpManager->render(player->isUp());
+    if(powerUpManager->getSelecting())
+    {
+        printFPS(10, 10);
+        printStopWatch(10, 25);
+        return;
+    }
     background->render();
     enemiesManager->render(player->getLevel(), player->isUp());
     player->render();
@@ -63,6 +71,7 @@ void GameScene::onKeyboardUp()
 void GameScene::reset()
 {
     player->reset(screenWidth / 2);
+    powerUpManager->reset();
     enemiesManager->reset();
     resetStopWatch();
     ending = false;
