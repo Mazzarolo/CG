@@ -57,8 +57,6 @@ void Background::render()
     rightCurve->moveY(renderY);
     leftCurve->render();
     rightCurve->render();
-    rightCurve->renderSpawnPoint();
-    leftCurve->renderSpawnPoint();
     leftCurve->moveY(renderY + height);
     rightCurve->moveY(renderY + height);
     leftCurve->render();
@@ -81,6 +79,37 @@ bool Background::checkCollision(Vector2 point, int hitBoxRadius)
     if(leftCurve->checkCollision(point, hitBoxRadius) || rightCurve->checkCollision(point, hitBoxRadius))
     {
         return true;
+    }
+    return false;
+}
+
+bool Background::checkCollision(Vector2 point, int hitBoxRadius, bool right)
+{
+    if(right)
+    {
+        rightCurve->moveY(renderY);
+        if(rightCurve->checkCollision(point, hitBoxRadius))
+        {
+            return true;
+        }
+        rightCurve->moveY(renderY + height);
+        if(rightCurve->checkCollision(point, hitBoxRadius))
+        {
+            return true;
+        }
+    }
+    else
+    {
+        leftCurve->moveY(renderY);
+        if(leftCurve->checkCollision(point, hitBoxRadius))
+        {
+            return true;
+        }
+        leftCurve->moveY(renderY + height);
+        if(leftCurve->checkCollision(point, hitBoxRadius))
+        {
+            return true;
+        }
     }
     return false;
 }
@@ -116,12 +145,4 @@ vector<Vector2> Background::getSpawnPoints()
     points.push_back(leftCurve->getSpawnPoint());
     points.push_back(rightCurve->getSpawnPoint());
     return points;
-}
-
-vector<int> Background::getAllX(int y)
-{
-    vector<int> x;
-    x.push_back(leftCurve->getX(y));
-    x.push_back(rightCurve->getX(y));
-    return x;
 }

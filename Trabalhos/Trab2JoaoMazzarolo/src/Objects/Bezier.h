@@ -29,8 +29,6 @@ public:
 
     Vector2 getSpawnPoint();
 
-    int getX(int y);
-
 private:
     //Função que vai interpolando entre 2 pontos com base em um offset t
     Vector2 lerp(Vector2 a, Vector2 b, float t);

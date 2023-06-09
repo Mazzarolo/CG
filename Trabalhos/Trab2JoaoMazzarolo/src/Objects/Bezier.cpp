@@ -60,6 +60,7 @@ bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 
         if (Collisions::circlePoint(player, hitBoxRadius, p))
         {
+            printf("%f %f\n", p.x, p.y);
             return true;
         }
     }
@@ -83,23 +84,4 @@ void Bezier::renderSpawnPoint()
 Vector2 Bezier::getSpawnPoint()
 {
     return spawnPoint;
-}
-
-int Bezier::getX(int y)
-{
-    for (float t = 0; t < 1; t += 0.01) {
-        Vector2 p0 = lerp(renderPoints[0], renderPoints[1], t);
-        Vector2 p1 = lerp(renderPoints[1], renderPoints[2], t);
-        Vector2 p2 = lerp(renderPoints[2], renderPoints[3], t);
-
-        Vector2 p01 = lerp(p0, p1, t);
-        Vector2 p12 = lerp(p1, p2, t);
-
-        Vector2 p = lerp(p01, p12, t);
-
-        if (Collisions::circlePoint(p, 5, Vector2(p.x, y)))
-        {
-            return p.x;
-        }
-    }
 }

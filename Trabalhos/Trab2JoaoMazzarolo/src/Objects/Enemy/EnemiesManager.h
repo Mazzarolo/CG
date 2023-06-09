@@ -16,11 +16,12 @@ private:
     vector<Animation*> sprites;
     Animation* explosion;
     Background* background;
+    Player* player;
     int screenWidth, screenHeight;
     float spawnTime, spawnTimeCounter;
 
 public:
-    EnemiesManager(int screenWidth, int screenHeight, Background* background);
+    EnemiesManager(int screenWidth, int screenHeight, Background* background, Player* player);
 
     void reset();
 
@@ -28,7 +29,7 @@ public:
 
     void spawn(int level);
 
-    bool verifyCollision(Vector2 playerPosition, int playerRadius, Gun* playerGun);
+    bool verifyCollision();
 };
 
 #endif // ENEMIESMANAGER_H

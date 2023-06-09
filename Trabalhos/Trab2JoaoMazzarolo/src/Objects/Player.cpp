@@ -31,7 +31,7 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     color[0] = 1;
     color[1] = color[2] = 0;
     shooting = false;
-    life = 3;
+    life = 5;
     score = 0;
     scorePosition = Vector2(60, screenHeight - 85);
     scoreTime = scoreTimeCounter = 0.01f;
@@ -146,7 +146,7 @@ void Player::reset(int x)
 {
     center.x = x;
     center.y = fixedY;
-    life = 10;
+    life = 5;
     gun->reset();
     invincibleTimeCounter = invincibleTime;
     invincibleBlinkTimeCounter = invincibleBlinkTime;

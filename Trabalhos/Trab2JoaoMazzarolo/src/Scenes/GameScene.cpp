@@ -6,7 +6,7 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
     int startY = screenHeight / 7;
     player = new Player(screenWidth, screenHeight, startY, curvesHeight);
     background = new Background(screenWidth, screenHeight, player->getPosition().y, curvesHeight);
-    enemiesManager = new EnemiesManager(screenWidth, screenHeight, background);
+    enemiesManager = new EnemiesManager(screenWidth, screenHeight, background, player);
     ending = false;
     endTime = 3;
     endTimeCounter = 0;
@@ -19,7 +19,7 @@ void GameScene::render()
     player->render();
     background->moveY(player->getY());
 
-    if(enemiesManager->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
+    if(enemiesManager->verifyCollision())
     {
         if(player->takeDamage())
         {

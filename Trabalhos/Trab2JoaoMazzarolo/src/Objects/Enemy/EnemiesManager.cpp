@@ -1,11 +1,12 @@
 #include "EnemiesManager.h"
 
-EnemiesManager::EnemiesManager(int screenWidth, int screenHeight, Background* background)
+EnemiesManager::EnemiesManager(int screenWidth, int screenHeight, Background* background, Player* player)
 {
     this->background = background;
     this->screenWidth = screenWidth;
     this->screenHeight = screenHeight;
-    spawnTime = 1;
+    this->player = player;
+    spawnTime = 7;
     spawnTimeCounter = 0;
 
     sprites.push_back(new Animation(2, 1, 2, 0.3f));
@@ -48,21 +49,29 @@ void EnemiesManager::spawn(int level)
         //printf("Enemy spawned at (%d, %d)\n", x, y);
         float speed = 150;
         int enemyType = rand() % sprites.size();
-        enemyType = 1;
         if (enemyType == 0)
         {
+            speed = 75 + level * 10;
             x = screenWidth / 4 + x % (screenWidth / 2);
-            enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType]));
+            enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], player));
+            spawnTimeCounter += spawnTime * 3 / 4;
         }
         else if (enemyType == 1)
         {
+            int num = level + 1;
+            if(num > 4)
+                num = 4;
+            speed = 75 + level * 10;
             vector<Vector2> limits = background->getSpawnPoints();
-            x = limits[0].x + x % (int)(limits[1].x - limits[0].x);
-            enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], background, rand() % 2));
+            float distance = (limits[1].x - limits[0].x) / num;
+            x = limits[0].x + x % (int)(distance);
+            for(int i = 0; i < num; i++)
+                enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x + i * distance, y, speed, sprites[enemyType], background, rand() % 2));
+            spawnTimeCounter += spawnTime * 1 / 5;
         }
         else if (enemyType == 2)
         {
-            speed = 75 + level * 10;
+            speed = 85 + level * 10;
             int distance = screenWidth / 7;
             int num = level + 1;
             
@@ -86,7 +95,7 @@ void EnemiesManager::reset()
 }
 
 // verifica as colisoes de todas as fontes, e retorna true se o jogador for atingido
-bool EnemiesManager::verifyCollision(Vector2 playerPosition, int playerRadius, Gun* playerGun)
+bool EnemiesManager::verifyCollision()
 {
     bool hit = false;
     for(int i = 0; i < (int) enemies.size(); i++)
@@ -98,7 +107,7 @@ bool EnemiesManager::verifyCollision(Vector2 playerPosition, int playerRadius, G
             continue;
         }
 
-        if(enemies[i]->verifyCollision(playerPosition, playerRadius, playerGun))
+        if(enemies[i]->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
         {
             hit = true;
         }

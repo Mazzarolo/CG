@@ -27,14 +27,13 @@ public:
     ~Background();
 
     bool checkCollision(Vector2 point, int hitBoxRadius);
+    bool checkCollision(Vector2 point, int hitBoxRadius, bool right);
 
     void render();
 
     void moveY(int renderY);
 
     vector<Vector2> getSpawnPoints();
-
-    vector<int> getAllX(int y);
 
 private:
     void createStars(int numStars);
