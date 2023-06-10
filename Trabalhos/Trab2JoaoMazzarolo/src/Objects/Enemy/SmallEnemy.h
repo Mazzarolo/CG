@@ -10,7 +10,7 @@ private:
     bool right;
 
 public:
-    SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, int minX, int maxX, bool right, Animation* sprite);
+    SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, int minX, int maxX, bool right, Animation* sprite, int life);
 
     virtual ~SmallEnemy() { };
 

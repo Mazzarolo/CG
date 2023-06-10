@@ -20,7 +20,7 @@ protected:
     bool dead;
 
 protected:
-    Enemy(int screenWidth, int screenHeight, int x, int y, float speed);
+    Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int life);
 
 public:
     virtual ~Enemy();

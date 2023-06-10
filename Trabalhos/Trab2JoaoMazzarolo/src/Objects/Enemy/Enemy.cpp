@@ -2,7 +2,7 @@
 
 Animation* Enemy::explosion = NULL;
 
-Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed)
+Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int life)
 {
     if(explosion == NULL)
     {
@@ -13,7 +13,7 @@ Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed)
     this->position = Vector2(x, y);
     this->speed = -speed;
     this->dead = false;
-    life = 3;
+    this->life = life;
     explosionTime = 0.5f;
     explosionTimeCounter = 0;
 }

@@ -68,6 +68,8 @@ public:
 
     void powerUpGun();
 
+    int getLife();
+
 private:
     void gunControl();
 

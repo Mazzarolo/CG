@@ -99,3 +99,14 @@ bool Projectile::getEnded()
 {
     return ended;
 }
+
+Projectile* Projectile::clone()
+{
+    Projectile* p = new Projectile(position.x, position.y, radius, speed, colorCircle, colorBorder);
+}
+
+void Projectile::setPosition(int x, int y)
+{
+    position.x = x;
+    position.y = y;
+}

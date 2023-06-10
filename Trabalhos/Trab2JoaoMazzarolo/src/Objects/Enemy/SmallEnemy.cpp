@@ -1,14 +1,14 @@
 #include "SmallEnemy.h"
 
-SmallEnemy::SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, int minX, int maxX, bool right, Animation* sprite) 
-    : Enemy(screenWidth, screenHeight, x, y, speed)
+SmallEnemy::SmallEnemy(int screenWidth, int screenHeight, int x, int y, float speed, int minX, int maxX, bool right, Animation* sprite, int life) 
+    : Enemy(screenWidth, screenHeight, x, y, speed, life)
 {
     this->minX = minX;
     this->maxX = maxX;
     this->right = right;
     this->sprite = sprite;
     this->hitBoxRadius = 16;
-    gun = new Gun(x, y, screenHeight, 0.8f, -300);
+    gun = new Gun(x, y, screenHeight, 0.8f - speed * 0.001, -speed * 3);
 }
 
 void SmallEnemy::move(bool accelerating)

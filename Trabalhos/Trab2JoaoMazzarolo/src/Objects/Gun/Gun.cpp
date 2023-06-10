@@ -11,6 +11,7 @@ Gun::Gun(int x, int y, int screenHeight, int radius)
     shootRateCounter = 0;
     numProjectiles = 1;
     projectileRadius = 5;
+    projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
 }
 
 Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
@@ -23,6 +24,7 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
     shootRateCounter = 0;
     numProjectiles = 1;
     projectileRadius = 5;
+    projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
 }
 
 void Gun::shoot()
@@ -32,13 +34,19 @@ void Gun::shoot()
     shootRateCounter = 0;
     if(numProjectiles == 1)
     {
-        projectiles.push_back(new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3}));
+        Projectile* projectile = projectileModel->clone();
+        projectile->setPosition(position.x, position.y);
+        projectiles.push_back(projectile);
         return;
     }
 
     int offset = radius / (numProjectiles - 1);
     for(int i = 0; i < numProjectiles; i++)
-        projectiles.push_back(new Projectile(position.x - (radius / 2) + offset * i, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3}));
+    {
+        Projectile* projectile = projectileModel->clone();
+        projectile->setPosition(position.x - (radius / 2) + offset * i, position.y);
+        projectiles.push_back(projectile);
+    }
 }
 
 void Gun::render()
@@ -83,6 +91,13 @@ void Gun::reset()
         delete projectiles[i];
     }
     projectiles.clear();
+    delete projectileModel;
+    speed = 500;
+    shootRate = 0.5;
+    shootRateCounter = 0;
+    numProjectiles = 1;
+    projectileRadius = 5;
+    projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
 }
 
 bool Gun::verifyCollision(Vector2 position, int radius)

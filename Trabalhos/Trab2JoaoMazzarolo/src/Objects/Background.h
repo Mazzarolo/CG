@@ -4,14 +4,15 @@
 #include <time.h>
 #include <stdlib.h>
 #include "../Lib/gl_canvas2d.h"
+#include "../Tools/Clock.h"
 #include "Star.h"
-#include "Bitmap.h"
+#include "Animation.h"
 #include "Bezier.h"
 
 
 using namespace std;
 
-class Background
+class Background : public Clock
 {
 private:
     Bezier* leftCurve;
@@ -20,6 +21,7 @@ private:
     int renderY, height, offsetY;
     int screenWidth, screenHeight;
     vector<Star*> stars;
+    vector<Animation*> planets;
 
 public:
     Background(int screenWidth, int screenHeight, int offsetY, int curveHeight);

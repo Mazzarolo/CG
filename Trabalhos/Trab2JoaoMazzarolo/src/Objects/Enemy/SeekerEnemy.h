@@ -10,7 +10,7 @@ private:
     Player* player;
 
 public:
-    SeekerEnemy(int screenWidth, int screenHeight, int x, int y, float speed, Animation* sprite, Player* player);
+    SeekerEnemy(int screenWidth, int screenHeight, int x, int y, float speed, Animation* sprite, Player* player, int life);
 
     virtual ~SeekerEnemy() { };
 

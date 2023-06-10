@@ -53,7 +53,7 @@ void EnemiesManager::spawn(int level)
         {
             speed = 75 + level * 10;
             x = screenWidth / 4 + x % (screenWidth / 2);
-            enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], player));
+            enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], player, 3 + level));
         }
         else if (enemyType == 1)
         {
@@ -65,7 +65,8 @@ void EnemiesManager::spawn(int level)
             float distance = (limits[1].x - limits[0].x) / num;
             x = limits[0].x + x % (int)(distance);
             for(int i = 0; i < num; i++)
-                enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x + i * distance, y, speed, sprites[enemyType], background, rand() % 2));
+                enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x + i * distance, y, speed, 
+                    sprites[enemyType], background, rand() % 2, 3 + level));
         }
         else if (enemyType == 2)
         {
@@ -77,7 +78,7 @@ void EnemiesManager::spawn(int level)
 
             for (int i = 0; i < num; i++)
                 enemies.push_back(new SmallEnemy(screenWidth, screenHeight, x + i * distance, y, speed, i * distance,
-                 screenWidth - (num - 1 - i) * distance, rand() % 2, sprites[enemyType]));
+                 screenWidth - (num - 1 - i) * distance, rand() % 2, sprites[enemyType], 3 + level));
         }
     }
 }
@@ -102,6 +103,7 @@ bool EnemiesManager::verifyCollision()
         {
             delete enemies[i];
             enemies.erase(enemies.begin() + i);
+            player->addScore(100);
             continue;
         }
 

@@ -62,6 +62,10 @@ public:
 
     void moveX(int x);
 
+    void moveY(float y);
+
+    Vector2 getPosition();
+
     virtual Bitmap* clone();
 
 private:

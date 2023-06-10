@@ -11,7 +11,7 @@ private:
     bool right;
 
 public:
-    BlockerEnemy(int screenWidth, int screenHeight, int x, int y, float speed, Animation* sprite, Background* background, bool right);
+    BlockerEnemy(int screenWidth, int screenHeight, int x, int y, float speed, Animation* sprite, Background* background, bool right, int life);
 
     virtual ~BlockerEnemy() { };
 

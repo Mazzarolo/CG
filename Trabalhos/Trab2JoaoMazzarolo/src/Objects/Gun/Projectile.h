@@ -11,8 +11,8 @@ private:
     static Animation* explosionSprite;
     Vector2 position;
     int radius;
-    int colorCircle[3];
-    int colorBorder[3];
+    float colorCircle[3];
+    float colorBorder[3];
     int speed;
     float explosionTime, explosionTimeCounter;
     bool ended;
@@ -42,6 +42,10 @@ public:
     bool hasEnded();
 
     bool getEnded();
+
+    Projectile* clone();
+
+    void setPosition(int x, int y);
 };
 
 #endif // PROJECTILE_H

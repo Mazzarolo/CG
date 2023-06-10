@@ -186,7 +186,10 @@ void Player::renderStats()
         else
         {
             scoreTimeCounter = 0;
-            score += scoreMultiplier;
+            if(top)
+                score += scoreMultiplier + scoreMultiplier / 2;
+            else
+                score += scoreMultiplier;
         }
     }
 
@@ -300,4 +303,9 @@ void Player::addScore(int x)
 void Player::powerUpGun()
 {
     printf("powerUpGun\n");
+}
+
+int Player::getLife()
+{
+    return life;
 }

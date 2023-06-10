@@ -36,6 +36,26 @@ Background::Background(int screenWidth, int screenHeight, int offsetY, int curve
     points.push_back(Vector2(38 * screenWidth / 32, 2 * height / 3));
     points.push_back(Vector2(22 * screenWidth / 32, 3 * height / 3));
     rightCurve = new Bezier(points);
+
+    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets[0]->setPosition(50, 400);
+    planets[0]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet01.bmp");
+
+    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets[1]->setPosition(50, 200);
+    planets[1]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet02.bmp");
+
+    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets[2]->setPosition(400, 500);
+    planets[2]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet03.bmp");
+
+    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets[3]->setPosition(-800, 0);
+    planets[3]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet04.bmp");
+
+    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets[4]->setPosition(300, 0);
+    planets[4]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet05.bmp");
 }
 
 Background::~Background()
@@ -52,6 +72,15 @@ void Background::render()
 {
     CV::clear(backColor[0], backColor[1], backColor[2]);
     renderStars();
+    for(int i = 0; i < (int) planets.size(); i++)
+    {
+        planets[i]->render();
+        planets[i]->moveY(-1.0f * getDeltaTime());
+        if(planets[i]->getPosition().y < -planets[i]->getHeight())
+        {
+            planets[i]->setPosition(planets[i]->getPosition().x, screenHeight + 100);
+        }
+    }
     CV::color(lineColor[0], lineColor[1], lineColor[2]);
     leftCurve->moveY(renderY);
     rightCurve->moveY(renderY);

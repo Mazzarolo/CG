@@ -119,6 +119,16 @@ void Bitmap::moveX(int x)
     position.x += x;
 }
 
+void Bitmap::moveY(float y)
+{
+    position.y += y;
+}
+
+Vector2 Bitmap::getPosition()
+{
+    return position;
+}
+
 Bitmap* Bitmap::clone()
 {
     Bitmap* clone = new Bitmap();

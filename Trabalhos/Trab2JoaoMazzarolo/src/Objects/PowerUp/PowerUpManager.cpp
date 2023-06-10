@@ -42,7 +42,7 @@ void PowerUpManager::render(bool isUp)
     {
         powerUpItem->render(isUp, powerUpIsGun);
 
-        if(powerUpItem->verifyCollision(player->getPosition(), player->getHitBoxRadius()))
+        if(powerUpItem->verifyCollision(player->getPosition(), player->getHitBoxRadius()) && player->getLife() > 0)
         {
             delete powerUpItem;
             powerUpItem = NULL;

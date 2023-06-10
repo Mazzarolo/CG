@@ -14,6 +14,7 @@ private:
     float shootRate, shootRateCounter;
     int limitY, speed, numProjectiles, radius, projectileRadius;
     Vector2 position;
+    Projectile* projectileModel;
     vector<Projectile*> projectiles;
 
 public:

@@ -15,9 +15,9 @@ GameScene::GameScene(int screenWidth, int screenHeight) : Scene(screenWidth, scr
 
 void GameScene::render()
 {
-    powerUpManager->render(player->isUp());
     if(powerUpManager->getSelecting())
     {
+        powerUpManager->render(player->isUp());
         pause();
         printFPS(10, 10);
         printStopWatch(10, 25);
@@ -26,6 +26,7 @@ void GameScene::render()
     resume();
     background->render();
     enemiesManager->render(player->getLevel(), player->isUp());
+    powerUpManager->render(player->isUp());
     player->render();
     background->moveY(player->getY());
 
