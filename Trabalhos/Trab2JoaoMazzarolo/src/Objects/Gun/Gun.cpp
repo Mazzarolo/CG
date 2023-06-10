@@ -13,6 +13,7 @@ Gun::Gun(int x, int y, int screenHeight, int radius)
     projectileRadius = 5;
     damage = 1;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
+    projectileModel->setTopDown(true);
 }
 
 Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
@@ -31,6 +32,7 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
 
 void Gun::shoot()
 {
+    printf("Topdown %d \n", projectileModel->getTopDown());
     if (shootRateCounter < shootRate)
         return;
     shootRateCounter = 0;
@@ -101,6 +103,7 @@ void Gun::reset()
     numProjectiles = 1;
     projectileRadius = 5;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
+    projectileModel->setTopDown(true);
 }
 
 bool Gun::verifyCollision(Vector2 position, int radius)

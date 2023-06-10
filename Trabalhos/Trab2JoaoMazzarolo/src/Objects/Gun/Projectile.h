@@ -16,6 +16,7 @@ private:
     int speed;
     float explosionTime, explosionTimeCounter;
     bool ended;
+    bool curved, topDown, explosive, continuous, decending;
 
 public:
     Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder);
@@ -50,6 +51,10 @@ public:
     void setRadius(int radius);
 
     void setSpeed(int speed);
+
+    void setTopDown(bool topDown);
+
+    bool getTopDown();
 };
 
 #endif // PROJECTILE_H

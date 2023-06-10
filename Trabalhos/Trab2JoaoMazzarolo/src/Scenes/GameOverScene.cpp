@@ -54,7 +54,6 @@ void GameOverScene::render()
 
 void GameOverScene::onPlayClick()
 {
-    printf("Play clicked\n");
     nextScene = 1;
 }
 

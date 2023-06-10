@@ -79,6 +79,8 @@
 		<Unit filename="src/Objects/PowerUp/PowerUpManager.h" />
 		<Unit filename="src/Objects/Star.cpp" />
 		<Unit filename="src/Objects/Star.h" />
+		<Unit filename="src/Scenes/GameOverScene.cpp" />
+		<Unit filename="src/Scenes/GameOverScene.h" />
 		<Unit filename="src/Scenes/GameScene.cpp" />
 		<Unit filename="src/Scenes/GameScene.h" />
 		<Unit filename="src/Scenes/MenuScene.cpp" />

@@ -18,16 +18,19 @@ void SceneManager::update()
     int nextScene = currentScene->getNextScene();
     if(nextScene == 0)
     {
+        currentScene->setNextScene(-1);
         currentScene = menuScene;
         currentScene->reset();
     }
     else if (nextScene == 1)
     {
+        currentScene->setNextScene(-1);
         currentScene = gameScene;
         currentScene->reset();
     }
     else if (nextScene == 2)
     {
+        currentScene->setNextScene(-1);
         currentScene = gameOverScene;
         gameOverScene->reset(gameScene->getScore());
     }

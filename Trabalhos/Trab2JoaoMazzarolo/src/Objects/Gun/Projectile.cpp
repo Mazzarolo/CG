@@ -19,6 +19,7 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
     explosionTime = 0.8f;
     explosionTimeCounter = 0;
     ended = false;
+    curved = topDown = explosive = continuous = decending = false;
     //printf("%.f %.f\n", position.x, position.y);
 }
 
@@ -37,7 +38,18 @@ void Projectile::move()
 {
     if(ended)
         return;
-    position.y += speed * getDeltaTime();
+    
+    if(topDown && position.y > 550)
+        decending = true;
+
+    if(decending)
+    {
+        position.y -= speed * getDeltaTime();
+    }
+    else
+    {
+        position.y += speed * getDeltaTime();
+    }
 }
 
 void Projectile::move(bool down)
@@ -103,6 +115,7 @@ bool Projectile::getEnded()
 Projectile* Projectile::clone()
 {
     Projectile* p = new Projectile(position.x, position.y, radius, speed, colorCircle, colorBorder);
+    p->setTopDown(topDown);
 }
 
 void Projectile::setPosition(int x, int y)
@@ -119,4 +132,19 @@ void Projectile::setSpeed(int speed)
 void Projectile::setRadius(int radius)
 {
     this->radius = radius;
+}
+
+void Projectile::setTopDown(bool topDown)
+{
+    this->topDown = topDown;
+    if(!topDown)
+        return;
+    colorCircle[0] = 0.5f;
+    colorCircle[1] = 0.0f;
+    colorCircle[2] = 0.7f;
+}
+
+bool Projectile::getTopDown()
+{
+    return topDown;
 }
