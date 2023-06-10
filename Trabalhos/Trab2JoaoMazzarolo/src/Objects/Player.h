@@ -64,11 +64,17 @@ public:
 
     Gun* getGun();
 
+    int getScore();
+
     void addScore(int score);
 
     void powerUpGun();
 
     int getLife();
+
+    void addLife();
+
+    void setShield();
 
 private:
     void gunControl();

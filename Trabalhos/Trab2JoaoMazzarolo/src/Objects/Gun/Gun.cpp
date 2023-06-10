@@ -11,6 +11,7 @@ Gun::Gun(int x, int y, int screenHeight, int radius)
     shootRateCounter = 0;
     numProjectiles = 1;
     projectileRadius = 5;
+    damage = 1;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
 }
 
@@ -24,6 +25,7 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
     shootRateCounter = 0;
     numProjectiles = 1;
     projectileRadius = 5;
+    damage = 1;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
 }
 
@@ -92,6 +94,7 @@ void Gun::reset()
     }
     projectiles.clear();
     delete projectileModel;
+    damage = 1;
     speed = 500;
     shootRate = 0.5;
     shootRateCounter = 0;
@@ -149,4 +152,14 @@ void Gun::addShoot()
 void Gun::addProjectileRadius(int radius)
 {
     projectileRadius += radius;
+}
+
+void Gun::addDamage(int damage)
+{
+    this->damage += damage;
+}
+
+int Gun::getDamage()
+{
+    return damage;
 }

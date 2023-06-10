@@ -87,6 +87,11 @@ void GameScene::endGame()
     endTimeCounter += getDeltaTime();
     if(endTimeCounter >= endTime)
     {
-        nextScene = 0;
+        nextScene = 2;
     }
+}
+
+int GameScene::getScore()
+{
+    return player->getScore();
 }

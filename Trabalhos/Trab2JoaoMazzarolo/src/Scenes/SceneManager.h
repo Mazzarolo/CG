@@ -5,6 +5,7 @@
 #include <mmsystem.h>
 #include "GameScene.h"
 #include "MenuScene.h"
+#include "GameOverScene.h"
 #include "../Tools/Clock.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ private:
     Scene* currentScene;
     GameScene* gameScene;
     MenuScene* menuScene;
+    GameOverScene* gameOverScene;
     Clock* clock;
 
 public:

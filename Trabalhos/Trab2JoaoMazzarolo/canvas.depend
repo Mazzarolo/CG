@@ -211,7 +211,7 @@
 	"Scene.h"
 	<stdio.h>
 
-1686372989 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1686406383 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
 1686374308 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
@@ -231,10 +231,10 @@
 1686320792 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\bezier.cpp
 	"Bezier.h"
 
-1686368830 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
+1686416141 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.cpp
 	"Player.h"
 
-1686368647 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
+1686418168 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\player.h
 	"../Lib/gl_canvas2d.h"
 	"Gun/Gun.h"
 	"../Tools/Input.h"
@@ -244,11 +244,11 @@
 	<windows.h>
 	<mmsystem.h>
 
-1686002704 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
+1686416039 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1686002704 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.h
+1686416065 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -265,10 +265,10 @@
 	"../Tools/Input.h"
 	"../Tools/Clock.h"
 
-1686373133 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
+1686415847 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
-1686347469 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+1686415827 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
 1686001746 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
@@ -365,14 +365,15 @@
 1684877056 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
 	"Clock.h"
 
-1684845787 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
+1686415390 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.h
 	<windows.h>
 	<mmsystem.h>
 	"GameScene.h"
 	"MenuScene.h"
+	"GameOverScene.h"
 	"../Tools/Clock.h"
 
-1686331598 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
+1686415766 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.h
 	<vector>
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
@@ -394,7 +395,7 @@
 1686350779 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\clock.cpp
 	"Clock.h"
 
-1686343724 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
+1686406855 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\input.cpp
 	"Input.h"
 
 1684879941 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.h
@@ -497,7 +498,7 @@
 1684789222 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
 	"Star.h"
 
-1686347502 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1686409917 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
 1684932773 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
@@ -509,10 +510,10 @@
 1685041912 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
 	"SpriteButton.h"
 
-1686370199 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
+1686418042 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
 	"Gun.h"
 
-1686367317 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
+1686417946 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
 	"Projectile.h"
 	"../../Tools/Clock.h"
 	"../../Tools/Collisions.h"
@@ -555,7 +556,7 @@
 1686369607 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
 	"EnemiesManager.h"
 
-1686369381 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+1686418059 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
 	"Enemy.h"
 
 1686369400 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
@@ -632,7 +633,7 @@
 1686343868 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupitem.cpp
 	"PowerUpItem.h"
 
-1686368693 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.cpp
+1686416608 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.cpp
 	"PowerUpManager.h"
 
 1686354936 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.h
@@ -648,4 +649,12 @@
 	"../../Tools/Clock.h"
 	"../Animation.h"
 	"../Background.h"
+
+1686416227 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.cpp
+	"GameOverScene.h"
+
+1686415822 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.h
+	"Scene.h"
+	<vector>
+	"../UI/SpriteButton.h"
 

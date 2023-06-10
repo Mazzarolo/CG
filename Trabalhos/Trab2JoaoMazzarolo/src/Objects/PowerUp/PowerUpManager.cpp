@@ -76,6 +76,8 @@ void PowerUpManager::renderCards()
 {
     CV::clear(0.1, 0.1, 0.1);
     powerUpGunCards[selectedCards[0]]->render();
+    CV::color(1, 1, 1);
+    CV::textTitle(screenWidth / 2 - 10, screenHeight / 2, "OR");
     powerUpGunCards[selectedCards[1]]->render();
     if(!powerUpGunCards[selectedCards[0]]->getActive() || !powerUpGunCards[selectedCards[1]]->getActive())
     {

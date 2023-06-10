@@ -164,6 +164,16 @@ void CV::textTitle(float x, float y, const char *t)
     }
 }
 
+void CV::biggerText(float x, float y, const char *t)
+{
+    int tam = (int)strlen(t);
+    for(int c=0; c < tam; c++)
+    {
+      glRasterPos2i(x + c*10, y);
+      glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, t[c]);
+    }
+}
+
 void CV::clear(float r, float g, float b)
 {
    glClearColor( r, g, b, 1 );

@@ -32,6 +32,7 @@ public:
 
     void render();
 
+    int getScore();
 private:
     void onKeyboardUp();
 

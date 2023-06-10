@@ -12,7 +12,7 @@ class Gun : public Clock
 {
 private:
     float shootRate, shootRateCounter;
-    int limitY, speed, numProjectiles, radius, projectileRadius;
+    int limitY, speed, numProjectiles, radius, projectileRadius, damage;
     Vector2 position;
     Projectile* projectileModel;
     vector<Projectile*> projectiles;
@@ -44,6 +44,10 @@ public:
     void addShoot();
 
     void addProjectileRadius(int radius);
+
+    void addDamage(int damage);
+
+    int getDamage();
 };
 
 #endif // GUN_H

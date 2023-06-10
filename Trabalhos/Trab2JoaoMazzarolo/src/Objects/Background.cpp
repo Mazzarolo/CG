@@ -37,25 +37,29 @@ Background::Background(int screenWidth, int screenHeight, int offsetY, int curve
     points.push_back(Vector2(22 * screenWidth / 32, 3 * height / 3));
     rightCurve = new Bezier(points);
 
-    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
     planets[0]->setPosition(50, 400);
     planets[0]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet01.bmp");
 
-    planets.push_back(new Animation(10, 2, 20, 0.2f));
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
     planets[1]->setPosition(50, 200);
     planets[1]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet02.bmp");
 
-    planets.push_back(new Animation(10, 2, 20, 0.2f));
-    planets[2]->setPosition(400, 500);
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
+    planets[2]->setPosition(400, 600);
     planets[2]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet03.bmp");
 
-    planets.push_back(new Animation(10, 2, 20, 0.2f));
-    planets[3]->setPosition(-800, 0);
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
+    planets[3]->setPosition(-800, 700);
     planets[3]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet04.bmp");
 
-    planets.push_back(new Animation(10, 2, 20, 0.2f));
-    planets[4]->setPosition(300, 0);
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
+    planets[4]->setPosition(300, 1000);
     planets[4]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet05.bmp");
+
+    planets.push_back(new Animation(10, 2, 20, 0.1f));
+    planets[5]->setPosition(-1700, -300);
+    planets[5]->load("Trab2JoaoMazzarolo\\src\\Images\\Planets\\Planet06.bmp");
 }
 
 Background::~Background()
@@ -74,9 +78,10 @@ void Background::render()
     renderStars();
     for(int i = 0; i < (int) planets.size(); i++)
     {
-        planets[i]->render();
-        planets[i]->moveY(-1.0f * getDeltaTime());
-        if(planets[i]->getPosition().y < -planets[i]->getHeight())
+        if(planets[i]->getPosition().y > -500 && planets[i]->getPosition().y < screenHeight + 100)
+            planets[i]->render();
+        planets[i]->moveY(-1.0f * getDeltaTime() * 10);
+        if(planets[i]->getPosition().y < -500)
         {
             planets[i]->setPosition(planets[i]->getPosition().x, screenHeight + 100);
         }

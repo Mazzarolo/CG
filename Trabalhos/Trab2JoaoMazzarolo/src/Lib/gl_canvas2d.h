@@ -60,6 +60,7 @@ public:
     //desenha texto na coordenada (x,y)
     static void text(float x, float y, const char *t);
     //Desenha texto com uma outra fonte
+    static void biggerText(float x, float y, const char *t);
     static void textTitle(float x, float y, const char *t);
     static void text(Vector2 pos, const char *t);
 

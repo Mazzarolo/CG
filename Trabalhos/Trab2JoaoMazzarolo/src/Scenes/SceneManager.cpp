@@ -6,6 +6,7 @@ SceneManager::SceneManager(int screenWidth, int screenHeight)
     this->screenHeight = screenHeight;
     gameScene = new GameScene(screenWidth, screenHeight);
     menuScene = new MenuScene(screenWidth, screenHeight);
+    gameOverScene = new GameOverScene(screenWidth, screenHeight);
     currentScene = menuScene;
     clock = new Clock();
 }
@@ -26,5 +27,11 @@ void SceneManager::update()
         currentScene->setNextScene(-1);
         currentScene = gameScene;
         currentScene->reset();
+    }
+    else if (nextScene == 2)
+    {
+        currentScene->setNextScene(-1);
+        currentScene = gameOverScene;
+        gameOverScene->reset(gameScene->getScore());
     }
 }
