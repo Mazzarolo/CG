@@ -18,10 +18,12 @@ void GameScene::render()
     powerUpManager->render(player->isUp());
     if(powerUpManager->getSelecting())
     {
+        pause();
         printFPS(10, 10);
         printStopWatch(10, 25);
         return;
     }
+    resume();
     background->render();
     enemiesManager->render(player->getLevel(), player->isUp());
     player->render();

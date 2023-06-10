@@ -15,6 +15,7 @@ public:
     void render();
 
     void setPosition(int x, int y);
+    void setPosition(int x);
 };
 
 #endif // POWER_UP_CARD_H

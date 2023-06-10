@@ -12,12 +12,12 @@ class Gun : public Clock
 {
 private:
     float shootRate, shootRateCounter;
-    int limitY, speed;
+    int limitY, speed, numProjectiles, radius, projectileRadius;
     Vector2 position;
     vector<Projectile*> projectiles;
 
 public:
-    Gun(int x, int y, int screenHeight);
+    Gun(int x, int y, int screenHeight, int radius);
 
     Gun(int x, int y, int screenHeight, float shootRate, int speed);
 
@@ -35,6 +35,14 @@ public:
     bool verifyCollision(Vector2 position, int radius);
 
     bool isEmpty();
+
+    void addShootRate(float shootRate);
+
+    void addSpeed(int speed);
+
+    void addShoot();
+
+    void addProjectileRadius(int radius);
 };
 
 #endif // GUN_H

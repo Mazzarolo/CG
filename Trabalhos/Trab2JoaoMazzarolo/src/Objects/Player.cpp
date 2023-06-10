@@ -20,9 +20,8 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     explosion->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
     explosion->setPosition(-explosion->getWidth() / 2, -explosion->getHeight() / 2);
 
-    gun = new Gun(screenWidth / 2, startY, screenHeight);
-
     hitBoxRadius = 18;
+    gun = new Gun(screenWidth / 2, startY, screenHeight, hitBoxRadius);
     speed = 300;
     cameraSpeed = cameraSpeedChanger = 100;
     left = right = top = false;

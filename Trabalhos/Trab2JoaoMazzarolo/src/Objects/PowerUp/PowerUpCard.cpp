@@ -28,11 +28,16 @@ void PowerUpCard::render()
     CV::rectFill(x, y, x + width, y + height);
 
     CV::color(1, 1, 1);
-    CV::text(x + 10, y + 10, text);
+    CV::textTitle(x + 10, y + 10, text);
 }
 
 void PowerUpCard::setPosition(int x, int y)
 {
-    x = x;
-    y = y;
+    this->x = x;
+    this->y = y;
+}
+
+void PowerUpCard::setPosition(int x)
+{
+    this->x = x;
 }

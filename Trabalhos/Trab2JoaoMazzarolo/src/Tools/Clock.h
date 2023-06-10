@@ -15,6 +15,8 @@ private:
 
     static float stopWatch;
 
+    static bool isPaused;
+
 protected:
     float getDeltaTime();
 
@@ -30,6 +32,10 @@ public:
     Clock();
     
     void tic();
+
+    void pause();
+
+    void resume();
 };
 
 #endif // CLOCK_H

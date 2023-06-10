@@ -2,6 +2,7 @@
 
 float Clock::deltaTime = 0;
 float Clock::stopWatch = 0;
+bool Clock::isPaused = false;
 
 Clock::Clock()
 {
@@ -15,7 +16,8 @@ void Clock::tic()
     deltaTime = time.count();
     lastFrame = currentFrame;
 
-    stopWatch += deltaTime;
+    if(!isPaused)
+        stopWatch += deltaTime;
 }
 
 float Clock::getDeltaTime()
@@ -34,6 +36,7 @@ void Clock::printFPS(int x, int y)
 void Clock::resetStopWatch()
 {
     stopWatch = 0;
+    isPaused = false;
 }
 
 float Clock::getStopWatch()
@@ -44,7 +47,17 @@ float Clock::getStopWatch()
 void Clock::printStopWatch(int x, int y)
 {
     char sw[10];
-    sprintf(sw, "Time:%.f", getStopWatch());
+    sprintf(sw, "Time:%.1f", getStopWatch());
     CV::color(1, 1, 1);
     CV::text(x, y, sw);
+}
+
+void Clock::pause()
+{
+    isPaused = true;
+}
+
+void Clock::resume()
+{
+    isPaused = false;
 }

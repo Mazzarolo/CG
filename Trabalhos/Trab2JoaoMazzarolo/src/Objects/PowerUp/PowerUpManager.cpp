@@ -14,8 +14,10 @@ PowerUpManager::PowerUpManager(int screenWidth, int screenHeight, Background* ba
 
 void PowerUpManager::createCards()
 {
-    powerUpGunCards.push_back(new PowerUpCard(75, 50, "GUN", [this] {player->powerUpGun();}));
-    powerUpGunCards.push_back(new PowerUpCard(425, 50, "BULLET", [this] {player->powerUpGun();}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "Make your Weapon Bigger", [this] {player->getGun()->addProjectileRadius(1);}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "More bullets per shoot", [this] {player->getGun()->addShoot();}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "More bullets per second", [this] {player->getGun()->addShootRate(0.8);}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Add speed to your gun", [this] {player->getGun()->addSpeed(1.2);}));
 }
 
 void PowerUpManager::render(bool isUp)
@@ -45,8 +47,15 @@ void PowerUpManager::render(bool isUp)
             delete powerUpItem;
             powerUpItem = NULL;
             selecting = true;
-            powerUpGunCards[0]->setActive(true);
-            powerUpGunCards[1]->setActive(true);
+            selectedCards[0] = rand() % powerUpGunCards.size();
+            do
+            {
+                selectedCards[1] = rand() % powerUpGunCards.size();
+            } while (selectedCards[0] == selectedCards[1]);
+            powerUpGunCards[selectedCards[0]]->setActive(true);
+            powerUpGunCards[selectedCards[0]]->setPosition(75);
+            powerUpGunCards[selectedCards[1]]->setActive(true);
+            powerUpGunCards[selectedCards[1]]->setPosition(425);
         }
         else if(powerUpItem->isDead())
         {
@@ -60,18 +69,18 @@ void PowerUpManager::spawn()
 {
     powerUpIsGun = rand() % 2;
     int x = background->getSpawnPoints()[0].x + (background->getSpawnPoints()[1].x - background->getSpawnPoints()[0].x) / 2.0f;
-    powerUpItem = new PowerUpItem(x, screenHeight + 10, 300, background, rand() % 2);
+    powerUpItem = new PowerUpItem(x, screenHeight + 10, 150, background, rand() % 2);
 }
 
 void PowerUpManager::renderCards()
 {
     CV::clear(0.1, 0.1, 0.1);
-    powerUpGunCards[0]->render();
-    powerUpGunCards[1]->render();
-    if(!powerUpGunCards[0]->getActive() || !powerUpGunCards[1]->getActive())
+    powerUpGunCards[selectedCards[0]]->render();
+    powerUpGunCards[selectedCards[1]]->render();
+    if(!powerUpGunCards[selectedCards[0]]->getActive() || !powerUpGunCards[selectedCards[1]]->getActive())
     {
-        powerUpGunCards[0]->setActive(false);
-        powerUpGunCards[1]->setActive(false);
+        powerUpGunCards[selectedCards[0]]->setActive(false);
+        powerUpGunCards[selectedCards[1]]->setActive(false);
         selecting = false;
     }
 }

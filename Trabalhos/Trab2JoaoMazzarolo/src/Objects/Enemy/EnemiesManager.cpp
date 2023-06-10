@@ -41,7 +41,7 @@ void EnemiesManager::spawn(int level)
     spawnTimeCounter += getDeltaTime();
     if(level > 6)
         level = 6;
-    if(spawnTimeCounter >= spawnTime - level * 0.5f)
+    if(spawnTimeCounter >= spawnTime - level * 1.0f)
     {
         spawnTimeCounter = 0;
         int x = rand();
@@ -54,7 +54,6 @@ void EnemiesManager::spawn(int level)
             speed = 75 + level * 10;
             x = screenWidth / 4 + x % (screenWidth / 2);
             enemies.push_back(new SeekerEnemy(screenWidth, screenHeight, x, y, speed, sprites[enemyType], player));
-            spawnTimeCounter += spawnTime * 3 / 4;
         }
         else if (enemyType == 1)
         {
@@ -67,7 +66,6 @@ void EnemiesManager::spawn(int level)
             x = limits[0].x + x % (int)(distance);
             for(int i = 0; i < num; i++)
                 enemies.push_back(new BlockerEnemy(screenWidth, screenHeight, x + i * distance, y, speed, sprites[enemyType], background, rand() % 2));
-            spawnTimeCounter += spawnTime * 1 / 5;
         }
         else if (enemyType == 2)
         {

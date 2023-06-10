@@ -1,13 +1,16 @@
 #include "Gun.h"
 
-Gun::Gun(int x, int y, int screenHeight)
+Gun::Gun(int x, int y, int screenHeight, int radius)
 {
+    this->radius = radius;
     position.x = x;
     position.y = y;
     limitY = screenHeight;
     speed = 500;
     shootRate = 0.5;
     shootRateCounter = 0;
+    numProjectiles = 1;
+    projectileRadius = 5;
 }
 
 Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
@@ -18,6 +21,8 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
     this->speed = speed;
     this->shootRate = shootRate;
     shootRateCounter = 0;
+    numProjectiles = 1;
+    projectileRadius = 5;
 }
 
 void Gun::shoot()
@@ -25,7 +30,15 @@ void Gun::shoot()
     if (shootRateCounter < shootRate)
         return;
     shootRateCounter = 0;
-    projectiles.push_back(new Projectile(position.x, position.y, 5, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3}));
+    if(numProjectiles == 1)
+    {
+        projectiles.push_back(new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3}));
+        return;
+    }
+
+    int offset = radius / (numProjectiles - 1);
+    for(int i = 0; i < numProjectiles; i++)
+        projectiles.push_back(new Projectile(position.x - (radius / 2) + offset * i, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3}));
 }
 
 void Gun::render()
@@ -101,4 +114,24 @@ void Gun::move(int x, int y)
 bool Gun::isEmpty()
 {
     return projectiles.empty();
+}
+
+void Gun::addShootRate(float shootRate)
+{
+    this->shootRate *= shootRate;
+}
+
+void Gun::addSpeed(int speed)
+{
+    this->speed *= speed;
+}
+
+void Gun::addShoot()
+{
+    numProjectiles++;
+}
+
+void Gun::addProjectileRadius(int radius)
+{
+    projectileRadius += radius;
 }

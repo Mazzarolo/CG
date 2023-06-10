@@ -14,6 +14,7 @@ private:
     vector<PowerUpCard*> powerUpGunCards, powerUpBulletCards;
     Background* background;
     Player* player;
+    int selectedCards[2];
     bool powerUpIsGun, selecting;
     int screenWidth, screenHeight;
     float spawnTime, spawnTimeCounter;
