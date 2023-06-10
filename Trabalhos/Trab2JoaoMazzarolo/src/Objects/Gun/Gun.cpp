@@ -13,7 +13,6 @@ Gun::Gun(int x, int y, int screenHeight, int radius)
     projectileRadius = 5;
     damage = 1;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
-    projectileModel->setTopDown(true);
 }
 
 Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
@@ -32,7 +31,6 @@ Gun::Gun(int x, int y, int screenHeight, float shootRate, int speed)
 
 void Gun::shoot()
 {
-    printf("Topdown %d \n", projectileModel->getTopDown());
     if (shootRateCounter < shootRate)
         return;
     shootRateCounter = 0;
@@ -103,7 +101,6 @@ void Gun::reset()
     numProjectiles = 1;
     projectileRadius = 5;
     projectileModel = new Projectile(position.x, position.y, projectileRadius, speed, new float[3]{1, 0, 0}, new float[3]{0.3, 0.3, 0.3});
-    projectileModel->setTopDown(true);
 }
 
 bool Gun::verifyCollision(Vector2 position, int radius)
@@ -116,7 +113,37 @@ bool Gun::verifyCollision(Vector2 position, int radius)
         {
             projectiles[i]->explode();
             hit = true;
-        } else if(projectiles[i]->hasEnded())
+        } 
+        else if(projectiles[i]->hasEnded())
+        {
+            delete projectiles[i];
+            projectiles.erase(projectiles.begin() + i);
+        }
+    }
+
+    return hit;
+}
+
+bool Gun::verifyCollision(Vector2 position, int radius, int enemyId)
+{
+    bool hit = false;
+
+    for (int i = 0; i < (int) projectiles.size(); i++)
+    {
+        if (Collisions::circleCircle(projectiles[i]->getPosition(), projectiles[i]->getRadius(), position, radius) && !projectiles[i]->getEnded())
+        {
+            if(projectiles[i]->getEnemyId() == enemyId && projectiles[i]->getContinuous())
+                continue;
+            else if(projectiles[i]->getContinuous())
+            {
+                Projectile* clone = projectiles[i]->clone();
+                clone->setEnemyId(enemyId);
+                projectiles.push_back(clone);
+            }
+            projectiles[i]->explode();
+            hit = true;
+        } 
+        else if(projectiles[i]->hasEnded())
         {
             delete projectiles[i];
             projectiles.erase(projectiles.begin() + i);

@@ -20,6 +20,8 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
     explosionTimeCounter = 0;
     ended = false;
     curved = topDown = explosive = continuous = decending = false;
+    enemyId = -1;
+    fixedX = x;
     //printf("%.f %.f\n", position.x, position.y);
 }
 
@@ -38,7 +40,7 @@ void Projectile::move()
 {
     if(ended)
         return;
-    
+
     if(topDown && position.y > 550)
         decending = true;
 
@@ -49,6 +51,11 @@ void Projectile::move()
     else
     {
         position.y += speed * getDeltaTime();
+    }
+
+    if(curved)
+    {
+        position.x = fixedX + cos(position.y / 50) * getDeltaTime() * 2000;
     }
 }
 
@@ -116,11 +123,14 @@ Projectile* Projectile::clone()
 {
     Projectile* p = new Projectile(position.x, position.y, radius, speed, colorCircle, colorBorder);
     p->setTopDown(topDown);
+    p->setCurved(curved);
+    p->setContinuous(continuous);
 }
 
 void Projectile::setPosition(int x, int y)
 {
     position.x = x;
+    fixedX = x;
     position.y = y;
 }
 
@@ -147,4 +157,44 @@ void Projectile::setTopDown(bool topDown)
 bool Projectile::getTopDown()
 {
     return topDown;
+}
+
+void Projectile::setCurved(bool curved)
+{
+    this->curved = curved;
+    if(!curved)
+        return;
+    colorCircle[0] = 0.0f;
+    colorCircle[1] = 0.5f;
+    colorCircle[2] = 0.7f;
+}
+
+bool Projectile::getCurved()
+{
+    return curved;
+}
+
+void Projectile::setContinuous(bool continuous)
+{
+    this->continuous = continuous;
+    if(!continuous)
+        return;
+    colorCircle[0] = 0.7f;
+    colorCircle[1] = 0.5f;
+    colorCircle[2] = 0.0f;
+}
+
+bool Projectile::getContinuous()
+{
+    return continuous;
+}
+
+void Projectile::setEnemyId(int id)
+{
+    enemyId = id;
+}
+
+int Projectile::getEnemyId()
+{
+    return enemyId;
 }

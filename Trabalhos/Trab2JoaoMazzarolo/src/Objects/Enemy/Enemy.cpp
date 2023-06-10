@@ -1,6 +1,7 @@
 #include "Enemy.h"
 
 Animation* Enemy::explosion = NULL;
+int Enemy::count = 0;
 
 Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int life)
 {
@@ -10,6 +11,7 @@ Enemy::Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int l
         explosion->load((char*) "Trab2JoaoMazzarolo\\src\\Images\\Explosions\\ExplosionBig.bmp");
     }
 
+    id = count++;
     this->position = Vector2(x, y);
     this->speed = -speed;
     this->dead = false;
@@ -75,7 +77,7 @@ bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playe
         hit = true;
     }
 
-    if(playerGun->verifyCollision(position, hitBoxRadius))
+    if(playerGun->verifyCollision(position, hitBoxRadius, id))
         life -= playerGun->getDamage();
 
     if(life <= 0)
@@ -98,4 +100,9 @@ void Enemy::renderSprite()
     {
         sprite->render();
     }
+}
+
+int Enemy::getId()
+{
+    return id;
 }

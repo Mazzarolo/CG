@@ -9,11 +9,12 @@
 class Enemy : public Clock
 {
 protected:
+    static int count;
     Animation* sprite;
     static Animation* explosion;
     Gun* gun;
     Vector2 position;
-    int life;
+    int life, id;
     int hitBoxRadius;
     float speed;
     float explosionTime, explosionTimeCounter;
@@ -32,6 +33,8 @@ public:
     bool isDead();
 
     bool verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun);
+
+    int getId();
 
 private:
     void renderSprite();

@@ -10,10 +10,10 @@ class Projectile : public Clock
 private:
     static Animation* explosionSprite;
     Vector2 position;
-    int radius;
+    int radius, fixedX;
     float colorCircle[3];
     float colorBorder[3];
-    int speed;
+    int speed, enemyId;
     float explosionTime, explosionTimeCounter;
     bool ended;
     bool curved, topDown, explosive, continuous, decending;
@@ -55,6 +55,18 @@ public:
     void setTopDown(bool topDown);
 
     bool getTopDown();
+
+    void setCurved(bool curved);
+
+    bool getCurved();
+
+    void setContinuous(bool continuous);
+
+    bool getContinuous();
+
+    void setEnemyId(int id);
+
+    int getEnemyId();
 };
 
 #endif // PROJECTILE_H
