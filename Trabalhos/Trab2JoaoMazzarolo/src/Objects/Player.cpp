@@ -37,7 +37,8 @@ Player::Player(int screenWidth, int screenHeight, int startY, int curveHeight)
     changingTime = 30;
     changingTimeCounter = 0;
     invincibleTime = invincibleTimeCounter = 1.0f;
-    invincibleBlinkTime = invincibleBlinkTimeCounter = 0.1f;
+    shieldTime = shieldTimeCounter = 5.0f;
+    invincibleBlinkTime = invincibleBlinkTimeCounter = 0.05f;
     scoreMultiplier = scoreChanger = 10;
 }
 
@@ -147,8 +148,10 @@ void Player::reset(int x)
     center.y = fixedY;
     life = 3;
     gun->reset();
+    speed = 300;
     invincibleTimeCounter = invincibleTime;
     invincibleBlinkTimeCounter = invincibleBlinkTime;
+    shieldTimeCounter = shieldTime;
     score = 0;
     scoreTime = scoreTimeCounter = 0.1f;
     changingTimeCounter = 0;
@@ -204,7 +207,7 @@ void Player::renderStats()
 
 bool Player::takeDamage(int x)
 {
-    if(invincibleTimeCounter < invincibleTime)
+    if(invincibleTimeCounter < invincibleTime || shieldTimeCounter < shieldTime)
     {
         if(life > 0)
             center.x = x;
@@ -225,7 +228,7 @@ bool Player::takeDamage(int x)
 
 bool Player::takeDamage()
 {
-    if(invincibleTimeCounter < invincibleTime)
+    if(invincibleTimeCounter < invincibleTime || shieldTimeCounter < shieldTime)
     {
         return false;
     }
@@ -248,6 +251,13 @@ void Player::renderSprite()
     {
         explosion->render();
         return;
+    }
+
+    if(shieldTimeCounter < shieldTime)
+    {
+        CV::color(rand() % 14);
+        CV::circle(0, 0, hitBoxRadius + 5, 30);
+        shieldTimeCounter += getDeltaTime();
     }
 
     if(invincibleTimeCounter < invincibleTime)
@@ -313,4 +323,24 @@ int Player::getLife()
 int Player::getScore()
 {
     return score;
+}
+
+void Player::addShield()
+{
+    shieldTimeCounter = 0;
+}
+
+void Player::addLife()
+{
+    life++;
+}
+
+void Player::addScoreMultiplier()
+{
+    scoreMultiplier += scoreChanger;
+}
+
+void Player::addSpeed(float multiplier)
+{
+    speed *= multiplier;
 }

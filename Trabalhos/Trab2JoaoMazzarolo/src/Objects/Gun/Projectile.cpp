@@ -110,3 +110,13 @@ void Projectile::setPosition(int x, int y)
     position.x = x;
     position.y = y;
 }
+
+void Projectile::setSpeed(int speed)
+{
+    this->speed = speed;
+}
+
+void Projectile::setRadius(int radius)
+{
+    this->radius = radius;
+}

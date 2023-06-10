@@ -142,6 +142,7 @@ void Gun::addShootRate(float shootRate)
 void Gun::addSpeed(int speed)
 {
     this->speed *= speed;
+    projectileModel->setSpeed(this->speed);
 }
 
 void Gun::addShoot()
@@ -152,6 +153,7 @@ void Gun::addShoot()
 void Gun::addProjectileRadius(int radius)
 {
     projectileRadius += radius;
+    projectileModel->setRadius(projectileRadius);
 }
 
 void Gun::addDamage(int damage)

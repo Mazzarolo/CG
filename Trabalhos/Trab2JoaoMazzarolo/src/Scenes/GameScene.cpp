@@ -73,6 +73,7 @@ void GameScene::onKeyboardUp()
 
 void GameScene::reset()
 {
+    nextScene = -1;
     player->reset(screenWidth / 2);
     powerUpManager->reset();
     enemiesManager->reset();

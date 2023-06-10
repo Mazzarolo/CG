@@ -54,6 +54,7 @@ void GameOverScene::render()
 
 void GameOverScene::onPlayClick()
 {
+    printf("Play clicked\n");
     nextScene = 1;
 }
 
@@ -64,6 +65,7 @@ void GameOverScene::onExitClick()
 
 void GameOverScene::reset(int score)
 {
+    nextScene = -1;
     this->score = score;
     for(int i = 0; i < (int) buttons.size(); i++)
     {

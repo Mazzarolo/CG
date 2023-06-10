@@ -25,7 +25,7 @@ private:
     int life, score, scoreMultiplier, scoreChanger, cameraSpeedChanger;
     int hitBoxRadius;
     int color[3];
-    float invincibleTime, invincibleTimeCounter, invincibleBlinkTime, invincibleBlinkTimeCounter;
+    float invincibleTime, invincibleTimeCounter, invincibleBlinkTime, invincibleBlinkTimeCounter, shieldTime, shieldTimeCounter;
     float scoreTime, scoreTimeCounter;
     float changingTime, changingTimeCounter;
     float speed, cameraSpeed;
@@ -74,7 +74,11 @@ public:
 
     void addLife();
 
-    void setShield();
+    void addShield();
+
+    void addSpeed(float multiplier);
+
+    void addScoreMultiplier();
 
 private:
     void gunControl();

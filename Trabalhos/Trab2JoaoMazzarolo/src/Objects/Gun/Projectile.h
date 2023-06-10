@@ -46,6 +46,10 @@ public:
     Projectile* clone();
 
     void setPosition(int x, int y);
+
+    void setRadius(int radius);
+
+    void setSpeed(int speed);
 };
 
 #endif // PROJECTILE_H

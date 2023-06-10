@@ -14,10 +14,16 @@ PowerUpManager::PowerUpManager(int screenWidth, int screenHeight, Background* ba
 
 void PowerUpManager::createCards()
 {
-    powerUpGunCards.push_back(new PowerUpCard(75, 50, "Make your Weapon Bigger", [this] {player->getGun()->addProjectileRadius(1);}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "Make your Weapon Bigger", [this] {player->getGun()->addProjectileRadius(3);}));
     powerUpGunCards.push_back(new PowerUpCard(425, 50, "More bullets per shoot", [this] {player->getGun()->addShoot();}));
     powerUpGunCards.push_back(new PowerUpCard(75, 50, "More bullets per second", [this] {player->getGun()->addShootRate(0.8);}));
-    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Add speed to your gun", [this] {player->getGun()->addSpeed(1.2);}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Add speed to your bullets", [this] {player->getGun()->addSpeed(1.5);}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "Add damage to your gun", [this] {player->getGun()->addDamage(1);}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Get more health", [this] {player->addLife();}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "5 Seconds Shield", [this] {player->addShield();}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Get 1000 points", [this] {player->addScore(1000);}));
+    powerUpGunCards.push_back(new PowerUpCard(75, 50, "Get more points over time", [this] {player->addScoreMultiplier();}));
+    powerUpGunCards.push_back(new PowerUpCard(425, 50, "Get more speed", [this] {player->addSpeed(1.2);}));
 }
 
 void PowerUpManager::render(bool isUp)
