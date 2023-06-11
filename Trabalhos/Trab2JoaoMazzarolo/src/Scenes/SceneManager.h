@@ -5,6 +5,7 @@
 #include <mmsystem.h>
 #include "GameScene.h"
 #include "MenuScene.h"
+#include "InfoScene.h"
 #include "GameOverScene.h"
 #include "../Tools/Clock.h"
 
@@ -18,7 +19,9 @@ private:
     GameScene* gameScene;
     MenuScene* menuScene;
     GameOverScene* gameOverScene;
+    InfoScene* infoScene;
     Clock* clock;
+    bool menuMusicPlaying;
 
 public:
     SceneManager(int screenWidth, int screenHeight);

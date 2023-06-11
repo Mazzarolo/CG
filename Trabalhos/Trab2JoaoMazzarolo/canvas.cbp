@@ -83,6 +83,8 @@
 		<Unit filename="src/Scenes/GameOverScene.h" />
 		<Unit filename="src/Scenes/GameScene.cpp" />
 		<Unit filename="src/Scenes/GameScene.h" />
+		<Unit filename="src/Scenes/InfoScene.cpp" />
+		<Unit filename="src/Scenes/InfoScene.h" />
 		<Unit filename="src/Scenes/MenuScene.cpp" />
 		<Unit filename="src/Scenes/MenuScene.h" />
 		<Unit filename="src/Scenes/Scene.cpp" />

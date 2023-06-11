@@ -61,7 +61,7 @@ void MenuScene::onPlayClick()
 
 void MenuScene::onInfoClick()
 {
-    nextScene = 2;
+    nextScene = 3;
 }
 
 void MenuScene::onExitClick()
