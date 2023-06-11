@@ -39,13 +39,15 @@ GameOverScene::~GameOverScene()
 
 void GameOverScene::render()
 {
-    CV::clear(0.1, 0.1, 0.2);
+    CV::clear(0, 0, 0.05);
     title->render();
     printFPS(10, 10);
     CV::color(rand() % 14);
     char scoreText[50];
     sprintf(scoreText, "Score: %d", score);
     CV::biggerText(3 * screenWidth / 8, 7 * screenHeight / 12, scoreText);
+    sprintf(scoreText, "Highscore: %d", highscore);
+    CV::biggerText(3 * screenWidth / 8, 8 * screenHeight / 12, scoreText);
     for(int i = 0; i < (int) buttons.size(); i++)
     {
         buttons[i]->render();
@@ -66,6 +68,12 @@ void GameOverScene::reset(int score)
 {
     nextScene = -1;
     this->score = score;
+    getHighscore();
+    if(score > highscore)
+    {
+        highscore = score;
+        setHighscore();
+    }
     for(int i = 0; i < (int) buttons.size(); i++)
     {
         buttons[i]->setActive(true);
@@ -79,4 +87,27 @@ void GameOverScene::setNextScene(int nextScene)
     {
         buttons[i]->setActive(false);
     }
+}
+
+void GameOverScene::getHighscore()
+{
+    FILE* file = fopen("Trab2JoaoMazzarolo\\src\\Data\\Highscore", "r");
+    if(file == NULL)
+    {
+        highscore = 0;
+        return;
+    }
+    fscanf(file, "%d", &highscore);
+    fclose(file);
+}
+
+void GameOverScene::setHighscore()
+{
+    FILE* file = fopen("Trab2JoaoMazzarolo\\src\\Data\\Highscore", "w");
+    if(file == NULL)
+    {
+        return;
+    }
+    fprintf(file, "%d", highscore);
+    fclose(file);
 }

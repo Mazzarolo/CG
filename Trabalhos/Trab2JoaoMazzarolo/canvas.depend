@@ -268,7 +268,7 @@
 1686421232 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gamescene.cpp
 	"GameScene.h"
 
-1686458552 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
+1686490817 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\scenemanager.cpp
 	"SceneManager.h"
 
 1686001746 source:j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\lib\gl_canvas2d.cpp
@@ -499,7 +499,7 @@
 1684789222 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
 	"Star.h"
 
-1686455222 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1686491372 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
 1684932773 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
@@ -555,13 +555,13 @@
 	"../../Lib/gl_canvas2d.h"
 	"../Background.h"
 
-1686369607 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
+1686493097 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
 	"EnemiesManager.h"
 
-1686451868 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+1686493013 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
 	"Enemy.h"
 
-1686449993 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
+1686492720 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
 	"../Animation.h"
 	"../Gun/Gun.h"
 	"../../Tools/Clock.h"
@@ -652,19 +652,19 @@
 	"../Animation.h"
 	"../Background.h"
 
-1686426574 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.cpp
+1686494014 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.cpp
 	"GameOverScene.h"
 
-1686415822 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.h
+1686493652 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\gameoverscene.h
 	"Scene.h"
 	<vector>
 	"../UI/SpriteButton.h"
 
-1686455167 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\infoscene.h
+1686491838 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\infoscene.h
 	"Scene.h"
 	"../Lib/gl_canvas2d.h"
 	"../UI/SpriteButton.h"
 
-1686455309 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\infoscene.cpp
+1686492228 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\infoscene.cpp
 	"InfoScene.h"
 

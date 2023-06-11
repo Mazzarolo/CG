@@ -103,11 +103,10 @@ bool EnemiesManager::verifyCollision()
         {
             delete enemies[i];
             enemies.erase(enemies.begin() + i);
-            player->addScore(100);
             continue;
         }
 
-        if(enemies[i]->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun()))
+        if(player->getLife() > 0 && enemies[i]->verifyCollision(player->getPosition(), player->getHitBoxRadius(), player->getGun(), [this](int score) { player->addScore(score); }))
         {
             hit = true;
         }

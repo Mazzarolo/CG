@@ -8,7 +8,7 @@
 class GameOverScene : public Scene
 {
 private:
-    int score;
+    int score, highscore;
     Bitmap* title;
     vector<SpriteButton*> buttons;
 
@@ -27,6 +27,9 @@ private:
 
     virtual void setNextScene(int nextScene);
 
+    void getHighscore();
+
+    void setHighscore();
 };
 
 #endif // GAME_OVER_SCENE_H

@@ -32,7 +32,7 @@ public:
 
     bool isDead();
 
-    bool verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun);
+    bool verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun, function<void(int)> addScore);
 
     int getId();
 

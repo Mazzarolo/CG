@@ -66,7 +66,7 @@ bool Enemy::isDead()
         return false;
 }
 
-bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun)
+bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun, function<void(int)> addScore)
 {
     bool hit = false;
 
@@ -78,8 +78,11 @@ bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playe
     if(playerGun->verifyCollision(position, hitBoxRadius, id, [this] {loseSpeed();}))
         life -= playerGun->getDamage();
 
-    if(life <= 0)
+    if(life <= 0 && !dead)
+    {
         dead = true;
+        addScore(200);
+    }
 
     return hit;
 }

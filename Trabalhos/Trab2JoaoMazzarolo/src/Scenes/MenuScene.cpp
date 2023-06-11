@@ -45,7 +45,7 @@ MenuScene::~MenuScene()
 
 void MenuScene::render()
 {
-    CV::clear(0.1, 0.1, 0.2);
+    CV::clear(0, 0, 0.05);
     title->render();
     printFPS(10, 10);
     for(int i = 0; i < (int) buttons.size(); i++)

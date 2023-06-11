@@ -24,6 +24,8 @@ private:
     void onExitClick();
 
     virtual void setNextScene(int nextScene);
+
+    void printInfoText();
 };
 
 #endif // INFO_SCENE_H

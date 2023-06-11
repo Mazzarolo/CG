@@ -27,8 +27,9 @@ InfoScene::~InfoScene()
 
 void InfoScene::render()
 {
-    CV::clear(0.1, 0.1, 0.2);
+    CV::clear(0, 0, 0.05);
     title->render();
+    printInfoText();
     printFPS(10, 10);
     exitButton->render();
 }
@@ -48,4 +49,22 @@ void InfoScene::setNextScene(int nextScene)
 {
     this->nextScene = nextScene;
     exitButton->setActive(false);
+}
+
+void InfoScene::printInfoText()
+{
+    CV::color(1, 1, 1);
+    char buffer[100];
+    int startY = 100;
+    sprintf(buffer, "-> Move your ship with WASD");
+    CV::textTitle(50, startY + 300, buffer);
+    sprintf(buffer, "-> Shoot with SPACE");
+    CV::textTitle(50, startY + 250, buffer);
+    sprintf(buffer, "-> Press ESC during gameplay to reset and return to main menu");
+    CV::textTitle(50, startY + 200, buffer);
+    sprintf(buffer, "-> Get the upgrade boxes to improve yout ship");
+    CV::textTitle(50, startY + 150, buffer);
+    sprintf(buffer, "-> Stay alive and destroy foes to get points");
+    CV::textTitle(50, startY + 100, buffer);
+    sprintf(buffer, "Enjoy!");
 }

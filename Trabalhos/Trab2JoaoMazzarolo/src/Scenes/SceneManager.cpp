@@ -23,12 +23,15 @@ void SceneManager::update()
     {
         if(!menuMusicPlaying)
             PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\MenuMusic.wav"), NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+        menuMusicPlaying = true;
         currentScene->setNextScene(-1);
         currentScene = menuScene;
         currentScene->reset();
     }
     else if (nextScene == 1)
     {
+        if(!menuMusicPlaying)
+            PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\MenuMusic.wav"), NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
         menuMusicPlaying = false;
         currentScene->setNextScene(-1);
         currentScene = gameScene;
