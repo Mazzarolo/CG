@@ -12,11 +12,12 @@ class PowerUpManager : public Clock
 private:
     PowerUpItem* powerUpItem;
     vector<PowerUpCard*> powerUpGunCards, powerUpBulletCards;
+    vector<bool> activeBulletCards;
     Background* background;
     Player* player;
     int selectedCards[2];
     bool powerUpIsGun, selecting;
-    int screenWidth, screenHeight;
+    int screenWidth, screenHeight, counter, limit, bulletCardsActive;
     float spawnTime, spawnTimeCounter;
 
 public:
@@ -27,8 +28,6 @@ public:
     void render(bool isUp);
 
     void spawn();
-
-    void verifyCollision();
 
     void renderCards();
 

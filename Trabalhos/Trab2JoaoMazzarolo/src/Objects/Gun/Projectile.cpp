@@ -19,10 +19,9 @@ Projectile::Projectile(int x, int y, int radius, int speed, float* colorCircle, 
     explosionTime = 0.8f;
     explosionTimeCounter = 0;
     ended = false;
-    curved = topDown = explosive = continuous = decending = false;
+    curved = topDown = decelerator = continuous = decending = false;
     enemyId = -1;
     fixedX = x;
-    //printf("%.f %.f\n", position.x, position.y);
 }
 
 void Projectile::loadExplosionSprite()
@@ -55,7 +54,7 @@ void Projectile::move()
 
     if(curved)
     {
-        position.x = fixedX + cos(position.y / 50) * getDeltaTime() * 2000;
+        position.x = fixedX + cos(position.y / 50) * getDeltaTime() * 3000;
     }
 }
 
@@ -63,7 +62,7 @@ void Projectile::move(bool down)
 {
     if(ended)
         return;
-    
+
     if(down)
         position.y += 2 * speed * getDeltaTime();
     else
@@ -125,6 +124,9 @@ Projectile* Projectile::clone()
     p->setTopDown(topDown);
     p->setCurved(curved);
     p->setContinuous(continuous);
+    p->setDecelerator(decelerator);
+    p->decending = decending;
+    return p;
 }
 
 void Projectile::setPosition(int x, int y)
@@ -149,9 +151,16 @@ void Projectile::setTopDown(bool topDown)
     this->topDown = topDown;
     if(!topDown)
         return;
-    colorCircle[0] = 0.5f;
-    colorCircle[1] = 0.0f;
-    colorCircle[2] = 0.7f;
+    if(!curved && !continuous && !decelerator)
+    {
+        colorCircle[0] = 0.5f;
+        colorCircle[1] = 0.0f;
+        colorCircle[2] = 0.7f;
+        return;
+    }
+    colorCircle[0] = (colorCircle[0] + 0.5f) / 2.0f;
+    colorCircle[1] = (colorCircle[1] + 0.0f) / 2.0f;
+    colorCircle[2] = (colorCircle[2] + 0.7f) / 2.0f;
 }
 
 bool Projectile::getTopDown()
@@ -164,9 +173,16 @@ void Projectile::setCurved(bool curved)
     this->curved = curved;
     if(!curved)
         return;
-    colorCircle[0] = 0.0f;
-    colorCircle[1] = 0.5f;
-    colorCircle[2] = 0.7f;
+    if(!topDown && !continuous && !decelerator)
+    {
+        colorCircle[0] = 0.0f;
+        colorCircle[1] = 0.5f;
+        colorCircle[2] = 0.7f;
+        return;
+    }
+    colorCircle[0] = (colorCircle[0] + 0.0f) / 2.0f;
+    colorCircle[1] = (colorCircle[1] + 0.5f) / 2.0f;
+    colorCircle[2] = (colorCircle[2] + 0.7f) / 2.0f;
 }
 
 bool Projectile::getCurved()
@@ -179,9 +195,16 @@ void Projectile::setContinuous(bool continuous)
     this->continuous = continuous;
     if(!continuous)
         return;
-    colorCircle[0] = 0.7f;
-    colorCircle[1] = 0.5f;
-    colorCircle[2] = 0.0f;
+    if(!topDown && !curved && !decelerator)
+    {
+        colorCircle[0] = 0.7f;
+        colorCircle[1] = 0.5f;
+        colorCircle[2] = 0.0f;
+        return;
+    }
+    colorCircle[0] = (colorCircle[0] + 0.7f) / 2.0f;
+    colorCircle[1] = (colorCircle[1] + 0.5f) / 2.0f;
+    colorCircle[2] = (colorCircle[2] + 0.0f) / 2.0f;
 }
 
 bool Projectile::getContinuous()
@@ -197,4 +220,26 @@ void Projectile::setEnemyId(int id)
 int Projectile::getEnemyId()
 {
     return enemyId;
+}
+
+void Projectile::setDecelerator(bool decelerator)
+{
+    this->decelerator = decelerator;
+    if(!decelerator)
+        return;
+    if(!topDown && !curved && !continuous)
+    {
+        colorCircle[0] = 0.5f;
+        colorCircle[1] = 0.5f;
+        colorCircle[2] = 1.0f;
+        return;
+    }
+    colorCircle[0] = (colorCircle[0] + 0.5f) / 2.0f;
+    colorCircle[1] = (colorCircle[1] + 0.5f) / 2.0f;
+    colorCircle[2] = (colorCircle[2] + 1.0f) / 2.0f;
+}
+
+bool Projectile::getDecelerator()
+{
+    return decelerator;
 }

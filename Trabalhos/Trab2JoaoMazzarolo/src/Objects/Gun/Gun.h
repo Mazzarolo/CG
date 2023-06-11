@@ -5,6 +5,7 @@
 #include "../../Tools/Clock.h"
 #include "../../Tools/Collisions.h"
 #include <vector>
+#include <functional>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ public:
     void reset();
 
     bool verifyCollision(Vector2 position, int radius);
-    bool verifyCollision(Vector2 position, int radius, int enemyId);
+    bool verifyCollision(Vector2 position, int radius, int enemyId, function<void()> loseSpeed);
 
     bool isEmpty();
 
@@ -49,6 +50,14 @@ public:
     void addDamage(int damage);
 
     int getDamage();
+
+    void setContinuous();
+
+    void setCurved();
+
+    void setTopDown();
+
+    void setDecelerator();
 };
 
 #endif // GUN_H

@@ -211,7 +211,7 @@
 	"Scene.h"
 	<stdio.h>
 
-1686418242 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
+1686446990 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.cpp
 	"Background.h"
 
 1686374308 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\background.h
@@ -498,7 +498,7 @@
 1684789222 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\star.cpp
 	"Star.h"
 
-1686426950 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
+1686444625 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\scenes\menuscene.cpp
 	"MenuScene.h"
 
 1684932773 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\tools\collisions.cpp
@@ -510,21 +510,22 @@
 1685041912 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\ui\spritebutton.cpp
 	"SpriteButton.h"
 
-1686435424 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
+1686450844 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.cpp
 	"Gun.h"
 
-1686434936 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
+1686450838 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
 	"Projectile.h"
 	"../../Tools/Clock.h"
 	"../../Tools/Collisions.h"
 	<vector>
+	<functional>
 
-1686434719 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.h
+1686450534 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.h
 	"../../Lib/gl_canvas2d.h"
 	"../../Tools/Clock.h"
 	"../Animation.h"
 
-1686434777 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.cpp
+1686451561 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\projectile.cpp
 	"Projectile.h"
 
 1685068451 j:\programação\c\cg\trabalhos\trab2joaomazzarolo\src\objects\gun\gun.h
@@ -556,10 +557,10 @@
 1686369607 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
 	"EnemiesManager.h"
 
-1686435177 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
+1686451868 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.cpp
 	"Enemy.h"
 
-1686434627 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
+1686449993 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\enemy\enemy.h
 	"../Animation.h"
 	"../Gun/Gun.h"
 	"../../Tools/Clock.h"
@@ -633,10 +634,10 @@
 1686343868 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupitem.cpp
 	"PowerUpItem.h"
 
-1686420988 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.cpp
+1686451966 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.cpp
 	"PowerUpManager.h"
 
-1686354936 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.h
+1686449204 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab2joaomazzarolo\src\objects\powerup\powerupmanager.h
 	"PowerUpItem.h"
 	"PowerUpCard.h"
 	"../Background.h"

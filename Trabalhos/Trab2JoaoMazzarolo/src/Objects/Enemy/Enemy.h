@@ -36,6 +36,8 @@ public:
 
     int getId();
 
+    void loseSpeed();
+
 private:
     void renderSprite();
 

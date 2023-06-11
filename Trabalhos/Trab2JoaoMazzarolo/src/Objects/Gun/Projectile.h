@@ -16,7 +16,7 @@ private:
     int speed, enemyId;
     float explosionTime, explosionTimeCounter;
     bool ended;
-    bool curved, topDown, explosive, continuous, decending;
+    bool curved, topDown, continuous, decelerator, decending;
 
 public:
     Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder);
@@ -67,6 +67,10 @@ public:
     void setEnemyId(int id);
 
     int getEnemyId();
+
+    void setDecelerator(bool decelerator);
+
+    bool getDecelerator();
 };
 
 #endif // PROJECTILE_H

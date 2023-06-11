@@ -37,9 +37,7 @@ void Enemy::render(bool accelerating)
     gun->render(accelerating);
 
     sprite->setPosition(position.x - sprite->getWidth() / 2, position.y - sprite->getHeight() / 2);
-    
-    //CV::color(1, 0, 0);
-    //CV::circle(position.x, position.y, hitBoxRadius, 30);
+
     renderSprite();
 }
 
@@ -77,7 +75,7 @@ bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playe
         hit = true;
     }
 
-    if(playerGun->verifyCollision(position, hitBoxRadius, id))
+    if(playerGun->verifyCollision(position, hitBoxRadius, id, [this] {loseSpeed();}))
         life -= playerGun->getDamage();
 
     if(life <= 0)
@@ -105,4 +103,9 @@ void Enemy::renderSprite()
 int Enemy::getId()
 {
     return id;
+}
+
+void Enemy::loseSpeed()
+{
+    speed *= 0.7f;
 }

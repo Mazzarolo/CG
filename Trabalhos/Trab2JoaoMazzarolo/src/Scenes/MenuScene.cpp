@@ -56,19 +56,16 @@ void MenuScene::render()
 
 void MenuScene::onPlayClick()
 {
-    printf("Playing...\n");
     nextScene = 1;
 }
 
 void MenuScene::onInfoClick()
 {
-    printf("Info...\n");
     nextScene = 2;
 }
 
 void MenuScene::onExitClick()
 {
-    printf("Exiting...\n");
     exit(0);
 }
 

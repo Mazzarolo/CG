@@ -124,7 +124,7 @@ bool Gun::verifyCollision(Vector2 position, int radius)
     return hit;
 }
 
-bool Gun::verifyCollision(Vector2 position, int radius, int enemyId)
+bool Gun::verifyCollision(Vector2 position, int radius, int enemyId, function<void()> loseSpeed)
 {
     bool hit = false;
 
@@ -140,6 +140,8 @@ bool Gun::verifyCollision(Vector2 position, int radius, int enemyId)
                 clone->setEnemyId(enemyId);
                 projectiles.push_back(clone);
             }
+            if(projectiles[i]->getDecelerator())
+                loseSpeed();
             projectiles[i]->explode();
             hit = true;
         } 
@@ -194,4 +196,24 @@ void Gun::addDamage(int damage)
 int Gun::getDamage()
 {
     return damage;
+}
+
+void Gun::setContinuous()
+{
+    projectileModel->setContinuous(true);
+}
+
+void Gun::setCurved()
+{
+    projectileModel->setCurved(true);
+}
+
+void Gun::setTopDown()
+{
+    projectileModel->setTopDown(true);
+}
+
+void Gun::setDecelerator()
+{
+    projectileModel->setDecelerator(true);
 }
