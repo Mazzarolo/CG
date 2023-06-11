@@ -31,13 +31,11 @@ void keyboard(int key)
 
 void keyboardUp(int key)
 {
-    //printf("\nLiberou: %d" , key);
     input->setKeyUp(key);
 }
 
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-    //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
     input->setMouse(button, state, wheel, direction, x, y);
 }
 
