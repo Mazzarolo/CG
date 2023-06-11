@@ -1,3 +1,5 @@
+// Classe base de inimigo, utilizada como classe mãe para criar os inimigos do jogo.
+
 #ifndef ENEMY_H
 #define ENEMY_H
 
@@ -21,25 +23,26 @@ protected:
     bool dead;
 
 protected:
-    Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int life);
+    Enemy(int screenWidth, int screenHeight, int x, int y, float speed, int life); // Construtor padrão.
 
 public:
-    virtual ~Enemy();
+    virtual ~Enemy(); // Destrutor padrão.
 
-    void render(bool accelerating);
+    void render(bool accelerating); // Renderiza o inimigo.
 
-    virtual void move(bool accelerating);
+    virtual void move(bool accelerating); // Move o inimigo.
 
-    bool isDead();
+    bool isDead(); // Retorna se o inimigo está morto.
 
+    // Verifica a colisão com o inimigo e todas as suas balas.
     bool verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playerGun, function<void(int)> addScore);
 
-    int getId();
+    int getId(); // Retorna o id do inimigo.
 
-    void loseSpeed();
+    void loseSpeed(); // Diminui a velocidade do inimigo.
 
 private:
-    void renderSprite();
+    void renderSprite(); // Renderiza o sprite do inimigo.
 
 };
 

@@ -1,3 +1,5 @@
+// Classe base para os botões do jogo, que é herdada pelos outros botões.
+
 #ifndef BUTTON_H
 #define BUTTON_H
 
@@ -15,20 +17,27 @@ protected:
     bool selected, clicked, active;
 
 protected:
+    // Construtores
     Button(int x, int y, int width, int height, function<void()> onClick);
     Button(int x, int y, function<void()> onClick);
 
+    // Destrutor
     virtual ~Button() { };
 
+    // Renderiza o botão
     virtual void render() = 0;
 
+    // Verifica se o mouse está sobre o botão
     bool checkCollision();
 
+    // Evento de clique no botão
     void onMouse();
 
 public:
+    // Atualiza se o botão esta ativo
     void setActive(bool active);
 
+    // Retorna se o botão esta ativo
     bool getActive();
 };
 

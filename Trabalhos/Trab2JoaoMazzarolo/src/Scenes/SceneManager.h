@@ -1,3 +1,5 @@
+// Classe que representa o gerenciador de cenas
+
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
@@ -24,8 +26,10 @@ private:
     bool menuMusicPlaying;
 
 public:
+    // Construtor
     SceneManager(int screenWidth, int screenHeight);
 
+    // Loop principal do jogo, que gerencia e renderiza as cenas
     void update();
 };
 

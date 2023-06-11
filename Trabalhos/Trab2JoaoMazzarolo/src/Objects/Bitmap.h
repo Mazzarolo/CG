@@ -1,3 +1,5 @@
+// Classe que serve para controlar e desenhar imagens carregadas no formato BMP
+
 #ifndef BITMAP_H
 #define BITMAP_H
 
@@ -8,11 +10,13 @@
 
 using namespace std;
 
+// Structs que representa cada pixel da imagem
 typedef struct bitmapPixel
 {
     float r, g, b, a;
 } BitmapPixel;
 
+// Structs que representa o cabeçalho do arquivo BMP
 typedef struct bitmapHeader
 {
     unsigned char test[2];
@@ -30,6 +34,7 @@ typedef struct dibHeader
     unsigned short colorDepth;
 } DibHeader;
 
+// Struct que representa informações sobre os pixels da imagem
 typedef struct pixelInfo
 {
     unsigned int rowSize;
@@ -46,29 +51,39 @@ protected:
     BitmapPixel* pixels;
 
 public:
+    // Construtor
     Bitmap();
 
+    // Destrutor
     virtual ~Bitmap();
     
+    // Carrega uma imagem no formato BMP
     void load(char* filename);
 
+    // Renderiza a imagem
     virtual void render();
 
+    // Move a imagem
     void setPosition(int x, int y);
 
+    // Retorna a largura e altura da imagem
     int getWidth();
-
     int getHeight();
 
+    // move a imagem em relação a X
     void moveX(int x);
 
+    // move a imagem em relação a Y
     void moveY(float y);
 
+    // Retorna a posição da imagem
     Vector2 getPosition();
 
+    // Retorna uma copia da imagem
     virtual Bitmap* clone();
 
 private:
+    // Lê o cabeçalho do arquivo BMP
     bool read(unsigned char* memory);
 };
 

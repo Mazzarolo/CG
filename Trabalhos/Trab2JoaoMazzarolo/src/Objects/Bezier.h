@@ -1,3 +1,5 @@
+// Classe que representa uma curva de Bezier
+
 #ifndef BEZIER_H
 #define BEZIER_H
 
@@ -15,18 +17,22 @@ private:
     Vector2 spawnPoint;
 
 public:
+    // Construtor
     Bezier(vector<Vector2> points);
 
+    // Verifica colisão com a curva
     bool checkCollision(Vector2 player, int hitBoxRadius);
 
-    //move the curves
+    // Move a curva em relação a Y
     void moveY(int offsetY);
 
-    //Desenha uma curva de Bezier
+    // Desenha uma curva de Bezier
     void render();
 
+    // Desenha o ponto de spawn
     void renderSpawnPoint();
 
+    // Retorna o ponto de spawn
     Vector2 getSpawnPoint();
 
 private:

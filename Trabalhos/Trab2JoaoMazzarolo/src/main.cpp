@@ -1,3 +1,5 @@
+/* Trabalho02 de Computação Gráfca - João Davi Rigo Mazzarolo */
+
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h>
 

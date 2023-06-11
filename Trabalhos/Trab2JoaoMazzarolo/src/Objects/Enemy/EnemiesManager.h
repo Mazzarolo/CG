@@ -1,3 +1,5 @@
+// Classe que gerencia a criação e movimentação dos inimigos.
+
 #ifndef ENEMIESMANAGER_H
 #define ENEMIESMANAGER_H
 
@@ -21,15 +23,16 @@ private:
     float spawnTime, spawnTimeCounter;
 
 public:
+    // Construtor padrão.
     EnemiesManager(int screenWidth, int screenHeight, Background* background, Player* player);
 
-    void reset();
+    void reset(); // Reseta o gerenciador de inimigos.
 
-    void render(int level, bool up);
+    void render(int level, bool up); // Renderiza os inimigos.
 
-    void spawn(int level);
+    void spawn(int level); // Cria um novo inimigo.
 
-    bool verifyCollision();
+    bool verifyCollision(); // Verifica a colisão de todos os inimigos e balas com o jogador.
 };
 
 #endif // ENEMIESMANAGER_H

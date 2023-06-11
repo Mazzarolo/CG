@@ -1,3 +1,5 @@
+// Classe que representa a cena do jogo
+
 #ifndef GAMESCENE_H_INCLUDED
 #define GAMESCENE_H_INCLUDED
 
@@ -24,20 +26,26 @@ private:
     float endTime, endTimeCounter;
 
 public:
+    // Construtor
     GameScene(int screenWidth, int screenHeight);
 
+    // Destrutor
     ~GameScene();
 
+    // Método que reseta a cena
     void reset();
 
+    // Método que renderiza a cena
     void render();
 
+    // Método que retorna o score do jogador
     int getScore();
 private:
+    // Função de callback para o evento de soltar uma tecla
     void onKeyboardUp();
 
+    // Função para setar o fim da cena
     void endGame();
-
 };
 
 

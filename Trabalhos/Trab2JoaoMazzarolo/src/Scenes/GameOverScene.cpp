@@ -45,11 +45,11 @@ void GameOverScene::render()
     CV::color(rand() % 14);
     char scoreText[50];
     sprintf(scoreText, "Score: %d", score);
-    CV::biggerText(3 * screenWidth / 8, 7 * screenHeight / 12, scoreText);
+    CV::textTitle(3 * screenWidth / 8, 7 * screenHeight / 12, scoreText);
     sprintf(scoreText, "Highscore: %d", highscore);
-    CV::biggerText(3 * screenWidth / 8, 8 * screenHeight / 12, scoreText);
+    CV::textTitle(3 * screenWidth / 8, 8 * screenHeight / 12, scoreText);
     sprintf(scoreText, "Duration: %.1f s", time);
-    CV::biggerText(3 * screenWidth / 8, 6 * screenHeight / 12, scoreText);
+    CV::textTitle(3 * screenWidth / 8, 6 * screenHeight / 12, scoreText);
     for(int i = 0; i < (int) buttons.size(); i++)
     {
         buttons[i]->render();

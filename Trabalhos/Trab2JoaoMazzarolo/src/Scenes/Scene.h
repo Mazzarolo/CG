@@ -1,3 +1,5 @@
+// Classe base para as cenas do jogo, que é herdada pelas outras cenas.
+
 #ifndef SCENE_H
 #define SCENE_H
 
@@ -10,16 +12,22 @@ protected:
     int screenWidth, screenHeight, nextScene;
 
 public:
+    // Construtor
     Scene(int screenWidth, int screenHeight);
 
+    // Destrutor
     virtual ~Scene() {  };
     
+    // Renderiza a cena
     virtual void render() = 0;
     
+    // Retorna a próxima cena
     int getNextScene();
 
+    // Reseta a cena
     virtual void reset() { };
 
+    // Método para setar a próxima cena
     virtual void setNextScene(int nextScene);
 };
 

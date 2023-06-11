@@ -1,3 +1,5 @@
+// Classe que representa um relógio, contendo ferramentas de controle de tempo
+
 #ifndef CLOCK_H
 #define CLOCK_H
 
@@ -18,23 +20,32 @@ private:
     static bool isPaused;
 
 protected:
+    // Método para calcular o tempo entre frames
     float getDeltaTime();
 
+    // Método para printar o FPS
     void printFPS(int x, int y);
 
+    // Método para printar o cronometro
     void printStopWatch(int x, int y);
 
+    // Método para resetar o relógio
     void resetStopWatch();
 
 public:
+    // Construtor
     Clock();
     
+    // Método para atualizar o relógio
     void tic();
 
+    // Método para pausar o cronometro
     void pause();
 
+    // Método para resumir o cronometro
     void resume();
 
+    // Método para retornar o tempo contado no cronometro
     float getStopWatch();
 };
 

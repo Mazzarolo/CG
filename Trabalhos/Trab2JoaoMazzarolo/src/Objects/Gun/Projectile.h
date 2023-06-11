@@ -1,3 +1,5 @@
+// Classe do Projétil, que é utilizado tanto pelo jogador quanto pelos inimigos.
+
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
@@ -19,58 +21,61 @@ private:
     bool curved, topDown, continuous, decelerator, decending;
 
 public:
+    // Construtor padrão.
     Projectile(int x, int y, int radius, int speed, float* colorCircle, float* colorBorder);
 
     virtual ~Projectile() { };
 
+    // Carrega o sprite da explosão.
     static void loadExplosionSprite();
 
+    // Renderiza o projétil.
     void render();
 
-    void move();
-    void move(bool down);
+    void move(); // Move o projétil.
+    void move(bool down); // Move o projétil dos inimigos mais rapidamente se o jogador estiver se movendo.
 
-    int getY();
+    int getY(); // Retorna a posição Y do projétil.
 
-    int getRadius();
+    int getRadius(); // Retorna o raio do projétil.
 
-    Vector2 getPosition();
+    Vector2 getPosition(); // Retorna a posição do projétil.
 
-    virtual void renderSprite();
+    virtual void renderSprite(); // Renderiza o sprite do projétil.
 
-    void explode();
+    void explode(); // começa o processo de explosão do projétil.
 
-    bool hasEnded();
+    bool hasEnded(); // Verifica se o projétil já explodiu.
 
-    bool getEnded();
+    bool getEnded(); // Retorna se o projétil está em processo de explosão
 
-    Projectile* clone();
+    Projectile* clone(); // Retorna uma cópia do projétil.
 
-    void setPosition(int x, int y);
+    void setPosition(int x, int y); // Define a posição do projétil.
 
-    void setRadius(int radius);
+    void setRadius(int radius); // Define o raio do projétil.
 
-    void setSpeed(int speed);
+    void setSpeed(int speed); // Define a velocidade do projétil.
 
-    void setTopDown(bool topDown);
+    void setTopDown(bool topDown); // Define que o projetil ira retornar para baixo a partir de uma certa altura
 
-    bool getTopDown();
+    bool getTopDown();  // Retorna se o projétil irá retornar para baixo a partir de uma certa altura
 
-    void setCurved(bool curved);
+    void setCurved(bool curved); // Define que o projétil irá seguir uma trajetória curva.
 
-    bool getCurved();
+    bool getCurved(); // Retorna se o projétil irá seguir uma trajetória curva.
 
-    void setContinuous(bool continuous);
+    void setContinuous(bool continuous); // Define que o projétil irá atravessar inimigos.
 
-    bool getContinuous();
+    bool getContinuous(); // Retorna se o projétil irá atravessar inimigos.
 
-    void setEnemyId(int id);
+    void setEnemyId(int id); // Define o id do inimigo que está imune ao projetil (para projeteis que atravessam)
 
-    int getEnemyId();
+    int getEnemyId(); // Retorna o id do inimigo que está imune ao projetil (para projeteis que atravessam)
 
-    void setDecelerator(bool decelerator);
+    void setDecelerator(bool decelerator); // define que o projetil ira desacelerar os alvos
 
-    bool getDecelerator();
+    bool getDecelerator(); // retorna se o projetil ira desacelerar os alvos
 };
 
 #endif // PROJECTILE_H

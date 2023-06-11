@@ -10,7 +10,7 @@ Bezier::Bezier(vector<Vector2> points)
     spawnPoint = Vector2(points[0].x, 600);
 }
 
-//Fun��o que vai interpolando entre 2 pontos com base em um offset t
+//Funçao que vai interpolando entre 2 pontos com base em um offset t
 Vector2 Bezier::lerp(Vector2 a, Vector2 b, float t)
 {
     return Vector2(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t);
@@ -45,7 +45,6 @@ void Bezier::render()
     }
 }
 
-//Faça um metodo que verifique a colisão da curva com um ponto passado por parametro
 bool Bezier::checkCollision(Vector2 player, int hitBoxRadius)
 {
     for (float t = 0; t < 1; t += 0.01) {

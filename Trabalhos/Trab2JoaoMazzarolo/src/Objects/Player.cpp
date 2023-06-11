@@ -310,11 +310,6 @@ void Player::addScore(int x)
     score += x;
 }
 
-void Player::powerUpGun()
-{
-    printf("powerUpGun\n");
-}
-
 int Player::getLife()
 {
     return life;
