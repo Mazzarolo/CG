@@ -26,8 +26,6 @@ protected:
 
     void resetStopWatch();
 
-    float getStopWatch();
-
 public:
     Clock();
     
@@ -36,6 +34,8 @@ public:
     void pause();
 
     void resume();
+
+    float getStopWatch();
 };
 
 #endif // CLOCK_H

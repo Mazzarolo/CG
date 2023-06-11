@@ -41,7 +41,7 @@ void SceneManager::update()
     {
         currentScene->setNextScene(-1);
         currentScene = gameOverScene;
-        gameOverScene->reset(gameScene->getScore());
+        gameOverScene->reset(gameScene->getScore(), clock->getStopWatch());
     }
     else if (nextScene == 3)
     {

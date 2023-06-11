@@ -48,6 +48,8 @@ void GameOverScene::render()
     CV::biggerText(3 * screenWidth / 8, 7 * screenHeight / 12, scoreText);
     sprintf(scoreText, "Highscore: %d", highscore);
     CV::biggerText(3 * screenWidth / 8, 8 * screenHeight / 12, scoreText);
+    sprintf(scoreText, "Duration: %.1f s", time);
+    CV::biggerText(3 * screenWidth / 8, 6 * screenHeight / 12, scoreText);
     for(int i = 0; i < (int) buttons.size(); i++)
     {
         buttons[i]->render();
@@ -64,10 +66,11 @@ void GameOverScene::onExitClick()
     nextScene = 0;
 }
 
-void GameOverScene::reset(int score)
+void GameOverScene::reset(int score, float time)
 {
     nextScene = -1;
     this->score = score;
+    this->time = time;
     getHighscore();
     if(score > highscore)
     {

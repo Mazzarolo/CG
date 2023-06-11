@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
-#include <windows.h>
-#include <mmsystem.h>
 
 #include "Lib/gl_canvas2d.h"
 #include "Scenes/SceneManager.h"
@@ -43,7 +41,6 @@ int main(void)
 {
     CV::init(&screenWidth, &screenHeight, "Nave Gamer");
 
-    //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Test.wav"), NULL, SND_ASYNC);
     sceneManager = new SceneManager(screenWidth, screenHeight);
     input = new Input();
 

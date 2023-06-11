@@ -213,7 +213,7 @@ bool Player::takeDamage(int x)
             center.x = x;
         return false;
     }
-    //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Zap.wav"), NULL, SND_ASYNC);
+
     life--;
 
     invincibleTimeCounter = 0;
@@ -232,7 +232,7 @@ bool Player::takeDamage()
     {
         return false;
     }
-    //PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\Zap.wav"), NULL, SND_ASYNC);
+
     life--;
 
     invincibleTimeCounter = 0;

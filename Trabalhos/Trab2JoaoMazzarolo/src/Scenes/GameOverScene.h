@@ -9,6 +9,7 @@ class GameOverScene : public Scene
 {
 private:
     int score, highscore;
+    float time;
     Bitmap* title;
     vector<SpriteButton*> buttons;
 
@@ -19,7 +20,7 @@ public:
 
     void render();
 
-    virtual void reset(int score);
+    virtual void reset(int score, float time);
 private:
     void onPlayClick();
 

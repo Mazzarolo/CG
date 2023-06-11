@@ -23,7 +23,10 @@ void GameScene::render()
         printStopWatch(10, 25);
         return;
     }
-    resume();
+    if(!ending)
+        resume();
+    else
+        pause();
     background->render();
     enemiesManager->render(player->getLevel(), player->isUp());
     powerUpManager->render(player->isUp());
