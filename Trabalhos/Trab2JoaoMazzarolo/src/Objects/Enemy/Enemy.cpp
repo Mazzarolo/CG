@@ -75,8 +75,9 @@ bool Enemy::verifyCollision(Vector2 PlayerPosition, int playerRadius, Gun* playe
         hit = true;
     }
 
-    if(playerGun->verifyCollision(position, hitBoxRadius, id, [this] {loseSpeed();}))
-        life -= playerGun->getDamage();
+    if(!dead)
+        if(playerGun->verifyCollision(position, hitBoxRadius, id, [this] {loseSpeed();}))
+            life -= playerGun->getDamage();
 
     if(life <= 0 && !dead)
     {
