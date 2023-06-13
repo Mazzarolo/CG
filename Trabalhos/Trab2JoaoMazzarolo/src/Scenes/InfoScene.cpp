@@ -62,7 +62,7 @@ void InfoScene::printInfoText()
     CV::textTitle(50, startY + 250, buffer);
     sprintf(buffer, "-> Press ESC during gameplay to reset and return to main menu");
     CV::textTitle(50, startY + 200, buffer);
-    sprintf(buffer, "-> Get the upgrade boxes to improve yout ship");
+    sprintf(buffer, "-> Get the upgrade boxes, and select the improvement of your ship");
     CV::textTitle(50, startY + 150, buffer);
     sprintf(buffer, "-> Stay alive and destroy foes to get points");
     CV::textTitle(50, startY + 100, buffer);

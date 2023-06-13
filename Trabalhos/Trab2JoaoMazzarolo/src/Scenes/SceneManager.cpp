@@ -39,6 +39,7 @@ void SceneManager::update()
     }
     else if (nextScene == 2)
     {
+        PlaySound(TEXT("Trab2JoaoMazzarolo\\src\\Sounds\\GameOverMusic.wav"), NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
         currentScene->setNextScene(-1);
         currentScene = gameOverScene;
         gameOverScene->reset(gameScene->getScore(), clock->getStopWatch());

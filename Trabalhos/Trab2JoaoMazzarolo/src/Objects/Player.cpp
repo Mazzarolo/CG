@@ -256,7 +256,9 @@ void Player::renderSprite()
     if(shieldTimeCounter < shieldTime)
     {
         CV::color(rand() % 14);
-        CV::circle(0, 0, hitBoxRadius + 5, 30);
+        CV::circleFill(0, 0, hitBoxRadius + 10, 30);
+        CV::color(0, 0, 0);
+        CV::circleFill(0, 0, hitBoxRadius + 5, 30);
         shieldTimeCounter += getDeltaTime();
     }
 
