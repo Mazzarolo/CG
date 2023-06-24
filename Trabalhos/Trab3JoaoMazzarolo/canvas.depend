@@ -993,3 +993,285 @@
 1685041912 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab3joaomazzarolo\src\ui\spritebutton.cpp
 	"SpriteButton.h"
 
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\lib\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\lib\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"../Structures/Vector2.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\include\gl\glut.h
+	"freeglut_std.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\structures\vector2.h
+	<math.h>
+	<stdio.h>
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"Lib/gl_canvas2d.h"
+	"Scenes/SceneManager.h"
+	"Tools/Input.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\scenemanager.h
+	<windows.h>
+	<mmsystem.h>
+	"GameScene.h"
+	"MenuScene.h"
+	"InfoScene.h"
+	"GameOverScene.h"
+	"../Tools/Clock.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\gamescene.h
+	<vector>
+	"Scene.h"
+	"../Lib/gl_canvas2d.h"
+	"../Objects/Player.h"
+	"../Objects/Background.h"
+	"../Tools/Input.h"
+	"../Objects/Bitmap.h"
+	"../Objects/Enemy/EnemiesManager.h"
+	"../Objects/PowerUp/PowerUpManager.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\scene.h
+	"../Tools/Input.h"
+	"../Tools/Clock.h"
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\input.h
+	<vector>
+	<functional>
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\clock.h
+	<chrono>
+	"../Lib/gl_canvas2d.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\player.h
+	"../Lib/gl_canvas2d.h"
+	"Gun/Gun.h"
+	"../Tools/Input.h"
+	"../Tools/Clock.h"
+	"Animation.h"
+	<vector>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\gun\gun.h
+	"Projectile.h"
+	"../../Tools/Clock.h"
+	"../../Tools/Collisions.h"
+	<vector>
+	<functional>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\gun\projectile.h
+	"../../Lib/gl_canvas2d.h"
+	"../../Tools/Clock.h"
+	"../Animation.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\animation.h
+	"Bitmap.h"
+	"../Tools/Clock.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\bitmap.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Lib/gl_canvas2d.h"
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\collisions.h
+	<vector>
+	"../Structures/Vector2.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\background.h
+	<time.h>
+	<stdlib.h>
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Clock.h"
+	"Star.h"
+	"Animation.h"
+	"Bezier.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\star.h
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Clock.h"
+	"player.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\bezier.h
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Collisions.h"
+	<vector>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\enemiesmanager.h
+	<vector>
+	"BlockerEnemy.h"
+	"SmallEnemy.h"
+	"SeekerEnemy.h"
+	"../../Tools/Clock.h"
+	"../../Lib/gl_canvas2d.h"
+	"../Background.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\blockerenemy.h
+	"Enemy.h"
+	"../Background.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\enemy.h
+	"../Animation.h"
+	"../Gun/Gun.h"
+	"../../Tools/Clock.h"
+	"../../Lib/gl_canvas2d.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\smallenemy.h
+	"Enemy.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\seekerenemy.h
+	"Enemy.h"
+	"../Player.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupmanager.h
+	"PowerUpItem.h"
+	"PowerUpCard.h"
+	"../Background.h"
+	"../Player.h"
+	<vector>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupitem.h
+	"../../Tools/Collisions.h"
+	"../../Lib/gl_canvas2d.h"
+	"../../Tools/Clock.h"
+	"../Animation.h"
+	"../Background.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupcard.h
+	"../../Lib/gl_canvas2d.h"
+	"../../UI/Button.h"
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\ui\button.h
+	"../Lib/gl_canvas2d.h"
+	"../Tools/Input.h"
+	<functional>
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\menuscene.h
+	<vector>
+	"../Lib/gl_canvas2d.h"
+	"Scene.h"
+	"../UI/SpriteButton.h"
+
+1686776748 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\ui\spritebutton.h
+	<vector>
+	"Button.h"
+	"../Objects/Bitmap.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\infoscene.h
+	"Scene.h"
+	"../Lib/gl_canvas2d.h"
+	"../UI/SpriteButton.h"
+
+1686776747 j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\gameoverscene.h
+	"Scene.h"
+	<vector>
+	"../UI/SpriteButton.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\animation.cpp
+	"Animation.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\background.cpp
+	"Background.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\bezier.cpp
+	"Bezier.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\bitmap.cpp
+	"Bitmap.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\blockerenemy.cpp
+	"BlockerEnemy.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\enemiesmanager.cpp
+	"EnemiesManager.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\enemy.cpp
+	"Enemy.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\seekerenemy.cpp
+	"SeekerEnemy.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\enemy\smallenemy.cpp
+	"SmallEnemy.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\gun\gun.cpp
+	"Gun.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\gun\projectile.cpp
+	"Projectile.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\player.cpp
+	"Player.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupcard.cpp
+	"PowerUpCard.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupitem.cpp
+	"PowerUpItem.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\powerup\powerupmanager.cpp
+	"PowerUpManager.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\objects\star.cpp
+	"Star.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\gameoverscene.cpp
+	"GameOverScene.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\gamescene.cpp
+	"GameScene.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\infoscene.cpp
+	"InfoScene.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\menuscene.cpp
+	"MenuScene.h"
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\scene.cpp
+	"Scene.h"
+	<stdio.h>
+
+1686776747 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\scenes\scenemanager.cpp
+	"SceneManager.h"
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\clock.cpp
+	"Clock.h"
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\collisions.cpp
+	"Collisions.h"
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\tools\input.cpp
+	"Input.h"
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\ui\button.cpp
+	"Button.h"
+
+1686776748 source:j:\programação\c\cg\trabalhos\trab3joaomazzarolo\src\ui\spritebutton.cpp
+	"SpriteButton.h"
+
