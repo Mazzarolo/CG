@@ -149,14 +149,15 @@
 	<math.h>
 	<stdio.h>
 
-1687651110 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1687718852 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	"Lib/gl_canvas2d.h"
-	"Objects/Component2D.h"
+	"Objects/Engine2D.h"
+	"Objects/Cube.h"
 	"Tools/Clock.h"
 
 1680114778 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\bola.h
@@ -174,7 +175,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1687636534 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
+1687706402 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
 	"Component2D.h"
 
 1687636498 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.h
@@ -201,4 +202,17 @@
 1687631710 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\lib\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
+
+1687705049 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.h
+	"../Tools/Clock.h"
+	"Component2D.h"
+
+1687706553 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.cpp
+	"Engine2D.h"
+
+1687709414 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.h
+	"../Lib/gl_canvas2d.h"
+
+1687716049 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
+	"Cube.h"
 

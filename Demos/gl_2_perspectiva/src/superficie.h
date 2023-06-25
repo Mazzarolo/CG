@@ -32,17 +32,25 @@ class Superficie
 public:
    Superficie()
    {
+       float r = 2;
+       float ang = 0;
+       float ang2 = 0;
       //geracao de terrenos aleatorios a cada execucao
       srand(time(NULL));
 
       //cria um terreno centrado na origem
       for(int x=0; x<=DIM; x++)
+      {
+         ang2 = 0;
          for(int z=0; z<=DIM; z++)
          {
-              mat[x][z].x = x - (float)( DIM/2.0 );
-              mat[x][z].y = ( rand()%18 ) / 10.0;
-              mat[x][z].z = z - (float)( DIM/2.0 );
+              mat[x][z].x = r * cos(ang) * sin(ang2);
+              mat[x][z].y = r * sin(ang) * sin(ang2);
+              mat[x][z].z = r * sin(ang2);
+              ang2 += 3.14 / DIM;
          }
+         ang += 2 * 3.14 / DIM;
+      }
    }
 
    //faz a rotacao de um unico ponto 3D no eixo X

@@ -245,3 +245,44 @@
 
 1589217858 d:\ufsm\disciplinas\computacao grafica\demos\gl_2_perspectiva\src\vector2.h
 
+1680114778 source:j:\programação\c\cg\demos\gl_2_perspectiva\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1680114778 j:\programação\c\cg\demos\gl_2_perspectiva\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1680114778 j:\programação\c\cg\demos\gl_2_perspectiva\include\gl\glut.h
+	"freeglut_std.h"
+
+1680114778 j:\programação\c\cg\demos\gl_2_perspectiva\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1680114778 j:\programação\c\cg\demos\gl_2_perspectiva\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1680114778 j:\programação\c\cg\demos\gl_2_perspectiva\src\vector2.h
+
+1680114778 source:j:\programação\c\cg\demos\gl_2_perspectiva\src\main.cpp
+	"superficie.h"
+	"gl_canvas2d.h"
+
+1687714980 j:\programação\c\cg\demos\gl_2_perspectiva\src\superficie.h
+	<math.h>
+	<time.h>
+	"gl_canvas2d.h"
+
