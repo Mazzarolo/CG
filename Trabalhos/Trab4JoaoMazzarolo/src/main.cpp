@@ -21,10 +21,23 @@ void render()
    pistao->render();
    //pistao->rotate(timer->getDeltaTime());
    manivela->render();
-   manivela->rotate(timer->getDeltaTime());
+   manivela->rotate(timer->getDeltaTime() * 5);
    biela->render();
    biela->move(manivela->getUpFaceCenter() - biela->getCenter());
-   //biela->rotate(timer->getDeltaTime());
+   pistao->move(biela->getUpFaceCenter() - pistao->getCenter());
+   while(biela->getUpFaceCenter().x < manivela->getCenter().x - 1 || biela->getUpFaceCenter().x > manivela->getCenter().x + 1 || biela->getUpFaceCenter().y < manivela->getCenter().y)
+   {
+      if(biela->getCenter().x < manivela->getCenter().x)
+      {
+         //printf("\nRotacionando para a direita");
+         biela->rotate(-0.1);
+      }
+      else
+      {
+         //printf("\nRotacionando para a esquerda");
+         biela->rotate(0.1);
+      }
+   }
 }
 
 void keyboard(int key)
@@ -60,8 +73,8 @@ int main(void)
 
    biela = new Component2D({Vector2(0, 50),
                             Vector2(15, 50),
-                            Vector2(30, 200),
-                            Vector2(70, 200),
+                            Vector2(30, 250),
+                            Vector2(70, 250),
                             Vector2(85, 50),
                             Vector2(100, 50),
                             Vector2(100, 15),
@@ -69,9 +82,7 @@ int main(void)
                             Vector2(30, 0),
                             Vector2(0, 15)});
 
-   manivela->translate(Vector2(screenWidth / 2, screenHeight / 4));
-   biela->translate(Vector2(screenWidth / 2, manivela->getHeight() + screenHeight / 4));
-   pistao->translate(Vector2(screenWidth / 2, biela->getHeight() + manivela->getHeight() + screenHeight / 9));
+   manivela->translate(Vector2(screenWidth / 2, screenHeight / 3));
 
    CV::init(&screenWidth, &screenHeight, "Trabalho 4");
    CV::run();

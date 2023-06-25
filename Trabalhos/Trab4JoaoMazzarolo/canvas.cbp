@@ -44,13 +44,13 @@
 			<Add library="../lib/freeglut.lib" />
 		</Linker>
 		<Unit filename="include/GL/glut.h" />
-		<Unit filename="src/Bola.h" />
-		<Unit filename="src/Botao.h" />
-		<Unit filename="src/Relogio.cpp" />
-		<Unit filename="src/Relogio.h" />
+		<Unit filename="src/Lib/gl_canvas2d.cpp" />
+		<Unit filename="src/Lib/gl_canvas2d.h" />
+		<Unit filename="src/Objects/Component2D.cpp" />
+		<Unit filename="src/Objects/Component2D.h" />
+		<Unit filename="src/Tools/Clock.cpp" />
+		<Unit filename="src/Tools/Clock.h" />
 		<Unit filename="src/Vector2.h" />
-		<Unit filename="src/gl_canvas2d.cpp" />
-		<Unit filename="src/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
