@@ -34,6 +34,26 @@ Point Cube::rotateX(Point p, float angle)
     return r;
 }
 
+Point Cube::rotateY(Point p, float angle)
+{
+    Point r;
+    r.x = p.x * cos(angle) + p.z * sin(angle);
+    r.y = p.y;
+    r.z = -p.x * sin(angle) + p.z * cos(angle);
+
+    return r;
+}
+
+Point Cube::rotateZ(Point p, float angle)
+{
+    Point r;
+    r.x = p.x * cos(angle) - p.y * sin(angle);
+    r.y = p.x * sin(angle) + p.y * cos(angle);
+    r.z = p.z;
+
+    return r;
+}
+
 Point Cube::translate(Point p)
 {
     Point r;
@@ -63,7 +83,7 @@ void Cube::transform()
 
     for (int i = 0; i < 8; i++)
     {
-        p = rotateX(*points[i], angle);
+        p = rotateY(*points[i], angle);
         p = translate(p);
         p = project(p);
         transf[i] = new Point(p.x, p.y, p.z);

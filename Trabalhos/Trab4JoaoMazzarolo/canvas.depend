@@ -216,3 +216,86 @@
 1687716049 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
 	"Cube.h"
 
+1687958929 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\lib\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\lib\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"../Vector2.h"
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\include\gl\glut.h
+	"freeglut_std.h"
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\vector2.h
+	<math.h>
+	<stdio.h>
+
+1687965014 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"Lib/gl_canvas2d.h"
+	"Objects/Engine2D.h"
+	"Objects/Cube.h"
+	"Tools/Clock.h"
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.h
+	"../Tools/Clock.h"
+	"Component2D.h"
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\tools\clock.h
+	<chrono>
+	"../Lib/gl_canvas2d.h"
+
+1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.h
+	<vector>
+	"../Vector2.h"
+	"../Lib/gl_canvas2d.h"
+
+1687965150 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.h
+	"../Lib/gl_canvas2d.h"
+	"Point.h"
+
+1687959341 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
+	"Component2D.h"
+
+1687965183 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
+	"Cube.h"
+
+1687965011 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.cpp
+	"Engine2D.h"
+
+1687958929 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\tools\clock.cpp
+	"Clock.h"
+
+1687959909 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
+
+1687965846 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
+	"Cylinder.h"
+
+1687965828 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
+	"../lib/gl_canvas2d.h"
+	"Point.h"
+

@@ -2,17 +2,7 @@
 #define CUBE_H
 
 #include "../Lib/gl_canvas2d.h"
-
-class Point
-{
-public:
-    float x;
-    float y;
-    float z;
-
-    Point() { x = 0; y = 0; z = 0; }
-    Point(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
-};
+#include "Point.h"
 
 class Cube
 {
@@ -27,6 +17,10 @@ public:
     ~Cube();
 
     Point rotateX(Point p, float angle);
+
+    Point rotateY(Point p, float angle);
+
+    Point rotateZ(Point p, float angle);
 
     Point translate(Point p);
 

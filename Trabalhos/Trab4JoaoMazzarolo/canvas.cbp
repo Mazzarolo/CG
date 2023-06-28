@@ -50,8 +50,11 @@
 		<Unit filename="src/Objects/Component2D.h" />
 		<Unit filename="src/Objects/Cube.cpp" />
 		<Unit filename="src/Objects/Cube.h" />
+		<Unit filename="src/Objects/Cylinder.cpp" />
+		<Unit filename="src/Objects/Cylinder.h" />
 		<Unit filename="src/Objects/Engine2D.cpp" />
 		<Unit filename="src/Objects/Engine2D.h" />
+		<Unit filename="src/Objects/Point.h" />
 		<Unit filename="src/Tools/Clock.cpp" />
 		<Unit filename="src/Tools/Clock.h" />
 		<Unit filename="src/Vector2.h" />
