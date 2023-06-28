@@ -21,7 +21,10 @@ public:
 
     Point rotateX(Point p);
 
+    Point rotateY(Point p);
+
     Point translate(Point p);
+    Point translate(Point p, Point offset);
 
     Point project(Point p);
 

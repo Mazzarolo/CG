@@ -83,6 +83,7 @@ void Cube::transform()
 
     for (int i = 0; i < 8; i++)
     {
+        p = rotateX(*points[i], angle);
         p = rotateY(*points[i], angle);
         p = translate(p);
         p = project(p);

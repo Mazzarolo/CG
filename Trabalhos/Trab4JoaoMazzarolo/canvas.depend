@@ -149,7 +149,7 @@
 	<math.h>
 	<stdio.h>
 
-1687718852 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1687988810 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -158,6 +158,7 @@
 	"Lib/gl_canvas2d.h"
 	"Objects/Engine2D.h"
 	"Objects/Cube.h"
+	"Objects/Cylinder.h"
 	"Tools/Clock.h"
 
 1680114778 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\bola.h
@@ -175,7 +176,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1687706402 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
+1687988370 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
 	"Component2D.h"
 
 1687636498 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.h
@@ -207,13 +208,14 @@
 	"../Tools/Clock.h"
 	"Component2D.h"
 
-1687706553 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.cpp
+1687988370 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.cpp
 	"Engine2D.h"
 
-1687709414 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.h
+1687988370 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.h
 	"../Lib/gl_canvas2d.h"
+	"Point.h"
 
-1687716049 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
+1687988676 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
 	"Cube.h"
 
 1687958929 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\lib\gl_canvas2d.cpp
@@ -296,6 +298,15 @@
 	"Cylinder.h"
 
 1687965828 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
+	"../lib/gl_canvas2d.h"
+	"Point.h"
+
+1687988858 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
+
+1687989027 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
+	"Cylinder.h"
+
+1687991239 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
 	"../lib/gl_canvas2d.h"
 	"Point.h"
 
