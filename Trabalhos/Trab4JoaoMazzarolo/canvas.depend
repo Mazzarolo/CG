@@ -252,7 +252,7 @@
 	<math.h>
 	<stdio.h>
 
-1687965014 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1688044197 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -261,6 +261,7 @@
 	"Lib/gl_canvas2d.h"
 	"Objects/Engine2D.h"
 	"Objects/Cube.h"
+	"Objects/Cylinder.h"
 	"Tools/Clock.h"
 
 1687958929 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.h
@@ -283,7 +284,7 @@
 1687959341 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\component2d.cpp
 	"Component2D.h"
 
-1687965183 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
+1688042200 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cube.cpp
 	"Cube.h"
 
 1687965011 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine2d.cpp
@@ -292,12 +293,12 @@
 1687958929 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\tools\clock.cpp
 	"Clock.h"
 
-1687959909 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
+1688042200 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
 
-1687965846 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
+1688044668 source:c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
 	"Cylinder.h"
 
-1687965828 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
+1688044648 c:\users\jdrma\documentos\programação\codigos c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
 	"../lib/gl_canvas2d.h"
 	"Point.h"
 

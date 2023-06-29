@@ -46,7 +46,8 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 int main(void)
 {
    cube = new Cube(Point(0, 0, 0), 100);
-   cylinder = new Cylinder();
+   cylinder = new Cylinder(1, 1, 2);
+   cylinder->translateCylinder(Point(1, -1, 0));
    engine = new Engine2D(screenWidth, screenHeight);
    timer = new Clock();
 

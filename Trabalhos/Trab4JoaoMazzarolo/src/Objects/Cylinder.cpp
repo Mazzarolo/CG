@@ -1,6 +1,6 @@
 #include "Cylinder.h"
 
-Cylinder::Cylinder()
+Cylinder::Cylinder(int orientation, float radiusMultiplier, float heightMultiplier)
 {
     float ang = 0;
     float inc = 2 * PI / DIM;
@@ -9,9 +9,24 @@ Cylinder::Cylinder()
     {
         for (int j = 0; j <= DIM; j++)
         {
-            mat[i][j].x = cos(ang);
-            mat[i][j].y = sin(ang);
-            mat[i][j].z = 2 * j / (float)DIM - 1;
+            if(orientation == 0)
+            {
+                mat[i][j].x = heightMultiplier * 2 * i / (float)DIM - 1;
+                mat[i][j].y = cos(ang) * radiusMultiplier;
+                mat[i][j].z = sin(ang) * radiusMultiplier;
+            }
+            else if(orientation == 1)
+            {
+                mat[i][j].x = cos(ang) * radiusMultiplier;
+                mat[i][j].y = heightMultiplier * 2 * i / (float)DIM - 1;
+                mat[i][j].z = sin(ang) * radiusMultiplier;
+            }
+            else if(orientation == 2)
+            {
+                mat[i][j].x = cos(ang) * radiusMultiplier;
+                mat[i][j].y = sin(ang) * radiusMultiplier;
+                mat[i][j].z = heightMultiplier * 2 * j / (float)DIM - 1;
+            }
             ang += inc;
         }
     }
@@ -67,6 +82,15 @@ Point Cylinder::translate(Point p, Point offset)
     return resp;
 }
 
+void Cylinder::translateCylinder(Point offset)
+{
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            mat[x][z] = translate(mat[x][z], offset);
+        }
+}
+
 // projecao em perspectiva, assumindo camera na origem olhando para z negativo.
 Point Cylinder::project(Point p)
 {
@@ -90,8 +114,6 @@ void Cylinder::transform()
         {
             // copia os Points originais
             p = mat[x][z];
-
-            p = translate(p, Point(1, 0, 0));
 
             // rotacao no eixo x
             p = rotateY(p);

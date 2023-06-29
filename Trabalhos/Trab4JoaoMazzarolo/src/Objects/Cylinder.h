@@ -4,7 +4,7 @@
 #include "../lib/gl_canvas2d.h"
 #include "Point.h"
 
-#define DIM 20
+#define DIM 40
 
 class Cylinder
 {
@@ -15,13 +15,15 @@ private:
 
     float ang = 0;
 public:
-    Cylinder();
+    Cylinder(int orientation, float radiusMultiplier, float heightMultiplier);
 
     void render();
 
     Point rotateX(Point p);
 
     Point rotateY(Point p);
+
+    void translateCylinder(Point offset);
 
     Point translate(Point p);
     Point translate(Point p, Point offset);
