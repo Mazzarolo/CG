@@ -9,7 +9,7 @@ class Engine3D : public Clock
 {
 private:
     int screenWidth, screenHeight;
-    Cylinder *manivela, *pistao1, *pistao2;
+    Cylinder *eixo, *manivela1, *manivela2, *pistao1, *pistao2;
     float ang = 0;
 
 public:
@@ -22,6 +22,7 @@ public:
 
     void movePistao2();
 
+    void moveEixo();
 };
 
 #endif // ENGINE_3D_H

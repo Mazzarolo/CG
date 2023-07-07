@@ -208,7 +208,8 @@ void Cylinder::transform()
             // copia os Points originais
             p = mat[x][z];
 
-            // rotacao no eixo x
+            p = rotateZ(p);
+
             p = rotateY(p);
 
             // translacao no eixo z
