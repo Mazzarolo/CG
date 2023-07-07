@@ -149,7 +149,7 @@
 	<math.h>
 	<stdio.h>
 
-1688669759 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1688751578 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -157,6 +157,7 @@
 	<stdlib.h>
 	"Lib/gl_canvas2d.h"
 	"Objects/EngineV2D.h"
+	"Objects/Engine3D.h"
 	"Objects/Cube.h"
 	"Objects/Cylinder.h"
 	"Tools/Clock.h"
@@ -304,17 +305,26 @@
 
 1687988858 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
 
-1688670653 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
+1688758021 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
 	"Cylinder.h"
 
-1688670581 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
+1688752057 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
 	"../lib/gl_canvas2d.h"
+	"../Tools/Clock.h"
 	"Point.h"
 
 1688669524 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\enginev2d.h
 	"../Tools/Clock.h"
 	"../lib/gl_canvas2d.h"
 
-1688669884 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\enginev2d.cpp
+1688751539 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\enginev2d.cpp
 	"EngineV2D.h"
+
+1688758622 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.h
+	"../lib/gl_canvas2d.h"
+	"../Tools/Clock.h"
+	"Cylinder.h"
+
+1688756969 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.cpp
+	"Engine3D.h"
 

@@ -30,6 +30,15 @@ Cylinder::Cylinder(int orientation, float radiusMultiplier, float heightMultipli
             ang += inc;
         }
     }
+
+    // copy the matrix to the auxiliar matrix
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            transf[i][j] = mat[i][j];
+        }
+    }
 }
 
 Point Cylinder::rotateX(Point p)
@@ -46,6 +55,26 @@ Point Cylinder::rotateX(Point p)
     return resp;
 }
 
+Point Cylinder::rotateX(Point p, float angle)
+{
+    Point resp;
+
+    resp.x = p.x;
+    resp.y = cos(angle) * p.y - sin(angle) * p.z;
+    resp.z = sin(angle) * p.y + cos(angle) * p.z;
+
+    return resp;
+}
+
+void Cylinder::rotateCylinderX(float angle)
+{
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            mat[x][z] = rotateX(mat[x][z], angle);
+        }
+}
+
 Point Cylinder::rotateY(Point p)
 {
     Point resp;
@@ -58,6 +87,70 @@ Point Cylinder::rotateY(Point p)
     resp.z = -sin(ang) * p.x + cos(ang) * p.z;
 
     return resp;
+}
+
+Point Cylinder::rotateY(Point p, float angle)
+{
+    Point resp;
+
+    resp.x = cos(angle) * p.x + sin(angle) * p.z;
+    resp.y = p.y;
+    resp.z = -sin(angle) * p.x + cos(angle) * p.z;
+
+    return resp;
+}
+
+void Cylinder::rotateCylinderY(float angle)
+{
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            mat[x][z] = rotateY(mat[x][z], angle);
+        }
+}
+
+Point Cylinder::rotateZ(Point p)
+{
+    Point resp;
+    
+    if(angZ > 2 * PI)
+        angZ = 0;
+
+    resp.x = cos(angZ) * p.x - sin(angZ) * p.y;
+    resp.y = sin(angZ) * p.x + cos(angZ) * p.y;
+    resp.z = p.z;
+
+    return resp;
+}
+
+Point Cylinder::rotateZ(Point p, float angle)
+{
+    Point resp;
+
+    resp.x = cos(angle) * p.x - sin(angle) * p.y;
+    resp.y = sin(angle) * p.x + cos(angle) * p.y;
+    resp.z = p.z;
+
+    return resp;
+}
+
+void Cylinder::rotateCylinderZ(float angle)
+{
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            mat[x][z] = rotateZ(mat[x][z], angle);
+        }
+}
+
+void Cylinder::rotateCylinderZ()
+{
+    angZ += getDeltaTime();
+}
+
+float Cylinder::getAngZ()
+{
+    return angZ;
 }
 
 Point Cylinder::translate(Point p)
@@ -94,7 +187,7 @@ void Cylinder::translateCylinder(Point offset)
 // projecao em perspectiva, assumindo camera na origem olhando para z negativo.
 Point Cylinder::project(Point p)
 {
-    float d = -500;
+    float d = -300;
     Point resp;
 
     resp.x = (p.x * d) / p.z;
@@ -126,9 +219,31 @@ void Cylinder::transform()
         }
 }
 
+void Cylinder::project()
+{
+    Point p;
+    // Processa cada vertice da superficie individualmente.
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            // copia os Points originais
+            p = mat[x][z];
+
+            p = rotateZ(p);
+
+            // translacao no eixo z
+            p = translate(p);
+
+            // projecao em perspectiva
+            transf[x][z] = project(p);
+        }
+}
+
 void Cylinder::render()
 {
-    transform();
+    //transform();
+
+    project();
 
     CV::color(0, 0, 0);
 
