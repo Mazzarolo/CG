@@ -43,6 +43,10 @@ public:
     Point translate(Point p);
     Point translate(Point p, Point offset);
 
+    Point getUpFaceCenter();
+
+    Point getDownFaceCenter();
+
     Point project(Point p);
     void project();
 

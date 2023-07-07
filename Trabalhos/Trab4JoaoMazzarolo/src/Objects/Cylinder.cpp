@@ -240,6 +240,82 @@ void Cylinder::project()
         }
 }
 
+Point Cylinder::getUpFaceCenter()
+{
+    Point p;
+
+    float minX, maxX, minY, maxY, minZ, maxZ;
+
+    for(int i = 0; i <= DIM; i++)
+    {
+        if(i == 0)
+        {
+            minX = maxX = transf[0][i].x;
+            minY = maxY = transf[0][i].y;
+            minZ = maxZ = transf[0][i].z;
+        }
+        else
+        {
+            if(transf[0][i].x < minX)
+                minX = transf[0][i].x;
+            if(transf[0][i].x > maxX)
+                maxX = transf[0][i].x;
+            if(transf[0][i].y < minY)
+                minY = transf[0][i].y;
+            if(transf[0][i].y > maxY)
+                maxY = transf[0][i].y;
+            if(transf[0][i].z < minZ)
+                minZ = transf[0][i].z;
+            if(transf[0][i].z > maxZ)
+                maxZ = transf[0][i].z;
+        }
+    }
+
+    p.x = (minX + maxX) / 2;
+    p.y = (minY + maxY) / 2;
+    p.z = (minZ + maxZ) / 2;
+
+    return p;
+}
+
+Point Cylinder::getDownFaceCenter()
+{
+    Point p;
+
+    float minX, maxX, minY, maxY, minZ, maxZ;
+
+    for(int i = 0; i <= DIM; i++)
+    {
+        if(i == 0)
+        {
+            minX = maxX = transf[DIM][i].x;
+            minY = maxY = transf[DIM][i].y;
+            minZ = maxZ = transf[DIM][i].z;
+        }
+        else
+        {
+            if(transf[DIM][i].x < minX)
+                minX = transf[DIM][i].x;
+            if(transf[DIM][i].x > maxX)
+                maxX = transf[DIM][i].x;
+            if(transf[DIM][i].y < minY)
+                minY = transf[DIM][i].y;
+            if(transf[DIM][i].y > maxY)
+                maxY = transf[DIM][i].y;
+            if(transf[DIM][i].z < minZ)
+                minZ = transf[DIM][i].z;
+            if(transf[DIM][i].z > maxZ)
+                maxZ = transf[DIM][i].z;
+        }
+    }
+
+    p.x = (minX + maxX) / 2;
+    p.y = (minY + maxY) / 2;
+    p.z = (minZ + maxZ) / 2;
+
+    return p;
+}
+
 void Cylinder::render()
 {
     //transform();

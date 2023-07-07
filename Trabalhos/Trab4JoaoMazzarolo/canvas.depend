@@ -149,7 +149,7 @@
 	<math.h>
 	<stdio.h>
 
-1688751578 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1688763458 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -305,10 +305,10 @@
 
 1687988858 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\point.h
 
-1688760918 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
+1688765681 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.cpp
 	"Cylinder.h"
 
-1688752057 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
+1688763252 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\cylinder.h
 	"../lib/gl_canvas2d.h"
 	"../Tools/Clock.h"
 	"Point.h"
@@ -325,6 +325,6 @@
 	"../Tools/Clock.h"
 	"Cylinder.h"
 
-1688760886 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.cpp
+1688765601 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.cpp
 	"Engine3D.h"
 
