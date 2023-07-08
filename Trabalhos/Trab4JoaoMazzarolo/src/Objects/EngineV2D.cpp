@@ -46,14 +46,6 @@ void EngineV2D::movePistoes()
 
     pistao2Pos.x = p1.x + d2 * cos(PI - angHorizontal);
     pistao2Pos.y = p1.y + d2 * sin(PI - angHorizontal);
-    /*
-    float bielaLength = 100;
-    float manivelaRadius = 30;
-
-    float dist = -bielaLength * cos(asin(manivelaRadius * sin(ang) / bielaLength)) + manivelaRadius * cos(ang);
-
-    pistao1Pos = Vector2(dist + (screenWidth / 2), screenHeight / 2);
-    */
 }
 
 EngineV2D::EngineV2D(int screenWidth, int screenHeight)

@@ -14,7 +14,7 @@ private:
 
     Point transf[DIM + 1][DIM + 1];
 
-    float ang = 0, angZ = 0;
+    float ang = 0, angY = 0, angZ = 0, distance = -300;
 public:
     Cylinder(int orientation, float radiusMultiplier, float heightMultiplier);
 
@@ -32,11 +32,15 @@ public:
     void rotateCylinderX(float angle);
 
     void rotateCylinderY(float angle);
+    void rotateCylinderY();
 
     void rotateCylinderZ(float angle);
     void rotateCylinderZ();
 
     float getAngZ();
+
+    void setAngY(float angY);
+    float getAngY();
 
     void translateCylinder(Point offset);
 
@@ -49,6 +53,8 @@ public:
 
     Point project(Point p);
     void project();
+
+    void increaseDistance(float inc);
 
     void transform();
 };

@@ -78,13 +78,13 @@ void Cylinder::rotateCylinderX(float angle)
 Point Cylinder::rotateY(Point p)
 {
     Point resp;
-    ang += 0.000001;
-    if(ang > 2 * PI)
-        ang = 0;
 
-    resp.x = cos(ang) * p.x + sin(ang) * p.z;
+    if(angY > 2 * PI)
+        angY = 0;
+
+    resp.x = cos(angY) * p.x + sin(angY) * p.z;
     resp.y = p.y;
-    resp.z = -sin(ang) * p.x + cos(ang) * p.z;
+    resp.z = -sin(angY) * p.x + cos(angY) * p.z;
 
     return resp;
 }
@@ -107,6 +107,11 @@ void Cylinder::rotateCylinderY(float angle)
         {
             mat[x][z] = rotateY(mat[x][z], angle);
         }
+}
+
+void Cylinder::rotateCylinderY()
+{
+    angY += getDeltaTime() * 5;
 }
 
 Point Cylinder::rotateZ(Point p)
@@ -187,7 +192,7 @@ void Cylinder::translateCylinder(Point offset)
 // projecao em perspectiva, assumindo camera na origem olhando para z negativo.
 Point Cylinder::project(Point p)
 {
-    float d = -300;
+    float d = distance;
     Point resp;
 
     resp.x = (p.x * d) / p.z;
@@ -195,6 +200,11 @@ Point Cylinder::project(Point p)
     resp.z = 0;
 
     return resp;
+}
+
+void Cylinder::increaseDistance(float inc)
+{
+    distance += inc;
 }
 
 // aplica sequencia de transformacoes na malha para fazer a animacao e visualizacao.
@@ -232,12 +242,24 @@ void Cylinder::project()
 
             p = rotateZ(p);
 
+            p = rotateY(p);
+
             // translacao no eixo z
             p = translate(p);
 
             // projecao em perspectiva
             transf[x][z] = project(p);
         }
+}
+
+void Cylinder::setAngY(float ang)
+{
+    angY = ang;
+}
+
+float Cylinder::getAngY()
+{
+    return angY;
 }
 
 Point Cylinder::getUpFaceCenter()

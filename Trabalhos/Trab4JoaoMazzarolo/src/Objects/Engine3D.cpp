@@ -16,6 +16,8 @@ Engine3D::Engine3D(int screenWidth, int screenHeight)
     manivela2->translateCylinder(Point(0, 0.5, -1));
     pistao1->translateCylinder(Point(-4, 6, 1));
     pistao2->translateCylinder(Point(6, 8, -1));
+    cameraSlider = new Slider(screenWidth / 2, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
+    cameraSlider->setZero();
 }
 
 void drawParallelLines(float x1, float y1, float x2, float y2, float radius, int numLines) {
@@ -45,6 +47,27 @@ void drawParallelLines(float x1, float y1, float x2, float y2, float radius, int
     }
 }
 
+void Engine3D::onMouse(int button, int state, int wheel, int direction, int x, int y)
+{
+    cameraSlider->onMouse(x, y, button, state);
+    eixo->setAngY(cameraSlider->percent() * 2 * PI);
+    manivela1->setAngY(cameraSlider->percent() * 2 * PI);
+    manivela2->setAngY(cameraSlider->percent() * 2 * PI);
+    pistao1->setAngY(cameraSlider->percent() * 2 * PI);
+    pistao2->setAngY(cameraSlider->percent() * 2 * PI);
+    float inc = 0;
+    if(wheel == 0 && direction == 1)
+        inc = -100;
+    else if(wheel == 0 && direction == -1)
+        inc = 100;
+    
+    eixo->increaseDistance(inc);
+    manivela1->increaseDistance(inc);
+    manivela2->increaseDistance(inc);
+    pistao1->increaseDistance(inc);
+    pistao2->increaseDistance(inc);
+}
+
 void Engine3D::render()
 {
     ang = manivela1->getAngZ();
@@ -64,6 +87,8 @@ void Engine3D::render()
     CV::line(manivela1->getDownFaceCenter().x, manivela1->getDownFaceCenter().y, pistao1->getUpFaceCenter().x, pistao1->getUpFaceCenter().y);
 
     CV::line(manivela2->getDownFaceCenter().x, manivela2->getDownFaceCenter().y, pistao2->getUpFaceCenter().x, pistao2->getUpFaceCenter().y);
+    CV::translate(0, 0);
+    cameraSlider->render();
 }
 
 void Engine3D::movePistao1()
