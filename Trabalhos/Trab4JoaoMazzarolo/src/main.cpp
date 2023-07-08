@@ -20,8 +20,8 @@ Clock *timer;
 void render()
 {
    timer->tic();
-   //engine->render();
-   engine3D->render();
+   engine->render();
+   //engine3D->render();
 }
 
 void keyboard(int key)
@@ -35,6 +35,7 @@ void keyboardUp(int key)
 
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
+   engine->onMouse(button, state, wheel, direction, x, y);
 }
 
 int main(void)

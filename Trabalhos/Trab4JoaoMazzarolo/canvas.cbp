@@ -59,6 +59,8 @@
 		<Unit filename="src/Objects/EngineV2D.cpp" />
 		<Unit filename="src/Objects/EngineV2D.h" />
 		<Unit filename="src/Objects/Point.h" />
+		<Unit filename="src/Objects/Slider.cpp" />
+		<Unit filename="src/Objects/Slider.h" />
 		<Unit filename="src/Tools/Clock.cpp" />
 		<Unit filename="src/Tools/Clock.h" />
 		<Unit filename="src/Vector2.h" />

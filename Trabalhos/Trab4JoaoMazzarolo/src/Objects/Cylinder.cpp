@@ -145,7 +145,7 @@ void Cylinder::rotateCylinderZ(float angle)
 
 void Cylinder::rotateCylinderZ()
 {
-    angZ += getDeltaTime();
+    angZ += getDeltaTime() * 5;
 }
 
 float Cylinder::getAngZ()

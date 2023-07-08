@@ -4,18 +4,18 @@ Engine3D::Engine3D(int screenWidth, int screenHeight)
 {
     this->screenWidth = screenWidth;
     this->screenHeight = screenHeight;
-    eixo = new Cylinder(2, 0.5, 3);
+    eixo = new Cylinder(2, 0.5, 2);
     manivela1 = new Cylinder(1, 1, 1);
     manivela2 = new Cylinder(1, 1, 1);
     pistao1 = new Cylinder(1, 1, 0.5);
     pistao2 = new Cylinder(1, 1, 0.5);
     pistao1->rotateCylinderZ(PI / 4);
     pistao2->rotateCylinderZ(-PI / 4);
-    eixo->translateCylinder(Point(0, 0, -2));
-    manivela1->translateCylinder(Point(0, 0.5, 2));
-    manivela2->translateCylinder(Point(0, 0.5, -2));
-    pistao1->translateCylinder(Point(-4, 6, 2));
-    pistao2->translateCylinder(Point(6, 8, -2));
+    eixo->translateCylinder(Point(0, 0, -1));
+    manivela1->translateCylinder(Point(0, 0.5, 1));
+    manivela2->translateCylinder(Point(0, 0.5, -1));
+    pistao1->translateCylinder(Point(-4, 6, 1));
+    pistao2->translateCylinder(Point(6, 8, -1));
 }
 
 void drawParallelLines(float x1, float y1, float x2, float y2, float radius, int numLines) {
@@ -70,8 +70,8 @@ void Engine3D::movePistao1()
 {
     Point pistao1Pos;
 
-    pistao1Pos.x = -cos(ang) * getDeltaTime();
-    pistao1Pos.y = cos(ang) * getDeltaTime();
+    pistao1Pos.x = -cos(ang) * getDeltaTime() * 5;
+    pistao1Pos.y = cos(ang) * getDeltaTime() * 5;
 
     pistao1Pos.z = 0;
 
@@ -82,8 +82,8 @@ void Engine3D::movePistao2()
 {
     Point pistao2Pos;
 
-    pistao2Pos.x = -sin(ang) * getDeltaTime();
-    pistao2Pos.y = -sin(ang) * getDeltaTime();
+    pistao2Pos.x = -sin(ang) * getDeltaTime() * 5;
+    pistao2Pos.y = -sin(ang) * getDeltaTime() * 5;
 
     pistao2Pos.z = 0;
 
