@@ -59,9 +59,9 @@ void Engine3D::onMouse(int button, int state, int wheel, int direction, int x, i
     pistao2->setAngY(cameraSlider->percent() * 2 * PI);
     float inc = 0;
     if(wheel == 0 && direction == 1)
-        inc = -100 * getDeltaTime();
+        inc = -1000 * getDeltaTime();
     else if(wheel == 0 && direction == -1)
-        inc = 100 * getDeltaTime();
+        inc = 1000 * getDeltaTime();
     
     eixo->increaseDistance(inc);
     manivela1->increaseDistance(inc);
@@ -106,8 +106,8 @@ void Engine3D::movePistao1()
 {
     Point pistao1Pos;
 
-    pistao1Pos.x = -cos(ang) * getDeltaTime() * (1 + speedSlider->percent() * 10);
-    pistao1Pos.y = cos(ang) * getDeltaTime() * (1 + speedSlider->percent() * 10);
+    pistao1Pos.x = ((cos(PI - ang) + sin(PI - ang)) / 2) * getDeltaTime() * (1 + speedSlider->percent() * 10);
+    pistao1Pos.y = -((cos(PI - ang) + sin(PI - ang)) / 2) * getDeltaTime() * (1 + speedSlider->percent() * 10);
 
     pistao1Pos.z = 0;
 
@@ -118,8 +118,8 @@ void Engine3D::movePistao2()
 {
     Point pistao2Pos;
 
-    pistao2Pos.x = -sin(ang) * getDeltaTime() * (1 + speedSlider->percent() * 10);
-    pistao2Pos.y = -sin(ang) * getDeltaTime() * (1 + speedSlider->percent() * 10);
+    pistao2Pos.x = -((sin(ang) + cos(ang)) / 2) * getDeltaTime() * (1 + speedSlider->percent() * 10);
+    pistao2Pos.y = -((sin(ang) + cos(ang)) / 2) * getDeltaTime() * (1 + speedSlider->percent() * 10);
 
     pistao2Pos.z = 0;
 

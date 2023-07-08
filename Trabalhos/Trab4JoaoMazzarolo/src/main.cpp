@@ -16,16 +16,21 @@ int screenWidth = 500, screenHeight = 500;
 EngineV2D *engine;
 Engine3D *engine3D;
 Clock *timer;
+bool is3D = false;
 
 void render()
 {
    timer->tic();
-   //engine->render();
-   engine3D->render();
+   if(is3D)
+      engine3D->render();
+   else
+      engine->render();
 }
 
 void keyboard(int key)
 {
+   if(key == 32)
+      is3D = !is3D;
 }
 
 void keyboardUp(int key)

@@ -149,7 +149,7 @@
 	<math.h>
 	<stdio.h>
 
-1688844102 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
+1688846929 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -327,7 +327,7 @@
 	"Slider.h"
 	"Cylinder.h"
 
-1688845012 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.cpp
+1688851508 source:j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\engine3d.cpp
 	"Engine3D.h"
 
 1688835475 j:\programação\c\cg\trabalhos\trab4joaomazzarolo\src\objects\slider.h
