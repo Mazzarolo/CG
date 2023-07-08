@@ -343,6 +343,11 @@ Point Cylinder::getDownFaceCenter()
     return p;
 }
 
+Point Cylinder::getCenter()
+{
+    return Point(getUpFaceCenter().x + getDownFaceCenter().x / 2, getUpFaceCenter().y + getDownFaceCenter().y / 2, getUpFaceCenter().z + getDownFaceCenter().z / 2);
+}
+
 void Cylinder::render()
 {
     //transform();

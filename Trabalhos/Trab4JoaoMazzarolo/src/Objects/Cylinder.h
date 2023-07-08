@@ -5,7 +5,7 @@
 #include "../Tools/Clock.h"
 #include "Point.h"
 
-#define DIM 40
+#define DIM 30
 
 class Cylinder : public Clock
 {
@@ -50,6 +50,8 @@ public:
     Point getUpFaceCenter();
 
     Point getDownFaceCenter();
+
+    Point getCenter();
 
     void setSpeed(float speed);
 
