@@ -14,7 +14,7 @@ private:
 
     Point transf[DIM + 1][DIM + 1];
 
-    float ang = 0, angY = 0, angZ = 0, distance = -300;
+    float ang = 0, angY = 0, angZ = 0, distance = -300, speed = 1;
 public:
     Cylinder(int orientation, float radiusMultiplier, float heightMultiplier);
 
@@ -50,6 +50,8 @@ public:
     Point getUpFaceCenter();
 
     Point getDownFaceCenter();
+
+    void setSpeed(float speed);
 
     Point project(Point p);
     void project();

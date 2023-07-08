@@ -9,7 +9,7 @@
 class Engine3D : public Clock
 {
 private:
-    Slider *cameraSlider;
+    Slider *cameraSlider, *speedSlider;
     int screenWidth, screenHeight;
     Cylinder *eixo, *manivela1, *manivela2, *pistao1, *pistao2;
     float ang = 0, angHorizontal = PI / 4;

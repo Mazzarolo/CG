@@ -150,7 +150,12 @@ void Cylinder::rotateCylinderZ(float angle)
 
 void Cylinder::rotateCylinderZ()
 {
-    angZ += getDeltaTime() * 5;
+    angZ += getDeltaTime() * speed;
+}
+
+void Cylinder::setSpeed(float speed)
+{
+    this->speed = speed;
 }
 
 float Cylinder::getAngZ()
