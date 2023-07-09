@@ -41,6 +41,125 @@ Cylinder::Cylinder(int orientation, float radiusMultiplier, float heightMultipli
     }
 }
 
+void Cylinder::resetPosition(int orientation, float radiusMultiplier, float heightMultiplier)
+{
+    float ang = 0;
+    float inc = 2 * PI / DIM;
+
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            if(orientation == 0)
+            {
+                mat[i][j].x = heightMultiplier * 2 * i / (float)DIM - 1;
+                mat[i][j].y = cos(ang) * radiusMultiplier;
+                mat[i][j].z = sin(ang) * radiusMultiplier;
+            }
+            else if(orientation == 1)
+            {
+                mat[i][j].x = cos(ang) * radiusMultiplier;
+                mat[i][j].y = heightMultiplier * 2 * i / (float)DIM - 1;
+                mat[i][j].z = sin(ang) * radiusMultiplier;
+            }
+            else if(orientation == 2)
+            {
+                mat[i][j].x = cos(ang) * radiusMultiplier;
+                mat[i][j].y = sin(ang) * radiusMultiplier;
+                mat[i][j].z = heightMultiplier * 2 * j / (float)DIM - 1;
+            }
+            ang += inc;
+        }
+    }
+
+    // copy the matrix to the auxiliar matrix
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            transf[i][j] = mat[i][j];
+        }
+    }
+}
+
+void Cylinder::changeShapeToCone(float radiusMultiplier, float heightMultiplier)
+{
+    float ang = 0;
+    float inc = 2 * PI / DIM;
+
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            mat[i][j].x = heightMultiplier * 2 * i / (float)DIM - 1;
+            mat[i][j].y = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
+            mat[i][j].z = sin(ang) * radiusMultiplier * (1 - i / (float)DIM);
+            ang += inc;
+        }
+    }
+
+    // copy the matrix to the auxiliar matrix
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            transf[i][j] = mat[i][j];
+        }
+    }
+}
+
+void Cylinder::changeShapeToCircularCone(float radiusMultiplier, float heightMultiplier)
+{
+    float ang = 0;
+    float inc = 2 * PI / DIM;
+
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            mat[i][j].x = heightMultiplier * 2 * i / (float)DIM - 1;
+            mat[i][j].y = cos(ang) * radiusMultiplier * (sqrt(i * 20) / (float)DIM);
+            mat[i][j].z = sin(ang) * radiusMultiplier * (sqrt(i * 20) / (float)DIM);
+            ang += inc;
+        }
+    }
+
+    // copy the matrix to the auxiliar matrix
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            transf[i][j] = mat[i][j];
+        }
+    }
+}
+
+void Cylinder::changeShapeToSphere(float radiusMultiplier)
+{
+    float ang = 0;
+    float inc = 2 * PI / DIM;
+
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            mat[i][j].x = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
+            mat[i][j].y = sin(ang) * radiusMultiplier * (1 - i / (float)DIM);
+            mat[i][j].z = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
+            ang += inc;
+        }
+    }
+
+    // copy the matrix to the auxiliar matrix
+    for (int i = 0; i <= DIM; i++)
+    {
+        for (int j = 0; j <= DIM; j++)
+        {
+            transf[i][j] = mat[i][j];
+        }
+    }
+}
+
 Point Cylinder::rotateX(Point p)
 {
     Point resp;
@@ -354,18 +473,26 @@ void Cylinder::render()
 
     project();
 
-    CV::color(0, 0, 0);
+    if(visible)
+    {
+        CV::color(0, 0, 0);
 
-    for (int x = 0; x <= DIM; x++)
-        for (int z = 0; z <= DIM; z++)
-        {
-            CV::point(transf[x][z].x, transf[x][z].y);
-        }
+        for (int x = 0; x <= DIM; x++)
+            for (int z = 0; z <= DIM; z++)
+            {
+                CV::point(transf[x][z].x, transf[x][z].y);
+            }
 
-    for (int x = 0; x < DIM; x++)
-        for (int z = 0; z < DIM; z++)
-        {
-            CV::line(transf[x][z].x, transf[x][z].y, transf[x + 1][z].x, transf[x + 1][z].y);
-            CV::line(transf[x][z].x, transf[x][z].y, transf[x][z + 1].x, transf[x][z + 1].y);
-        }
+        for (int x = 0; x < DIM; x++)
+            for (int z = 0; z < DIM; z++)
+            {
+                CV::line(transf[x][z].x, transf[x][z].y, transf[x + 1][z].x, transf[x + 1][z].y);
+                CV::line(transf[x][z].x, transf[x][z].y, transf[x][z + 1].x, transf[x][z + 1].y);
+            }
+    }
+}
+
+void Cylinder::setVisible()
+{
+    visible = !visible;
 }

@@ -29,6 +29,7 @@ void render()
 
 void keyboard(int key)
 {
+   engine3D->onKeyboard(key);
    if(key == 32)
       is3D = !is3D;
 }

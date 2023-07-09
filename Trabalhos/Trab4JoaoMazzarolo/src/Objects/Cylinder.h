@@ -15,8 +15,16 @@ private:
     Point transf[DIM + 1][DIM + 1];
 
     float ang = 0, angY = 0, angZ = 0, distance = -300, speed = 1;
+
+    bool visible = true;
 public:
     Cylinder(int orientation, float radiusMultiplier, float heightMultiplier);
+
+    void changeShapeToCone(float radiusMultiplier, float heightMultiplier);
+
+    void changeShapeToCircularCone(float radiusMultiplier, float heightMultiplier);
+
+    void changeShapeToSphere(float radiusMultiplier);
 
     void render();
 
@@ -47,6 +55,8 @@ public:
     Point translate(Point p);
     Point translate(Point p, Point offset);
 
+    void resetPosition(int orientation, float radiusMultiplier, float heightMultiplier);
+
     Point getUpFaceCenter();
 
     Point getDownFaceCenter();
@@ -61,6 +71,8 @@ public:
     void increaseDistance(float inc);
 
     void transform();
+
+    void setVisible();
 };
 
 #endif // CYlINDER_H
