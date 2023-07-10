@@ -8,7 +8,6 @@
 #include "Lib/gl_canvas2d.h"
 #include "Objects/EngineV2D.h"
 #include "Objects/Engine3D.h"
-#include "Objects/Cube.h"
 #include "Objects/Cylinder.h"
 #include "Tools/Clock.h"
 

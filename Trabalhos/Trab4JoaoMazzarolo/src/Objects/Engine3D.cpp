@@ -15,12 +15,12 @@ Engine3D::Engine3D(int screenWidth, int screenHeight)
     manivela2->rotateCylinderZ(-PI / 2);
     pistao1 = new Cylinder(1, 1, 0.5);
     pistao2 = new Cylinder(1, 1, 0.5);
-    pistao1->rotateCylinderZ(PI / 4);
-    pistao2->rotateCylinderZ(-PI / 4);
+    pistao1->rotateCylinderZ(angHorizontal);
+    pistao2->rotateCylinderZ(-angHorizontal);
     camisa1 = new Cylinder(1, 1, 1.5);
     camisa2 = new Cylinder(1, 1, 1.5);
-    camisa1->rotateCylinderZ(PI / 4);
-    camisa2->rotateCylinderZ(-PI / 4);
+    camisa1->rotateCylinderZ(angHorizontal);
+    camisa2->rotateCylinderZ(-angHorizontal);
     eixo->translateCylinder(Point(0, 1, -1));
     conection1->translateCylinder(Point(0, 1.5, 0.5));
     conection2->translateCylinder(Point(0, 1.5, -0.5));
@@ -30,58 +30,62 @@ Engine3D::Engine3D(int screenWidth, int screenHeight)
     pistao2->translateCylinder(Point(6, 8, -0.5));
     camisa1->translateCylinder(Point(-4.8, 6.8, 0.5));
     camisa2->translateCylinder(Point(4.8, 6.8, -0.5));
-    cameraSlider = new Slider(screenWidth / 4, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
-    cameraSlider->setZero();
-    speedSlider = new Slider(screenWidth * 2 / 4, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
+    cameraSliderX = new Slider(screenWidth / 10, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
+    cameraSliderX->setZero();
+    cameraSliderY = new Slider(screenWidth * 4 / 10, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
+    cameraSliderY->setZero();
+    speedSlider = new Slider(screenWidth * 7 / 10, screenHeight * 9 / 10, 100, 20, 10, 1, 0);
     speedSlider->setZero();
 }
 
 void Engine3D::drawParallelLines(float x1, float y1, float x2, float y2, float radius, int numLines) {
-    // Calcula a inclinação da linha original
-    float slope = (y2 - y1) / (x2 - x1);
-
-    // Calcula o ângulo entre as linhas paralelas
     float angleStep = 2 * PI / numLines;
 
-    // Desenha as linhas paralelas em um padrão circular
     for (int i = 0; i < numLines; ++i) {
-        // Calcula o ângulo para a linha atual
         float angle = i * angleStep;
 
-        // Calcula as coordenadas para a linha paralela
         float dx = radius * cos(angle);
         float dy = radius * sin(angle);
 
-        // Calcula as coordenadas finais para a linha paralela
         float x1_parallel = x1 + dx;
         float y1_parallel = y1 + dy;
         float x2_parallel = x2 + dx;
         float y2_parallel = y2 + dy;
 
-        // Aqui você pode chamar a função de desenho (substitua com a função apropriada para o seu caso)
         CV::line(x1_parallel, y1_parallel, x2_parallel, y2_parallel);
     }
 }
 
 void Engine3D::onMouse(int button, int state, int wheel, int direction, int x, int y)
 {
-    cameraSlider->onMouse(x, y, button, state);
-    eixo->setAngY(cameraSlider->percent() * PI * 2);
-    conection1->setAngY(cameraSlider->percent() * PI * 2);
-    conection2->setAngY(cameraSlider->percent() * PI * 2);
-    manivela1->setAngY(cameraSlider->percent() * PI * 2);
-    manivela2->setAngY(cameraSlider->percent() * PI * 2);
-    pistao1->setAngY(cameraSlider->percent() * PI * 2);
-    pistao2->setAngY(cameraSlider->percent() * PI * 2);
-    camisa1->setAngY(cameraSlider->percent() * PI * 2);
-    camisa2->setAngY(cameraSlider->percent() * PI * 2);
+    cameraSliderY->onMouse(x, y, button, state);
+    eixo->setAngY(cameraSliderY->percent() * PI * 2);
+    conection1->setAngY(cameraSliderY->percent() * PI * 2);
+    conection2->setAngY(cameraSliderY->percent() * PI * 2);
+    manivela1->setAngY(cameraSliderY->percent() * PI * 2);
+    manivela2->setAngY(cameraSliderY->percent() * PI * 2);
+    pistao1->setAngY(cameraSliderY->percent() * PI * 2);
+    pistao2->setAngY(cameraSliderY->percent() * PI * 2);
+    camisa1->setAngY(cameraSliderY->percent() * PI * 2);
+    camisa2->setAngY(cameraSliderY->percent() * PI * 2);
+
+    cameraSliderX->onMouse(x, y, button, state);
+    eixo->setAngX(cameraSliderX->percent() * PI * 2);
+    conection1->setAngX(cameraSliderX->percent() * PI * 2);
+    conection2->setAngX(cameraSliderX->percent() * PI * 2);
+    manivela1->setAngX(cameraSliderX->percent() * PI * 2);
+    manivela2->setAngX(cameraSliderX->percent() * PI * 2);
+    pistao1->setAngX(cameraSliderX->percent() * PI * 2);
+    pistao2->setAngX(cameraSliderX->percent() * PI * 2);
+    camisa1->setAngX(cameraSliderX->percent() * PI * 2);
+    camisa2->setAngX(cameraSliderX->percent() * PI * 2);
 
     float inc = 0;
     if(wheel == 0 && direction == 1)
         inc = -5000 * getDeltaTime();
     else if(wheel == 0 && direction == -1)
         inc = 5000 * getDeltaTime();
-    
+
     eixo->increaseDistance(inc);
     manivela1->increaseDistance(inc);
     manivela2->increaseDistance(inc);
@@ -135,8 +139,17 @@ void Engine3D::render()
         drawParallelLines(conection2->getUpFaceCenter().x, conection2->getUpFaceCenter().y, pistao2->getUpFaceCenter().x, pistao2->getUpFaceCenter().y, 5, 10);
     }
     CV::translate(0, 0);
-    cameraSlider->render();
+    CV::color(0, 0, 0);
+    CV::text(screenWidth / 10, screenHeight - 20, "Angulo X");
+    cameraSliderX->render();
+    CV::text(screenWidth * 4 / 10, screenHeight - 20, "Angulo Y");
+    cameraSliderY->render();
+    CV::text(screenWidth * 7 / 10, screenHeight - 20, "RPM");
     speedSlider->render();
+    CV::text(20, 10, "PRECIONE ESPACO PARA VER A MODELAGEM EM 2D");
+    CV::text(20, 30, "RODE O SCROLL DO MOUSE PARA DAR ZOOM IN E OUT");
+    CV::text(20, 70, "PRECIONE AS TECLAS DE 1 A 5 ");
+    CV::text(20, 50, "PARA ESCONDER / REVELAR OS COMPONENTES");
 }
 
 void Engine3D::movePistao1()
@@ -151,7 +164,7 @@ void Engine3D::movePistao1()
     if(ang > -getDeltaTime() * speed && ang < getDeltaTime() * speed)
     {
         pistao1->resetPosition(1, 1, 0.5);
-        pistao1->rotateCylinderZ(PI / 4);
+        pistao1->rotateCylinderZ(angHorizontal);
         pistao1->translateCylinder(Point(-6, 8, 0.5));
     }
 
@@ -170,7 +183,7 @@ void Engine3D::movePistao2()
     if(ang > -getDeltaTime() * speed && ang < getDeltaTime() * speed)
     {
         pistao2->resetPosition(1, 1, 0.5);
-        pistao2->rotateCylinderZ(-PI / 4);
+        pistao2->rotateCylinderZ(-angHorizontal);
         pistao2->translateCylinder(Point(6, 8, -0.5));
     }
 

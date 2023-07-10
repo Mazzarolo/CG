@@ -6,31 +6,12 @@ void EngineV2D::rotateManivela(float angle)
     manivelaPos.y = screenHeight / 2 + 30 * sin(angle);
 }
 
-void EngineV2D::movePistao1()
-{
-    pistao1Pos.x = 30 * -sin(ang);
-    pistao1Pos.y = 30 * sin(ang);
-
-    pistao1Pos.x += screenWidth * 1 / 4;
-    pistao1Pos.y += screenHeight * 3 / 4;
-}
-
-void EngineV2D::movePistao2()
-{
-    pistao2Pos.x = 30 * cos(ang);
-    pistao2Pos.y = 30 * cos(ang);
-
-    pistao2Pos.x += screenWidth * 3 / 4;
-    pistao2Pos.y += screenHeight * 3 / 4;
-}
-
 void EngineV2D::movePistoes()
 {
     float manivelaRadius = 30;
     float bielaLenght = 50;
 
     Vector2 p1 = Vector2(screenWidth / 2, screenHeight / 2);
-    Vector2 p2 = manivelaPos;
 
     float angRel1 = angHorizontal - ang;
     float angRel2 = PI - angHorizontal - ang;
@@ -76,6 +57,7 @@ void EngineV2D::onMouse(int button, int state, int wheel, int direction, int x, 
 void EngineV2D::render()
 {
     CV::color(0, 0, 0);
+    CV::text(20, screenHeight - 30, "PRECIONE ESPACO PARA VER A MODELAGEM EM 3D");
     CV::circle(screenWidth / 2, screenHeight / 2, 30, 30);
     CV::circle(manivelaPos.x, manivelaPos.y, 10, 30);
     CV::circle(pistao1Pos.x, pistao1Pos.y, 10, 30);
@@ -84,7 +66,9 @@ void EngineV2D::render()
     CV::line(manivelaPos.x, manivelaPos.y, pistao2Pos.x, pistao2Pos.y);
     rotateManivela(ang);
     movePistoes();
+    CV::text(screenWidth * 1 / 4, screenHeight * 1 / 4 + 25, "RPM");
     speedSlider->render();
+    CV::text(screenWidth * 2 / 4, screenHeight * 1 / 4 + 25, "Angulo");
     angSlider->render();
     ang += getDeltaTime() * rpm;
     if (ang >= 2 * PI)

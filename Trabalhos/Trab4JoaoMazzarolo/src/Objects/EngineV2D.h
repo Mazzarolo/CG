@@ -15,10 +15,6 @@ private:
 
     void rotateManivela(float angle);
 
-    void movePistao1();
-
-    void movePistao2();
-
     void movePistoes();
 
 public:

@@ -30,15 +30,6 @@ Cylinder::Cylinder(int orientation, float radiusMultiplier, float heightMultipli
             ang += inc;
         }
     }
-
-    // copy the matrix to the auxiliar matrix
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            transf[i][j] = mat[i][j];
-        }
-    }
 }
 
 void Cylinder::resetPosition(int orientation, float radiusMultiplier, float heightMultiplier)
@@ -71,15 +62,6 @@ void Cylinder::resetPosition(int orientation, float radiusMultiplier, float heig
             ang += inc;
         }
     }
-
-    // copy the matrix to the auxiliar matrix
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            transf[i][j] = mat[i][j];
-        }
-    }
 }
 
 void Cylinder::changeShapeToCone(float radiusMultiplier, float heightMultiplier)
@@ -95,15 +77,6 @@ void Cylinder::changeShapeToCone(float radiusMultiplier, float heightMultiplier)
             mat[i][j].y = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
             mat[i][j].z = sin(ang) * radiusMultiplier * (1 - i / (float)DIM);
             ang += inc;
-        }
-    }
-
-    // copy the matrix to the auxiliar matrix
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            transf[i][j] = mat[i][j];
         }
     }
 }
@@ -124,52 +97,18 @@ void Cylinder::changeShapeToCircularCone(float radiusMultiplier, float heightMul
         }
     }
 
-    // copy the matrix to the auxiliar matrix
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            transf[i][j] = mat[i][j];
-        }
-    }
-}
-
-void Cylinder::changeShapeToSphere(float radiusMultiplier)
-{
-    float ang = 0;
-    float inc = 2 * PI / DIM;
-
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            mat[i][j].x = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
-            mat[i][j].y = sin(ang) * radiusMultiplier * (1 - i / (float)DIM);
-            mat[i][j].z = cos(ang) * radiusMultiplier * (1 - i / (float)DIM);
-            ang += inc;
-        }
-    }
-
-    // copy the matrix to the auxiliar matrix
-    for (int i = 0; i <= DIM; i++)
-    {
-        for (int j = 0; j <= DIM; j++)
-        {
-            transf[i][j] = mat[i][j];
-        }
-    }
 }
 
 Point Cylinder::rotateX(Point p)
 {
     Point resp;
-    ang += 0.000001;
-    if(ang > 2 * PI)
-        ang = 0;
+
+    if(angX > 2 * PI)
+        angX = 0;
 
     resp.x = p.x;
-    resp.y = cos(ang) * p.y - sin(ang) * p.z;
-    resp.z = sin(ang) * p.y + cos(ang) * p.z;
+    resp.y = cos(angX) * p.y - sin(angX) * p.z;
+    resp.z = sin(angX) * p.y + cos(angX) * p.z;
 
     return resp;
 }
@@ -191,6 +130,15 @@ void Cylinder::rotateCylinderX(float angle)
         for (int z = 0; z <= DIM; z++)
         {
             mat[x][z] = rotateX(mat[x][z], angle);
+        }
+}
+
+void Cylinder::rotateCylinderX()
+{
+    for (int x = 0; x <= DIM; x++)
+        for (int z = 0; z <= DIM; z++)
+        {
+            mat[x][z] = rotateX(mat[x][z]);
         }
 }
 
@@ -236,7 +184,7 @@ void Cylinder::rotateCylinderY()
 Point Cylinder::rotateZ(Point p)
 {
     Point resp;
-    
+
     if(angZ > 2 * PI)
         angZ = 0;
 
@@ -313,7 +261,6 @@ void Cylinder::translateCylinder(Point offset)
         }
 }
 
-// projecao em perspectiva, assumindo camera na origem olhando para z negativo.
 Point Cylinder::project(Point p)
 {
     float d = distance;
@@ -331,47 +278,24 @@ void Cylinder::increaseDistance(float inc)
     distance += inc;
 }
 
-// aplica sequencia de transformacoes na malha para fazer a animacao e visualizacao.
-void Cylinder::transform()
-{
-    Point p;
-    // Processa cada vertice da superficie individualmente.
-    for (int x = 0; x <= DIM; x++)
-        for (int z = 0; z <= DIM; z++)
-        {
-            // copia os Points originais
-            p = mat[x][z];
-
-            p = rotateZ(p);
-
-            p = rotateY(p);
-
-            // translacao no eixo z
-            p = translate(p);
-
-            // projecao em perspectiva
-            transf[x][z] = project(p);
-        }
-}
-
 void Cylinder::project()
 {
     Point p;
-    // Processa cada vertice da superficie individualmente.
+
     for (int x = 0; x <= DIM; x++)
         for (int z = 0; z <= DIM; z++)
         {
-            // copia os Points originais
+
             p = mat[x][z];
 
             p = rotateZ(p);
 
             p = rotateY(p);
 
-            // translacao no eixo z
+            p = rotateX(p);
+
             p = translate(p);
 
-            // projecao em perspectiva
             transf[x][z] = project(p);
         }
 }
@@ -390,7 +314,7 @@ Point Cylinder::getUpFaceCenter()
 {
     Point p;
 
-    float minX, maxX, minY, maxY, minZ, maxZ;
+    float minX = 0, maxX = 0, minY = 0, maxY = 0, minZ = 0, maxZ = 0;
 
     for(int i = 0; i <= DIM; i++)
     {
@@ -428,7 +352,7 @@ Point Cylinder::getDownFaceCenter()
 {
     Point p;
 
-    float minX, maxX, minY, maxY, minZ, maxZ;
+    float minX = 0, maxX = 0, minY = 0, maxY = 0, minZ = 0, maxZ = 0;
 
     for(int i = 0; i <= DIM; i++)
     {
@@ -469,9 +393,7 @@ Point Cylinder::getCenter()
 
 void Cylinder::render()
 {
-    //transform();
-
-    project();
+   project();
 
     if(visible)
     {
@@ -495,4 +417,9 @@ void Cylinder::render()
 void Cylinder::setVisible()
 {
     visible = !visible;
+}
+
+void Cylinder::setAngX(float ang)
+{
+    angX = ang;
 }

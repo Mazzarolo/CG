@@ -46,14 +46,8 @@
 		<Unit filename="include/GL/glut.h" />
 		<Unit filename="src/Lib/gl_canvas2d.cpp" />
 		<Unit filename="src/Lib/gl_canvas2d.h" />
-		<Unit filename="src/Objects/Component2D.cpp" />
-		<Unit filename="src/Objects/Component2D.h" />
-		<Unit filename="src/Objects/Cube.cpp" />
-		<Unit filename="src/Objects/Cube.h" />
 		<Unit filename="src/Objects/Cylinder.cpp" />
 		<Unit filename="src/Objects/Cylinder.h" />
-		<Unit filename="src/Objects/Engine2D.cpp" />
-		<Unit filename="src/Objects/Engine2D.h" />
 		<Unit filename="src/Objects/Engine3D.cpp" />
 		<Unit filename="src/Objects/Engine3D.h" />
 		<Unit filename="src/Objects/EngineV2D.cpp" />

@@ -14,7 +14,7 @@ private:
 
     Point transf[DIM + 1][DIM + 1];
 
-    float ang = 0, angY = 0, angZ = 0, distance = -300, speed = 1;
+    float angX = 0, angY = 0, angZ = 0, distance = -300, speed = 1;
 
     bool visible = true;
 public:
@@ -23,8 +23,6 @@ public:
     void changeShapeToCone(float radiusMultiplier, float heightMultiplier);
 
     void changeShapeToCircularCone(float radiusMultiplier, float heightMultiplier);
-
-    void changeShapeToSphere(float radiusMultiplier);
 
     void render();
 
@@ -38,6 +36,7 @@ public:
     Point rotateZ(Point p, float angle);
 
     void rotateCylinderX(float angle);
+    void rotateCylinderX();
 
     void rotateCylinderY(float angle);
     void rotateCylinderY();
@@ -49,6 +48,8 @@ public:
 
     void setAngY(float angY);
     float getAngY();
+
+    void setAngX(float angX);
 
     void translateCylinder(Point offset);
 
@@ -69,8 +70,6 @@ public:
     void project();
 
     void increaseDistance(float inc);
-
-    void transform();
 
     void setVisible();
 };
