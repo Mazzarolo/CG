@@ -42,10 +42,6 @@ EngineV2D::EngineV2D(int screenWidth, int screenHeight)
     angHorizontal = (PI / 6) + angSlider->percent() * PI / 4;
 }
 
-EngineV2D::~EngineV2D()
-{
-}
-
 void EngineV2D::onMouse(int button, int state, int wheel, int direction, int x, int y)
 {
     speedSlider->onMouse(x, y, button, state);

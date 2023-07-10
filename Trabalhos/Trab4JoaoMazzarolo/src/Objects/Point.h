@@ -1,3 +1,5 @@
+// Classe para criar pontos em 3D
+
 #ifndef POINT_H
 #define POINT_H
 

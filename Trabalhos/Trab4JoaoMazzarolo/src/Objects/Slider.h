@@ -22,10 +22,10 @@ public:
     //Move o slider
     void move(int x, int y);
 
-    //Fun��o que trata o arrastar do slider
+    //Funçao que trata o arrastar do slider
     bool onMouse(int mx, int my, int button, int state);
 
-    //Fun��o que retorna a porcentagem do slider entre 0 e 1
+    //Funçao que retorna a porcentagem do slider entre 0 e 1
     float percent();
 
     //Seta o xBotao para 0, deixando o slider "zerado"

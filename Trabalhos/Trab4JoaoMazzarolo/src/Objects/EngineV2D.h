@@ -1,3 +1,5 @@
+// Classe que representa o modelo em 2D do movimento do motor
+
 #ifndef ENGINEV_2D_H
 #define ENGINEV_2D_H
 
@@ -18,13 +20,14 @@ private:
     void movePistoes();
 
 public:
+    // Contrutor da classe
     EngineV2D(int screenWidth, int screenHeight);
-    ~EngineV2D();
 
+    // Renderiza o motor 2D
     void render();
 
+    // trata inputs do mouse
     void onMouse(int button, int state, int wheel, int direction, int x, int y);
-
 };
 
 #endif // ENGINEV_2D_H
